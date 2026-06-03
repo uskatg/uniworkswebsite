@@ -12,6 +12,24 @@
       addEventListener("pageshow",function(e){ if(e.persisted) toTop(); });
     })();
   </script>
+  <script>
+    /* Dynamic up-scaling for large screens. The layout maxes out at ~1280px, so
+       on big monitors it looks tiny with huge side margins. Scale the whole page
+       up proportionally once the viewport exceeds a reference width. Site is
+       built in px, so CSS `zoom` is the faithful lever.
+       Tune: lower REF = more zoom (REF 1280 ≈ 150% on a 1920-wide screen). */
+    (function(){
+      var el = document.documentElement, REF = 1440, MAX = 1.6;
+      function applyZoom(){
+        el.style.zoom = '';                 // reset so we measure at 100%
+        var w = el.clientWidth;
+        if (w > REF) el.style.zoom = Math.min(w / REF, MAX);
+      }
+      applyZoom();
+      addEventListener('resize', applyZoom);
+      addEventListener('DOMContentLoaded', applyZoom);
+    })();
+  </script>
   <title>uniworks — Flexibles Personal. Flexible Jobs.</title>
   <meta name="description" content="Deutschlands schnellst wachsender Personaldienstleister. Flexible Jobs für Studierende, zuverlässiges Personal für Unternehmen." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

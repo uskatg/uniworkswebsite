@@ -12,6 +12,24 @@
       addEventListener("pageshow",function(e){ if(e.persisted) toTop(); });
     })();
   </script>
+  <script>
+    /* Dynamic up-scaling for large screens. The layout maxes out at ~1280px, so
+       on big monitors it looks tiny with huge side margins. Scale the whole page
+       up proportionally once the viewport exceeds a reference width. Site is
+       built in px, so CSS `zoom` is the faithful lever.
+       Tune: lower REF = more zoom (REF 1280 ≈ 150% on a 1920-wide screen). */
+    (function(){
+      var el = document.documentElement, REF = 1440, MAX = 1.6;
+      function applyZoom(){
+        el.style.zoom = '';                 // reset so we measure at 100%
+        var w = el.clientWidth;
+        if (w > REF) el.style.zoom = Math.min(w / REF, MAX);
+      }
+      applyZoom();
+      addEventListener('resize', applyZoom);
+      addEventListener('DOMContentLoaded', applyZoom);
+    })();
+  </script>
   <title>uniworks — Flexibles Personal. Flexible Jobs.</title>
   <meta name="description" content="Deutschlands schnellst wachsender Personaldienstleister. Flexible Jobs für Studierende, zuverlässiges Personal für Unternehmen." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,8 +119,8 @@
     /* version2: full-bleed green splash hero, everything centred */
     .hero-outer{padding-top:72px;background:var(--g)}
     .hero{max-width:var(--mw);margin:0 auto;padding:48px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:calc(100vh - 72px)}
-    .hero-mark{width:clamp(118px,17vw,196px);height:auto;margin-bottom:clamp(26px,4.5vw,44px)}
-    .hero-tagline{font-size:clamp(16px,2.2vw,22px);font-weight:500;line-height:1.35;color:rgba(255,255,255,.92);letter-spacing:-.01em;margin-bottom:10px}
+    .hero-mark{width:clamp(140px,20vw,240px);height:auto;margin-bottom:clamp(26px,4.5vw,44px)}
+    .hero-tagline{font-size:clamp(18px,2.6vw,26px);font-weight:500;line-height:1.35;color:rgba(255,255,255,.92);letter-spacing:-.01em;margin-bottom:10px}
     .hero h1{font-size:clamp(34px,6.4vw,68px);font-weight:700;line-height:1.05;letter-spacing:-.03em;color:#fff}
     .hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(32px,5vw,48px)}
     @media(max-width:900px){
