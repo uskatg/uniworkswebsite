@@ -795,12 +795,35 @@ document.addEventListener('keydown', (e) => {
   window.addEventListener('load', recompute);
 
   function nudge(dir) {
-    if (isDesktop() && pinDuration > 0) window.scrollBy({top: dir * STEP, behavior: 'smooth'});
-    else track.scrollBy({left: dir * STEP, behavior: 'smooth'});
+    if (isDesktop() && pinDuration > 0) {
+      // Move only within the carousel's pinned range so the screen stays put
+      // (sticky keeps the header/cards fixed; only the track slides). Clamping
+      // prevents the scroll from leaking into the neighbouring sections.
+      const start = pin.getBoundingClientRect().top + window.scrollY - NAV; // scrollY where the track is at 0
+      const target = Math.min(Math.max(window.scrollY + dir * STEP, start), start + pinDuration);
+      window.scrollTo({top: target, behavior: 'smooth'});
+    } else {
+      track.scrollBy({left: dir * STEP, behavior: 'smooth'});
+    }
   }
 
   document.getElementById('uw-next').addEventListener('click', () => nudge(1));
   document.getElementById('uw-prev').addEventListener('click', () => nudge(-1));
+
+  // Horizontal trackpad swipe over the carousel drives it left/right (desktop).
+  // Feeds the gesture into the same vertical-scroll mechanism so state stays in sync.
+  track.parentElement.addEventListener('wheel', (e) => {
+    if (!isDesktop() || pinDuration <= 0) return;       // mobile uses native overflow scroll
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // let vertical gestures scroll the page
+    const top = pin.getBoundingClientRect().top;
+    const p = Math.min(Math.max(NAV - top, 0), pinDuration);
+    // Only hijack while the carousel still has room to travel in that direction.
+    if ((e.deltaX > 0 && p < pinDuration) || (e.deltaX < 0 && p > 0)) {
+      e.preventDefault();
+      window.scrollBy({top: e.deltaX});
+    }
+  }, {passive: false});
+
   recompute();
 })();
 
