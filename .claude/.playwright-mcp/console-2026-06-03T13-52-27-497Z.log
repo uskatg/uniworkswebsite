@@ -1,0 +1,6 @@
+[      42ms] TypeError: Cannot set properties of null (setting 'textContent')
+    at render (http://localhost:8769/index.html:749:25)
+    at setActive (http://localhost:8769/index.html:794:5)
+    at http://localhost:8769/index.html:844:3
+    at http://localhost:8769/index.html:845:3
+[     103ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8769/favicon.ico:0

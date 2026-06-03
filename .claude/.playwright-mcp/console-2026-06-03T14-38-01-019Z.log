@@ -1,0 +1,9 @@
+[     148ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8773/favicon.ico:0
+[  214587ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/Logistik.jpeg:0
+[  214588ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/AdeleMesse.webp:0
+[  214588ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/Catering.webp:0
+[  214589ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/Promotion.webp:0
+[  214589ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/Einzelhandel.webp:0
+[  214589ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/GastronomieHotellerie.webp:0
+[  254130ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/Buero.webp:0
+[  256395ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8773/UniworksImages/visuals/Studierende.webm:0

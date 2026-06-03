@@ -1,0 +1,226 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "uniworks Startseite" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "uniworks" [ref=e5]
+        - generic [ref=e6]: uniworks
+      - generic [ref=e7]:
+        - link "Für Studierende" [ref=e8] [cursor=pointer]:
+          - /url: "#app"
+        - button "Für Unternehmen" [ref=e10] [cursor=pointer]:
+          - text: Für Unternehmen
+          - generic [ref=e11]: 
+        - link "Über uns" [ref=e12] [cursor=pointer]:
+          - /url: "#ueber-uns"
+        - generic "Sprache wählen" [ref=e13]:
+          - link "DE" [ref=e14] [cursor=pointer]:
+            - /url: /de
+          - link "EN" [ref=e16] [cursor=pointer]:
+            - /url: /en
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]: Deutschlands schnellst wachsender Personaldienstleister
+      - heading "Flexible Jobs. Zuverlässiges Personal." [level=1] [ref=e22]:
+        - text: Flexible Jobs.
+        - emphasis [ref=e23]: Zuverlässiges
+        - text: Personal.
+      - paragraph [ref=e24]: Verbinden Sie Ihr Unternehmen mit motivierten Studierenden — für Schichten, die wirklich besetzt werden.
+      - generic [ref=e25]:
+        - link "Personal anfragen" [ref=e26] [cursor=pointer]:
+          - /url: "#unternehmen"
+          - generic [ref=e27]: 
+          - text: Personal anfragen
+        - link "Jobs finden" [ref=e28] [cursor=pointer]:
+          - /url: "#app"
+          - generic [ref=e29]: 
+          - text: Jobs finden
+      - generic [ref=e30]:
+        - strong [ref=e31]: 16.000+
+        - text: Studierende registriert
+        - strong [ref=e33]: 185.000+
+        - text: Stunden geleistet
+    - generic [ref=e34]:
+      - img "Studierende bei der Arbeit" [ref=e35]
+      - generic [ref=e36]:
+        - generic [ref=e38]: 
+        - generic [ref=e39]:
+          - generic [ref=e40]: Geleistete Stunden
+          - generic [ref=e41]: 185.000+
+      - generic [ref=e43]:
+        - generic [ref=e44]: 
+        - text: 10.000+ Schichten besetzt
+  - region "Kennzahlen" [ref=e45]:
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - generic [ref=e48]: 16.000+
+        - generic [ref=e49]: Registrierte Nutzer
+      - generic [ref=e50]:
+        - generic [ref=e51]: 10.000+
+        - generic [ref=e52]: Besetzte Schichten
+      - generic [ref=e53]:
+        - generic [ref=e54]: 185.000+
+        - generic [ref=e55]: Geleistete Stunden
+      - generic [ref=e56]:
+        - generic [ref=e57]: 650+
+        - generic [ref=e58]: Fachkräfte
+  - region "Deutschlandweit vertreten" [ref=e59]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: Deutschlandweit
+        - heading "In über 40 Städten für dich da" [level=2] [ref=e63]
+        - paragraph [ref=e64]: Gegründet wurde uniworks in München und ist mittlerweile deutschlandweit vertreten.
+      - generic [ref=e66]:
+        - img "Umriss von Deutschland mit uniworks-Standorten"
+  - region "Einblicke in unsere Jobs" [ref=e68]:
+    - paragraph [ref=e69]: Einblicke in unsere Jobs
+  - generic [ref=e115]:
+    - generic [ref=e116]:
+      - generic [ref=e117]: Unsere Bereiche
+      - heading "Für jeden Bedarf das passende Personal" [level=2] [ref=e118]
+    - generic [ref=e121]:
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - paragraph [ref=e124]: Für Unternehmen
+          - heading "Für jede Branche das passende Personal" [level=3] [ref=e125]
+        - generic [ref=e126]:
+          - button "Zurück" [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: 
+          - button "Weiter" [ref=e129] [cursor=pointer]:
+            - generic [ref=e130]: 
+      - generic [ref=e131]:
+        - region "Kategorie-Karussell"
+  - generic [ref=e133]:
+    - generic [ref=e135]:
+      - paragraph [ref=e136]: Für Studierende
+      - heading "Flexible Jobs, die zu deinem Studium passen" [level=2] [ref=e137]
+    - generic [ref=e140]:
+      - list [ref=e141]:
+        - listitem [ref=e142]:
+          - generic [ref=e143]: 
+          - generic [ref=e144]:
+            - strong [ref=e145]: Flexible Schichten
+            - text: Wähle täglich aus offenen Jobs in deiner Nähe.
+        - listitem [ref=e146]:
+          - generic [ref=e147]: 
+          - generic [ref=e148]:
+            - strong [ref=e149]: Faire Bezahlung
+            - text: Immer mindestens 16 € pro Stunde, fair und transparent.
+        - listitem [ref=e150]:
+          - generic [ref=e151]: 
+          - generic [ref=e152]:
+            - strong [ref=e153]: In der App buchen
+            - text: Schicht aussuchen, annehmen, loslegen — in Minuten.
+        - listitem [ref=e154]:
+          - generic [ref=e155]: 
+          - generic [ref=e156]:
+            - strong [ref=e157]: Rund ums Studium
+            - text: Jobs, die sich deinem Hochschulalltag anpassen.
+        - listitem [ref=e158]:
+          - generic [ref=e159]: 
+          - generic [ref=e160]:
+            - strong [ref=e161]: Deutschlandweit
+            - text: Über 15.000 Studierende sind schon dabei.
+      - generic [ref=e162]:
+        - link "App holen" [ref=e163] [cursor=pointer]:
+          - /url: "#app"
+          - generic [ref=e164]: 
+          - text: App holen
+        - link "So funktioniert's" [ref=e165] [cursor=pointer]:
+          - /url: "#app"
+  - generic [ref=e168]:
+    - generic [ref=e169]: Schichten finden
+    - heading "Die App für flexible Jobs neben dem Studium" [level=2] [ref=e170]:
+      - text: Die App für
+      - emphasis [ref=e171]: flexible Jobs
+      - text: neben dem Studium
+    - paragraph [ref=e172]: Täglich neue Schichten in deiner Stadt. Mindestens €16/Stunde. Einfach bewerben, direkt loslegen.
+    - generic [ref=e173]:
+      - link "Im App Store herunterladen" [ref=e174] [cursor=pointer]:
+        - /url: "#"
+        - img "App Store" [ref=e175]
+      - link "Bei Google Play herunterladen" [ref=e176] [cursor=pointer]:
+        - /url: "#"
+        - img "Google Play" [ref=e177]
+  - generic [ref=e178]:
+    - paragraph [ref=e180]: Unsere Partner & Kunden
+    - generic [ref=e182]:
+      - img [ref=e183]
+      - img [ref=e184]
+      - img [ref=e185]
+      - img [ref=e186]
+      - img [ref=e187]
+      - img [ref=e188]
+      - img [ref=e189]
+      - img [ref=e190]
+  - contentinfo [ref=e191]:
+    - generic [ref=e192]:
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - heading "uniworks" [level=3] [ref=e196]
+          - paragraph [ref=e197]: Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.
+          - generic [ref=e198]:
+            - link "Instagram" [ref=e199] [cursor=pointer]:
+              - /url: https://instagram.com/uniworks.gmbh
+              - generic [ref=e200]: 
+            - link "LinkedIn" [ref=e201] [cursor=pointer]:
+              - /url: https://linkedin.com/company/uniworks
+              - generic [ref=e202]: 
+        - generic [ref=e203]:
+          - heading "Plattform" [level=4] [ref=e204]
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - link "Für Studierende" [ref=e207] [cursor=pointer]:
+                - /url: "#app"
+            - listitem [ref=e208]:
+              - link "Für Unternehmen" [ref=e209] [cursor=pointer]:
+                - /url: "#unternehmen"
+            - listitem [ref=e210]:
+              - link "App herunterladen" [ref=e211] [cursor=pointer]:
+                - /url: "#app"
+        - generic [ref=e212]:
+          - heading "Branchen" [level=4] [ref=e213]
+          - list [ref=e214]:
+            - listitem [ref=e215]:
+              - link "Logistik" [ref=e216] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e217]:
+              - link "Event" [ref=e218] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e219]:
+              - link "Catering" [ref=e220] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e221]:
+              - link "Einzelhandel" [ref=e222] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e223]:
+              - link "Gastronomie" [ref=e224] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e225]:
+              - link "Promotion" [ref=e226] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e227]:
+          - heading "Unternehmen" [level=4] [ref=e228]
+          - list [ref=e229]:
+            - listitem [ref=e230]:
+              - link "Über Uns" [ref=e231] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e232]:
+              - link "Blog" [ref=e233] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e234]:
+              - link "FAQ" [ref=e235] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e236]:
+              - link "Impressum" [ref=e237] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e238]:
+              - link "Datenschutz" [ref=e239] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e240]:
+        - generic [ref=e241]: © 2025 uniworks GmbH. Alle Rechte vorbehalten.
+        - generic [ref=e242]:
+          - link "Impressum" [ref=e243] [cursor=pointer]:
+            - /url: "#"
+          - link "Datenschutz" [ref=e244] [cursor=pointer]:
+            - /url: "#"

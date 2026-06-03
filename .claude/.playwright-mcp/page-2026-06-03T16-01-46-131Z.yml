@@ -1,0 +1,369 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "uniworks Startseite" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "uniworks" [ref=e5]
+        - generic [ref=e6]: uniworks
+      - text: 
+      - generic "Sprache wählen" [ref=e7]:
+        - link "DE" [ref=e8] [cursor=pointer]:
+          - /url: /de
+        - link "EN" [ref=e10] [cursor=pointer]:
+          - /url: /en
+      - button "Menü öffnen" [ref=e11] [cursor=pointer]
+  - text:        
+  - generic [ref=e16]:
+    - generic [ref=e17]:
+      - heading "Willkommen bei uniworks." [level=1] [ref=e18]:
+        - text: Willkommen bei
+        - emphasis [ref=e19]: uniworks.
+      - paragraph [ref=e20]: Deutschlands schnellst wachsender Personaldienstleister.
+      - generic [ref=e21]:
+        - link "Personal anfragen" [ref=e22] [cursor=pointer]:
+          - /url: "#unternehmen"
+          - generic [ref=e23]: 
+          - text: Personal anfragen
+        - link "Jobs finden" [ref=e24] [cursor=pointer]:
+          - /url: "#studierende"
+          - generic [ref=e25]: 
+          - text: Jobs finden
+    - img "uniworks" [ref=e28]
+  - region "Kennzahlen" [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]: 16.000+
+        - generic [ref=e33]: Registrierte Nutzer
+      - generic [ref=e34]:
+        - generic [ref=e35]: 10.000+
+        - generic [ref=e36]: Besetzte Schichten
+      - generic [ref=e37]:
+        - generic [ref=e38]: 185.000+
+        - generic [ref=e39]: Geleistete Stunden
+      - generic [ref=e40]:
+        - generic [ref=e41]: 650+
+        - generic [ref=e42]: Fachkräfte
+  - region "Einblicke in unsere Jobs" [ref=e43]:
+    - paragraph [ref=e44]: Einblicke in unsere Jobs
+  - region "Deutschlandweit vertreten" [ref=e90]:
+    - generic [ref=e91]:
+      - generic [ref=e92]:
+        - generic [ref=e93]: Deutschlandweit
+        - heading "In über 40 Städten für dich da" [level=2] [ref=e94]
+        - paragraph [ref=e95]: Gegründet wurde uniworks in München und ist mittlerweile deutschlandweit vertreten.
+      - generic [ref=e97]:
+        - img "Umriss von Deutschland mit uniworks-Standorten"
+        - generic [ref=e98]:
+          - generic:
+            - button "München — Jobs ansehen"
+            - generic: München
+          - generic:
+            - button "Sylt — Jobs ansehen"
+            - generic: Sylt
+          - generic:
+            - button "Kiel — Jobs ansehen"
+            - generic: Kiel
+          - generic:
+            - button "Hamburg — Jobs ansehen"
+            - generic: Hamburg
+          - generic:
+            - button "Bremerhaven — Jobs ansehen"
+            - generic: Bremerhaven
+          - generic:
+            - button "Wilhelmshaven — Jobs ansehen"
+            - generic: Wilhelmshaven
+          - generic:
+            - button "Oldenburg — Jobs ansehen"
+            - generic: Oldenburg
+          - generic:
+            - button "Berlin — Jobs ansehen"
+            - generic: Berlin
+          - generic:
+            - button "Potsdam — Jobs ansehen"
+            - generic: Potsdam
+          - generic:
+            - button "Hannover — Jobs ansehen"
+            - generic: Hannover
+          - generic:
+            - button "Münster — Jobs ansehen"
+            - generic: Münster
+          - generic:
+            - button "Blankenburg — Jobs ansehen"
+            - generic: Blankenburg
+          - generic:
+            - button "Dortmund — Jobs ansehen"
+            - generic: Dortmund
+          - generic:
+            - button "Essen — Jobs ansehen"
+            - generic: Essen
+          - generic:
+            - button "Leipzig — Jobs ansehen"
+            - generic: Leipzig
+          - generic:
+            - button "Düsseldorf — Jobs ansehen"
+            - generic: Düsseldorf
+          - generic:
+            - button "Dresden — Jobs ansehen"
+            - generic: Dresden
+          - generic:
+            - button "Erfurt — Jobs ansehen"
+            - generic: Erfurt
+          - generic:
+            - button "Weimar — Jobs ansehen"
+            - generic: Weimar
+          - generic:
+            - button "Köln — Jobs ansehen"
+            - generic: Köln
+          - generic:
+            - button "Chemnitz — Jobs ansehen"
+            - generic: Chemnitz
+          - generic:
+            - button "Alsfeld — Jobs ansehen"
+            - generic: Alsfeld
+          - generic:
+            - button "Fulda — Jobs ansehen"
+            - generic: Fulda
+          - generic:
+            - button "Nürburg — Jobs ansehen"
+            - generic: Nürburg
+          - generic:
+            - button "Frankfurt — Jobs ansehen"
+            - generic: Frankfurt
+          - generic:
+            - button "Aschaffenburg — Jobs ansehen"
+            - generic: Aschaffenburg
+          - generic:
+            - button "Darmstadt — Jobs ansehen"
+            - generic: Darmstadt
+          - generic:
+            - button "Weiden — Jobs ansehen"
+            - generic: Weiden
+          - generic:
+            - button "Mannheim — Jobs ansehen"
+            - generic: Mannheim
+          - generic:
+            - button "Nürnberg — Jobs ansehen"
+            - generic: Nürnberg
+          - generic:
+            - button "Heidelberg — Jobs ansehen"
+            - generic: Heidelberg
+          - generic:
+            - button "Regensburg — Jobs ansehen"
+            - generic: Regensburg
+          - generic:
+            - button "Stuttgart — Jobs ansehen"
+            - generic: Stuttgart
+          - generic:
+            - button "Passau — Jobs ansehen"
+            - generic: Passau
+          - generic:
+            - button "Reutlingen — Jobs ansehen"
+            - generic: Reutlingen
+          - generic:
+            - button "Ulm — Jobs ansehen"
+            - generic: Ulm
+          - generic:
+            - button "Augsburg — Jobs ansehen"
+            - generic: Augsburg
+          - generic:
+            - button "Freiburg — Jobs ansehen"
+            - generic: Freiburg
+          - generic:
+            - button "Rosenheim — Jobs ansehen"
+            - generic: Rosenheim
+          - generic:
+            - button "Salzburg — Jobs ansehen"
+            - generic: Salzburg
+          - generic:
+            - button "Kempten — Jobs ansehen"
+            - generic: Kempten
+          - generic:
+            - button "Konstanz — Jobs ansehen"
+            - generic: Konstanz
+          - generic:
+            - button "Weil am Rhein — Jobs ansehen"
+            - generic: Weil am Rhein
+  - generic [ref=e99]:
+    - generic [ref=e100]:
+      - generic [ref=e101]: Unsere Bereiche
+      - heading "Für jeden Bedarf das passende Personal" [level=2] [ref=e102]
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - paragraph [ref=e108]: Für Unternehmen
+          - heading "Für jede Branche das passende Personal" [level=3] [ref=e109]
+        - generic [ref=e110]:
+          - button "Zurück" [ref=e111] [cursor=pointer]:
+            - generic [ref=e112]: 
+          - button "Weiter" [ref=e113] [cursor=pointer]:
+            - generic [ref=e114]: 
+      - region "Kategorie-Karussell" [ref=e116]:
+        - generic [ref=e119]:
+          - heading "Logistik" [level=4] [ref=e120]
+          - paragraph [ref=e121]: Lager, Versand und Inventur, zuverlässig besetzt.
+          - button "Zu Logistik" [ref=e122] [cursor=pointer]
+        - generic [ref=e125]:
+          - heading "Event" [level=4] [ref=e126]
+          - paragraph [ref=e127]: Auf- und Abbau bis Einlass, alles aus einer Hand.
+          - button "Zu Events" [ref=e128] [cursor=pointer]
+        - generic [ref=e131]:
+          - heading "Catering" [level=4] [ref=e132]
+          - paragraph [ref=e133]: Service- und Küchenhilfen, kurzfristig verfügbar.
+          - button "Zu Catering" [ref=e134] [cursor=pointer]
+        - generic [ref=e137]:
+          - heading "Einzelhandel" [level=4] [ref=e138]
+          - paragraph [ref=e139]: Kasse, Verkauf und Auffüllen, flexibel gebucht.
+          - button "Zum Einzelhandel" [ref=e140] [cursor=pointer]
+        - generic [ref=e143]:
+          - heading "Gastronomie & Hotellerie" [level=4] [ref=e144]
+          - paragraph [ref=e145]: Service und Empfang auf Sterneniveau.
+          - button "Mehr erfahren" [ref=e146] [cursor=pointer]
+        - generic [ref=e149]:
+          - heading "Promotion" [level=4] [ref=e150]
+          - paragraph [ref=e151]: Promoter und Hostessen, die Ihre Marke vertreten.
+          - button "Zu Promotion" [ref=e152] [cursor=pointer]
+        - generic [ref=e155]:
+          - heading "Büro" [level=4] [ref=e156]
+          - paragraph [ref=e157]: Verlässliche Unterstützung im Büroalltag.
+          - button "Zum Büro" [ref=e158] [cursor=pointer]
+  - generic [ref=e160]:
+    - generic [ref=e162]:
+      - paragraph [ref=e163]: Für Studierende
+      - heading "Flexible Jobs, die zu deinem Studium passen" [level=2] [ref=e164]
+    - generic [ref=e167]:
+      - list [ref=e168]:
+        - listitem [ref=e169]:
+          - generic [ref=e170]: 
+          - generic [ref=e171]:
+            - strong [ref=e172]: Flexible Schichten
+            - text: Wähle täglich aus offenen Jobs in deiner Nähe.
+        - listitem [ref=e173]:
+          - generic [ref=e174]: 
+          - generic [ref=e175]:
+            - strong [ref=e176]: Faire Bezahlung
+            - text: Immer mindestens 16 € pro Stunde, fair und transparent.
+        - listitem [ref=e177]:
+          - generic [ref=e178]: 
+          - generic [ref=e179]:
+            - strong [ref=e180]: In der App buchen
+            - text: Schicht aussuchen, annehmen, loslegen — in Minuten.
+        - listitem [ref=e181]:
+          - generic [ref=e182]: 
+          - generic [ref=e183]:
+            - strong [ref=e184]: Rund ums Studium
+            - text: Jobs, die sich deinem Hochschulalltag anpassen.
+        - listitem [ref=e185]:
+          - generic [ref=e186]: 
+          - generic [ref=e187]:
+            - strong [ref=e188]: Deutschlandweit
+            - text: Über 15.000 Studierende sind schon dabei.
+      - link "Mehr erfahren" [ref=e190] [cursor=pointer]:
+        - /url: about.html
+  - region "Erfahre mehr über uns" [ref=e191]:
+    - generic [ref=e192]:
+      - heading "Erfahre mehr über uns" [level=2] [ref=e193]
+      - link "Alle News" [ref=e194] [cursor=pointer]:
+        - /url: about.html#news
+        - text: Alle News
+        - generic [ref=e195]: 
+    - generic [ref=e196]:
+      - link "uniworks auf den großen Karriere-Events" [ref=e197] [cursor=pointer]:
+        - /url: about.html#news
+        - heading "uniworks auf den großen Karriere-Events" [level=3] [ref=e199]
+      - link "Uniworker+ — mehr Vorteile für unsere Kräfte" [ref=e200] [cursor=pointer]:
+        - /url: about.html#news
+        - heading "Uniworker+ — mehr Vorteile für unsere Kräfte" [level=3] [ref=e202]
+      - link "Start ins Wintersemester 2024/25" [ref=e203] [cursor=pointer]:
+        - /url: about.html#news
+        - heading "Start ins Wintersemester 2024/25" [level=3] [ref=e205]
+      - link "uniworks in der Presse" [ref=e206] [cursor=pointer]:
+        - /url: about.html#news
+        - heading "uniworks in der Presse" [level=3] [ref=e208]
+      - link "Die neue uniworks App ist da" [ref=e209] [cursor=pointer]:
+        - /url: about.html#news
+        - heading "Die neue uniworks App ist da" [level=3] [ref=e211]
+      - link "Startschuss für die Expansion" [ref=e212] [cursor=pointer]:
+        - /url: about.html#news
+        - heading "Startschuss für die Expansion" [level=3] [ref=e214]
+  - generic [ref=e215]:
+    - paragraph [ref=e217]: Unsere Partner & Kunden
+    - generic [ref=e219]:
+      - img [ref=e220]
+      - img [ref=e221]
+      - img [ref=e222]
+      - img [ref=e223]
+      - img [ref=e224]
+      - img [ref=e225]
+      - img [ref=e226]
+      - img [ref=e227]
+  - contentinfo [ref=e228]:
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - generic [ref=e231]:
+          - heading "uniworks" [level=3] [ref=e233]
+          - paragraph [ref=e234]: Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.
+          - generic [ref=e235]:
+            - link "Instagram" [ref=e236] [cursor=pointer]:
+              - /url: https://instagram.com/uniworks.gmbh
+              - generic [ref=e237]: 
+            - link "LinkedIn" [ref=e238] [cursor=pointer]:
+              - /url: https://linkedin.com/company/uniworks
+              - generic [ref=e239]: 
+        - generic [ref=e240]:
+          - heading "Plattform" [level=4] [ref=e241]
+          - list [ref=e242]:
+            - listitem [ref=e243]:
+              - link "Für Studierende" [ref=e244] [cursor=pointer]:
+                - /url: "#studierende"
+            - listitem [ref=e245]:
+              - link "Für Unternehmen" [ref=e246] [cursor=pointer]:
+                - /url: "#unternehmen"
+            - listitem [ref=e247]:
+              - link "App herunterladen" [ref=e248] [cursor=pointer]:
+                - /url: "#app"
+        - generic [ref=e249]:
+          - heading "Branchen" [level=4] [ref=e250]
+          - list [ref=e251]:
+            - listitem [ref=e252]:
+              - link "Logistik" [ref=e253] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e254]:
+              - link "Event" [ref=e255] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e256]:
+              - link "Catering" [ref=e257] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e258]:
+              - link "Einzelhandel" [ref=e259] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e260]:
+              - link "Gastronomie" [ref=e261] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e262]:
+              - link "Promotion" [ref=e263] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e264]:
+          - heading "Unternehmen" [level=4] [ref=e265]
+          - list [ref=e266]:
+            - listitem [ref=e267]:
+              - link "Über Uns" [ref=e268] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e269]:
+              - link "Blog" [ref=e270] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e271]:
+              - link "FAQ" [ref=e272] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e273]:
+              - link "Impressum" [ref=e274] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e275]:
+              - link "Datenschutz" [ref=e276] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e277]:
+        - generic [ref=e278]: © 2025 uniworks GmbH. Alle Rechte vorbehalten.
+        - generic [ref=e279]:
+          - link "Impressum" [ref=e280] [cursor=pointer]:
+            - /url: "#"
+          - link "Datenschutz" [ref=e281] [cursor=pointer]:
+            - /url: "#"

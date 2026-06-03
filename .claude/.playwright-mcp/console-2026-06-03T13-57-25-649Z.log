@@ -1,0 +1,17 @@
+[      98ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8770/favicon.ico:0
+[  156144ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/VIPCatering.webp:0
+[  156144ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/Messeaufbau.webp:0
+[  156144ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/EventShuttle.webp:0
+[  156145ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/Streckenposten.webp:0
+[  156145ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/FanBotschafterStadion.webp:0
+[  156145ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/Fruehstuecksservice.webp:0
+[  156146ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/WarenEinraeumen.webp:0
+[  156146ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/PromoterNY.webp:0
+[  156146ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/SupermarktNeueroeffnung.webp:0
+[  156147ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/work/SchulCatering.webp:0
+[  159386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/visuals/Logistik.jpeg:0
+[  159386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/visuals/AdeleMesse.webp:0
+[  159386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/visuals/Catering.webp:0
+[  159386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/visuals/Einzelhandel.webp:0
+[  159386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/visuals/GastronomieHotellerie.webp:0
+[  159386ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8770/UniworksImages/visuals/Promotion.webp:0

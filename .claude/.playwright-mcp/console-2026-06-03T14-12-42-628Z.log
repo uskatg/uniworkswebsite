@@ -1,0 +1,2 @@
+[     219ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8772/favicon.ico:0
+[   18461ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8772/UniworksImages/visuals/Buero.webp:0

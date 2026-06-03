@@ -1,0 +1,276 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "uniworks Startseite" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - img "uniworks" [ref=e5]
+        - generic [ref=e6]: uniworks
+      - text: 
+      - button "Menü öffnen" [ref=e7] [cursor=pointer]
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]: Das Team
+      - heading "Das Team hinter uniworks" [level=2] [ref=e15]
+    - generic [ref=e16]:
+      - article [ref=e17]:
+        - img "Moritz" [ref=e18]
+        - generic [ref=e19]:
+          - heading "Moritz" [level=3] [ref=e20]
+          - generic [ref=e21]: Geschäftsführender Gesellschafter
+      - article [ref=e22]:
+        - img "David Lindenmayer" [ref=e23]
+        - generic [ref=e24]:
+          - heading "David" [level=3] [ref=e25]
+          - generic [ref=e26]: Gesellschafter • Technologie
+      - article [ref=e27]:
+        - img "Emil Dax" [ref=e28]
+        - generic [ref=e29]:
+          - heading "Emil" [level=3] [ref=e30]
+          - generic [ref=e31]: Gesellschafter • Kreatives
+      - article [ref=e32]:
+        - img "Phin" [ref=e33]
+        - generic [ref=e34]:
+          - heading "Phin" [level=3] [ref=e35]
+          - generic [ref=e36]: Head of Operations & Strategy
+      - article [ref=e37]:
+        - img "Kanghyun" [ref=e38]
+        - generic [ref=e39]:
+          - heading "Kanghyun" [level=3] [ref=e40]
+          - generic [ref=e41]: Product Manager & Software Engineer
+      - article [ref=e42]:
+        - img "Amelie" [ref=e43]
+        - generic [ref=e44]:
+          - heading "Amelie" [level=3] [ref=e45]
+          - generic [ref=e46]: Founders Associate
+      - article [ref=e47]:
+        - img "Bine" [ref=e48]
+        - generic [ref=e49]:
+          - heading "Bine" [level=3] [ref=e50]
+          - generic [ref=e51]: HR & Buchhaltung
+      - article [ref=e52]:
+        - img "Phil" [ref=e53]
+        - generic [ref=e54]:
+          - heading "Phil" [level=3] [ref=e55]
+          - generic [ref=e56]: Projektleiter
+      - article [ref=e57]:
+        - img "Thommy" [ref=e58]
+        - generic [ref=e59]:
+          - heading "Thommy" [level=3] [ref=e60]
+          - generic [ref=e61]: Gesellschafter • Personal
+      - article [ref=e62]:
+        - img "Alina" [ref=e63]
+        - generic [ref=e64]:
+          - heading "Alina" [level=3] [ref=e65]
+          - generic [ref=e66]: HR & Onboarding
+      - article [ref=e67]:
+        - img "Marie" [ref=e68]
+        - generic [ref=e69]:
+          - heading "Marie" [level=3] [ref=e70]
+          - generic [ref=e71]: Assistenz der Geschäftsleitung
+      - article [ref=e72]:
+        - img "Ellen" [ref=e73]
+        - generic [ref=e74]:
+          - heading "Ellen" [level=3] [ref=e75]
+          - generic [ref=e76]: Assistenz der Geschäftsleitung
+  - generic [ref=e78]:
+    - generic [ref=e79]:
+      - generic [ref=e80]: Unsere Geschichte
+      - heading "Wie entstand uniworks eigentlich?" [level=2] [ref=e81]
+      - paragraph [ref=e82]: "Die Idee, Studierende und Unternehmen zusammenzubringen, entstand aus eigener Erfahrung: Moritz, Thommy, David & Stefan gründeten das Unternehmen, während sie selbst noch studierten. Sie bemerkten, dass es für Studierende kaum Möglichkeiten gab, während des Studiums flexibel Praxiserfahrung zu sammeln und gleichzeitig fair entlohnt zu werden. Ebenso zeigten die Erfahrungen, die Moritz als Unternehmer sammelte, wie schwierig es sein kann, qualifizierte Arbeitskräfte für den eigenen Betrieb zu gewinnen."
+      - paragraph [ref=e83]: "Aus dieser Erkenntnis wurde eine Vision, die heute Realität ist: Studierende und Unternehmen profitieren gleichermaßen von einem flexiblen Modell. Einerseits durch attraktive Löhne und eine Beschäftigung, die sich hervorragend mit dem Studium vereinbaren lässt. Andererseits Zugang zu einem großen Talentpool, der die perfekte Besetzung für jede freie Stelle ermöglicht."
+    - generic [ref=e84]:
+      - img "Das uniworks Gründungsteam" [ref=e85]
+      - generic [ref=e86]:
+        - strong [ref=e87]: "2021"
+        - text: gegründet in München
+  - generic [ref=e89]:
+    - generic [ref=e90]:
+      - generic [ref=e91]: News & Updates
+      - heading "News und Updates zu uniworks" [level=2] [ref=e92]
+    - generic [ref=e93]:
+      - link "Februar 2025 · News uniworks wird DEHOGA Mitglied Mehr lesen" [ref=e94] [cursor=pointer]:
+        - /url: post/uniworks-wird-dehoga-mitglied.html
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: 
+            - text: Februar 2025 · News
+          - heading "uniworks wird DEHOGA Mitglied" [level=3] [ref=e99]
+          - generic [ref=e100]:
+            - text: Mehr lesen
+            - generic [ref=e101]: 
+      - link "Januar 2025 · News uniworks in der Presse Mehr lesen" [ref=e102] [cursor=pointer]:
+        - /url: post/uniworks-in-der-presse.html
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - generic [ref=e106]: 
+            - text: Januar 2025 · News
+          - heading "uniworks in der Presse" [level=3] [ref=e107]
+          - generic [ref=e108]:
+            - text: Mehr lesen
+            - generic [ref=e109]: 
+      - link "November 2024 · News Young Talents begeistern – Karriere Events als Erfolgsfaktor Mehr lesen" [ref=e110] [cursor=pointer]:
+        - /url: post/young-talents-begeistern-karriere-events-als-erfolgsfaktor.html
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - generic [ref=e114]: 
+            - text: November 2024 · News
+          - heading "Young Talents begeistern – Karriere Events als Erfolgsfaktor" [level=3] [ref=e115]
+          - generic [ref=e116]:
+            - text: Mehr lesen
+            - generic [ref=e117]: 
+      - 'link "Oktober 2024 · News Auftakt zum Wintersemester 2024/25: uniworks feiert mit Münchens Studierenden Mehr lesen" [ref=e118] [cursor=pointer]':
+        - /url: post/auftakt-zum-wintersemester-2024-25-uniworks-feiert-mit-munchens-studierenden.html
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: 
+            - text: Oktober 2024 · News
+          - 'heading "Auftakt zum Wintersemester 2024/25: uniworks feiert mit Münchens Studierenden" [level=3] [ref=e123]'
+          - generic [ref=e124]:
+            - text: Mehr lesen
+            - generic [ref=e125]: 
+      - link "Mai 2024 · News uniworker plus Mehr lesen" [ref=e126] [cursor=pointer]:
+        - /url: post/uniworker-plus.html
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: 
+            - text: Mai 2024 · News
+          - heading "uniworker plus" [level=3] [ref=e131]
+          - generic [ref=e132]:
+            - text: Mehr lesen
+            - generic [ref=e133]: 
+      - link "Oktober 2023 · News Die uniworks App Mehr lesen" [ref=e134] [cursor=pointer]:
+        - /url: post/die-uniworks-app.html
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - generic [ref=e138]: 
+            - text: Oktober 2023 · News
+          - heading "Die uniworks App" [level=3] [ref=e139]
+          - generic [ref=e140]:
+            - text: Mehr lesen
+            - generic [ref=e141]: 
+      - link "Mai 2023 · News Startschuss Mehr lesen" [ref=e142] [cursor=pointer]:
+        - /url: post/startschuss.html
+        - generic [ref=e144]:
+          - generic [ref=e145]:
+            - generic [ref=e146]: 
+            - text: Mai 2023 · News
+          - heading "Startschuss" [level=3] [ref=e147]
+          - generic [ref=e148]:
+            - text: Mehr lesen
+            - generic [ref=e149]: 
+      - link "Januar 2023 · News uniworks – Eine eingetragene Marke Mehr lesen" [ref=e150] [cursor=pointer]:
+        - /url: post/uniworks-eine-eingetragene-marke.html
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]: 
+            - text: Januar 2023 · News
+          - heading "uniworks – Eine eingetragene Marke" [level=3] [ref=e155]
+          - generic [ref=e156]:
+            - text: Mehr lesen
+            - generic [ref=e157]: 
+      - link "Januar 2023 · News Von Studierenden für Studierende Mehr lesen" [ref=e158] [cursor=pointer]:
+        - /url: post/von-studierenden-fur-studierende.html
+        - generic [ref=e160]:
+          - generic [ref=e161]:
+            - generic [ref=e162]: 
+            - text: Januar 2023 · News
+          - heading "Von Studierenden für Studierende" [level=3] [ref=e163]
+          - generic [ref=e164]:
+            - text: Mehr lesen
+            - generic [ref=e165]: 
+  - generic [ref=e167]:
+    - generic [ref=e168]:
+      - generic [ref=e169]: Mitgliedschaften & Auszeichnungen
+      - heading "Geprüft und anerkannt" [level=2] [ref=e170]
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - img "DEHOGA Bayern Mitglied" [ref=e173]
+        - generic [ref=e174]:
+          - heading "Mitglied der DEHOGA Bayern" [level=3] [ref=e175]
+          - paragraph [ref=e176]: Als Partner des Hotel- und Gaststättenverbands sind wir fest in der bayerischen Hospitality-Branche verankert.
+      - generic [ref=e177]:
+        - img "Eingetragene Marke" [ref=e178]
+        - generic [ref=e179]:
+          - heading "Eingetragene Marke" [level=3] [ref=e180]
+          - paragraph [ref=e181]: uniworks ist eine offiziell eingetragene Marke — für ein Versprechen, auf das sich Unternehmen und Studierende verlassen können.
+  - generic [ref=e184]:
+    - heading "Werde Teil von uniworks" [level=2] [ref=e185]
+    - paragraph [ref=e186]: Ob als Studierende:r auf der Suche nach flexiblen Jobs oder als Unternehmen mit Personalbedarf — wir bringen euch zusammen.
+    - generic [ref=e187]:
+      - link "Jobs finden" [ref=e188] [cursor=pointer]:
+        - /url: index.html#studierende
+        - generic [ref=e189]: 
+        - text: Jobs finden
+      - link "Personal anfragen" [ref=e190] [cursor=pointer]:
+        - /url: index.html#unternehmen
+  - contentinfo [ref=e191]:
+    - generic [ref=e192]:
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - heading "uniworks" [level=3] [ref=e196]
+          - paragraph [ref=e197]: Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.
+          - generic [ref=e198]:
+            - link "Instagram" [ref=e199] [cursor=pointer]:
+              - /url: https://instagram.com/uniworks.gmbh
+              - generic [ref=e200]: 
+            - link "LinkedIn" [ref=e201] [cursor=pointer]:
+              - /url: https://linkedin.com/company/uniworks
+              - generic [ref=e202]: 
+        - generic [ref=e203]:
+          - heading "Plattform" [level=4] [ref=e204]
+          - list [ref=e205]:
+            - listitem [ref=e206]:
+              - link "Für Studierende" [ref=e207] [cursor=pointer]:
+                - /url: index.html#studierende
+            - listitem [ref=e208]:
+              - link "Für Unternehmen" [ref=e209] [cursor=pointer]:
+                - /url: index.html#unternehmen
+            - listitem [ref=e210]:
+              - link "App herunterladen" [ref=e211] [cursor=pointer]:
+                - /url: index.html#app
+        - generic [ref=e212]:
+          - heading "Branchen" [level=4] [ref=e213]
+          - list [ref=e214]:
+            - listitem [ref=e215]:
+              - link "Logistik" [ref=e216] [cursor=pointer]:
+                - /url: index.html#unternehmen
+            - listitem [ref=e217]:
+              - link "Event" [ref=e218] [cursor=pointer]:
+                - /url: index.html#unternehmen
+            - listitem [ref=e219]:
+              - link "Catering" [ref=e220] [cursor=pointer]:
+                - /url: index.html#unternehmen
+            - listitem [ref=e221]:
+              - link "Einzelhandel" [ref=e222] [cursor=pointer]:
+                - /url: index.html#unternehmen
+            - listitem [ref=e223]:
+              - link "Gastronomie" [ref=e224] [cursor=pointer]:
+                - /url: index.html#unternehmen
+            - listitem [ref=e225]:
+              - link "Promotion" [ref=e226] [cursor=pointer]:
+                - /url: index.html#unternehmen
+        - generic [ref=e227]:
+          - heading "Unternehmen" [level=4] [ref=e228]
+          - list [ref=e229]:
+            - listitem [ref=e230]:
+              - link "Über Uns" [ref=e231] [cursor=pointer]:
+                - /url: about.html
+            - listitem [ref=e232]:
+              - link "Blog" [ref=e233] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e234]:
+              - link "FAQ" [ref=e235] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e236]:
+              - link "Impressum" [ref=e237] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e238]:
+              - link "Datenschutz" [ref=e239] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e240]:
+        - generic [ref=e241]: © 2025 uniworks GmbH. Alle Rechte vorbehalten.
+        - generic [ref=e242]:
+          - link "Impressum" [ref=e243] [cursor=pointer]:
+            - /url: "#"
+          - link "Datenschutz" [ref=e244] [cursor=pointer]:
+            - /url: "#"

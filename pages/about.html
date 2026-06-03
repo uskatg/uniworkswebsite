@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    if("scrollRestoration" in history){history.scrollRestoration="manual";}
+    (function(){
+      function toTop(){ if(location.hash) return; var h=document.documentElement,p=h.style.scrollBehavior; h.style.scrollBehavior="auto"; window.scrollTo(0,0); h.style.scrollBehavior=p; }
+      addEventListener("DOMContentLoaded",toTop);
+      addEventListener("load",function(){ toTop(); requestAnimationFrame(toTop); setTimeout(toTop,80); setTimeout(toTop,250); });
+      addEventListener("pageshow",function(e){ if(e.persisted) toTop(); });
+    })();
+  </script>
+  <title>uniworks — Über uns</title>
+  <meta name="description" content="Wer hinter uniworks steckt: das Team, die Geschichte und aktuelle News von Deutschlands schnellst wachsendem Personaldienstleister aus München." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;--gm:#EAF3DE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+    .eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+    .sec-h{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--black);margin-bottom:14px}
+    .sec-sub{font-size:17px;line-height:1.65;color:var(--sec);max-width:620px}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:16px;font-weight:600;border-radius:var(--r8);padding:14px 28px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+    .btn-p:active{transform:scale(.98)}
+    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
+    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:32px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+    .nav-ctas{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+    .nav-ctas .btn{font-size:14px;padding:10px 20px}
+    .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;padding:8px 12px;border-radius:var(--r8);transition:all var(--tr);white-space:nowrap}
+    .nav-textlink:hover{color:var(--g);background:var(--gl)}
+    .nav-textlink.active{color:var(--g)}
+    .lang-switch{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin:0 4px}
+    .lang-switch a{color:var(--sec);text-decoration:none;padding:4px 2px;transition:color var(--tr)}
+    .lang-switch a:hover{color:var(--g)}
+    .lang-switch a.active{color:var(--black)}
+    .lang-switch .sep{width:1px;height:16px;background:var(--border)}
+    .mob-overlay .lang-switch a{font-size:15px;padding:4px 2px;border-bottom:none}
+    .nav-lang-mob{display:none}
+    .nav-dd{position:relative}
+    .nav-dd-toggle .ti{font-size:16px;transition:transform var(--tr)}
+    .nav-dd.open .nav-dd-toggle .ti{transform:rotate(180deg)}
+    .nav-dd-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);box-shadow:var(--shh);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity var(--tr),transform var(--tr),visibility var(--tr);z-index:101}
+    .nav-dd.open .nav-dd-menu{opacity:1;visibility:visible;transform:none}
+    .nav-dd-menu a{display:flex;align-items:center;gap:10px;padding:10px 12px;font-size:14px;font-weight:500;color:var(--black);text-decoration:none;border-radius:var(--r8);transition:all var(--tr)}
+    .nav-dd-menu a:hover{background:var(--gl);color:var(--g)}
+    .nav-dd-menu a .ti{font-size:18px;color:var(--g);flex-shrink:0}
+    .nav-hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto}
+    .nav-hbg span{display:block;width:22px;height:2px;background:var(--black);border-radius:2px;transition:all var(--tr)}
+    .mob-overlay{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);z-index:98;flex-direction:column;padding:6px 24px 16px;gap:0;border-bottom:1px solid var(--border);box-shadow:0 16px 30px rgba(0,0,0,.10)}
+    .mob-overlay.open{display:flex}
+    .mob-overlay a{font-size:20px;font-weight:600;color:var(--black);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--border)}
+    .mob-overlay a:hover{color:var(--g)}
+    .mob-overlay>a:last-child{border-bottom:none}
+    .mob-ctas{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+    .mob-ctas .btn{justify-content:center}
+    .mob-dd{border-bottom:1px solid var(--border)}
+    .mob-overlay summary{font-size:20px;font-weight:600;color:var(--black);padding:14px 0;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+    .mob-overlay summary::-webkit-details-marker{display:none}
+    .mob-dd summary .ti{font-size:20px;color:var(--black);transition:transform var(--tr)}
+    .mob-dd[open] summary .ti{transform:rotate(180deg)}
+    .mob-dd summary:hover{color:var(--g)}
+    .mob-dd-list{display:flex;flex-direction:column;padding:4px 0 12px}
+    .mob-dd-list a{font-size:17px;font-weight:500;padding:11px 0 11px 6px;border-bottom:none;display:flex;align-items:center;gap:12px}
+    .mob-dd-list a .ti{font-size:20px;color:var(--g);flex-shrink:0}
+    @media(max-width:900px){.nav-links,.nav-ctas{display:none}.nav-hbg{display:flex;margin-left:0}.nav-inner{padding:0 24px;gap:16px}.nav-lang-mob{display:flex;margin-left:auto}}
+
+    /* ── ABOUT HERO ── */
+    .ab-hero{padding:140px 0 64px;background:#fff}
+    .ab-hero h1{font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:20px;max-width:14ch}
+    .ab-hero h1 em{color:var(--g);font-style:normal}
+    .ab-hero p{font-size:19px;line-height:1.6;color:var(--sec);max-width:600px}
+
+    /* ── STATS BAND ── */
+    .stats{background:var(--black);padding:48px 0}
+    .stats-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+    .stat{text-align:center}
+    .stat-v{font-size:40px;font-weight:800;color:var(--g);letter-spacing:-.035em;line-height:1;margin-bottom:6px}
+    .stat-l{font-size:14px;color:rgba(255,255,255,.6)}
+    @media(max-width:768px){.stats-inner{grid-template-columns:1fr 1fr;gap:28px;padding:0 24px}}
+
+    /* ── TEAM ── */
+    .team{padding:136px 0 96px}
+    .team-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:48px}
+    .team-head .sec-sub{text-align:center}
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .team-card{background:#fff;border:1px solid var(--border);border-radius:var(--r20);overflow:hidden;transition:transform var(--tr),box-shadow var(--tr)}
+    .team-card:hover{transform:translateY(-4px);box-shadow:var(--shh)}
+    .team-card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:var(--bg)}
+    .team-ph{width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--gl),#d6f0de);color:var(--g);font-size:64px;font-weight:800;letter-spacing:-.02em}
+    .team-card-body{padding:22px 24px 26px}
+    .team-card h3{font-size:20px;font-weight:700;margin-bottom:4px}
+    .team-role{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+    .team-card p{font-size:14.5px;line-height:1.6;color:var(--sec)}
+    @media(max-width:900px){
+      .team-grid{grid-template-columns:1fr 1fr;gap:16px}
+      .team-card{cursor:pointer}
+      .team-card p{display:none}
+      .team-card.is-open p{display:block}
+      .team-card-hint{display:flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:600;color:var(--g)}
+      .team-card-hint .ti{font-size:15px;transition:transform var(--tr)}
+      .team-card.is-open .team-card-hint .ti{transform:rotate(180deg)}
+    }
+    @media(max-width:620px){.team-grid{gap:12px}.team-card-body{padding:14px 14px 16px}.team-card h3{font-size:15px}.team-role{font-size:10.5px}.team-card p{font-size:13px;line-height:1.55}}
+    .team-card-hint{display:none}
+
+    /* ── ORIGIN STORY ── */
+    .origin{padding:96px 0;background:var(--bg)}
+    .origin-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+    .origin-text .sec-sub{margin-bottom:20px;max-width:none}
+    .origin-text p{font-size:16px;line-height:1.75;color:var(--body);margin-bottom:16px}
+    .origin-text p:last-child{margin-bottom:0}
+    .origin-text strong{color:var(--black);font-weight:700}
+    .origin-media{position:relative}
+    .origin-media img{width:100%;border-radius:var(--r20);box-shadow:0 24px 64px rgba(0,0,0,.16);display:block}
+    .origin-badge{position:absolute;left:-24px;bottom:-24px;background:var(--g);color:#fff;border-radius:var(--r16);padding:18px 22px;box-shadow:0 12px 28px rgba(42,181,74,.4);max-width:200px}
+    .origin-badge strong{display:block;font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1}
+    .origin-badge span{font-size:13px;color:rgba(255,255,255,.9)}
+    @media(max-width:900px){.origin-grid{grid-template-columns:1fr;gap:48px}.origin-badge{left:12px;bottom:12px;padding:11px 15px;max-width:150px;border-radius:var(--r12)}.origin-badge strong{font-size:20px}.origin-badge span{font-size:11.5px}}
+
+    /* ── NEWS ── */
+    .news{padding:96px 0}
+    .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+    .news-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--r20);overflow:hidden;text-decoration:none;transition:transform var(--tr),box-shadow var(--tr)}
+    .news-card:hover{transform:translateY(-4px);box-shadow:var(--shh)}
+    .news-card-img{aspect-ratio:16/10;overflow:hidden}
+    .news-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--tr)}
+    .news-card:hover .news-card-img img{transform:scale(1.04)}
+    .news-card-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+    .news-date{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--g);margin-bottom:10px}
+    .news-card h3{font-size:18px;font-weight:700;line-height:1.25;margin-bottom:8px}
+    .news-card p{font-size:14.5px;line-height:1.6;color:var(--sec);margin-bottom:16px}
+    .news-more{margin-top:auto;font-size:14px;font-weight:600;color:var(--black);display:inline-flex;align-items:center;gap:6px}
+    .news-card:hover .news-more{color:var(--g)}
+    @media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){.news-grid{grid-template-columns:1fr 1fr;gap:14px}.news-card-body{padding:14px 14px 18px}.news-card h3{font-size:15px}.news-card p{display:none}}
+
+    /* ── MEMBERSHIPS / BADGES ── */
+    .memb{padding:72px 0;background:var(--bg)}
+    .memb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:760px;margin:36px auto 0}
+    .memb-card{display:flex;align-items:center;gap:20px;background:#fff;border:1px solid var(--border);border-radius:var(--r16);padding:22px 26px}
+    .memb-card img{width:140px;height:140px;object-fit:contain;flex-shrink:0}
+    .memb-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+    .memb-card p{font-size:14px;line-height:1.55;color:var(--sec)}
+    .memb-head{text-align:center;display:flex;flex-direction:column;align-items:center}
+    @media(max-width:620px){.memb-grid{grid-template-columns:1fr}}
+
+    /* ── CTA ── */
+    .ab-cta{padding:96px 0}
+    .ab-cta-inner{background:var(--g);border-radius:32px;padding:64px 48px;text-align:center;color:#fff;box-shadow:0 24px 64px rgba(42,181,74,.3)}
+    .ab-cta-inner h2{color:#fff;font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.03em;margin-bottom:14px}
+    .ab-cta-inner p{font-size:18px;line-height:1.6;color:rgba(255,255,255,.92);max-width:520px;margin:0 auto 32px}
+    .ab-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .ab-cta .btn-p{background:#fff;color:var(--gd)}
+    .ab-cta .btn-p:hover{background:#f4fbf6}
+    .ab-cta .btn-s{border-color:rgba(255,255,255,.6);color:#fff}
+    .ab-cta .btn-s:hover{background:rgba(255,255,255,.15)}
+    @media(max-width:768px){.ab-cta-inner{padding:48px 24px}}
+
+    /* ── FOOTER ── */
+    footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+    .footer-brand h3{color:var(--black);font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--sec);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:var(--black);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:var(--sec);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:var(--g)}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:var(--sec);text-decoration:none}
+    .footer-bottom a:hover{color:var(--black)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+
+    /* ── fade-up ── */
+    .fu{opacity:0;transform:translateY(16px);transition:opacity .6s var(--tr),transform .6s var(--tr)}
+    .fu.vis{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){.fu{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="main-nav" role="banner">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="uniworks Startseite">
+      <img src="../images/branding/AppIcon.webp" alt="uniworks" />
+      <span class="nav-logo-text">uniworks</span>
+    </a>
+    <div class="nav-ctas">
+      <a href="index.html#studierende" class="btn btn-s">Für Studierende</a>
+      <div class="nav-dd" id="nav-dd">
+        <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
+          Für Unternehmen
+          <i class="ti ti-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+          <a href="index.html#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-textlink active" aria-current="page">Über uns</a>
+      <div class="lang-switch" id="lang-switch" aria-label="Sprache wählen">
+        <a href="/de" hreflang="de" data-lang="de">DE</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="/en" hreflang="en" data-lang="en">EN</a>
+      </div>
+    </div>
+    <div class="lang-switch nav-lang-mob" aria-label="Sprache wählen">
+      <a href="/de" hreflang="de" data-lang="de">DE</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="/en" hreflang="en" data-lang="en">EN</a>
+    </div>
+    <button class="nav-hbg" id="nav-hbg" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- mobile overlay -->
+<div class="mob-overlay" id="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <a href="index.html#studierende">Für Studierende</a>
+  <details class="mob-dd">
+    <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+    <div class="mob-dd-list">
+      <a href="index.html#unternehmen"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+      <a href="index.html#unternehmen"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+      <a href="index.html#unternehmen"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+      <a href="index.html#unternehmen"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+      <a href="index.html#unternehmen"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+      <a href="index.html#unternehmen"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+      <a href="index.html#unternehmen"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+    </div>
+  </details>
+  <a href="about.html">Über uns</a>
+</div>
+
+<!-- ── TEAM ── -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="team-head fu">
+      <div class="eyebrow">Das Team</div>
+      <h2 class="sec-h">Das Team hinter uniworks</h2>
+    </div>
+    <div class="team-grid">
+      <article class="team-card fu">
+        <img src="../images/membersandnews/Moritz.webp" alt="Moritz" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Moritz</h3>
+          <div class="team-role">Geschäftsführender Gesellschafter</div>
+          <p>Nach 14 Jahren als Pilot bei Lufthansa, entschloss sich Moritz, neue Wege einzuschlagen und die Arbeitswelt mit uniworks zu revolutionieren. Zwischen 2020 und 2024 studierte er an der LMU München sowie der Accadis Hochschule Bad Homburg und erhielt seinen MBA in Management &amp; Leadership.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/David.webp" alt="David Lindenmayer" loading="lazy" />
+        <div class="team-card-body">
+          <h3>David</h3>
+          <div class="team-role">Gesellschafter • Technologie</div>
+          <p>Nach zwei Semestern Ingenieurwissenschaften an der ETH Zürich entschloss sich David, ein BWL-Studium an der LMU zu absolvieren. Aus seiner Begeisterung für Technik und IT entsprang die Idee zur uniworks App. Nun verantwortet er alles Technologische und sorgt dafür, dass unsere Systeme laufen.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/Emil.webp" alt="Emil Dax" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Emil</h3>
+          <div class="team-role">Gesellschafter • Kreatives</div>
+          <p>Als Interfacedesign-Student an der FH Potsdam sorgt Emil für den kreativen Input bei uniworks und betreut Projekte wie die uniworks App und unsere Website. Durch seine Nähe zur Hauptstadt verantwortet er auch die Projekte in Berlin.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/New.webp" alt="Phin" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Phin</h3>
+          <div class="team-role">Head of Operations &amp; Strategy</div>
+          <p>Steuert die täglichen Abläufe und die langfristige Ausrichtung von uniworks. Er sorgt dafür, dass im Hintergrund alles reibungslos läuft, während er gleichzeitig neue Impulse setzt, um das Unternehmen und unsere Prozesse kontinuierlich aufs nächste Level zu bringen.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/New.webp" alt="Kanghyun" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Kanghyun</h3>
+          <div class="team-role">Product Manager &amp; Software Engineer</div>
+          <p>Kanghyun studiert Informatik an der LMU München und bringt sein technisches Know-how bei uniworks ein. Sein Schwerpunkt liegt im Backend. Daneben treibt er aber auch eigene Projekte voran und entwickelt neue Ideen weiter.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/Amelie.webp" alt="Amelie" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Amelie</h3>
+          <div class="team-role">Founders Associate</div>
+          <p>Amelie hat Wirtschaftspsychologie studiert und Erfahrung in der Strategieberatung gesammelt. Ihr Master in Consumer Science hat sie nach München verschlagen – und damit auch zu uniworks. Sie arbeitet operativ und strategisch an der Seite von Moritz.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/New.webp" alt="Bine" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Bine</h3>
+          <div class="team-role">HR &amp; Buchhaltung</div>
+          <p>Fleißig kümmert sich Bine um die An- und Abmeldung der uniworker sowie die Lohnabrechnung.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/New.webp" alt="Phil" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Phil</h3>
+          <div class="team-role">Projektleiter</div>
+          <p>Für den Großraum Frankfurt und das Rhein-Ruhr-Gebiet sowie Hamburg betreut Phil als Projektleiter unsere Kunden in der Region und kümmert sich um die Disposition sowie das Recruiting. Beim Fotoshooting war er leider nicht in München. ;)</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/Thommy.webp" alt="Thommy" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Thommy</h3>
+          <div class="team-role">Gesellschafter • Personal</div>
+          <p>Thommy studiert Management &amp; Technology an der TU München und konnte durch diverse Tätigkeiten in der Unternehmensberatung wertvolle Einblicke zum Thema HR gewinnen. Er ist verantwortlich für alles rund ums Thema Personal und führt die Gespräche mit allen Bewerber:innen, gerne auch auf Italienisch oder Englisch. :)</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/New.webp" alt="Alina" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Alina</h3>
+          <div class="team-role">HR &amp; Onboarding</div>
+          <p>Neben ihrem Studium in den Wirtschaftswissenschaften unterstützt Alina im Onboarding-Prozess neuer uniworker und führt zusammen mit Thommy die Kennlerngespräche mit neuen Bewerber:innen.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/Marie.webp" alt="Marie" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Marie</h3>
+          <div class="team-role">Assistenz der Geschäftsleitung</div>
+          <p>Marie unterstützt neben ihrem Studium bei operativen Aufgaben wie der Disposition oder unseren Instagram-Account.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="../images/membersandnews/Ellen.webp" alt="Ellen" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Ellen</h3>
+          <div class="team-role">Assistenz der Geschäftsleitung</div>
+          <p>Neben ihrem Finance &amp; Management Studium unterstützt Ellen bei operativen Aufgaben und ist bei Fragen täglich erreichbar für alle uniworker.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORIGIN STORY ── -->
+<section class="origin" id="geschichte">
+  <div class="wrap origin-grid">
+    <div class="origin-text fu">
+      <div class="eyebrow">Unsere Geschichte</div>
+      <h2 class="sec-h">Wie entstand uniworks eigentlich?</h2>
+      <p>Die Idee, Studierende und Unternehmen zusammenzubringen, entstand aus eigener Erfahrung: Moritz, Thommy, David &amp; Stefan gründeten das Unternehmen, während sie selbst noch studierten. Sie bemerkten, dass es für Studierende kaum Möglichkeiten gab, während des Studiums flexibel Praxiserfahrung zu sammeln und gleichzeitig fair entlohnt zu werden. Ebenso zeigten die Erfahrungen, die Moritz als Unternehmer sammelte, wie schwierig es sein kann, qualifizierte Arbeitskräfte für den eigenen Betrieb zu gewinnen.</p>
+      <p>Aus dieser Erkenntnis wurde eine Vision, die heute Realität ist: Studierende und Unternehmen profitieren gleichermaßen von einem flexiblen Modell. Einerseits durch attraktive Löhne und eine Beschäftigung, die sich hervorragend mit dem Studium vereinbaren lässt. Andererseits Zugang zu einem großen Talentpool, der die perfekte Besetzung für jede freie Stelle ermöglicht.</p>
+    </div>
+    <div class="origin-media fu" style="transition-delay:.1s">
+      <img src="../images/branding/UWTeam.webp" alt="Das uniworks Gründungsteam" loading="lazy" />
+      <div class="origin-badge">
+        <strong>2021</strong>
+        <span>gegründet in München</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS & UPDATES ── -->
+<section class="news" id="news">
+  <div class="wrap">
+    <div class="fu">
+      <div class="eyebrow">News &amp; Updates</div>
+      <h2 class="sec-h">News und Updates zu uniworks</h2>
+    </div>
+    <div class="news-grid">
+      <a href="../designfiles/post/uniworks-wird-dehoga-mitglied.html" class="news-card fu">
+        <div class="news-card-img"><img src="../images/membersandnews/DEHOGAMitglied.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Februar 2025 · News</span>
+          <h3>uniworks wird DEHOGA Mitglied</h3>
+          <p>uniworks geht den nächsten Schritt in der Gastronomie- und Hotelleriebranche: Ab sofort sind wir Mitglied der DEHOGA Bayern. Doch was bedeutet das für Unternehmen im Gastgewerbe, und welchen Mehrwert bringt unsere Mitgliedschaft?</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/uniworks-in-der-presse.html" class="news-card fu" style="transition-delay:.05s">
+        <div class="news-card-img"><img src="../images/membersandnews/Presse.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Januar 2025 · News</span>
+          <h3>uniworks in der Presse</h3>
+          <p>München – Eine kürzlich erschienene Berichterstattung auf personalleiter.today, einer Plattform für Personalmanagement und Geschäftsstrategien, hebt die innovative Rolle der uniworks GmbH während der umsatzstarken Weihnachtszeit hervor. Der Artikel beleuchtet, wie unser Unternehmen den Einzelhandel durch flexible Arbeitskräftevermittlung unterstützt. Durch das effektive Zusammenbringen…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/young-talents-begeistern-karriere-events-als-erfolgsfaktor.html" class="news-card fu" style="transition-delay:.1s">
+        <div class="news-card-img"><img src="../images/membersandnews/KarriereEvents.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>November 2024 · News</span>
+          <h3>Young Talents begeistern – Karriere Events als Erfolgsfaktor</h3>
+          <p>In Partnerschaft mit dem Absolventenkongress sorgen wir nicht nur dafür, dass Studierende während des Studiums die besten Jobmöglichkeiten bekommen, sondern auch nach ihrem Abschluss! Es ist längst bekannt: Junge Talente suchen nach mehr als nur einem Job – sie möchten sich mit den Werten ihres Arbeitgebers identifizieren und eine sinnvolle Tätigkeit ausüben. Die Herausforderung der nächsten…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/auftakt-zum-wintersemester-2024-25-uniworks-feiert-mit-munchens-studierenden.html" class="news-card fu">
+        <div class="news-card-img"><img src="../images/membersandnews/Wintersemester-2024-25.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Oktober 2024 · News</span>
+          <h3>Auftakt zum Wintersemester 2024/25: uniworks feiert mit Münchens Studierenden</h3>
+          <p>München – Die feierliche Erstiparty zum Wintersemester 2024/25 in München wurde am Freitag, dem 25. Oktober 2024, zu einem vollen Erfolg. Hunderte Studierende der LMU und TU München, darunter viele, die neu in die Stadt gezogen sind, kamen zusammen, um das neue Semester einzuläuten. Als Hauptsponsor des Events spielte uniworks eine zentrale Rolle, nicht nur durch finanzielle Unterstützung…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/uniworker-plus.html" class="news-card fu" style="transition-delay:.05s">
+        <div class="news-card-img"><img src="../images/membersandnews/UniworkerPlus.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Mai 2024 · News</span>
+          <h3>uniworker plus</h3>
+          <p>München – uniworks hat heute die Einführung des „uniworker plus“ Status bekannt gegeben. Diese neue Initiative zielt darauf ab, das Engagement und die Treue der Studierenden zu honorieren, die besonders engagiert sind. Um als „uniworker plus“ anerkannt zu werden, müssen Studierende fünfmal oder öfter pro Monat für uniworks tätig gewesen sein. Als „uniworker plus“ erhalten sie dann Zugang zu einer…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/die-uniworks-app.html" class="news-card fu" style="transition-delay:.1s">
+        <div class="news-card-img"><img src="../images/membersandnews/UniworksApp.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Oktober 2023 · News</span>
+          <h3>Die uniworks App</h3>
+          <p>München – Als Reaktion auf das rasante Wachstum und den überwältigenden Erfolg seiner Community launcht die uniworks GmbH eine App, die das Finden und Verwalten von Jobs für Studierende noch einfacher gestaltet. Mit der neuen App unterstreicht das Unternehmen sein Engagement, die Arbeitswelt für Studierende nicht nur flexibler, sondern auch intuitiver und zugänglicher zu gestalten. „Das schnelle…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/startschuss.html" class="news-card fu">
+        <div class="news-card-img"><img src="../images/membersandnews/Startschuss.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Mai 2023 · News</span>
+          <h3>Startschuss</h3>
+          <p>München – Nach intensiver Vorbereitung und Durchlaufen umfangreicher bürokratischer Prozesse verkündet die uniworks GmbH mit Stolz, dass Ende März die Erlaubnis zur Arbeitnehmerüberlassung erteilt wurde. Dieser bedeutende Schritt ermöglicht es dem Unternehmen, nun offiziell Studierende einzustellen und damit seine innovative Vision in die Tat umzusetzen. „Die Erlaubnis zur Arbeitnehmerüberlassung…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/uniworks-eine-eingetragene-marke.html" class="news-card fu" style="transition-delay:.05s">
+        <div class="news-card-img"><img src="../images/membersandnews/EingetrageneMarke.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Januar 2023 · News</span>
+          <h3>uniworks – Eine eingetragene Marke</h3>
+          <p>München – Die uniworks GmbH freut sich zu verkünden, dass „uniworks“ nun offiziell als Marke eingetragen ist. „Diese Eintragung spiegelt unser Engagement und unseren Glauben an die Stärke unserer Marke wider“, erklärt Moritz, Geschäftsführer von uniworks. Mit der Registrierung unterstreicht das Unternehmen sein Bestreben, die Dienstleistungen für seine Nutzer stetig zu verbessern und rechtlich…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+      <a href="../designfiles/post/von-studierenden-fur-studierende.html" class="news-card fu" style="transition-delay:.1s">
+        <div class="news-card-img"><img src="../images/membersandnews/Start.webp" alt="" loading="lazy" /></div>
+        <div class="news-card-body">
+          <span class="news-date"><i class="ti ti-calendar" aria-hidden="true"></i>Januar 2023 · News</span>
+          <h3>Von Studierenden für Studierende</h3>
+          <p>München – Mit einem innovativen Konzept und einem Startkapital von 25.000 Euro haben Moritz, David, Stefan und Thomas in München eine neue Ära für studentische Arbeitsverhältnisse eingeläutet: die Gründung der uniworks GmbH. Dieses junge Unternehmen stellt sich als zukunftsweisender Arbeitgeber dar, der Studierenden flexible Arbeitsmöglichkeiten bei einer Vielzahl von Partnerunternehmen bietet…</p>
+          <span class="news-more">Mehr lesen <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEMBERSHIPS / BADGES ── -->
+<section class="memb" id="auszeichnungen">
+  <div class="wrap">
+    <div class="memb-head fu">
+      <div class="eyebrow">Mitgliedschaften &amp; Auszeichnungen</div>
+      <h2 class="sec-h">Geprüft und anerkannt</h2>
+    </div>
+    <div class="memb-grid">
+      <div class="memb-card fu">
+        <img src="../images/membersandnews/DEHOGAMitglied.webp" alt="DEHOGA Bayern Mitglied" loading="lazy" />
+        <div>
+          <h3>Mitglied der DEHOGA Bayern</h3>
+          <p>Als Partner des Hotel- und Gaststättenverbands sind wir fest in der bayerischen Hospitality-Branche verankert.</p>
+        </div>
+      </div>
+      <div class="memb-card fu" style="transition-delay:.08s">
+        <img src="../images/membersandnews/EingetrageneMarke.webp" alt="Eingetragene Marke" loading="lazy" />
+        <div>
+          <h3>Eingetragene Marke</h3>
+          <p>uniworks ist eine offiziell eingetragene Marke — für ein Versprechen, auf das sich Unternehmen und Studierende verlassen können.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="ab-cta">
+  <div class="wrap">
+    <div class="ab-cta-inner fu">
+      <h2>Werde Teil von uniworks</h2>
+      <p>Ob als Studierende:r auf der Suche nach flexiblen Jobs oder als Unternehmen mit Personalbedarf — wir bringen euch zusammen.</p>
+      <div class="ab-cta-btns">
+        <a href="index.html#studierende" class="btn btn-p"><i class="ti ti-briefcase" aria-hidden="true"></i>Jobs finden</a>
+        <a href="index.html#unternehmen" class="btn btn-s">Personal anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <img src="../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+          <h3>uniworks</h3>
+        </div>
+        <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Plattform</h4>
+        <ul>
+          <li><a href="index.html#studierende">Für Studierende</a></li>
+          <li><a href="index.html#unternehmen">Für Unternehmen</a></li>
+          <li><a href="index.html#app">App herunterladen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branchen</h4>
+        <ul>
+          <li><a href="index.html#unternehmen">Logistik</a></li>
+          <li><a href="index.html#unternehmen">Event</a></li>
+          <li><a href="index.html#unternehmen">Catering</a></li>
+          <li><a href="index.html#unternehmen">Einzelhandel</a></li>
+          <li><a href="index.html#unternehmen">Gastronomie</a></li>
+          <li><a href="index.html#unternehmen">Promotion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="about.html">Über Uns</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 uniworks GmbH. Alle Rechte vorbehalten.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Nav scroll shadow ─────────────────────────────────────────────────────
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 8);
+}, {passive: true});
+
+// ── Language switch (DE / EN) ─────────────────────────────────────────────
+(() => {
+  const isEN = location.pathname.startsWith('/en');
+  document.documentElement.lang = isEN ? 'en' : 'de';
+  document.querySelectorAll('.lang-switch a').forEach(a => {
+    a.classList.toggle('active', a.dataset.lang === (isEN ? 'en' : 'de'));
+  });
+})();
+
+// ── Mobile hamburger ──────────────────────────────────────────────────────
+const hbg = document.getElementById('nav-hbg');
+const mobOverlay = document.getElementById('mob-overlay');
+let menuOpen = false;
+hbg.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobOverlay.classList.toggle('open', menuOpen);
+  hbg.setAttribute('aria-expanded', String(menuOpen));
+  document.body.style.overflow = menuOpen ? 'hidden' : '';
+});
+mobOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menuOpen = false;
+  mobOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+// ── "Für Unternehmen" category dropdown ───────────────────────────────────
+const navDd = document.getElementById('nav-dd');
+const navDdToggle = document.getElementById('nav-dd-toggle');
+navDdToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const open = navDd.classList.toggle('open');
+  navDdToggle.setAttribute('aria-expanded', String(open));
+});
+document.addEventListener('click', (e) => {
+  if (!navDd.contains(e.target)) {
+    navDd.classList.remove('open');
+    navDdToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    navDd.classList.remove('open');
+    navDdToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// ── Scroll-triggered fade-up ──────────────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+}, {threshold: 0.12, rootMargin: '0px 0px -32px 0px'});
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+
+// ── Team cards: tap to reveal full bio (mobile) ──
+document.querySelectorAll('.team-card').forEach(card => {
+  const body = card.querySelector('.team-card-body');
+  const bio = card.querySelector('p');
+  if (!body || !bio) return;
+  const hint = document.createElement('span');
+  hint.className = 'team-card-hint';
+  hint.innerHTML = 'Mehr erfahren <i class="ti ti-chevron-down" aria-hidden="true"></i>';
+  body.appendChild(hint);
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('aria-expanded', 'false');
+  const toggle = () => {
+    const open = card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', String(open));
+    hint.firstChild.textContent = open ? 'Weniger anzeigen ' : 'Mehr erfahren ';
+  };
+  card.addEventListener('click', toggle);
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  });
+});
+</script>
+</body>
+</html>
