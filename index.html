@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uniworks — Flexibles Personal. Flexible Jobs.</title>
+  <meta name="description" content="Deutschlands schnellst wachsender Personaldienstleister. Flexible Jobs für Studierende, zuverlässiges Personal für Unternehmen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;--gm:#EAF3DE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:16px;font-weight:600;border-radius:var(--r8);padding:14px 28px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+    .btn-p:active{transform:scale(.98)}
+    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
+    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
+    .btn-w{background:#fff;color:var(--black)}
+    .btn-w:hover{background:#F9FAFB;transform:translateY(-1px)}
+    .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+    .btn-ghost:hover{background:rgba(255,255,255,.25)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:32px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+    .nav-links{display:flex;align-items:center;gap:2px;flex:1;list-style:none}
+    .nav-links a{display:block;padding:8px 12px;font-size:15px;font-weight:500;color:var(--black);text-decoration:none;border-radius:var(--r8);transition:all var(--tr)}
+    .nav-links a:hover{color:var(--g);background:var(--gl)}
+    .nav-ctas{display:flex;align-items:center;gap:8px;flex-shrink:0}
+    .nav-ctas .btn{font-size:14px;padding:10px 20px}
+    .nav-dd{position:relative}
+    .nav-dd-toggle .ti{font-size:16px;transition:transform var(--tr)}
+    .nav-dd.open .nav-dd-toggle .ti{transform:rotate(180deg)}
+    .nav-dd-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);box-shadow:var(--shh);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity var(--tr),transform var(--tr),visibility var(--tr);z-index:101}
+    .nav-dd.open .nav-dd-menu{opacity:1;visibility:visible;transform:none}
+    .nav-dd-menu a{display:flex;align-items:center;gap:10px;padding:10px 12px;font-size:14px;font-weight:500;color:var(--black);text-decoration:none;border-radius:var(--r8);transition:all var(--tr)}
+    .nav-dd-menu a:hover{background:var(--gl);color:var(--g)}
+    .nav-dd-menu a .ti{font-size:18px;color:var(--g);flex-shrink:0}
+    .nav-hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto}
+    .nav-hbg span{display:block;width:22px;height:2px;background:var(--black);border-radius:2px;transition:all var(--tr)}
+    .mob-overlay{display:none;position:fixed;inset:0;background:#fff;z-index:99;flex-direction:column;padding:96px 24px 40px;gap:4px}
+    .mob-overlay.open{display:flex}
+    .mob-overlay a{font-size:20px;font-weight:600;color:var(--black);text-decoration:none;padding:14px 0;border-bottom:1px solid var(--border)}
+    .mob-overlay a:hover{color:var(--g)}
+    .mob-ctas{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+    .mob-ctas .btn{justify-content:center}
+    @media(max-width:900px){.nav-links,.nav-ctas{display:none}.nav-hbg{display:flex}.nav-inner{padding:0 24px}}
+
+    /* ── HERO ── */
+    .hero-outer{padding-top:72px;background:#fff}
+    .hero{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:48px;min-height:calc(100vh - 72px)}
+    .hero-text{padding:80px 0}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gl);color:var(--gd);font-size:13px;font-weight:600;padding:6px 14px;border-radius:100px;margin-bottom:28px;letter-spacing:.02em}
+    .hero-badge .dot{width:7px;height:7px;background:var(--g);border-radius:50%;flex-shrink:0}
+    .hero h1{font-size:clamp(40px,5vw,68px);font-weight:800;line-height:1.06;letter-spacing:-.035em;margin-bottom:24px}
+    .hero h1 em{color:var(--g);font-style:normal}
+    .hero-sub{font-size:18px;line-height:1.65;color:var(--sec);max-width:460px;margin-bottom:40px}
+    .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+    .hero-proof{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--sec)}
+    .hero-proof strong{color:var(--black);font-weight:600}
+    .hero-proof-dot{width:4px;height:4px;background:var(--border);border-radius:50%;flex-shrink:0}
+    .hero-img-col{position:relative;padding:64px 0;height:calc(100vh - 72px);display:flex;align-items:center}
+    .hero-img-main{width:100%;height:580px;object-fit:cover;border-radius:24px;box-shadow:0 24px 64px rgba(0,0,0,.14)}
+    .hero-float{position:absolute;background:#fff;border-radius:var(--r16);padding:16px 20px;box-shadow:0 8px 32px rgba(0,0,0,.12);display:flex;align-items:center;gap:12px}
+    .hero-float-bottom{bottom:96px;left:-28px}
+    .hero-float-top{top:100px;right:-16px;background:var(--g)}
+    .float-icon{width:44px;height:44px;background:var(--gl);border-radius:var(--r12);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--g);flex-shrink:0}
+    .float-lbl{font-size:12px;color:var(--sec);font-weight:500}
+    .float-val{font-size:18px;font-weight:700;color:var(--black);line-height:1.1}
+    .float-pill{font-size:13px;font-weight:600;color:#fff;white-space:nowrap}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;padding:0 24px;min-height:auto}
+      .hero-text{padding:56px 0 32px}
+      .hero-img-col{display:none}
+    }
+
+    /* ── STATS ── */
+    .stats{background:var(--black);padding:56px 0}
+    .stats-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+    .stat{text-align:center}
+    .stat-v{font-size:44px;font-weight:800;color:var(--g);letter-spacing:-.035em;line-height:1;margin-bottom:6px}
+    .stat-l{font-size:14px;color:rgba(255,255,255,.6)}
+    @media(max-width:768px){.stats-inner{grid-template-columns:repeat(2,1fr);padding:0 24px;gap:24px}.stat-v{font-size:34px}}
+
+    /* ── PHOTO CAROUSEL ── */
+    .photos-section{padding:72px 0;overflow:hidden}
+    .photos-label{text-align:center;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sec);text-transform:uppercase;margin-bottom:32px}
+    .track-wrap{position:relative;overflow:hidden}
+    .track-wrap::before,.track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+    .track-wrap::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+    .track-wrap::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+    .photo-track{display:flex;gap:14px;width:max-content;animation:scrollL 45s linear infinite}
+    .photo-track:hover{animation-play-state:paused}
+    .photo-track-r{animation:scrollR 55s linear infinite}
+    @keyframes scrollL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes scrollR{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+    .photo-card{flex-shrink:0;width:240px;height:300px;border-radius:var(--r16);overflow:hidden;position:relative;background:#fff;box-shadow:var(--sh);transition:transform var(--tr),box-shadow var(--tr)}
+    .photo-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+    .photo-card:hover{transform:translateY(-4px);box-shadow:var(--shh)}
+    .gap16{height:14px}
+
+    /* ── SERVICES (audience carousel) ── */
+    .services{background:var(--bg);padding-top:64px}
+    .services-intro{margin-bottom:8px}
+    .services-pin{position:relative}
+    .services-sticky{position:sticky;top:72px;display:flex;flex-direction:column;padding:16px 0 40px}
+    .uw-viewport{overflow:hidden}
+    .eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+    .sec-h{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--black);margin-bottom:14px}
+    .sec-sub{font-size:17px;line-height:1.65;color:var(--sec);max-width:540px}
+    .uw-tabs-wrap{display:inline-flex;gap:4px;background:var(--border);padding:4px;border-radius:var(--r12);margin:32px 0 24px}
+    .uw-tab{border:none;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font);transition:all var(--tr);background:transparent;color:var(--sec)}
+    .uw-tab.active{background:var(--g);color:#fff}
+    .uw-carousel-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .uw-eyebrow{font-size:13px;color:var(--sec);margin:0}
+    .uw-heading{font-size:20px;font-weight:600;color:var(--black);margin:4px 0 0}
+    .uw-nav-btns{display:flex;gap:8px}
+    .uw-nav-btn{width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--tr);font-size:18px;color:var(--black)}
+    .uw-nav-btn:hover{background:var(--g);color:#fff;border-color:var(--g)}
+    .uw-track{display:flex;gap:16px;padding-bottom:8px;width:max-content;will-change:transform}
+    .uw-track::-webkit-scrollbar{display:none}
+    @media(max-width:899px){
+      .services-sticky{position:static;height:auto;padding:8px 0 40px;overflow:visible}
+      .uw-viewport{overflow:visible}
+      .uw-track{overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;transform:none!important}
+    }
+    .uw-card{flex:0 0 280px;height:340px;border-radius:20px;position:relative;overflow:hidden;padding:28px;box-sizing:border-box;transition:transform var(--tr),box-shadow var(--tr)}
+    .uw-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.14)}
+    .uw-card h4{margin:0;font-size:24px;font-weight:600;color:#fff}
+    .uw-card p{margin:10px 0 20px;font-size:15px;line-height:1.55;color:rgba(255,255,255,.85)}
+    .uw-card-img-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .uw-card-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05) 0%,rgba(0,0,0,.62) 100%)}
+    .uw-card-body{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end}
+    .uw-card-btn-img{background:var(--g);color:#fff;border:none;border-radius:10px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all var(--tr)}
+    .uw-card-btn-img:hover{background:var(--gh)}
+
+    /* ── HOW IT WORKS ── */
+    .how{padding:96px 0}
+    .how-toggle{display:inline-flex;gap:4px;background:var(--bg);padding:4px;border-radius:var(--r12);margin:24px 0 48px}
+    .how-tab{border:none;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--font);background:transparent;color:var(--sec);transition:all var(--tr)}
+    .how-tab.active{background:#fff;color:var(--black);box-shadow:0 1px 6px rgba(0,0,0,.1)}
+    .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .how-panel{display:none;flex-direction:column;gap:32px}
+    .how-panel.active{display:flex}
+    .how-step{display:flex;gap:20px}
+    .step-num{flex-shrink:0;width:44px;height:44px;background:var(--gl);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--gd)}
+    .step-num-alt{background:var(--black);color:var(--g)}
+    .step-body h4{font-size:18px;font-weight:600;margin-bottom:6px}
+    .step-body p{font-size:15px;line-height:1.65;color:var(--sec)}
+    .how-phones{display:flex;gap:16px;justify-content:flex-end;align-items:flex-end}
+    .how-phone-wrap{width:47%}
+    .how-phone-wrap:nth-child(2){margin-top:48px}
+    .how-phone-wrap img{width:100%;border-radius:24px;box-shadow:0 16px 48px rgba(0,0,0,.12)}
+    @media(max-width:900px){.how-grid{grid-template-columns:1fr;gap:40px}.how-phones{display:none}}
+
+    /* ── APP SECTION ── */
+    .app-sec{background:var(--black);padding:96px 0;overflow:hidden}
+    .app-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .app-text h2{font-size:clamp(28px,3vw,44px);font-weight:700;color:#fff;margin-bottom:20px}
+    .app-text h2 em{color:var(--g);font-style:normal}
+    .app-text p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.6);margin-bottom:40px}
+    .app-badges{display:flex;gap:12px;flex-wrap:wrap}
+    .app-badge-lnk{display:block;height:48px}
+    .app-badge-lnk img{height:48px;width:auto}
+    .app-phones{display:flex;justify-content:flex-end;align-items:flex-end;gap:16px}
+    .app-ph{border-radius:24px;box-shadow:0 24px 64px rgba(0,0,0,.5)}
+    .app-ph:first-child{width:47%;margin-bottom:-56px}
+    .app-ph:last-child{width:46%}
+    @media(max-width:900px){.app-inner{grid-template-columns:1fr;padding:0 24px}.app-phones{justify-content:center}.app-ph:first-child{display:none}.app-ph:last-child{width:65%;max-width:280px;margin-bottom:0}}
+
+    /* ── PARTNERS ── */
+    .partners{padding:72px 0;border-top:1px solid var(--border)}
+    .partners-lbl{text-align:center;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sec);text-transform:uppercase;margin-bottom:40px}
+    .ptrs-track-wrap{position:relative;overflow:hidden}
+    .ptrs-track-wrap::before,.ptrs-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+    .ptrs-track-wrap::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+    .ptrs-track-wrap::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+    .ptrs-track{display:flex;align-items:center;gap:56px;width:max-content;animation:scrollL 28s linear infinite;padding:8px 0}
+    .ptrs-track:hover{animation-play-state:paused}
+    .ptr-logo{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all var(--tr);object-fit:contain;flex-shrink:0}
+    .ptr-logo:hover{opacity:1;filter:grayscale(0%)}
+
+    /* ── CTA BANNER ── */
+    .cta-banner{background:var(--g);padding:88px 40px;text-align:center}
+    .cta-banner h2{font-size:clamp(28px,3vw,44px);font-weight:700;color:#fff;margin-bottom:16px}
+    .cta-banner p{font-size:17px;color:rgba(255,255,255,.85);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+    .cta-banner-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    /* ── FOOTER ── */
+    footer{background:var(--black);color:rgba(255,255,255,.6);padding:64px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .footer-brand h3{color:#fff;font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:#fff;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:rgba(255,255,255,.5);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none}
+    .footer-bottom a:hover{color:rgba(255,255,255,.8)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+
+    /* ── FADE-UP ── */
+    .fu{opacity:0;transform:translateY(22px);transition:opacity .6s ease-out,transform .6s ease-out}
+    .fu.vis{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="main-nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="uniworks Startseite">
+      <img src="UniworksImages/branding/AppIcon.webp" alt="uniworks" />
+      <span class="nav-logo-text">uniworks</span>
+    </a>
+    <div class="nav-ctas">
+      <a href="#studierende" class="btn btn-s">Für Studierende</a>
+      <div class="nav-dd" id="nav-dd">
+        <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
+          Für Unternehmen
+          <i class="ti ti-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+          <a href="#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+        </div>
+      </div>
+    </div>
+    <button class="nav-hbg" id="nav-hbg" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- mobile overlay -->
+<div class="mob-overlay" id="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
+  <div class="mob-ctas">
+    <a href="#studierende" class="btn btn-s">Für Studierende</a>
+    <a href="#unternehmen" class="btn btn-p">Personal anfragen</a>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero-outer">
+  <div class="hero">
+    <div class="hero-text fu">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Deutschlands schnellst wachsender Personaldienstleister
+      </div>
+      <h1>Flexible Jobs.<br><em>Zuverlässiges</em><br>Personal.</h1>
+      <p class="hero-sub">Verbinden Sie Ihr Unternehmen mit motivierten Studierenden — für Schichten, die wirklich besetzt werden.</p>
+      <div class="hero-btns">
+        <a href="#unternehmen" class="btn btn-p">
+          <i class="ti ti-building" aria-hidden="true"></i>
+          Personal anfragen
+        </a>
+        <a href="#studierende" class="btn btn-s">
+          <i class="ti ti-briefcase" aria-hidden="true"></i>
+          Jobs finden
+        </a>
+      </div>
+      <div class="hero-proof">
+        <strong>16.000+</strong> Studierende registriert
+        <span class="hero-proof-dot"></span>
+        <strong>185.000+</strong> Stunden geleistet
+      </div>
+    </div>
+    <div class="hero-img-col fu" style="transition-delay:.15s">
+      <img src="UniworksImages/visuals/OlympiaHalle.webp" alt="Studierende bei der Arbeit" class="hero-img-main" />
+      <div class="hero-float hero-float-bottom">
+        <div class="float-icon"><i class="ti ti-clock" aria-hidden="true"></i></div>
+        <div>
+          <div class="float-lbl">Geleistete Stunden</div>
+          <div class="float-val">185.000+</div>
+        </div>
+      </div>
+      <div class="hero-float hero-float-top">
+        <span class="float-pill"><i class="ti ti-check" aria-hidden="true"></i> 10.000+ Schichten besetzt</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<section class="stats" aria-label="Kennzahlen">
+  <div class="stats-inner">
+    <div class="stat fu"><div class="stat-v">16.000+</div><div class="stat-l">Registrierte Nutzer</div></div>
+    <div class="stat fu" style="transition-delay:.08s"><div class="stat-v">10.000+</div><div class="stat-l">Besetzte Schichten</div></div>
+    <div class="stat fu" style="transition-delay:.16s"><div class="stat-v">185.000+</div><div class="stat-l">Geleistete Stunden</div></div>
+    <div class="stat fu" style="transition-delay:.24s"><div class="stat-v">650+</div><div class="stat-l">Fachkräfte</div></div>
+  </div>
+</section>
+
+<!-- ── SCROLLING PHOTO CAROUSEL ── -->
+<section class="photos-section" aria-label="Einblicke in unsere Jobs">
+  <p class="photos-label">Einblicke in unsere Jobs</p>
+
+  <!-- Row 1 — scrolls left -->
+  <div class="track-wrap" aria-hidden="true">
+    <div class="photo-track">
+      <div class="photo-card"><img src="UniworksImages/work/Ausschank.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Kellnern.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Catering.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Service.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Stagehands.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Buehneaufbau.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Runner.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Bankettservice.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Kassendienst.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/ProduktPromotion.webp" alt="" loading="lazy" /></div>
+      <!-- duplicate for seamless loop -->
+      <div class="photo-card"><img src="UniworksImages/work/Ausschank.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Kellnern.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Catering.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Service.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Stagehands.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Buehneaufbau.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Runner.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Bankettservice.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Kassendienst.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/ProduktPromotion.webp" alt="" loading="lazy" /></div>
+    </div>
+  </div>
+
+  <div class="gap16"></div>
+
+  <!-- Row 2 — scrolls right -->
+  <div class="track-wrap" aria-hidden="true">
+    <div class="photo-track photo-track-r">
+      <div class="photo-card"><img src="UniworksImages/work/VIPCatering.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Messeaufbau.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/EventShuttle.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Streckenposten.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/FanBotschafterStadion.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Fruehstuecksservice.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/WarenEinraeumen.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/PromoterNY.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/SupermarktNeueroeffnung.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/SchulCatering.webp" alt="" loading="lazy" /></div>
+      <!-- duplicate -->
+      <div class="photo-card"><img src="UniworksImages/work/VIPCatering.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Messeaufbau.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/EventShuttle.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Streckenposten.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/FanBotschafterStadion.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/Fruehstuecksservice.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/WarenEinraeumen.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/PromoterNY.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/SupermarktNeueroeffnung.webp" alt="" loading="lazy" /></div>
+      <div class="photo-card"><img src="UniworksImages/work/SchulCatering.webp" alt="" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES (audience toggle carousel) ── -->
+<section class="services" id="unternehmen">
+  <div class="wrap services-intro">
+    <div class="eyebrow">Unsere Bereiche</div>
+    <h2 class="sec-h">Für jeden Bedarf das passende Personal</h2>
+  </div>
+  <div class="services-pin" id="services-pin">
+    <div class="services-sticky">
+      <div class="wrap">
+        <div class="uw-tabs-wrap" role="tablist" aria-label="Zielgruppe wählen">
+          <button class="uw-tab active" data-aud="unternehmen" role="tab" aria-selected="true">Für Unternehmen</button>
+          <button class="uw-tab" data-aud="studierende" role="tab" aria-selected="false">Für Studierende</button>
+        </div>
+
+        <div class="uw-carousel-hdr">
+          <div>
+            <p id="uw-eyebrow" class="uw-eyebrow"></p>
+            <h3 id="uw-heading" class="uw-heading"></h3>
+          </div>
+          <div class="uw-nav-btns">
+            <button id="uw-prev" class="uw-nav-btn" aria-label="Zurück"><i class="ti ti-arrow-left" aria-hidden="true"></i></button>
+            <button id="uw-next" class="uw-nav-btn" aria-label="Weiter"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+
+        <div class="uw-viewport">
+          <div id="uw-track" class="uw-track" role="region" aria-label="Kategorie-Karussell"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="eyebrow">So einfach geht's</div>
+    <h2 class="sec-h">Wie es funktioniert</h2>
+    <p class="sec-sub">Ob Unternehmen oder Studierender — in wenigen Schritten geht's los.</p>
+
+    <div class="how-toggle" role="tablist" aria-label="Zielgruppe">
+      <button class="how-tab active" data-panel="companies" role="tab" aria-selected="true">Für Unternehmen</button>
+      <button class="how-tab" data-panel="students" role="tab" aria-selected="false" id="studierende">Für Studierende</button>
+    </div>
+
+    <div class="how-grid">
+      <div>
+        <!-- Companies panel -->
+        <div class="how-panel active" id="panel-companies" role="tabpanel">
+          <div class="how-step fu">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Bedarf melden</h4>
+              <p>Schreiben Sie uns Branche, Datum und Anzahl der benötigten Kräfte. Wir melden uns innerhalb weniger Stunden.</p>
+            </div>
+          </div>
+          <div class="how-step fu" style="transition-delay:.1s">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Passende Kandidaten erhalten</h4>
+              <p>Wir matchen Sie mit geeigneten Studierenden aus unserem geprüften Pool — kein Aufwand für Sie.</p>
+            </div>
+          </div>
+          <div class="how-step fu" style="transition-delay:.2s">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Schicht startet — unkompliziert</h4>
+              <p>Die Kräfte erscheinen pünktlich. Nach der Schicht rechnen wir transparent und ohne versteckte Kosten ab.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Students panel -->
+        <div class="how-panel" id="panel-students" role="tabpanel">
+          <div class="how-step fu">
+            <div class="step-num step-num-alt">1</div>
+            <div class="step-body">
+              <h4>App herunterladen</h4>
+              <p>Jetzt im App Store oder Google Play — Registrierung in wenigen Minuten, keine langen Formulare.</p>
+            </div>
+          </div>
+          <div class="how-step fu" style="transition-delay:.1s">
+            <div class="step-num step-num-alt">2</div>
+            <div class="step-body">
+              <h4>Job aussuchen &amp; buchen</h4>
+              <p>Stöbere durch Schichten in deiner Stadt — nach Branche, Zeit und Ort. Mindestens €16/Stunde, immer fair bezahlt.</p>
+            </div>
+          </div>
+          <div class="how-step fu" style="transition-delay:.2s">
+            <div class="step-num step-num-alt">3</div>
+            <div class="step-body">
+              <h4>Arbeiten &amp; verdienen</h4>
+              <p>Erscheinen, Schicht erledigen, Geld verdienen — flexibel um dein Studium herum, ganz ohne Bewerbungsprozess.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <a href="#unternehmen" class="btn btn-p" id="how-cta">Personal anfragen</a>
+        </div>
+      </div>
+
+      <div class="how-phones" aria-hidden="true">
+        <div class="how-phone-wrap">
+          <img src="UniworksImages/branding/iPhoneApp.webp" alt="" loading="lazy" />
+        </div>
+        <div class="how-phone-wrap">
+          <img src="UniworksImages/branding/iPhoneApp3.webp" alt="" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── APP DOWNLOAD ── -->
+<section class="app-sec" id="app">
+  <div class="app-inner">
+    <div class="app-text fu">
+      <div class="eyebrow" style="color:var(--g)">Schichten finden</div>
+      <h2>Die App für <em>flexible Jobs</em> neben dem Studium</h2>
+      <p>Täglich neue Schichten in deiner Stadt. Mindestens €16/Stunde. Einfach bewerben, direkt loslegen.</p>
+      <div class="app-badges">
+        <a href="#" class="app-badge-lnk" aria-label="Im App Store herunterladen">
+          <img src="UniworksImages/logos/AppStore.svg" alt="App Store" />
+        </a>
+        <a href="#" class="app-badge-lnk" aria-label="Bei Google Play herunterladen">
+          <img src="UniworksImages/logos/PlayStore.svg" alt="Google Play" />
+        </a>
+      </div>
+    </div>
+    <div class="app-phones" aria-hidden="true">
+      <img src="UniworksImages/branding/iPhoneApp2..webp" alt="" class="app-ph" loading="lazy" />
+      <img src="UniworksImages/branding/iPhoneApp4.webp" alt="" class="app-ph" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ── -->
+<section class="partners" id="partners">
+  <div class="wrap">
+    <p class="partners-lbl">Unsere Partner &amp; Kunden</p>
+  </div>
+  <div class="ptrs-track-wrap" aria-hidden="true">
+    <div class="ptrs-track">
+      <img src="UniworksImages/logos/DEHOGABayern.webp" alt="DEHOGA Bayern" class="ptr-logo" />
+      <img src="UniworksImages/logos/WERK1.webp" alt="WERK1" class="ptr-logo" />
+      <img src="UniworksImages/logos/TUM.webp" alt="TU München" class="ptr-logo" />
+      <img src="UniworksImages/logos/LMUIEC.webp" alt="LMU IEC" class="ptr-logo" />
+      <img src="UniworksImages/logos/AbsolventenKongress.webp" alt="Absolventenkongress" class="ptr-logo" />
+      <img src="UniworksImages/logos/JYSK.webp" alt="JYSK" class="ptr-logo" />
+      <img src="UniworksImages/logos/MBS.webp" alt="MBS" class="ptr-logo" />
+      <img src="UniworksImages/logos/Raeder.webp" alt="Räder" class="ptr-logo" />
+      <!-- duplicate for loop -->
+      <img src="UniworksImages/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/WERK1.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/TUM.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/LMUIEC.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/AbsolventenKongress.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/JYSK.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/MBS.webp" alt="" class="ptr-logo" />
+      <img src="UniworksImages/logos/Raeder.webp" alt="" class="ptr-logo" />
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <img src="UniworksImages/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+          <h3>uniworks</h3>
+        </div>
+        <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Plattform</h4>
+        <ul>
+          <li><a href="#studierende">Für Studierende</a></li>
+          <li><a href="#unternehmen">Für Unternehmen</a></li>
+          <li><a href="#how">Wie es funktioniert</a></li>
+          <li><a href="#app">App herunterladen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Branchen</h4>
+        <ul>
+          <li><a href="#">Logistik</a></li>
+          <li><a href="#">Event</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Einzelhandel</a></li>
+          <li><a href="#">Gastronomie</a></li>
+          <li><a href="#">Promotion</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="#">Über Uns</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 uniworks GmbH. Alle Rechte vorbehalten.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Nav scroll shadow ─────────────────────────────────────────────────────
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 8);
+}, {passive: true});
+
+// ── Mobile hamburger ──────────────────────────────────────────────────────
+const hbg = document.getElementById('nav-hbg');
+const mobOverlay = document.getElementById('mob-overlay');
+let menuOpen = false;
+hbg.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobOverlay.classList.toggle('open', menuOpen);
+  hbg.setAttribute('aria-expanded', String(menuOpen));
+  document.body.style.overflow = menuOpen ? 'hidden' : '';
+});
+mobOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  menuOpen = false;
+  mobOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}));
+
+// ── "Für Unternehmen" category dropdown ───────────────────────────────────
+const navDd = document.getElementById('nav-dd');
+const navDdToggle = document.getElementById('nav-dd-toggle');
+navDdToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const open = navDd.classList.toggle('open');
+  navDdToggle.setAttribute('aria-expanded', String(open));
+});
+document.addEventListener('click', (e) => {
+  if (!navDd.contains(e.target)) {
+    navDd.classList.remove('open');
+    navDdToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    navDd.classList.remove('open');
+    navDdToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// ── How-it-works toggle ───────────────────────────────────────────────────
+const howTabs = document.querySelectorAll('.how-tab');
+const howCta = document.getElementById('how-cta');
+howTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const p = tab.dataset.panel;
+    howTabs.forEach(t => { t.classList.toggle('active', t === tab); t.setAttribute('aria-selected', String(t === tab)); });
+    document.querySelectorAll('.how-panel').forEach(el => el.classList.toggle('active', el.id === 'panel-' + p));
+    if (p === 'companies') { howCta.textContent = 'Personal anfragen'; howCta.href = '#unternehmen'; }
+    else { howCta.textContent = 'App herunterladen'; howCta.href = '#app'; }
+  });
+});
+
+// ── Audience carousel ─────────────────────────────────────────────────────
+(function () {
+  const G = '#2ab54a', GD = '#173404', GL = '#EAF3DE';
+  const imgs = {
+    logistik:    'UniworksImages/visuals/Logistik.jpeg',
+    event:       'UniworksImages/visuals/AdeleMesse.webp',
+    catering:    'UniworksImages/work/Catering.webp',
+    retail:      'UniworksImages/work/Kassendienst.webp',
+    gastro:      'UniworksImages/work/Kellnern.webp',
+    promo:       'UniworksImages/work/ProduktPromotion.webp',
+    buero:       'UniworksImages/work/Service.webp',
+  };
+  const data = {
+    unternehmen: {
+      eyebrow: 'Für Unternehmen',
+      heading: 'Für jede Branche das passende Personal',
+      cards: [
+        {t:'Logistik',          s:'Lager, Versand und Inventur, zuverlässig besetzt.',        cta:'Zu Logistik',      img:imgs.logistik},
+        {t:'Event',             s:'Auf- und Abbau bis Einlass, alles aus einer Hand.',         cta:'Zu Events',        img:imgs.event},
+        {t:'Catering',          s:'Service- und Küchenhilfen, kurzfristig verfügbar.',         cta:'Zu Catering',      img:imgs.catering},
+        {t:'Einzelhandel',      s:'Kasse, Verkauf und Auffüllen, flexibel gebucht.',           cta:'Zum Einzelhandel', img:imgs.retail},
+        {t:'Gastronomie & Hotellerie', s:'Service und Empfang auf Sterneniveau.',             cta:'Mehr erfahren',    img:imgs.gastro},
+        {t:'Promotion',         s:'Promoter und Hostessen, die Ihre Marke vertreten.',        cta:'Zu Promotion',     img:imgs.promo},
+        {t:'Büro',              s:'Verlässliche Unterstützung im Büroalltag.',                cta:'Zum Büro',         img:imgs.buero},
+      ]
+    },
+    studierende: {
+      eyebrow: 'Für Studierende',
+      heading: 'Flexible Jobs, die zu deinem Studium passen',
+      cards: [
+        {t:'Flexible Schichten', s:'Wähle täglich aus offenen Jobs in deiner Nähe.',          cta:'Jobs entdecken',    icon:'ti-calendar-event', dark:true},
+        {t:'Faire Bezahlung',    s:'Immer mindestens €16 pro Stunde, fair und transparent.',  cta:'Mehr erfahren',     icon:'ti-coin-euro',       dark:false},
+        {t:'In der App buchen',  s:'Schicht aussuchen, annehmen, loslegen — in Minuten.',     cta:'App holen',         icon:'ti-device-mobile',   dark:false},
+        {t:'Rund ums Studium',   s:'Jobs, die sich deinem Hochschulalltag anpassen.',         cta:'So funktioniert\'s',icon:'ti-school',          dark:true},
+        {t:'Deutschlandweit',    s:'Über 15.000 Studierende sind schon dabei.',               cta:'Jetzt registrieren',icon:'ti-map-pin',         dark:false},
+      ]
+    }
+  };
+
+  const track   = document.getElementById('uw-track');
+  const tabs    = document.querySelectorAll('.uw-tab');
+  const eyebrow = document.getElementById('uw-eyebrow');
+  const heading = document.getElementById('uw-heading');
+
+  function render(aud) {
+    const set = data[aud];
+    eyebrow.textContent = set.eyebrow;
+    heading.textContent = set.heading;
+    track.innerHTML = '';
+    set.cards.forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'uw-card';
+      if (c.img) {
+        el.innerHTML = `<img src="${c.img}" alt="" class="uw-card-img-bg" loading="lazy" /><div class="uw-card-overlay"></div><div class="uw-card-body"><h4>${c.t}</h4><p>${c.s}</p><button class="uw-card-btn-img">${c.cta}</button></div>`;
+      } else {
+        const bg = c.dark ? GD : G;
+        const btnBg = c.dark ? GL : 'rgba(255,255,255,.2)';
+        const btnBorder = c.dark ? 'transparent' : 'rgba(255,255,255,.4)';
+        const btnColor = c.dark ? GD : '#fff';
+        el.style.background = bg;
+        el.innerHTML = `<h4>${c.t}</h4><p>${c.s}</p><button style="background:${btnBg};color:${btnColor};border:1.5px solid ${btnBorder};border-radius:10px;padding:10px 18px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .2s">${c.cta}</button><i class="ti ${c.icon}" aria-hidden="true" style="position:absolute;right:-12px;bottom:-12px;font-size:160px;color:rgba(255,255,255,.1);pointer-events:none"></i>`;
+      }
+      track.appendChild(el);
+    });
+    track.style.transform = '';
+    requestAnimationFrame(recompute);
+  }
+
+  function setActive(aud) {
+    tabs.forEach(t => { t.classList.toggle('active', t.dataset.aud === aud); t.setAttribute('aria-selected', String(t.dataset.aud === aud)); });
+    render(aud);
+  }
+
+  // ── Scroll-pinning: vertical scroll drives the carousel right, then page continues ──
+  const pin = document.getElementById('services-pin');
+  const sticky = pin.querySelector('.services-sticky');
+  const STEP = 296; // card (280) + gap (16)
+  const NAV = 72;   // sticky anchors just below the fixed nav
+  let pinDuration = 0;
+  const isDesktop = () => window.matchMedia('(min-width: 900px)').matches;
+
+  function recompute() {
+    if (!isDesktop()) { pin.style.height = ''; track.style.transform = ''; pinDuration = 0; return; }
+    const overflow = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
+    pinDuration = overflow;
+    // spacer = pinned block height + horizontal distance, so it stays stuck exactly
+    // long enough to scroll the cards fully, with the block held just under the nav.
+    pin.style.height = overflow > 0 ? (sticky.offsetHeight + overflow) + 'px' : '';
+    applyScroll();
+  }
+
+  function applyScroll() {
+    if (!isDesktop() || pinDuration <= 0) { track.style.transform = ''; return; }
+    const top = pin.getBoundingClientRect().top;
+    const p = Math.min(Math.max(NAV - top, 0), pinDuration);
+    track.style.transform = 'translateX(' + (-p) + 'px)';
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(() => { applyScroll(); ticking = false; }); ticking = true; }
+  }, {passive: true});
+  window.addEventListener('resize', recompute);
+  window.addEventListener('load', recompute);
+
+  function nudge(dir) {
+    if (isDesktop() && pinDuration > 0) window.scrollBy({top: dir * STEP, behavior: 'smooth'});
+    else track.scrollBy({left: dir * STEP, behavior: 'smooth'});
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => setActive(t.dataset.aud)));
+  document.getElementById('uw-next').addEventListener('click', () => nudge(1));
+  document.getElementById('uw-prev').addEventListener('click', () => nudge(-1));
+  setActive('unternehmen');
+})();
+
+// ── Scroll-triggered fade-up ──────────────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+}, {threshold: 0.12, rootMargin: '0px 0px -32px 0px'});
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

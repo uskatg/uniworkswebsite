@@ -1,0 +1,260 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "uniworks Startseite" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "uniworks" [ref=e5]
+        - generic [ref=e6]: uniworks
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Für Studierende" [ref=e9] [cursor=pointer]:
+            - /url: "#studierende"
+        - listitem [ref=e10]:
+          - link "Für Unternehmen" [ref=e11] [cursor=pointer]:
+            - /url: "#unternehmen"
+        - listitem [ref=e12]:
+          - link "Wie es funktioniert" [ref=e13] [cursor=pointer]:
+            - /url: "#how"
+        - listitem [ref=e14]:
+          - link "App" [ref=e15] [cursor=pointer]:
+            - /url: "#app"
+        - listitem [ref=e16]:
+          - link "Partner" [ref=e17] [cursor=pointer]:
+            - /url: "#partners"
+      - generic [ref=e18]:
+        - link "Für Studierende" [ref=e19] [cursor=pointer]:
+          - /url: "#studierende"
+        - link "Für Unternehmen" [ref=e20] [cursor=pointer]:
+          - /url: "#unternehmen"
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]: Deutschlands schnellst wachsender Personaldienstleister
+      - heading "Flexible Jobs. Zuverlässiges Personal." [level=1] [ref=e26]:
+        - text: Flexible Jobs.
+        - emphasis [ref=e27]: Zuverlässiges
+        - text: Personal.
+      - paragraph [ref=e28]: Verbinden Sie Ihr Unternehmen mit motivierten Studierenden — für Schichten, die wirklich besetzt werden.
+      - generic [ref=e29]:
+        - link "Personal anfragen" [ref=e30] [cursor=pointer]:
+          - /url: "#unternehmen"
+          - generic [ref=e31]: 
+          - text: Personal anfragen
+        - link "Jobs finden" [ref=e32] [cursor=pointer]:
+          - /url: "#studierende"
+          - generic [ref=e33]: 
+          - text: Jobs finden
+      - generic [ref=e34]:
+        - strong [ref=e35]: 16.000+
+        - text: Studierende registriert
+        - strong [ref=e37]: 185.000+
+        - text: Stunden geleistet
+    - generic [ref=e38]:
+      - img "Studierende bei der Arbeit" [ref=e39]
+      - generic [ref=e40]:
+        - generic [ref=e42]: 
+        - generic [ref=e43]:
+          - generic [ref=e44]: Geleistete Stunden
+          - generic [ref=e45]: 185.000+
+      - generic [ref=e47]:
+        - generic [ref=e48]: 
+        - text: 10.000+ Schichten besetzt
+  - region "Kennzahlen" [ref=e49]:
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]: 16.000+
+        - generic [ref=e53]: Registrierte Nutzer
+      - generic [ref=e54]:
+        - generic [ref=e55]: 10.000+
+        - generic [ref=e56]: Besetzte Schichten
+      - generic [ref=e57]:
+        - generic [ref=e58]: 185.000+
+        - generic [ref=e59]: Geleistete Stunden
+      - generic [ref=e60]:
+        - generic [ref=e61]: 650+
+        - generic [ref=e62]: Fachkräfte
+  - region "Einblicke in unsere Jobs" [ref=e63]:
+    - paragraph [ref=e64]: Einblicke in unsere Jobs
+  - generic [ref=e111]:
+    - generic [ref=e112]: Unsere Bereiche
+    - heading "Für jeden Bedarf das passende Personal" [level=2] [ref=e113]:
+      - text: Für jeden Bedarf
+      - text: das passende Personal
+    - paragraph [ref=e114]: Von Events bis Logistik — wir besetzen Schichten in allen relevanten Branchen, schnell und zuverlässig.
+    - tablist "Zielgruppe wählen" [ref=e115]:
+      - tab "Für Unternehmen" [selected] [ref=e116] [cursor=pointer]
+      - tab "Für Studierende" [ref=e117] [cursor=pointer]
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - paragraph [ref=e120]: Für Unternehmen
+        - heading "Für jede Branche das passende Personal" [level=3] [ref=e121]
+      - generic [ref=e122]:
+        - button "Zurück" [ref=e123] [cursor=pointer]:
+          - generic [ref=e124]: 
+        - button "Weiter" [ref=e125] [cursor=pointer]:
+          - generic [ref=e126]: 
+    - region "Kategorie-Karussell" [ref=e127]:
+      - generic [ref=e130]:
+        - heading "Logistik" [level=4] [ref=e131]
+        - paragraph [ref=e132]: Lager, Versand und Inventur, zuverlässig besetzt.
+        - button "Zu Logistik" [ref=e133] [cursor=pointer]
+      - generic [ref=e136]:
+        - heading "Event" [level=4] [ref=e137]
+        - paragraph [ref=e138]: Auf- und Abbau bis Einlass, alles aus einer Hand.
+        - button "Zu Events" [ref=e139] [cursor=pointer]
+      - generic [ref=e142]:
+        - heading "Catering" [level=4] [ref=e143]
+        - paragraph [ref=e144]: Service- und Küchenhilfen, kurzfristig verfügbar.
+        - button "Zu Catering" [ref=e145] [cursor=pointer]
+      - generic [ref=e148]:
+        - heading "Einzelhandel" [level=4] [ref=e149]
+        - paragraph [ref=e150]: Kasse, Verkauf und Auffüllen, flexibel gebucht.
+        - button "Zum Einzelhandel" [ref=e151] [cursor=pointer]
+      - generic [ref=e154]:
+        - heading "Gastronomie & Hotellerie" [level=4] [ref=e155]
+        - paragraph [ref=e156]: Service und Empfang auf Sterneniveau.
+        - button "Mehr erfahren" [ref=e157] [cursor=pointer]
+      - generic [ref=e160]:
+        - heading "Promotion" [level=4] [ref=e161]
+        - paragraph [ref=e162]: Promoter und Hostessen, die Ihre Marke vertreten.
+        - button "Zu Promotion" [ref=e163] [cursor=pointer]
+      - generic [ref=e166]:
+        - heading "Büro" [level=4] [ref=e167]
+        - paragraph [ref=e168]: Verlässliche Unterstützung im Büroalltag.
+        - button "Zum Büro" [ref=e169] [cursor=pointer]
+  - generic [ref=e171]:
+    - generic [ref=e172]: So einfach geht's
+    - heading "Wie es funktioniert" [level=2] [ref=e173]
+    - paragraph [ref=e174]: Ob Unternehmen oder Studierender — in wenigen Schritten geht's los.
+    - tablist "Zielgruppe" [ref=e175]:
+      - tab "Für Unternehmen" [selected] [ref=e176] [cursor=pointer]
+      - tab "Für Studierende" [ref=e177] [cursor=pointer]
+    - generic [ref=e179]:
+      - tabpanel [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]: "1"
+          - generic [ref=e183]:
+            - heading "Bedarf melden" [level=4] [ref=e184]
+            - paragraph [ref=e185]: Schreiben Sie uns Branche, Datum und Anzahl der benötigten Kräfte. Wir melden uns innerhalb weniger Stunden.
+        - generic [ref=e186]:
+          - generic [ref=e187]: "2"
+          - generic [ref=e188]:
+            - heading "Passende Kandidaten erhalten" [level=4] [ref=e189]
+            - paragraph [ref=e190]: Wir matchen Sie mit geeigneten Studierenden aus unserem geprüften Pool — kein Aufwand für Sie.
+        - generic [ref=e191]:
+          - generic [ref=e192]: "3"
+          - generic [ref=e193]:
+            - heading "Schicht startet — unkompliziert" [level=4] [ref=e194]
+            - paragraph [ref=e195]: Die Kräfte erscheinen pünktlich. Nach der Schicht rechnen wir transparent und ohne versteckte Kosten ab.
+      - link "Personal anfragen" [ref=e197] [cursor=pointer]:
+        - /url: "#unternehmen"
+  - generic [ref=e203]:
+    - generic [ref=e204]: Schichten finden
+    - heading "Die App für flexible Jobs neben dem Studium" [level=2] [ref=e205]:
+      - text: Die App für
+      - emphasis [ref=e206]: flexible Jobs
+      - text: neben dem Studium
+    - paragraph [ref=e207]: Täglich neue Schichten in deiner Stadt. Mindestens €16/Stunde. Einfach bewerben, direkt loslegen.
+    - generic [ref=e208]:
+      - link "Im App Store herunterladen" [ref=e209] [cursor=pointer]:
+        - /url: "#"
+        - img "App Store" [ref=e210]
+      - link "Bei Google Play herunterladen" [ref=e211] [cursor=pointer]:
+        - /url: "#"
+        - img "Google Play" [ref=e212]
+  - generic [ref=e214]:
+    - paragraph [ref=e216]: Unsere Partner & Kunden
+    - generic [ref=e218]:
+      - img [ref=e219]
+      - img [ref=e220]
+      - img [ref=e221]
+      - img [ref=e222]
+      - img [ref=e223]
+      - img [ref=e224]
+      - img [ref=e225]
+      - img [ref=e226]
+  - generic [ref=e227]:
+    - heading "Bereit anzufangen?" [level=2] [ref=e228]
+    - paragraph [ref=e229]: Ob Sie Personal suchen oder flexible Jobs neben dem Studium — bei uniworks finden Sie die passende Lösung.
+    - generic [ref=e230]:
+      - link "Personal anfragen" [ref=e231] [cursor=pointer]:
+        - /url: "#unternehmen"
+        - generic [ref=e232]: 
+        - text: Personal anfragen
+      - link "App herunterladen" [ref=e233] [cursor=pointer]:
+        - /url: "#app"
+        - generic [ref=e234]: 
+        - text: App herunterladen
+  - contentinfo [ref=e235]:
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - heading "uniworks" [level=3] [ref=e240]
+          - paragraph [ref=e241]: Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.
+          - generic [ref=e242]:
+            - link "Instagram" [ref=e243] [cursor=pointer]:
+              - /url: https://instagram.com/uniworks.gmbh
+              - generic [ref=e244]: 
+            - link "LinkedIn" [ref=e245] [cursor=pointer]:
+              - /url: https://linkedin.com/company/uniworks
+              - generic [ref=e246]: 
+        - generic [ref=e247]:
+          - heading "Plattform" [level=4] [ref=e248]
+          - list [ref=e249]:
+            - listitem [ref=e250]:
+              - link "Für Studierende" [ref=e251] [cursor=pointer]:
+                - /url: "#studierende"
+            - listitem [ref=e252]:
+              - link "Für Unternehmen" [ref=e253] [cursor=pointer]:
+                - /url: "#unternehmen"
+            - listitem [ref=e254]:
+              - link "Wie es funktioniert" [ref=e255] [cursor=pointer]:
+                - /url: "#how"
+            - listitem [ref=e256]:
+              - link "App herunterladen" [ref=e257] [cursor=pointer]:
+                - /url: "#app"
+        - generic [ref=e258]:
+          - heading "Branchen" [level=4] [ref=e259]
+          - list [ref=e260]:
+            - listitem [ref=e261]:
+              - link "Logistik" [ref=e262] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e263]:
+              - link "Event" [ref=e264] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e265]:
+              - link "Catering" [ref=e266] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e267]:
+              - link "Einzelhandel" [ref=e268] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e269]:
+              - link "Gastronomie" [ref=e270] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e271]:
+              - link "Promotion" [ref=e272] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e273]:
+          - heading "Unternehmen" [level=4] [ref=e274]
+          - list [ref=e275]:
+            - listitem [ref=e276]:
+              - link "Über Uns" [ref=e277] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e278]:
+              - link "Blog" [ref=e279] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e280]:
+              - link "FAQ" [ref=e281] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e282]:
+              - link "Impressum" [ref=e283] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e284]:
+              - link "Datenschutz" [ref=e285] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e286]:
+        - generic [ref=e287]: © 2025 uniworks GmbH. Alle Rechte vorbehalten.
+        - generic [ref=e288]:
+          - link "Impressum" [ref=e289] [cursor=pointer]:
+            - /url: "#"
+          - link "Datenschutz" [ref=e290] [cursor=pointer]:
+            - /url: "#"

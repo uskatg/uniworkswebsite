@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>uniworks — Festival Crew Call (3-page carousel)</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  /* ────────────────────────────────────────────────────────────
+     Page chrome (review surface, not part of the post itself)
+     ──────────────────────────────────────────────────────────── */
+  html, body {
+    margin: 0;
+    background: #d9dcd8;
+    font-family: var(--font-sans);
+    color: var(--fg);
+    min-height: 100vh;
+  }
+  .stage {
+    padding: 48px 32px 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+  .stage header {
+    text-align: center;
+    color: var(--ink-700);
+    max-width: 920px;
+  }
+  .stage header h1 {
+    font: 700 22px/1.2 var(--font-display);
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    color: var(--ink-900);
+  }
+  .stage header p {
+    margin: 0;
+    font: var(--t-small);
+    color: var(--ink-600);
+  }
+  .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1080px);
+    gap: 32px;
+    transform-origin: top center;
+  }
+  @media (max-width: 3500px) {
+    .carousel { transform: scale(min(1, calc((100vw - 64px) / (3 * 1080px + 64px)))); }
+  }
+  .post-label {
+    margin-top: 14px;
+    font: 600 13px/1 var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-600);
+    text-align: center;
+  }
+
+  /* ────────────────────────────────────────────────────────────
+     Post canvas — Instagram portrait (1080 × 1350)
+     ──────────────────────────────────────────────────────────── */
+  .post {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,.18);
+    color: var(--ink-950);
+    font-family: var(--font-sans);
+  }
+  .post--green { background: var(--brand); color: #fff; }
+  .post--white { background: #fff; color: var(--ink-950); }
+
+  /* Top bar: logo (top-left), pagination dots (top-right) */
+  .topbar {
+    position: absolute;
+    top: 56px; left: 56px; right: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+  }
+  .lockup {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .lockup img { width: 52px; height: 52px; display: block; }
+  .lockup .wm {
+    font: 500 38px/1 var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+  .post--green .lockup .wm,
+  .post--green .lockup img { filter: none; }
+  .post--white .lockup .wm { color: var(--ink-950); }
+
+  /* Pagination dots — three dots, the active one is an elongated pill */
+  .dots { display: flex; gap: 10px; align-items: center; }
+  .dots .dot {
+    width: 12px; height: 12px; border-radius: 999px;
+    background: currentColor;
+    opacity: 0.32;
+  }
+  .dots .dot.active { width: 36px; opacity: 1; }
+  .post--green .dots { color: #fff; }
+  .post--white .dots { color: var(--ink-900); }
+
+  /* Headline shared treatment */
+  .headline {
+    font: 700 130px/0.96 var(--font-display);
+    letter-spacing: -0.035em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .headline .ital { font-style: italic; font-weight: 700; }
+
+  /* The "pill highlight" — used on page 2 ("DABEI") and page 3 ("3") */
+  .pill-hl {
+    display: inline-block;
+    padding: 0.02em 0.28em 0.12em;
+    border-radius: 32px;
+    line-height: 1;
+    transform: translateY(-0.04em);
+  }
+  .pill-hl--green { background: var(--brand); color: #fff; }
+  .pill-hl--white { background: #fff; color: var(--brand-strong); }
+
+  /* Black circle CTA (echoed on pages 1 & 3) */
+  .swipe-cta {
+    width: 120px; height: 120px;
+    border-radius: 999px;
+    background: var(--ink-950);
+    color: #fff;
+    display: grid; place-items: center;
+    flex: 0 0 auto;
+  }
+  .swipe-cta svg { width: 56px; height: 56px; }
+  .swipe-cta--lift { box-shadow: 0 18px 40px -12px rgba(0,0,0,.35); }
+
+  /* ──────────────  PAGE 1  ────────────── */
+  .p1 .topbar { color: #fff; }
+  .p1 .body {
+    position: absolute;
+    top: 152px; left: 56px; right: 56px; bottom: 56px;
+    display: flex; flex-direction: column;
+    color: #fff;
+  }
+  .p1 .eyebrow {
+    font: 700 24px/1 var(--font-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.92;
+    margin-bottom: 24px;
+  }
+  .p1 .headline { font-size: 132px; }
+  .p1 .lead {
+    margin-top: 28px;
+    font: 700 30px/1.32 var(--font-sans);
+    max-width: 900px;
+  }
+  .p1 .lead .ital { font-style: italic; font-weight: 700; }
+  .p1 .photo {
+    margin-top: 36px;
+    height: 380px;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,.35);
+  }
+  .p1 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.15); }
+  .p1 .photo .photo-tag {
+    position: absolute; left: 28px; bottom: 24px;
+    font: 700 18px/1 var(--font-mono);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,.5);
+  }
+  .p1 .footer {
+    margin-top: auto;
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 32px;
+  }
+  .p1 .footer .kicker {
+    font: 700 28px/1.32 var(--font-sans);
+    max-width: 720px;
+  }
+  .p1 .footer .kicker b { font-weight: 700; }
+  .p1 .swipe-cta { background: #0d1410; color: var(--brand); }
+
+  /* ──────────────  PAGE 2  ────────────── */
+  .p2 .body {
+    position: absolute;
+    top: 152px; left: 56px; right: 56px; bottom: 56px;
+    display: flex; flex-direction: column;
+  }
+  .p2 .headline {
+    font-size: 124px;
+    color: var(--ink-950);
+    letter-spacing: -0.035em;
+  }
+  .p2 .headline .pill-hl { background: var(--brand); color: #fff; }
+  .p2 .strip {
+    height: 220px;
+    margin-top: 32px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--ink-900);
+    position: relative;
+  }
+  .p2 .strip img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.92; }
+  .p2 .grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    flex: 1;
+  }
+  .p2 .card {
+    border: 1.5px solid var(--ink-300);
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: flex; flex-direction: column;
+    background: #fff;
+    position: relative;
+  }
+  .p2 .card .meta {
+    font: 600 13px/1 var(--font-mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-500);
+    margin-bottom: 8px;
+  }
+  .p2 .card .name {
+    font: 700 34px/1.04 var(--font-display);
+    letter-spacing: -0.015em;
+    color: var(--ink-950);
+    margin-bottom: 8px;
+  }
+  .p2 .card .place {
+    font: 400 17px/1.3 var(--font-sans);
+    color: var(--ink-700);
+  }
+  .p2 .card .date {
+    font: 700 18px/1 var(--font-sans);
+    color: var(--ink-950);
+    margin-top: auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .p2 .card .dot {
+    width: 10px; height: 10px; border-radius: 999px; background: var(--brand);
+    display: inline-block;
+  }
+  .p2 .footer {
+    margin-top: 20px;
+    font: 500 18px/1.4 var(--font-sans);
+    color: var(--ink-600);
+  }
+
+  /* ──────────────  PAGE 3  ────────────── */
+  .p3 .topbar { color: #fff; }
+  .p3 .body {
+    position: absolute;
+    top: 152px; left: 56px; right: 56px; bottom: 56px;
+    display: flex; flex-direction: column;
+    color: #fff;
+  }
+  .p3 .headline {
+    font-size: 140px;
+    color: #fff;
+  }
+  .p3 .headline .pill-hl { background: #fff; color: var(--brand-strong); }
+  .p3 .headline .ital { font-style: italic; font-weight: 700; }
+  .p3 .steps {
+    margin-top: 56px;
+    display: flex; flex-direction: column;
+    gap: 18px;
+    flex: 1;
+  }
+  .p3 .step {
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px 32px;
+    display: flex; align-items: center; gap: 28px;
+    box-shadow: 0 14px 30px -16px rgba(0,0,0,.18);
+  }
+  .p3 .step .num {
+    font: 700 88px/0.9 var(--font-display);
+    color: var(--brand-strong);
+    letter-spacing: -0.04em;
+    min-width: 130px;
+    text-align: center;
+  }
+  .p3 .step .text { flex: 1; }
+  .p3 .step h3 {
+    font: 700 32px/1.1 var(--font-display);
+    color: var(--ink-950);
+    margin: 0 0 6px;
+  }
+  .p3 .step p {
+    font: 400 22px/1.4 var(--font-sans);
+    color: var(--ink-700);
+    margin: 0;
+  }
+  .p3 .bio-tag {
+    margin-top: 28px;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px 14px 18px;
+    background: rgba(255,255,255,0.14);
+    border: 2px solid rgba(255,255,255,0.85);
+    border-radius: 999px;
+    color: #fff;
+    font: 700 22px/1 var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .p3 .bio-tag svg { width: 26px; height: 26px; }
+
+  .p3 .cta-bar {
+    margin-top: 18px;
+    background: #fff;
+    border-radius: 28px;
+    padding: 26px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 18px 40px -16px rgba(0,0,0,.22);
+  }
+  .p3 .cta-bar .cta-text { color: var(--ink-950); }
+  .p3 .cta-bar .label {
+    font: 700 16px/1 var(--font-mono);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-600);
+    margin-bottom: 6px;
+  }
+  .p3 .cta-bar .url {
+    font: 700 44px/1 var(--font-display);
+    color: var(--ink-950);
+    letter-spacing: -0.02em;
+  }
+  .p3 .cta-bar .swipe-cta { width: 96px; height: 96px; background: var(--brand); color: #fff; }
+</style>
+</head>
+<body class="uw">
+<div class="stage">
+  <header>
+    <h1>Festival Crew Call — 3-page carousel</h1>
+    <p>1080 × 1350 · Instagram portrait · Logo top-left on every page · Green → White → Green</p>
+  </header>
+
+  <div class="carousel">
+
+    <!-- ============================================================
+         PAGE 1 · COVER (green) — CREW CALL
+         ============================================================ -->
+    <div>
+      <div class="post post--green p1">
+        <div class="topbar">
+          <div class="lockup">
+            <img src="../../assets/logo-mark-white.png" alt="uniworks" />
+            <span class="wm">uniworks</span>
+          </div>
+          <div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+        </div>
+
+        <div class="body">
+          <div class="eyebrow">Festival Season '26 — Crew Call</div>
+          <h2 class="headline">INCOMING<br/>CREW CALL —<br/>STAGEHANDS!</h2>
+          <p class="lead">Festival- und Konzert-Saison <span class="ital">2026</span> startet.</p>
+
+          <div class="photo">
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&h=600&fit=crop&q=80" alt="Festival stage crowd"/>
+            <div class="photo-tag">Festival · Stage · Crew</div>
+          </div>
+
+          <div class="footer">
+            <div class="kicker">Wir vermitteln dich als <b>Stagehand</b> &mdash; Bühnenauf- &amp; abbau auf Deutschlands fettesten Shows. Swipe &rarr;</div>
+          </div>
+        </div>
+      </div>
+      <div class="post-label">01 · Cover</div>
+    </div>
+
+    <!-- ============================================================
+         PAGE 2 · GRID (white) — WO WIR DABEI SIND
+         ============================================================ -->
+    <div>
+      <div class="post post--white p2">
+        <div class="topbar">
+          <div class="lockup">
+            <img src="../../assets/logo-mark-black.png" alt="uniworks" />
+            <span class="wm">uniworks</span>
+          </div>
+          <div class="dots"><span class="dot"></span><span class="dot active"></span><span class="dot"></span></div>
+        </div>
+
+        <div class="body">
+          <h2 class="headline">WO WIR <span class="pill-hl pill-hl--green">DABEI</span> SIND.</h2>
+
+          <div class="strip">
+            <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=1600&h=400&fit=crop&q=80" alt="Stage crew at work" />
+          </div>
+
+          <div class="grid">
+            <div class="card"><div class="meta">01 · Stadion Tour</div><div class="name">METALLICA</div><div class="place">Deutsche Bank Park · Frankfurt</div><div class="date"><span>24. – 26. Mai</span><span class="dot"></span></div></div>
+            <div class="card"><div class="meta">02 · Festival</div><div class="name">ROCK AM RING</div><div class="place">Nürburgring · Eifel</div><div class="date"><span>5. – 7. Jun</span><span class="dot"></span></div></div>
+            <div class="card"><div class="meta">03 · Festival</div><div class="name">ROCK IM PARK</div><div class="place">Zeppelinfeld · Nürnberg</div><div class="date"><span>5. – 7. Jun</span><span class="dot"></span></div></div>
+
+            <div class="card"><div class="meta">04 · Stadion Show</div><div class="name">LINKIN PARK</div><div class="place">Olympiastadion · München</div><div class="date"><span>10. – 12. Jun</span><span class="dot"></span></div></div>
+            <div class="card"><div class="meta">05 · Stadion Show</div><div class="name">HELENE FISCHER</div><div class="place">Deutsche Bank Park · Frankfurt</div><div class="date"><span>17. – 20. Jun</span><span class="dot"></span></div></div>
+            <div class="card"><div class="meta">06 · Festival</div><div class="name">SOUTHSIDE</div><div class="place">Neuhausen ob Eck</div><div class="date"><span>19. – 21. Jun</span><span class="dot"></span></div></div>
+
+            <div class="card"><div class="meta">07 · Festival</div><div class="name">HURRICANE</div><div class="place">Scheeßel · Niedersachsen</div><div class="date"><span>19. – 21. Jun</span><span class="dot"></span></div></div>
+            <div class="card"><div class="meta">08 · Stadion Show</div><div class="name">THE WEEKND</div><div class="place">Deutsche Bank Park · Frankfurt</div><div class="date"><span>28.07. – 01.08.</span><span class="dot"></span></div></div>
+            <div class="card"><div class="meta">09 · Crew laufend</div><div class="name">… UND MEHR</div><div class="place">Schichten laufend in der uniworks App.</div><div class="date"><span>Sommer '26</span><span class="dot"></span></div></div>
+          </div>
+
+          <div class="footer">Stand Mai '26 — neue Schichten kommen wöchentlich rein.</div>
+        </div>
+      </div>
+      <div class="post-label">02 · Where we're at</div>
+    </div>
+
+    <!-- ============================================================
+         PAGE 3 · STEPS (green) — IN 3 STEPS ZUR BÜHNE
+         ============================================================ -->
+    <div>
+      <div class="post post--green p3">
+        <div class="topbar">
+          <div class="lockup">
+            <img src="../../assets/logo-mark-white.png" alt="uniworks" />
+            <span class="wm">uniworks</span>
+          </div>
+          <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot active"></span></div>
+        </div>
+
+        <div class="body">
+          <h2 class="headline">IN <span class="pill-hl pill-hl--white">3</span> steps<br/>ZUR BÜHNE.</h2>
+
+          <div class="steps">
+            <div class="step">
+              <div class="num">01</div>
+              <div class="text">
+                <h3>App runterladen</h3>
+                <p>iOS · Android · oder apply.uniworks.gmbh</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">02</div>
+              <div class="text">
+                <h3>10-Min Kennenlernen</h3>
+                <p>Online-Call, kein Lebenslauf, kein Anschreiben.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="num">03</div>
+              <div class="text">
+                <h3>Schicht buchen</h3>
+                <p>Festival aussuchen, Schicht ziehen, los gehts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bio-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            <span>Link in Bio</span>
+          </div>
+
+          <div class="cta-bar">
+            <div class="cta-text">
+              <div class="label">Jetzt bewerben</div>
+              <div class="url">apply.uniworks.gmbh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post-label">03 · CTA</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

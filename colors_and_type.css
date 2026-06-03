@@ -1,0 +1,148 @@
+/* ============================================================
+   Uniworks — Colors & Type tokens
+   ------------------------------------------------------------
+   Use the semantic tokens (--brand, --bg, --fg, --h1, etc.) in
+   product/marketing work. The raw palette is below for tooling.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Brand green (the hero color) ---------- */
+  --green-50:  #e8f7ec;
+  --green-100: #c5ecd0;
+  --green-200: #9ee0b1;
+  --green-300: #6fd189;
+  --green-400: #46c469;
+  --green-500: #2ab54a;   /* ← brand */
+  --green-600: #21993d;
+  --green-700: #197a30;
+  --green-800: #135f25;
+  --green-900: #0c3f18;
+
+  /* ---------- Neutrals (warm-ish charcoal → off-white) ---------- */
+  --ink-950: #0d1410;     /* near-black, slight green undertone */
+  --ink-900: #161d18;
+  --ink-800: #232b25;
+  --ink-700: #3a4640;
+  --ink-600: #5b685f;
+  --ink-500: #7d8a82;
+  --ink-400: #a3afa8;
+  --ink-300: #c8d0cb;
+  --ink-200: #e1e6e3;
+  --ink-100: #eef2ef;
+  --ink-50:  #f6f8f6;
+  --white:   #ffffff;
+
+  /* ---------- Accents (used sparingly, supportive) ---------- */
+  --sun:     #ffd24a;     /* highlight / sticker yellow */
+  --beer:    #f4b740;     /* hospitality warm */
+  --plum:    #5b2a86;     /* contrast for charts/secondary */
+  --berry:   #e6444f;     /* alerts / "live" indicator */
+
+  /* ---------- Semantic surfaces ---------- */
+  --brand:           var(--green-500);
+  --brand-strong:    var(--green-600);
+  --brand-soft:      var(--green-50);
+  --brand-contrast:  var(--white);
+
+  --bg:              var(--white);
+  --bg-soft:         var(--ink-50);
+  --bg-inverse:      var(--green-500);
+  --bg-inverse-deep: var(--ink-950);
+
+  --fg:              var(--ink-950);
+  --fg-muted:        var(--ink-600);
+  --fg-subtle:       var(--ink-500);
+  --fg-on-brand:     var(--white);
+  --fg-on-dark:      var(--ink-50);
+
+  --border:          var(--ink-200);
+  --border-strong:   var(--ink-300);
+  --border-on-brand: rgba(255, 255, 255, 0.28);
+
+  --success: var(--green-600);
+  --warning: var(--beer);
+  --danger:  var(--berry);
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows / elevation ---------- */
+  --shadow-xs: 0 1px 2px rgba(13, 20, 16, 0.06);
+  --shadow-sm: 0 2px 6px rgba(13, 20, 16, 0.08);
+  --shadow-md: 0 8px 24px -8px rgba(13, 20, 16, 0.18);
+  --shadow-lg: 0 24px 48px -16px rgba(13, 20, 16, 0.22);
+  --shadow-brand: 0 12px 28px -10px rgba(42, 181, 74, 0.55);
+
+  /* ---------- Spacing scale ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---------- Type families ---------- */
+  --font-sans:    'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;   /* heavy weights */
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---------- Type roles (clamp-based for responsive) ---------- */
+  /* IBM Plex Sans max weight is 700 — use 700 for display (no heavier weight available) */
+  --t-display: 700 clamp(48px, 8vw, 96px)/0.95 var(--font-display);
+  --t-h1:      700 clamp(36px, 4.4vw, 60px)/1.02 var(--font-display);
+  --t-h2:      700 clamp(28px, 3.0vw, 42px)/1.08 var(--font-display);
+  --t-h3:      600 clamp(22px, 2.2vw, 28px)/1.18 var(--font-display);
+  --t-h4:      700 18px/1.25 var(--font-display);
+  --t-lead:    500 20px/1.45 var(--font-sans);
+  --t-body:    400 16px/1.55 var(--font-sans);
+  --t-small:   400 14px/1.5  var(--font-sans);
+  --t-caption: 500 12px/1.4  var(--font-sans);
+  --t-eyebrow: 700 12px/1.2  var(--font-sans);   /* uppercase, tracked */
+  --t-button:  700 15px/1    var(--font-sans);
+  --t-mono:    500 13px/1.45 var(--font-mono);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:    140ms;
+  --dur-base:    220ms;
+  --dur-slow:    420ms;
+}
+
+/* ============================================================
+   Element defaults — applied when you wrap content in .uw or set
+   uw on <body>. Apply piecemeal with the role classes below.
+   ============================================================ */
+
+.uw, body.uw {
+  font: var(--t-body);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.uw h1, .t-h1 { font: var(--t-h1);   letter-spacing: -0.02em; margin: 0; }
+.uw h2, .t-h2 { font: var(--t-h2);   letter-spacing: -0.015em; margin: 0; }
+.uw h3, .t-h3 { font: var(--t-h3);   letter-spacing: -0.01em;  margin: 0; }
+.uw h4, .t-h4 { font: var(--t-h4);   margin: 0; }
+.t-display    { font: var(--t-display); letter-spacing: -0.025em; }
+.t-lead       { font: var(--t-lead); color: var(--fg-muted); }
+.t-body       { font: var(--t-body); }
+.t-small      { font: var(--t-small); color: var(--fg-muted); }
+.t-caption    { font: var(--t-caption); color: var(--fg-subtle); }
+.t-eyebrow    { font: var(--t-eyebrow); text-transform: uppercase; letter-spacing: 0.12em; color: var(--brand-strong); }
+.t-mono       { font: var(--t-mono); }
+
+.uw a { color: var(--brand-strong); text-decoration: underline; text-underline-offset: 3px; }
+.uw a:hover { color: var(--green-700); }
