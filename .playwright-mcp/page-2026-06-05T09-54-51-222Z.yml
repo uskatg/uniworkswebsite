@@ -1,0 +1,37 @@
+- generic [ref=e1]:
+  - progressbar "Form progress" [ref=e9]
+  - generic [ref=e16]:
+    - generic:
+      - progressbar "Form progress"
+      - generic:
+        - img
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - group "Frage 1 Herzlich Willkommen bei uniworks! Mit wie vielen Personen dürfen wir Sie unterstützen?" [active] [ref=e19]:
+                    - generic [ref=e21]:
+                      - generic "Frage 1" [ref=e24]: "1"
+                      - generic [ref=e25]:
+                        - text: Herzlich Willkommen bei uniworks!
+                        - text: Mit wie vielen Personen dürfen wir Sie unterstützen?
+                    - spinbutton [ref=e29]
+                    - button "Ok Nächste Frage" [ref=e34] [cursor=pointer]:
+                      - generic [ref=e35]: Ok
+                  - group "Frage 2 Wann dürfen wir unterstützen?Diese Frage ist erforderlich Geben Sie gerne das Datum und geplante Uhrzeit des Einsatzes an." [ref=e38]:
+                    - generic [ref=e39]:
+                      - generic [ref=e40]:
+                        - generic "Frage 2" [ref=e43]: "2"
+                        - generic [ref=e44]: Wann dürfen wir unterstützen?*
+                      - generic [ref=e46]: Geben Sie gerne das Datum und geplante Uhrzeit des Einsatzes an.
+                    - textbox "Antworten Sie hier..." [ref=e50]
+                    - button "Ok Nächste Frage" [ref=e55] [cursor=pointer]:
+                      - generic [ref=e56]: Ok
+    - generic [ref=e59]:
+      - button "Zur vorherigen Frage navigieren" [disabled] [ref=e60]:
+        - img [ref=e62]
+      - button "Zur nächsten Frage navigieren" [ref=e64] [cursor=pointer]:
+        - img [ref=e66]

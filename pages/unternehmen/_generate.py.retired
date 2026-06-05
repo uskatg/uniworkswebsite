@@ -1,0 +1,498 @@
+#!/usr/bin/env python3
+"""RETIRED — do NOT run. Kept for reference only.
+
+This was the generator for the "Für Unternehmen" branch subpages. As of
+2026-06-05 the workflow moved to editing each pages/unternehmen/*.html file
+by hand, and several pages now carry custom content that is NOT in DATA below
+(e.g. einzelhandel's "voices" testimonial + real client logos, event's Adele
+hero + concert logos, gastronomie-hotellerie's review section).
+
+Running this script would OVERWRITE those hand edits from the stale DATA, so it
+has been retired (renamed to _generate.py.retired and guarded below). The 7
+pages are now maintained directly; keep the Personalanfrage <form> identical
+across them when editing by hand.
+
+Original generator description:
+  Emitted one static HTML file per industry into this folder, keeping the 7
+  pages identical except for per-industry content (TEMPLATE + DATA).
+"""
+import sys
+
+sys.exit(
+    "RETIRED: pages/unternehmen/*.html are now hand-maintained. "
+    "Running this generator would clobber custom page content. "
+    "Remove this guard intentionally if you ever revive it."
+)
+
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+# Brand client logos we actually have locally (images/logos/*). Used as the
+# "Referenzen" wall on every branch page.
+REF_LOGOS = [
+    ("JYSK.webp", "JYSK"),
+    ("Raeder.webp", "Räder"),
+    ("Driver.webp", "Driver"),
+    ("mTU.webp", "MTU"),
+    ("MBS.webp", "MBS"),
+]
+
+# Per-branche overrides for the "Referenzen" wall (else REF_LOGOS is used).
+REF_LOGOS_BY_SLUG = {
+    "logistik": [
+        ("JYSK.webp", "JYSK"),
+        ("Raeder.webp", "Räder"),
+        ("Rewe.webp", "REWE"),
+        ("Doco.webp", "Do & Co"),
+        ("Edeka.webp", "EDEKA"),
+        ("Driver.webp", "Driver"),
+        ("mTU.webp", "MTU"),
+        ("MBS.webp", "MBS"),
+    ],
+}
+
+# Partner / institutional band (bottom).
+PARTNER_LOGOS = [
+    ("DEHOGABayern.webp", "DEHOGA Bayern"),
+    ("WERK1.webp", "WERK1"),
+    ("AbsolventenKongress.webp", "Absolventenkongress"),
+    ("LMUIEC.webp", "LMU Innovation & Entrepreneurship Center"),
+    ("TUM.webp", "TU München"),
+]
+
+# Nav order = footer Branchen order = dropdown order.
+NAV = [
+    ("logistik", "ti-truck", "Logistik"),
+    ("event", "ti-confetti", "Event"),
+    ("catering", "ti-tools-kitchen-2", "Catering"),
+    ("einzelhandel", "ti-shopping-cart", "Einzelhandel"),
+    ("gastronomie-hotellerie", "ti-glass-full", "Gastronomie &amp; Hotellerie"),
+    ("promotion", "ti-speakerphone", "Promotion"),
+    ("buero", "ti-briefcase", "Büro"),
+]
+
+# Per-industry content. Sie-form, sentence-case headlines, inclusive colon forms.
+DATA = {
+    "logistik": {
+        "label": "Logistik", "icon": "ti-truck", "img": "Logistik.jpeg", "typeform": True,
+        "h1": "Ihr Spezialist für <em>Logistik</em> Personal",
+        "lead": "Ob tägliche Lagerlogistik, Wareneingang, Container-Entladung oder das "
+                "Abfangen saisonaler Auftragsspitzen: Unser eingespieltes Team aus "
+                "Kommissionierer:innen, Staplerfahrer:innen und flexiblen "
+                "Logistikhelfer:innen sorgt für reibungslose Abläufe in Ihrem Betrieb. "
+                "Wir passen uns flexibel an Ihre Schichtpläne an – denn Zuverlässigkeit "
+                "und Tempo sind in der Logistik entscheidend.",
+        "roles": "Ob <strong>Lagerhelfer:innen</strong> für saisonale Engpässe, "
+                 "qualifizierte <strong>Staplerfahrer:innen</strong> für Hochregale oder "
+                 "erfahrene <strong>Crewchiefs</strong>: Wir stellen Ihnen kurzfristig das "
+                 "ausgebildete Logistik-Team an Ihrem Standort zur Verfügung.",
+    },
+    "event": {
+        "label": "Event", "icon": "ti-confetti", "img": "AdeleMesse.webp",
+        "h1": "Ihr Spezialist für <em>Event</em> Personal",
+        "lead": "Vom Bühnenaufbau über den Einlass bis zum Abbau nach der letzten Zugabe: "
+                "Unser Event-Team hält Ihre Veranstaltung am Laufen. Stagehands, Auf- und "
+                "Abbauhelfer:innen sowie Einlass- und Garderobenpersonal – wir bringen "
+                "Hände, die anpacken, und Köpfe, die mitdenken.",
+        "roles": "Ob <strong>Konzert</strong>, <strong>Messe</strong>, Firmenfeier oder "
+                 "<strong>Stadion</strong>: Wir stellen Ihnen kurzfristig eingespielte "
+                 "Event-Crews an Ihrem Veranstaltungsort zur Verfügung.",
+    },
+    "catering": {
+        "label": "Catering", "icon": "ti-tools-kitchen-2", "img": "Catering.webp",
+        "h1": "Ihr Spezialist für <em>Catering</em> Personal",
+        "lead": "Bankettservice, Fingerfood-Empfang oder Großküche unter Hochdruck: Unser "
+                "Catering-Team serviert, schenkt aus und räumt ab – professionell und mit "
+                "einem Lächeln. Servicekräfte, Küchenhilfen und Runner:innen, die auch "
+                "volle Häuser souverän bewirten.",
+        "roles": "Ob <strong>VIP-Catering</strong>, Schulverpflegung oder "
+                 "<strong>Galadinner</strong>: Wir stellen Ihnen geschultes "
+                 "<strong>Servicepersonal</strong> pünktlich an Ihrem Standort zur Verfügung.",
+    },
+    "einzelhandel": {
+        "label": "Einzelhandel", "icon": "ti-shopping-cart", "img": "Einzelhandel.webp",
+        "h1": "Ihr Spezialist für <em>Einzelhandel</em> Personal",
+        "lead": "Neueröffnung, Inventur oder Weihnachtsgeschäft: Unser Retail-Team füllt "
+                "Regale, bedient Kassen und berät Ihre Kund:innen. Verkäufer:innen, "
+                "Kassierer:innen und Einräumhilfen, die Ihren Store auch in Stoßzeiten am "
+                "Laufen halten.",
+        "roles": "Ob <strong>Warenverräumung</strong> über Nacht, "
+                 "<strong>Kassendienst</strong> am Wochenende oder Personal für die "
+                 "<strong>Filialeröffnung</strong>: Wir stellen Ihnen kurzfristig "
+                 "zuverlässige Kräfte zur Verfügung.",
+    },
+    "gastronomie-hotellerie": {
+        "label": "Gastronomie &amp; Hotellerie", "icon": "ti-glass-full",
+        "img": "GastronomieHotellerie.webp",
+        "h1": "Ihr Spezialist für <em>Gastronomie &amp; Hotellerie</em> Personal",
+        "lead": "Frühstücksservice, Bankett oder Bar am Abend: Unser Team aus "
+                "Servicekräften, Barkeeper:innen und Hotelhilfen sorgt dafür, dass sich "
+                "Ihre Gäste rundum wohlfühlen. Geschultes Personal, das Service als "
+                "Gastgeben versteht.",
+        "roles": "Ob <strong>Restaurant</strong>, <strong>Hotel</strong>, Bar oder "
+                 "<strong>Bankett</strong>: Wir stellen Ihnen kurzfristig erfahrenes "
+                 "Gastro-Personal an Ihrem Standort zur Verfügung.",
+    },
+    "promotion": {
+        "label": "Promotion", "icon": "ti-speakerphone", "img": "Promotion.webp",
+        "h1": "Ihr Spezialist für <em>Promotion</em> Personal",
+        "lead": "Produktsampling, Roadshow oder Messestand: Unsere Promoter:innen geben "
+                "Ihrer Marke ein Gesicht. Aufgeschlossen, markensicher und mit dem "
+                "richtigen Gespür für den direkten Draht zu Ihrer Zielgruppe.",
+        "roles": "Ob <strong>Sampling</strong> im Supermarkt, "
+                 "<strong>Brand Ambassador</strong> auf dem Event oder "
+                 "<strong>Hostess</strong> auf der Messe: Wir stellen Ihnen kurzfristig "
+                 "überzeugende Promotion-Teams zur Verfügung.",
+    },
+    "buero": {
+        "label": "Büro", "icon": "ti-briefcase", "img": "Buero.webp",
+        "h1": "Ihr Spezialist für <em>Büro</em> Personal",
+        "lead": "Empfang, Datenerfassung oder Sachbearbeitung zur Überbrückung: Unsere "
+                "studentischen Bürokräfte unterstützen Ihr Team flexibel und zuverlässig. "
+                "Organisiert, digital versiert und schnell eingearbeitet.",
+        "roles": "Ob <strong>Empfangsdienst</strong>, <strong>Back-Office</strong> oder "
+                 "<strong>Projektunterstützung</strong>: Wir stellen Ihnen kurzfristig "
+                 "motivierte Office-Kräfte an Ihrem Standort zur Verfügung.",
+    },
+}
+
+
+def nav_dd_items(active):
+    rows = [
+        '          <a href="index.html" role="menuitem">'
+        '<i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>'
+    ]
+    for slug, icon, label in NAV:
+        cls = ' class="active"' if slug == active else ''
+        rows.append(
+            f'          <a href="{slug}.html"{cls} role="menuitem">'
+            f'<i class="ti {icon}" aria-hidden="true"></i>{label}</a>'
+        )
+    return "\n".join(rows)
+
+
+def nav_mob_items(active):
+    rows = [
+        '        <a href="index.html">'
+        '<i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>'
+    ]
+    for slug, icon, label in NAV:
+        rows.append(
+            f'        <a href="{slug}.html"><i class="ti {icon}" aria-hidden="true"></i>{label}</a>'
+        )
+    return "\n".join(rows)
+
+
+def ref_imgs(logos=None):
+    return "\n".join(
+        f'        <img src="../../images/logos/{f}" alt="{alt}" loading="lazy" />'
+        for f, alt in (logos or REF_LOGOS)
+    )
+
+
+def partner_imgs():
+    return "\n".join(
+        f'      <img src="../../images/logos/{f}" alt="{alt}" loading="lazy" />'
+        for f, alt in PARTNER_LOGOS
+    )
+
+
+def footer_branchen():
+    return "\n".join(
+        f'          <li><a href="{slug}.html">{label}</a></li>'
+        for slug, _, label in NAV
+    )
+
+
+TEMPLATE = """<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{label_plain} Personal — uniworks für Unternehmen</title>
+  <meta name="description" content="uniworks stellt Ihnen flexibles, zuverlässiges {label_plain}-Personal aus motivierten Studierenden bereit. Jetzt Personalanfrage stellen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="branche.css" />
+{head_extra}</head>
+<body{body_attr}>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Für Studierende</a></li>
+        <li><a href="../about.html">Über Uns</a></li>
+      </ul>
+      <div class="nav-ctas">
+        <div class="nav-dd" id="nav-dd">
+          <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
+            Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+{nav_dd}
+          </div>
+        </div>
+      </div>
+      <button class="nav-hbg" id="nav-hbg" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mob-overlay" id="mob-overlay">
+    <a href="../index.html">Für Studierende</a>
+    <details class="mob-dd">
+      <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+{nav_mob}
+      </div>
+    </details>
+    <a href="../about.html">Über Uns</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="bhero-outer">
+    <section class="bhero">
+      <div class="bhero-text">
+        <h1>{h1}</h1>
+        <p>{lead}</p>
+        {hero_cta}
+      </div>
+      <div class="bhero-media">
+        <img src="../../images/visuals/{img}" alt="{label_plain} bei uniworks" />
+      </div>
+    </section>
+  </div>
+
+  <!-- ── ROLES STRIP ── -->
+  <div class="roles">
+    <div class="roles-inner">
+      <i class="ti {icon}" aria-hidden="true"></i>
+      <p>{roles}</p>
+    </div>
+  </div>
+
+  <!-- ── REFERENCES ── -->
+  <section class="refs">
+    <div class="wrap">
+      <h2>Referenzen die für sich sprechen.</h2>
+      <div class="refs-grid">
+{ref_imgs}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERSONALANFRAGE (custom request form) ── -->
+  <section class="anfrage" id="anfrage">
+    <div class="wrap">
+      <div class="anfrage-grid">
+        <div class="anfrage-intro">
+          <h2>Senden Sie uns Ihre Personalanfrage.</h2>
+          <p>Teilen Sie uns mit, wie viel Personal Sie wann und wo benötigen, wir melden uns zeitnah mit einem Angebot, das Ihre Wünsche berücksichtigt.</p>
+          <ul class="anfrage-points">
+            <li><i class="ti ti-clock-hour-4" aria-hidden="true"></i>Antwort in der Regel innerhalb von 24&nbsp;Stunden</li>
+            <li><i class="ti ti-users" aria-hidden="true"></i>Geprüfte, motivierte Studierende</li>
+            <li><i class="ti ti-calendar-event" aria-hidden="true"></i>Flexibel ab einem Tag – auch kurzfristig</li>
+          </ul>{anfrage_extra}
+        </div>
+
+        <div class="form-card">
+          <form id="anfrage-form" data-branche="{label_plain}" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-unternehmen">Unternehmen <span class="req">*</span></label>
+                <input id="f-unternehmen" name="unternehmen" type="text" autocomplete="organization" placeholder="Musterfirma GmbH" />
+                <span class="field-error" data-error="unternehmen"></span>
+              </div>
+              <div class="field">
+                <label for="f-ansprechpartner">Ansprechpartner:in <span class="req">*</span></label>
+                <input id="f-ansprechpartner" name="ansprechpartner" type="text" autocomplete="name" placeholder="Vor- und Nachname" />
+                <span class="field-error" data-error="ansprechpartner"></span>
+              </div>
+              <div class="field">
+                <label for="f-email">E-Mail <span class="req">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@firma.de" />
+                <span class="field-error" data-error="email"></span>
+              </div>
+              <div class="field">
+                <label for="f-telefon">Telefon</label>
+                <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" placeholder="+49 …" />
+                <span class="field-error" data-error="telefon"></span>
+              </div>
+              <div class="field">
+                <label for="f-anzahl">Anzahl Mitarbeiter:innen <span class="req">*</span></label>
+                <input id="f-anzahl" name="anzahl" type="number" min="1" inputmode="numeric" placeholder="z.&nbsp;B. 5" />
+                <span class="field-error" data-error="anzahl"></span>
+              </div>
+              <div class="field">
+                <label for="f-einsatzort">Einsatzort <span class="req">*</span></label>
+                <input id="f-einsatzort" name="einsatzort" type="text" placeholder="PLZ / Ort" />
+                <span class="field-error" data-error="einsatzort"></span>
+              </div>
+              <div class="field">
+                <label for="f-beginn">Einsatzbeginn <span class="req">*</span></label>
+                <input id="f-beginn" name="beginn" type="date" />
+                <span class="field-error" data-error="beginn"></span>
+              </div>
+              <div class="field">
+                <label for="f-zeitraum">Zeitraum / Dauer</label>
+                <input id="f-zeitraum" name="zeitraum" type="text" placeholder="z.&nbsp;B. 3 Tage, ab sofort" />
+                <span class="field-error" data-error="zeitraum"></span>
+              </div>
+              <div class="field full">
+                <label for="f-nachricht">Nachricht</label>
+                <textarea id="f-nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihren Bedarf, gewünschte Qualifikationen oder Schichtzeiten."></textarea>
+              </div>
+              <div class="consent">
+                <input id="f-consent" name="consent" type="checkbox" />
+                <label for="f-consent">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. <a href="#">Datenschutz</a>. <span class="req">*</span></label>
+              </div>
+              <span class="field-error" data-error="consent" style="grid-column:1/-1"></span>
+            </div>
+            <button type="submit" class="btn btn-p">Personalanfrage senden</button>
+            <div class="form-status" id="form-status" role="alert"></div>
+            <p class="form-note">Mit&nbsp;* markierte Felder sind Pflichtfelder.</p>
+          </form>
+
+          <div class="form-success" id="form-success" role="status">
+            <div class="ok"><i class="ti ti-check" aria-hidden="true"></i></div>
+            <h3>Vielen Dank für Ihre Anfrage!</h3>
+            <p>Wir haben Ihre Personalanfrage erhalten und melden uns zeitnah mit einem passenden Angebot bei Ihnen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNER BAND ── -->
+  <section class="ptrs">
+    <div class="ptrs-inner">
+{partner_imgs}
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
+            <span>uniworks</span>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+        </div>
+        <div class="footer-col">
+          <h4>uniworks</h4>
+          <ul>
+            <li><a href="../index.html">Startseite</a></li>
+            <li><a href="../index.html">Für Studierende</a></li>
+            <li><a href="../about.html">Über Uns</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+{footer_branchen}
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="https://www.instagram.com/uniworks.gmbh">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright © 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <span>München</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="branche.js"></script>{foot_extra}
+</body>
+</html>
+"""
+
+
+def label_plain(label):
+    return label.replace("&amp;", "&")
+
+
+def render(slug, d):
+    lp = label_plain(d["label"])
+    tf = d.get("typeform")
+    if tf:
+        # Logistik: hero CTA opens the conversational (Typeform-style) flow;
+        # secondary jumps to the classic inline form further down.
+        body_attr = f' data-tf-branche="{lp}"'
+        head_extra = '  <link rel="stylesheet" href="typeform-flow.css" />\n'
+        foot_extra = '\n  <script src="typeform-flow.js"></script>'
+        hero_cta = (
+            '<div class="bhero-btns">\n'
+            '          <button type="button" class="btn btn-p" data-tf-open>Personalanfrage stellen</button>\n'
+            '          <a href="#anfrage" class="btn btn-s">Klassisches Formular</a>\n'
+            '        </div>'
+        )
+        anfrage_extra = (
+            '\n          <p style="margin-top:24px"><button type="button" class="btn btn-s" data-tf-open>'
+            '<i class="ti ti-messages" aria-hidden="true"></i> Lieber im Dialog ausfüllen</button></p>'
+        )
+    else:
+        body_attr = ''
+        head_extra = ''
+        foot_extra = ''
+        hero_cta = (
+            '<div class="bhero-btns">\n'
+            '          <a href="#anfrage" class="btn btn-p">Personalanfrage stellen</a>\n'
+            '          <a href="../about.html" class="btn btn-s">Über uniworks</a>\n'
+            '        </div>'
+        )
+        anfrage_extra = ''
+
+    return TEMPLATE.format(
+        label=d["label"],
+        label_plain=lp,
+        icon=d["icon"],
+        img=d["img"],
+        h1=d["h1"],
+        lead=d["lead"],
+        roles=d["roles"],
+        nav_dd=nav_dd_items(slug),
+        nav_mob=nav_mob_items(slug),
+        ref_imgs=ref_imgs(REF_LOGOS_BY_SLUG.get(slug)),
+        partner_imgs=partner_imgs(),
+        footer_branchen=footer_branchen(),
+        body_attr=body_attr,
+        head_extra=head_extra,
+        foot_extra=foot_extra,
+        hero_cta=hero_cta,
+        anfrage_extra=anfrage_extra,
+    )
+
+
+def main():
+    for slug, _, _ in NAV:
+        html = render(slug, DATA[slug])
+        path = os.path.join(HERE, slug + ".html")
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(html)
+        print("wrote", os.path.relpath(path))
+
+
+if __name__ == "__main__":
+    main()

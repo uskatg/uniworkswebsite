@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Personal — uniworks für Unternehmen</title>
+  <meta name="description" content="uniworks stellt Ihnen flexibles, zuverlässiges Event-Personal aus motivierten Studierenden bereit. Jetzt Personalanfrage stellen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="branche.css" />
+  <link rel="stylesheet" href="typeform-flow.css" />
+</head>
+<body data-tf-branche="Event">
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../about.html">Über Uns</a></li>
+      </ul>
+      <div class="nav-ctas">
+        <div class="nav-dd" id="nav-dd-uw">
+          <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+          <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
+          <a href="../studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+          <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+          </div>
+        </div>
+        <div class="nav-dd" id="nav-dd">
+          <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
+            Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+          <a href="index.html" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+          <a href="logistik.html" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+          <a href="event.html" class="active" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+          <a href="catering.html" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+          <a href="einzelhandel.html" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+          <a href="gastronomie-hotellerie.html" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+          <a href="promotion.html" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+          <a href="buero.html" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+          </div>
+        </div>
+      </div>
+      <button class="nav-hbg" id="nav-hbg" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mob-overlay" id="mob-overlay">
+    <details class="mob-dd">
+      <summary>Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="../studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+        <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+      </div>
+    </details>
+    <details class="mob-dd">
+      <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="index.html"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+        <a href="logistik.html"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+        <a href="event.html"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+        <a href="catering.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+        <a href="einzelhandel.html"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+        <a href="gastronomie-hotellerie.html"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+        <a href="promotion.html"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+        <a href="buero.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+      </div>
+    </details>
+    <a href="../about.html">Über Uns</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="bhero-outer">
+    <section class="bhero">
+      <div class="bhero-text">
+        <h1>Ihr Spezialist für <em>Event</em> Personal</h1>
+        <p>Vom Bühnenaufbau über den Einlass bis zum Abbau nach der letzten Zugabe: Unser Event-Team hält Ihre Veranstaltung am Laufen. Stagehands, Auf- und Abbauhelfer:innen sowie Einlass- und Garderobenpersonal – wir bringen Hände, die anpacken, und Köpfe, die mitdenken.</p>
+        <div class="bhero-btns">
+          <button type="button" class="btn btn-p" data-tf-open>Personalanfrage stellen</button>
+          <a href="#anfrage" class="btn btn-s">Klassisches Formular</a>
+        </div>
+      </div>
+      <div class="bhero-media">
+        <img src="../../images/visuals/Adele.webp" alt="Event bei uniworks" />
+      </div>
+    </section>
+  </div>
+
+  <!-- ── STAGE BANNER (image + caption underneath) ── -->
+  <section class="stagefeat">
+    <div class="wrap">
+      <img class="stagefeat-img" src="../../images/visuals/Stage.webp" alt="Bühne bei einem Live-Event" loading="lazy" />
+      <p class="stagefeat-text">Ob <strong>Konzert</strong>, <strong>Messe</strong>, Firmenfeier oder <strong>Stadion</strong>: Wir stellen Ihnen kurzfristig eingespielte Event-Crews an Ihrem Veranstaltungsort zur Verfügung.</p>
+    </div>
+  </section>
+
+  <!-- ── REFERENCES ── -->
+  <section class="refs">
+    <div class="wrap">
+      <h2>Referenzen die für sich sprechen.</h2>
+      <div class="refs-grid">
+        <img src="../../images/logos/concerts/Adelelogo.webp" alt="Adele" loading="lazy" />
+        <img src="../../images/logos/concerts/Coldplay.webp" alt="Coldplay" loading="lazy" />
+        <img src="../../images/logos/concerts/EdSheerna.webp" alt="Ed Sheeran" loading="lazy" />
+        <img src="../../images/logos/concerts/TaylorSwift.webp" alt="Taylor Swift" loading="lazy" />
+        <img src="../../images/logos/concerts/ImagineDragons.webp" alt="Imagine Dragons" loading="lazy" />
+        <img src="../../images/logos/concerts/ChrisBrown.webp" alt="Chris Brown" loading="lazy" />
+        <img src="../../images/logos/concerts/Hurricane.webp" alt="Hurricane Festival" loading="lazy" />
+        <img src="../../images/logos/concerts/RockImPark.svg" alt="Rock im Park" loading="lazy" />
+        <img src="../../images/logos/concerts/FeteDeLaMusique.webp" alt="Fête de la Musique" loading="lazy" />
+        <img src="../../images/logos/concerts/PalastBerlin.webp" alt="Friedrichstadt-Palast Berlin" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PERSONALANFRAGE (custom request form) ── -->
+  <section class="anfrage" id="anfrage">
+    <div class="wrap">
+      <div class="anfrage-grid">
+        <div class="anfrage-intro">
+          <h2>Senden Sie uns Ihre Personalanfrage.</h2>
+          <p>Teilen Sie uns mit, wie viel Personal Sie wann und wo benötigen, wir melden uns zeitnah mit einem Angebot, das Ihre Wünsche berücksichtigt.</p>
+          <ul class="anfrage-points">
+            <li><i class="ti ti-clock-hour-4" aria-hidden="true"></i>Antwort in der Regel innerhalb von 24&nbsp;Stunden</li>
+            <li><i class="ti ti-users" aria-hidden="true"></i>Geprüfte, motivierte Studierende</li>
+            <li><i class="ti ti-calendar-event" aria-hidden="true"></i>Flexibel ab einem Tag – auch kurzfristig</li>
+          </ul>
+          <p style="margin-top:24px"><button type="button" class="btn btn-s" data-tf-open><i class="ti ti-messages" aria-hidden="true"></i> Lieber im Dialog ausfüllen</button></p>
+        </div>
+
+        <div class="form-card">
+          <form id="anfrage-form" data-branche="Event" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-unternehmen">Unternehmen <span class="req">*</span></label>
+                <input id="f-unternehmen" name="unternehmen" type="text" autocomplete="organization" placeholder="Musterfirma GmbH" />
+                <span class="field-error" data-error="unternehmen"></span>
+              </div>
+              <div class="field">
+                <label for="f-ansprechpartner">Ansprechpartner:in <span class="req">*</span></label>
+                <input id="f-ansprechpartner" name="ansprechpartner" type="text" autocomplete="name" placeholder="Vor- und Nachname" />
+                <span class="field-error" data-error="ansprechpartner"></span>
+              </div>
+              <div class="field">
+                <label for="f-email">E-Mail <span class="req">*</span></label>
+                <input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@firma.de" />
+                <span class="field-error" data-error="email"></span>
+              </div>
+              <div class="field">
+                <label for="f-telefon">Telefon</label>
+                <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" placeholder="+49 …" />
+                <span class="field-error" data-error="telefon"></span>
+              </div>
+              <div class="field">
+                <label for="f-anzahl">Anzahl Mitarbeiter:innen <span class="req">*</span></label>
+                <input id="f-anzahl" name="anzahl" type="number" min="1" inputmode="numeric" placeholder="z.&nbsp;B. 5" />
+                <span class="field-error" data-error="anzahl"></span>
+              </div>
+              <div class="field">
+                <label for="f-einsatzort">Einsatzort <span class="req">*</span></label>
+                <input id="f-einsatzort" name="einsatzort" type="text" placeholder="PLZ / Ort" />
+                <span class="field-error" data-error="einsatzort"></span>
+              </div>
+              <div class="field">
+                <label for="f-beginn">Einsatzbeginn <span class="req">*</span></label>
+                <input id="f-beginn" name="beginn" type="date" />
+                <span class="field-error" data-error="beginn"></span>
+              </div>
+              <div class="field">
+                <label for="f-zeitraum">Zeitraum / Dauer</label>
+                <input id="f-zeitraum" name="zeitraum" type="text" placeholder="z.&nbsp;B. 3 Tage, ab sofort" />
+                <span class="field-error" data-error="zeitraum"></span>
+              </div>
+              <div class="field full">
+                <label for="f-nachricht">Nachricht</label>
+                <textarea id="f-nachricht" name="nachricht" placeholder="Beschreiben Sie kurz Ihren Bedarf, gewünschte Qualifikationen oder Schichtzeiten."></textarea>
+              </div>
+              <div class="consent">
+                <input id="f-consent" name="consent" type="checkbox" />
+                <label for="f-consent">Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. <a href="../datenschutz.html">Datenschutz</a>. <span class="req">*</span></label>
+              </div>
+              <span class="field-error" data-error="consent" style="grid-column:1/-1"></span>
+            </div>
+            <button type="submit" class="btn btn-p">Personalanfrage senden</button>
+            <div class="form-status" id="form-status" role="alert"></div>
+            <p class="form-note">Mit&nbsp;* markierte Felder sind Pflichtfelder.</p>
+          </form>
+
+          <div class="form-success" id="form-success" role="status">
+            <div class="ok"><i class="ti ti-check" aria-hidden="true"></i></div>
+            <h3>Vielen Dank für Ihre Anfrage!</h3>
+            <p>Wir haben Ihre Personalanfrage erhalten und melden uns zeitnah mit einem passenden Angebot bei Ihnen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNER MARQUEE ── -->
+  <section class="partners">
+    <div class="wrap">
+      <p class="partners-lbl">Unsere Partner &amp; Kunden</p>
+    </div>
+    <div class="ptrs-track-wrap" aria-hidden="true">
+      <div class="ptrs-track">
+        <img src="../../images/logos/DEHOGABayern.webp" alt="DEHOGA Bayern" class="ptr-logo" />
+        <img src="../../images/logos/WERK1.webp" alt="WERK1" class="ptr-logo" />
+        <img src="../../images/logos/TUM.webp" alt="TU München" class="ptr-logo" />
+        <img src="../../images/logos/LMUIEC.webp" alt="LMU IEC" class="ptr-logo" />
+        <img src="../../images/logos/AbsolventenKongress.webp" alt="Absolventenkongress" class="ptr-logo" />
+        <img src="../../images/logos/JYSK.webp" alt="JYSK" class="ptr-logo" />
+        <img src="../../images/logos/MBS.webp" alt="MBS" class="ptr-logo" />
+        <img src="../../images/logos/Raeder.webp" alt="Räder" class="ptr-logo" />
+        <img src="../../images/logos/Edeka.webp" alt="Edeka" class="ptr-logo" />
+        <img src="../../images/logos/Doco.webp" alt="Doco" class="ptr-logo" />
+        <img src="../../images/logos/Rewe.webp" alt="Rewe" class="ptr-logo" />
+        <!-- duplicate for seamless loop -->
+        <img src="../../images/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/WERK1.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/TUM.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/LMUIEC.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/AbsolventenKongress.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/JYSK.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/MBS.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Raeder.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Edeka.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Doco.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Rewe.webp" alt="" class="ptr-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="../../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="../index.html">Für Studierende</a></li>
+            <li><a href="index.html">Für Unternehmen</a></li>
+            <li><a href="../index.html#app">App herunterladen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="logistik.html">Logistik</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="einzelhandel.html">Einzelhandel</a></li>
+            <li><a href="gastronomie-hotellerie.html">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="promotion.html">Promotion</a></li>
+            <li><a href="buero.html">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="../about.html">Über Uns</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="branche.js"></script>
+  <script src="typeform-flow.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "uniworks uniworks" [ref=e4] [cursor=pointer]:
+        - /url: ../index.html
+        - img "uniworks" [ref=e5]
+        - generic [ref=e6]: uniworks
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Für Studierende" [ref=e9] [cursor=pointer]:
+            - /url: ../index.html
+        - listitem [ref=e10]:
+          - link "Über Uns" [ref=e11] [cursor=pointer]:
+            - /url: ../about.html
+      - button "Für Unternehmen" [ref=e14] [cursor=pointer]:
+        - text: Für Unternehmen
+        - generic [ref=e15]: 
+  - text:        
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: 
+        - text: Für Unternehmen · Logistik
+      - heading "Ihr Spezialist für Logistik Personal" [level=1] [ref=e21]:
+        - text: Ihr Spezialist für
+        - emphasis [ref=e22]: Logistik
+        - text: Personal
+      - paragraph [ref=e23]: "Ob tägliche Lagerlogistik, Wareneingang, Container-Entladung oder das Abfangen saisonaler Auftragsspitzen: Unser eingespieltes Team aus Kommissionierer:innen, Staplerfahrer:innen und flexiblen Logistikhelfer:innen sorgt für reibungslose Abläufe in Ihrem Betrieb. Wir passen uns flexibel an Ihre Schichtpläne an – denn Zuverlässigkeit und Tempo sind in der Logistik entscheidend."
+      - generic [ref=e24]:
+        - button "Personalanfrage stellen" [ref=e25] [cursor=pointer]
+        - link "Klassisches Formular" [ref=e26] [cursor=pointer]:
+          - /url: "#anfrage"
+    - img "Logistik bei uniworks" [ref=e28]
+  - generic [ref=e30]:
+    - generic [ref=e31]: 
+    - paragraph [ref=e32]:
+      - text: Ob
+      - strong [ref=e33]: Lagerhelfer:innen
+      - text: für saisonale Engpässe, qualifizierte
+      - strong [ref=e34]: Staplerfahrer:innen
+      - text: für Hochregale oder erfahrene
+      - strong [ref=e35]: Crewchiefs
+      - text: ": Wir stellen Ihnen kurzfristig das ausgebildete Logistik-Team an Ihrem Standort zur Verfügung."
+  - generic [ref=e37]:
+    - heading "Referenzen die für sich sprechen." [level=2] [ref=e38]
+    - generic [ref=e39]:
+      - img "JYSK" [ref=e40]
+      - img "Räder" [ref=e41]
+      - img "Driver" [ref=e42]
+      - img "MTU" [ref=e43]
+      - img "MBS" [ref=e44]
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - heading "Senden Sie uns Ihre Personalanfrage." [level=2] [ref=e49]
+      - paragraph [ref=e50]: Teilen Sie uns mit, wie viel Personal Sie wann und wo benötigen – wir melden uns zeitnah mit einem Angebot, das Ihre Wünsche berücksichtigt.
+      - list [ref=e51]:
+        - listitem [ref=e52]:
+          - generic [ref=e53]: 
+          - text: Antwort in der Regel innerhalb von 24 Stunden
+        - listitem [ref=e54]:
+          - generic [ref=e55]: 
+          - text: Geprüfte, motivierte Studierende
+        - listitem [ref=e56]:
+          - generic [ref=e57]: 
+          - text: Flexibel ab einem Tag – auch kurzfristig
+      - paragraph [ref=e58]:
+        - button "Lieber im Dialog ausfüllen" [ref=e59] [cursor=pointer]:
+          - generic [ref=e60]: 
+          - text: Lieber im Dialog ausfüllen
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: Unternehmen *
+            - textbox "Unternehmen *" [ref=e66]:
+              - /placeholder: Musterfirma GmbH
+          - generic [ref=e67]:
+            - generic [ref=e68]: Ansprechpartner:in *
+            - textbox "Ansprechpartner:in *" [ref=e69]:
+              - /placeholder: Vor- und Nachname
+          - generic [ref=e70]:
+            - generic [ref=e71]: E-Mail *
+            - textbox "E-Mail *" [ref=e72]:
+              - /placeholder: name@firma.de
+          - generic [ref=e73]:
+            - generic [ref=e74]: Telefon
+            - textbox "Telefon" [ref=e75]:
+              - /placeholder: +49 …
+          - generic [ref=e76]:
+            - generic [ref=e77]: Anzahl Mitarbeiter:innen *
+            - spinbutton "Anzahl Mitarbeiter:innen *" [ref=e78]
+          - generic [ref=e79]:
+            - generic [ref=e80]: Einsatzort *
+            - textbox "Einsatzort *" [ref=e81]:
+              - /placeholder: PLZ / Ort
+          - generic [ref=e82]:
+            - generic [ref=e83]: Einsatzbeginn *
+            - textbox "Einsatzbeginn *" [ref=e84]
+          - generic [ref=e85]:
+            - generic [ref=e86]: Zeitraum / Dauer
+            - textbox "Zeitraum / Dauer" [ref=e87]:
+              - /placeholder: z. B. 3 Tage, ab sofort
+          - generic [ref=e88]:
+            - generic [ref=e89]: Nachricht
+            - textbox "Nachricht" [ref=e90]:
+              - /placeholder: Beschreiben Sie kurz Ihren Bedarf, gewünschte Qualifikationen oder Schichtzeiten.
+          - generic [ref=e91]:
+            - checkbox "Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden. Datenschutz. *" [ref=e92]
+            - generic [ref=e93]:
+              - text: Ich stimme zu, dass meine Angaben zur Bearbeitung der Anfrage verarbeitet werden.
+              - link "Datenschutz" [ref=e94] [cursor=pointer]:
+                - /url: "#"
+              - text: . *
+        - button "Personalanfrage senden" [ref=e95] [cursor=pointer]
+        - paragraph [ref=e96]: Mit * markierte Felder sind Pflichtfelder.
+      - text: 
+  - generic [ref=e98]:
+    - img "DEHOGA Bayern"
+    - img "WERK1"
+    - img "Absolventenkongress"
+    - img "LMU Innovation & Entrepreneurship Center"
+    - img "TU München"
+  - contentinfo [ref=e99]:
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - img "uniworks" [ref=e104]
+            - generic [ref=e105]: uniworks
+          - paragraph [ref=e106]: Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.
+        - generic [ref=e107]:
+          - heading "uniworks" [level=4] [ref=e108]
+          - list [ref=e109]:
+            - listitem [ref=e110]:
+              - link "Startseite" [ref=e111] [cursor=pointer]:
+                - /url: ../index.html
+            - listitem [ref=e112]:
+              - link "Für Studierende" [ref=e113] [cursor=pointer]:
+                - /url: ../index.html
+            - listitem [ref=e114]:
+              - link "Über Uns" [ref=e115] [cursor=pointer]:
+                - /url: ../about.html
+        - generic [ref=e116]:
+          - heading "Branchen" [level=4] [ref=e117]
+          - list [ref=e118]:
+            - listitem [ref=e119]:
+              - link "Logistik" [ref=e120] [cursor=pointer]:
+                - /url: logistik.html
+            - listitem [ref=e121]:
+              - link "Event" [ref=e122] [cursor=pointer]:
+                - /url: event.html
+            - listitem [ref=e123]:
+              - link "Catering" [ref=e124] [cursor=pointer]:
+                - /url: catering.html
+            - listitem [ref=e125]:
+              - link "Einzelhandel" [ref=e126] [cursor=pointer]:
+                - /url: einzelhandel.html
+            - listitem [ref=e127]:
+              - link "Gastronomie & Hotellerie" [ref=e128] [cursor=pointer]:
+                - /url: gastronomie-hotellerie.html
+            - listitem [ref=e129]:
+              - link "Promotion" [ref=e130] [cursor=pointer]:
+                - /url: promotion.html
+            - listitem [ref=e131]:
+              - link "Büro" [ref=e132] [cursor=pointer]:
+                - /url: buero.html
+        - generic [ref=e133]:
+          - heading "Rechtliches" [level=4] [ref=e134]
+          - list [ref=e135]:
+            - listitem [ref=e136]:
+              - link "Impressum" [ref=e137] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e138]:
+              - link "Datenschutz" [ref=e139] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e140]:
+              - link "Instagram" [ref=e141] [cursor=pointer]:
+                - /url: https://www.instagram.com/uniworks.gmbh
+      - generic [ref=e142]:
+        - generic [ref=e143]: Copyright © 2026 uniworks GmbH. Alle Rechte vorbehalten.
+        - generic [ref=e144]: München

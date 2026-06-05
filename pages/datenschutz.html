@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz — uniworks GmbH</title>
+  <meta name="description" content="Datenschutzrichtlinien der uniworks GmbH — welche Daten wir erfassen, warum, wie wir sie verwenden und welche Rechte Du hast." />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    /* Canonical tokens (mirror colors_and_type.css / index.html) */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.2}
+    a{color:inherit}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;border-radius:var(--r8);padding:10px 20px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:24px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+    .nav-ctas{display:flex;align-items:center;gap:14px;margin-left:auto}
+    .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;transition:color var(--tr)}
+    .nav-textlink:hover{color:var(--g)}
+    @media(max-width:560px){.nav-inner{padding:0 24px;gap:14px}.nav-textlink{display:none}}
+
+    /* ── LEGAL CONTENT ── */
+    .legal{padding:128px 0 88px}
+    .legal-inner{max-width:760px;margin:0 auto}
+    .legal h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:8px}
+    .legal-updated{font-size:14px;color:var(--sec);margin-bottom:44px}
+    .legal h2{font-size:22px;font-weight:700;margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
+    .legal h3{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 12px}
+    .legal p{font-size:16px;line-height:1.75;color:var(--body);margin-bottom:16px}
+    .legal address{font-style:normal;font-size:16px;line-height:1.7;color:var(--body);margin:4px 0 16px}
+    .legal address strong{color:var(--black);font-weight:700}
+    .legal a[href^="mailto"],.legal a[href^="tel"]{color:var(--g);text-decoration:none}
+    .legal a[href^="mailto"]:hover,.legal a[href^="tel"]:hover{text-decoration:underline}
+    @media(max-width:560px){.legal{padding:104px 0 64px}}
+
+    /* ── FOOTER (mirrors index.html / about.html) ── */
+    footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+    .footer-brand h3{color:var(--black);font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--sec);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:var(--black);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:var(--sec);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:var(--g)}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:var(--sec);text-decoration:none}
+    .footer-bottom a:hover{color:var(--black)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="uniworks Startseite">
+        <img src="../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <div class="nav-ctas">
+        <a href="about.html" class="nav-textlink">Über uns</a>
+        <a href="unternehmen/index.html" class="btn btn-p">Für Unternehmen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── DATENSCHUTZ ── -->
+  <main class="legal">
+    <div class="wrap">
+      <div class="legal-inner">
+        <h1>Datenschutzrichtlinien</h1>
+        <p class="legal-lead">Unsere Datenschutzpraktiken in verständlicher Sprache.</p>
+        <p class="legal-updated">Zuletzt geändert: 5. September 2023.</p>
+
+        <h2>1.0 Allgemeine Hinweise</h2>
+        <p>Wir schätzen, dass Du uns Deine Daten anvertraust und versuchen, Deinem Vertrauen stets gerecht zu werden. Dies beginnt damit, sicherzustellen, dass Du verstehst, welche Daten wir erfassen, warum wir sie erfassen, wie wir sie verwenden und welche Wahlmöglichkeiten Dir hinsichtlich dieser Daten zur Verfügung stehen. Die vorliegenden Bestimmungen beschreiben unsere Datenschutzpraktiken in verständlicher Sprache, wobei Rechtssprache und Fachjargon auf ein Minimum reduziert sind.</p>
+
+        <h2>1.1 Wer wir sind</h2>
+        <p>Dies ist das Unternehmen, das im Rahmen der vorliegenden Datenschutzbestimmungen für Deine Daten verantwortlich ist (der „Datenverantwortliche“):</p>
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Inselkammerstr. 8<br />
+          82008 Unterhaching
+        </address>
+
+        <h2>1.2 Wo diese Datenschutzbestimmungen gelten</h2>
+        <p>Diese Datenschutzbestimmungen gelten für Websites, Apps und sonstige Dienste, die von uniworks betrieben werden. Aus Gründen der Einfachheit bezeichnen wir in den vorliegenden Bestimmungen alles oben Genannte als unsere „Dienste“. Um es besonders deutlich zu machen, haben wir in allen anwendbaren Diensten Links zu diesen Datenschutzbestimmungen eingefügt.</p>
+
+        <h2>1.3 Daten, die wir erfassen</h2>
+        <p>Es ist offensichtlich, dass wir dir nur dann bei der Suche nach passenden Mitarbeitern oder Jobangeboten helfen können, wenn wir bestimmte Daten von dir erheben. Dazu gehören grundlegende Profildaten, sowie Daten, die während der Nutzung unserer Dienste entstehen, wie zum Beispiel Zugriffsprotokolle. Informationen von Drittanbietern erhalten wir ebenfalls, falls du unsere Dienste über soziale Medien nutzt. Beim Erstellen eines Kontos musst du Anmeldedaten sowie einige grundlegende Informationen, die für die Erbringung des Dienstes erforderlich sind, angeben und wenn du dein Profil ausbaust, kannst du zusätzliche Angaben wie Persönlichkeitsmerkmale oder weitere persönliche Informationen sowie Fotos und Videos hinzufügen, wobei für bestimmte Inhalte der Zugriff auf deine Kamera und dein Gerät erforderlich sein kann. Einige freiwillig bereitgestellte Daten könnten als besonders schützenswert oder vertraulich eingestuft werden, wie zum Beispiel Angaben zu deinem ethnischen Hintergrund, und deine Zustimmung zur Verarbeitung dieser Informationen ist erforderlich. Bei Anmeldung für einen kostenpflichtigen Dienst oder einem direkten Kauf bei uns, werden Finanzinformationen wie Debit- oder Kreditkartendaten benötigt, die du uns oder unserem Zahlungsdienstleister zur Verfügung stellst. Informationen sammeln wir auch bei der Kontaktaufnahme mit unserem Kundenservice, um die Qualität unserer Dienstleistungen sicherzustellen und unsere Mitarbeiter zu schulen. Andere Nutzer können Informationen über dich bereitstellen, wenn sie unsere Dienste nutzen, und durch Nutzung deiner Anmeldedaten von sozialen Netzwerken zur Registrierung oder Anmeldung bei uniworks könnten einige Informationen deines Social-Media-Profils mit uns geteilt werden. Unsere Partner könnten uns auch Informationen über dich bereitstellen, zum Beispiel wenn uniworks-Anzeigen auf ihren Plattformen geschaltet werden. Wir erfassen Informationen über deine Aktivitäten, wie die Nutzung bestimmter Funktionen, Suchanfragen und Interaktionen mit anderen Nutzern sowie technische Daten von den Geräten, mit denen du auf unsere Dienste zugreifst, wie IP-Adresse, Gerätetyp und -kennungen, Browserinformationen und Netzwerkinformationen. Geolokalisierungs- und Mediendaten erfassen wir mit deiner Zustimmung ebenfalls, einschließlich präziser Standortdaten und, falls gestattet, auch Fotos und Videos, die du in den Diensten teilen möchtest.</p>
+
+        <h2>1.4 Cookies und ähnliche Datenerfassungstechnologien</h2>
+        <p>Wir verwenden Cookies und ähnliche Datenerfassungstechnologien (z. B. Web-Beacons, Pixels), um Dich und/oder Dein Gerät/Deine Geräte zu erkennen und können auch Dritten gestatten, dies zu tun. Cookies sind kleine Textdateien, die eine Website bei deren Besuch auf dem Computer des Besuchers abspeichert und Informationen über Benutzer und Website hinterlegen. Cookies können unterschiedlichen Zwecken dienen. Wir verwenden Cookies beispielsweise zur Verbesserung der technischen Funktion der Website, Analyse des Nutzungsverhaltens, sowie um sowohl Dir als auch unseren Benutzern gezielt nach unserer Auffassung interessante Jobangebote unterbreiten zu können, um Dich zu verifizieren und Deine Präferenzen und Einstellungen zu speichern, um Websiteverkehr und Trends zu analysieren, um Werbekampagnen durchzuführen und deren Effizienz zu beurteilen und um Dir die Nutzung sozialer Funktionen zu ermöglichen. Einige Webbrowser (einschließlich Safari, Internet Explorer, Firefox und Chrome) verfügen über die „Do Not Track“-Funktion („DNT“), die es einer Website mitteilt, wenn ein Nutzer nicht möchte, dass seine/ihre Onlineaktivität nachverfolgt wird. Falls eine Website, die auf ein DNT-Signal reagiert, ein DNT-Signal empfängt, kann der Browser diese Website daran hindern, bestimmte Daten über den Browser-Nutzer zu erfassen. Nicht alle Browser verfügen über eine solche Funktion und ein einheitlicher Standard ist momentan noch nicht etabliert. Aus diesem Grund reagieren viele Unternehmen, darunter auch uniworks, aktuell nicht auf DNT-Signale.</p>
+
+        <h2>1.5 Wie wir Deine Informationen verwenden</h2>
+        <p>Der Grund für die Nutzung deiner Daten ist die Erbringung und Verbesserung unserer Dienste. Wenn du eine detailliertere Erklärung zu den zahlreichen Gründen wünschst, aus denen wir deine Daten verwenden, und an einigen praktischen Beispielen interessiert bist, lies bitte weiter. Um dein Konto zu führen und dir unsere Dienste zu erbringen, erstellen und verwalten wir dein Konto, betreuen dich als Kunden, antworten auf deine Anfragen, führen deine Transaktionen aus, sprechen mit dir über unsere Dienste einschließlich der Auftragsverwaltung und Rechnungsstellung, helfen dir beim Kontakt mit Jobsuchenden und Arbeitgebern, analysieren Stellenanzeigen, dein Profil und das anderer Nutzer, um relevante Verbindungen vorzuschlagen, zeigen Nutzern Profile oder Stellenanzeigen anderer Nutzer und gewährleisten eine gleichbleibende Erfahrung auf deinen Geräten. Wir verlinken die verschiedenen Geräte, die du nutzt, indem wir Geräte- und Browserdaten verlinken, beispielsweise wenn du von unterschiedlichen Geräten aus auf unsere Dienste zugreifst, oder indem wir, ganz oder teilweise, IP-Adressen, Browserversionen und ähnliche Daten deiner Geräte nutzen, um diese zu identifizieren und zu verlinken. Um dir neue Dienste von uniworks anbieten zu können, registrieren wir dich für neue Funktionen und Anwendungen von uniworks, zeigen dein Profil dort, verwalten dein Konto auf diesen neuen Funktionen und Anwendungen, bieten dir Angebote und Anzeigen, die für dich von Interesse sind, verwalten Gewinnspiele, Wettbewerbe, Preisnachlässe und andere Angebote, entwickeln, zeigen und verfolgen in unseren Diensten und auf anderen Websites Inhalte und Werbeanzeigen, die auf deine Interessen zugeschnitten sind, und sprechen mit dir per E-Mail, Telefon oder über soziale Medien oder Mobilgeräte über unsere Produkte und Dienste, von denen wir meinen, dass sie für dich interessant sein könnten. Um unsere Dienste zu verbessern und neue zu entwickeln, führen wir Forschungen und Analysen zum Verhalten der Benutzer durch, um unsere Dienste und Inhalte zu verbessern, und entscheiden uns möglicherweise basierend auf dem Verhalten der Nutzer, die Gestaltung einer Funktion oder die Funktion selbst zu ändern oder neue Funktionen und Dienste zu entwickeln, wie etwa eine neue internetbasierte Funktion aufgrund von Nutzeranfragen. Um Betrug oder andere illegale oder nicht autorisierte Aktivitäten zu verhindern, zu erkennen und zu bekämpfen, reagieren wir auf aktuelles oder vermutetes Fehlverhalten auf und außerhalb der Plattform, führen Datenanalysen durch, um derartige Aktivitäten besser zu verstehen und Maßnahmen gegen sie zu entwickeln, speichern Daten in Bezug auf betrügerische Aktivitäten, um Wiederholungen zu vermeiden, und halten uns an gesetzliche Vorschriften, um rechtlichen Anforderungen gerecht zu werden, Strafverfolgungen zu unterstützen und unsere Rechte auszuüben, beispielsweise unsere Bedingungen. Um deine Daten wie oben beschrieben zu verarbeiten, vertrauen wir auf die folgenden rechtlichen Grundlagen: Erbringung unserer Dienste an dich, indem wir deine Daten verarbeiten, um den Vertrag zu erfüllen, den du mit uns geschlossen hast, während du unsere Dienste in Anspruch nimmst, um relevante Verbindungen mit Jobsuchenden und Arbeitgebern zu etablieren, dein Konto und dein Profil aufrechtzuerhalten, es für andere Nutzer sichtbar zu machen und dir andere Nutzer oder Stellenanzeigen zu empfehlen, berechtigte Interessen, indem wir deine Daten verwenden, wo wir ein berechtigtes Interesse hierfür haben, wie etwa das Verhalten der Nutzer unserer Dienste zu analysieren, um unsere Angebote zu verbessern und dir Angebote vorzuschlagen, die dich interessieren könnten, und Daten zu administrativen Zwecken, zur Betrugserkennung und aus anderen rechtlichen Gründen zu verarbeiten, sowie Einwilligung, indem wir dich um deine Einwilligung zur Nutzung deiner Daten für bestimmte Zwecke bitten und du deine Einwilligung jederzeit widerrufen kannst, indem du uns unter der Adresse kontaktierst, die du am Ende der vorliegenden Datenschutzbestimmungen findest.</p>
+
+        <h2>1.6 Wie wir Deine Informationen weitergeben</h2>
+        <p>Da es unser Ziel ist, dir bei der Etablierung bedeutungsvoller Verbindungen zu helfen, geben wir deine Nutzerdaten vor allem an andere Nutzer weiter, jedoch auch an Dienstanbieter und Partner, die uns bei der Ausführung unserer Dienste unterstützen und in manchen Fällen an Justizbehörden. Deine Daten werden anderen Nutzern zugänglich gemacht, wenn du freiwillig Informationen in unseren Diensten veröffentlichst, einschließlich deines öffentlichen Profils. Sei vorsichtig mit den Daten, die du teilst, denn weder du noch wir können kontrollieren, was andere mit diesen Informationen tun, sobald sie freigegeben sind. Wir arbeiten mit Drittparteien zusammen, die uns bei Aufgaben wie Daten-Hosting, Kundenbetreuung, Marketing und Sicherheitsoperationen unterstützen und dürfen Daten an Partner für die Verbreitung und Vermarktung unserer Dienste weitergeben, manchmal in gehashter, nicht lesbarer Form. Bei Unternehmensübernahmen oder ähnlichen Transaktionen dürfen deine Daten ebenfalls weitergegeben werden. Gesetzlich sind wir verpflichtet, Daten weiterzugeben, um rechtlichen Verfahren Folge zu leisten, zur Verbrechensprävention oder -aufklärung oder um die Sicherheit anderer Personen zu schützen. Des Weiteren dürfen wir Informationen freigeben, um unsere Haftung in Klagen zu verringern, unsere Rechte zu schützen, unsere Vereinbarungen umzusetzen und illegale Aktivitäten zu untersuchen oder zu verhindern. Mit deiner Einwilligung oder auf deinen Wunsch hin können wir Daten an Dritte weitergeben. In jedem der genannten Umstände dürfen wir nicht-personenbezogene Daten oder personenbezogene Daten in gehashter Form nutzen und weitergeben, auch an Werbetreibende für zielgerichtete Werbung in unseren Diensten und auf Websites von Drittparteien. Wir dürfen diese Informationen auch mit Daten kombinieren, die aus anderen Quellen erfasst wurden. Weitere Informationen zu Cookies und ähnlichen Technologien findest du in Abschnitt 1.4.</p>
+
+        <h2>1.7 Grenzüberschreitender Datentransfer</h2>
+        <p>Die Weitergabe von Daten, wie wir es in Abschnitt 1.6 beschrieben haben, beinhaltet manchmal grenzüberschreitenden Datentransfer, beispielsweise in den USA und in andere Gerichtsbarkeiten. Wenn Du Dich beispielsweise in Europa befindest (im Europäischen Wirtschaftsraum, „EWR“), werden Deine persönlichen Daten an Länder außerhalb des EWR übertragen. Wir verwenden Standardvertragsklauseln, die von der Europäischen Kommission genehmigt wurden, oder andere angemessene Sicherheitsklauseln, um den Datentransfer vom EWR in andere Länder zu erlauben. Standardvertragsklauseln sind bindende Verpflichtungen zum Schutz der Privatsphäre und der Sicherheit Deiner Daten zwischen Unternehmen, die persönliche Daten übertragen.</p>
+
+        <h2>1.8 Deine Rechte</h2>
+        <p>Wir möchten, dass du deine Daten kontrollieren kannst, daher stellen wir dir die folgenden Möglichkeiten zur Verfügung: Zugriffs-/Updatetools in den Diensten, die es dir ermöglichen, auf Informationen zuzugreifen, die du uns zur Verfügung gestellt hast und die direkt mit deinem Konto zusammenhängen, diese zu korrigieren oder zu löschen. Bei Fragen zu diesen Tools und Einstellungen kannst du unser Kundenbetreuungsteam unter <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a> kontaktieren. Wir helfen dir gerne weiter. Mobile Plattformen haben Berechtigungssysteme für spezifische Arten von Gerätedaten und Benachrichtigungen, wie Telefonbuch- und Ortungsdienste oder Push-Benachrichtigungen. Du kannst deine Einstellungen auf deinem Gerät ändern, um der Erfassung der zugehörigen Informationen oder der Anzeige der zugehörigen Benachrichtigungen zuzustimmen oder diese abzulehnen, wobei es sein kann, dass bestimmte Dienste nicht mehr voll funktionsfähig sind, wenn du dies tust. Dein Konto kannst du löschen, indem du entweder die zugehörige Funktion direkt im jeweiligen Dienst verwendest oder uns per E-Mail unter <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a> kontaktierst. Die Überprüfung deiner Daten, Anforderung einer Kopie, Aktualisierung oder Löschung deiner Daten sowie Widerspruch gegen ihre Verarbeitung kannst du durch Kontaktaufnahme über <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a> anfordern. Zu deinem Schutz und zum Schutz aller unserer Nutzer, können wir dich bitten, einen Identitätsnachweis zu erbringen, bevor wir die Anfragen bearbeiten. Wir können Anfragen ablehnen, wenn sie gesetzwidrig sind oder die Rechte anderer verletzen, und Anfragen auf Widerruf der Verarbeitung personenbezogener Daten ablehnen, wenn wir dadurch nicht mehr in der Lage wären, dir unsere Dienste zu erbringen. Die Erfassung sämtlicher Informationen durch eine App kannst du beenden, indem du diese deinstallierst, wobei die einzigartige Kennung deines Geräts weiterhin gespeichert bleibt. In manchen Ländern, einschließlich der Europäischen Union, hast du das Recht, eine Beschwerde bei der zuständigen Datenschutzbehörde einzureichen, falls du Bedenken hinsichtlich unserer Verarbeitung deiner personenbezogenen Daten hast. Die zuständige Datenschutzbehörde kann die deines Wohnsitzes, deines Arbeitsplatzes oder unserer Gerichtsbarkeit sein.</p>
+
+        <h2>1.9 Wie wir Deine Daten schützen</h2>
+        <p>Wir geben unser Bestes, um Deine persönlichen Daten vor unbefugtem Zugriff, Veränderung, Offenlegung oder Zerstörung zu schützen. Obwohl wir Schritte zum Schutz Deiner Informationen unternehmen, versprechen wir, wie alle Technologieunternehmen, nicht, dass Deine persönlichen Informationen immer sicher bleiben werden, und Du solltest dies auch nicht erwarten. Wir überprüfen regelmäßig unsere Systeme auf mögliche Schwachstellen und Angriffe und aktualisieren regelmäßig unsere Methoden zur Erfassung, Speicherung und Verarbeitung von Daten, um unsere physischen, technischen und organisatorischen Sicherheitsmaßnahmen zu verbessern. Wir können Deine Nutzung einiger oder aller unserer Dienste ohne Ankündigung aussetzen, wenn wir irgendeine Sicherheitsverletzung vermuten oder entdecken. Wenn Du glaubst, dass Dein Konto oder Deine Daten nicht mehr sicher sind, kontaktiere uns bitte umgehend per E-Mail an <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>.</p>
+
+        <h2>1.10 Wie lange speichern wir Deine Daten</h2>
+        <p>Wir bewahren Deine persönlichen Informationen nur so lange auf, wie wir sie für rechtmäßige Geschäftszwecke benötigen (wie in Abschnitt 1.5 dargelegt) und wie es geltende Gesetze erlauben. Um für den Schutz und die Sicherheit unserer Nutzer innerhalb und außerhalb unserer Dienste zu sorgen, bewahren wir Deine Daten zur Sicherheit nach Löschung Deines Kontos noch drei Monate lang auf. Während dieser Zeit bleiben die Kontodaten gespeichert, obwohl das Konto natürlich für niemanden mehr sichtbar sein wird. In der Praxis bedeutet das, dass wir nach der Löschung Deines Kontos (und Ablauf der Sicherheitsaufbewahrungszeit) oder nach zwei Jahren kontinuierlicher Inaktivität alle Deine Daten löschen oder anonymisieren, es sei denn: Wir sind aufgrund geltender Gesetze zu einer Aufbewahrung verpflichtet (beispielsweise werden einige „Verkehrsdaten“ für ein Jahr gespeichert, um gesetzliche Aufbewahrungsvorschriften zu erfüllen); wir sind zum Nachweis unserer Einhaltung geltender Gesetze zu einer Aufbewahrung verpflichtet (so werden beispielsweise Nachweise über Deine Einwilligung zu unseren Nutzungsbedingungen und Datenschutzbestimmungen sowie ähnliche Einwilligungen fünf Jahre lang aufbewahrt); es gibt eine offene Frage, eine Klage oder einen Streitfall, wodurch wir veranlasst werden, wesentliche Informationen aufzubewahren, bis das Problem geklärt ist; oder die Daten müssen aus legitimen Geschäftsinteressen wie Betrugsprävention und Stärkung der Sicherheit der Nutzer aufbewahrt werden. So werden zum Beispiel Daten aufbewahrt, um einen Nutzer, der aufgrund unsicheren Verhaltens oder Sicherheitsvorfällen gesperrt wurde, an der Eröffnung eines neuen Kontos zu hindern. Bitte beachte, dass wir aufgrund technischer Beschränkungen nicht versprechen können, dass alle Daten innerhalb eines bestimmten Zeitraums gelöscht werden, selbst wenn unsere Systeme so konzipiert sind, dass sie gemäß den oben genannten Richtlinien die Datenlöschung ausführen.</p>
+
+        <h2>1.11 Änderungen der Datenschutzbestimmungen</h2>
+        <p>Da wir immer auf der Suche nach neuen und innovativen Wegen sind, um Dich bei der Etablierung bedeutungsvoller Verbindungen zu unterstützen, kann es im Laufe der Zeit zu Änderungen der vorliegenden Datenschutzbestimmungen kommen. Wir informieren Dich, bevor irgendwelche wesentlichen Änderungen in Kraft treten, damit Du Zeit hast, die Änderungen einzusehen.</p>
+
+        <h2>1.12 Wie Du uns kontaktieren kannst</h2>
+        <p>Falls Du Fragen zu diesen Datenschutzbestimmungen hast, kannst Du uns folgendermaßen erreichen:</p>
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Elsässer Str. 25<br />
+          81667 München<br />
+          E-Mail: <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>
+        </address>
+
+        <h2>1.13 Dein Konto löschen</h2>
+        <p>Um Dein Konto für die uniworks App zu löschen, befolge die in der App hinterlegten Schritte.</p>
+
+        <h2>Ergänzende Hinweise für unsere Website</h2>
+        <p>Des Weiteren gelten folgende Punkte speziell für unsere Website.</p>
+
+        <h3>Analyse-Tools und Tools von Drittanbietern · Hosting</h3>
+        <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen. Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung. Wir hosten die Inhalte unserer Website bei folgendem Anbieter: Anbieter der Website-Erstellung und Hosting-Dienste ist Webflow, Inc., mit Sitz in San Francisco, USA. Beim Besuch unserer Website erfasst Webflow verschiedene Logfiles, einschließlich deiner IP-Adresse. Webflow wird als Tool verwendet, um Websites zu erstellen und zu hosten und speichert dabei notwendige Cookies oder andere Wiedererkennungstechnologien, die für die korrekte Darstellung der Seite, für bestimmte Funktionen und für die Sicherheit unerlässlich sind. Detaillierte Informationen kannst du der Datenschutzerklärung von Webflow entnehmen, die unter dem angegebenen Link zur Verfügung steht. Die Nutzung von Webflow basiert auf Art. 6 Abs. 1 lit. f DSGVO, da wir ein berechtigtes Interesse an einer zuverlässigen Darstellung unserer Website haben. Falls eine Einwilligung eingeholt wurde, erfolgt die Verarbeitung auf Basis von Art. 6 Abs. 1 lit. a DSGVO sowie § 25 Abs. 1 TTDSG, insbesondere wenn es um die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers geht. Diese Einwilligung kann jederzeit widerrufen werden. Die Datenübertragung in die USA stützt sich auf die Standardvertragsklauseln der EU-Kommission, und weitere Details dazu finden sich in der Datenschutzerklärung von Webflow.</p>
+
+        <h3>Allgemeine Hinweise und Pflichtinformationen</h3>
+        <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht. Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+
+        <h3>Hinweis zur verantwortlichen Stelle</h3>
+        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Elsässer Str. 25<br />
+          81667 München<br />
+          Telefon: <a href="tel:+4901749359156">0174 9359156</a><br />
+          E-Mail: <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>
+        </address>
+        <p>Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.</p>
+
+        <h3>Speicherdauer</h3>
+        <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.</p>
+
+        <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung</h3>
+        <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endgerät (z. B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind, auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert.</p>
+
+        <h3>Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten</h3>
+        <p>Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den USA oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten. Wenn diese Tools aktiv sind, können Ihre personenbezogenen Daten in diese Drittstaaten übertragen und dort verarbeitet werden. Wir weisen darauf hin, dass in diesen Ländern kein mit der EU vergleichbares Datenschutzniveau garantiert werden kann. Beispielsweise sind US-Unternehmen dazu verpflichtet, personenbezogene Daten an Sicherheitsbehörden herauszugeben, ohne dass Sie als Betroffener hiergegen gerichtlich vorgehen könnten. Es kann daher nicht ausgeschlossen werden, dass US-Behörden (z. B. Geheimdienste) Ihre auf US-Servern befindlichen Daten zu Überwachungszwecken verarbeiten, auswerten und dauerhaft speichern. Wir haben auf diese Verarbeitungstätigkeiten keinen Einfluss.</p>
+
+        <h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+        <p>Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.</p>
+
+        <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3>
+        <p>Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, haben Sie jederzeit das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen; dies gilt auch für ein auf diese Bestimmungen gestütztes Profiling. Die jeweilige Rechtsgrundlage, auf denen eine Verarbeitung beruht, entnehmen Sie dieser Datenschutzerklärung. Wenn Sie Widerspruch einlegen, werden wir Ihre betroffenen personenbezogenen Daten nicht mehr verarbeiten, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen (Widerspruch nach Art. 21 Abs. 1 DSGVO). Werden Ihre personenbezogenen Daten verarbeitet, um Direktwerbung zu betreiben, so haben Sie das Recht, jederzeit Widerspruch gegen die Verarbeitung Sie betreffender personenbezogener Daten zum Zwecke derartiger Werbung einzulegen; dies gilt auch für das Profiling, soweit es mit solcher Direktwerbung in Verbindung steht. Wenn Sie widersprechen, werden Ihre personenbezogenen Daten anschließend nicht mehr zum Zwecke der Direktwerbung verwendet (Widerspruch nach Art. 21 Abs. 2 DSGVO).</p>
+
+        <h3>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+        <p>Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
+
+        <h3>Recht auf Datenübertragbarkeit</h3>
+        <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
+
+        <h3>Auskunft, Berichtigung und Löschung</h3>
+        <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.</p>
+
+        <h3>Recht auf Einschränkung der Verarbeitung</h3>
+        <p>Du hast das Recht, eine Einschränkung der Verarbeitung deiner personenbezogenen Daten zu verlangen. Dieses Recht kannst du jederzeit geltend machen, indem du Kontakt zu uns aufnimmst. Die Gründe für eine solche Einschränkung können folgende sein: Wenn du die Richtigkeit deiner bei uns gespeicherten personenbezogenen Daten anzweifelst, benötigen wir Zeit, um dies zu überprüfen. Während dieser Überprüfung hast du das Recht, die Einschränkung der Verarbeitung zu verlangen. Sollte die Verarbeitung deiner Daten unrechtmäßig erfolgt sein, kannst du anstelle einer Löschung die Einschränkung der Verarbeitung fordern. Wenn wir deine personenbezogenen Daten nicht länger benötigen, du sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen brauchst, kannst du die Einschränkung der Verarbeitung anstelle einer Löschung beantragen. Hast du Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt, muss abgewogen werden, ob deine oder unsere Interessen überwiegen. Bis diese Abwägung entschieden ist, hast du das Recht, die Einschränkung der Verarbeitung deiner Daten zu verlangen. Sind deine Daten unter eingeschränkter Verarbeitung, dürfen sie – abgesehen von ihrer Speicherung – nur mit deiner Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+
+        <h3>SSL- bzw. TLS-Verschlüsselung</h3>
+        <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</p>
+
+        <h3>Datenerfassung auf dieser Website · Cookies</h3>
+        <p>Unsere Internetseiten nutzen sogenannte „Cookies“. Das sind kleine Textdateien, die auf deinem Endgerät keinen Schaden anrichten. Es gibt Session-Cookies, die nach dem Ende deines Besuchs automatisch gelöscht werden, und permanente Cookies, die auf deinem Gerät verbleiben, bis du sie selbst löschst oder eine Löschung durch deinen Webbrowser erfolgt. Cookies können entweder direkt von unserer Seite gesetzt werden (First-Party-Cookies) oder von Drittanbietern (Third-Party-Cookies), die bestimmte Dienstleistungen auf unserer Webseite ermöglichen. Cookies erfüllen unterschiedliche Funktionen: Einige sind technisch notwendig, damit Webseitenfunktionen wie der Warenkorb oder Videodarstellungen funktionieren, andere dienen der Auswertung des Nutzerverhaltens oder Werbezwecken. Die Speicherung von notwendigen Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO, es sei denn, es wird eine andere Rechtsgrundlage herangezogen. Wir als Websitebetreiber haben ein berechtigtes Interesse an der Speicherung dieser Cookies zur technisch fehlerfreien und optimierten Bereitstellung unserer Dienste. Wenn eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien eingeholt wurde, basiert die Verarbeitung ausschließlich auf dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG); diese Einwilligung ist jederzeit widerrufbar. Du kannst deinen Browser so einstellen, dass du über das Setzen von Cookies informiert wirst und nur im Einzelfall die Annahme von Cookies erlaubst, die Annahme von Cookies für bestimmte Fälle oder generell ausschließt und das automatische Löschen der Cookies beim Schließen des Browsers aktivierst. Wenn du Cookies deaktivierst, kann die Funktionalität unserer Website eingeschränkt sein. Details zu den auf dieser Website eingesetzten Cookies und Diensten findest du in unserer Datenschutzerklärung.</p>
+
+        <h3>Soziale Medien · Instagram</h3>
+        <p>Auf unserer Website sind Funktionen des Dienstes Instagram integriert, angeboten durch die Meta Platforms Ireland Limited in Irland. Sobald Instagram-Elemente aktiv sind, wird eine Verbindung zwischen deinem Endgerät und den Instagram-Servern hergestellt, wodurch Instagram Informationen über deinen Besuch auf unserer Webseite erhält. Wenn du in deinem Instagram-Account eingeloggt bist, kannst du Inhalte unserer Website mit deinem Instagram-Profil verknüpfen, was Instagram ermöglicht, den Besuch unserer Website deinem Benutzerkonto zuzuordnen. Als Websitebetreiber erhalten wir keine Kenntnis über den Inhalt der übermittelten Daten oder deren Nutzung durch Instagram. Der Einsatz von Instagram erfolgt entweder auf Grundlage deiner Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 TTDSG), die jederzeit widerrufbar ist, oder auf Grundlage unseres berechtigten Interesses an einer umfassenden Sichtbarkeit in den sozialen Medien, sofern keine Einwilligung eingeholt wurde. Für die Erhebung der Daten, die dann an Facebook bzw. Instagram weitergeleitet werden, tragen wir gemeinsam mit der Meta Platforms Ireland Limited die Verantwortung gemäß Art. 26 DSGVO. Unsere Verantwortung ist auf die Erfassung der Daten und deren Weiterleitung beschränkt. Die Verarbeitung der Daten durch Facebook oder Instagram nach der Weiterleitung fällt nicht in unseren Verantwortungsbereich. Die Verpflichtungen aus der gemeinsamen Verarbeitung sind in einer speziellen Vereinbarung festgehalten, deren Details du unter dem angegebenen Link findest. Wir sind für die Datenschutzinformationen beim Einsatz des Instagram-Tools und die sichere Implementierung des Tools auf unserer Webseite zuständig, Meta trägt die Verantwortung für die Datensicherheit der Produkte. Betroffenenrechte in Bezug auf Daten, die bei Instagram verarbeitet werden, kannst du direkt bei Instagram geltend machen. Anfragen zu deinen Rechten, die bei uns eingehen, leiten wir an Facebook weiter. Die Datenübertragung in die USA erfolgt auf Basis der Standardvertragsklauseln der EU-Kommission. Weitere Informationen dazu findest du unter den angegebenen Links. Ausführliche Informationen zum Datenschutz bei Instagram erhältst du in der Datenschutzerklärung von Instagram.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="index.html">Für Studierende</a></li>
+            <li><a href="unternehmen/index.html">Für Unternehmen</a></li>
+            <li><a href="index.html#app">App herunterladen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="unternehmen/logistik.html">Logistik</a></li>
+            <li><a href="unternehmen/event.html">Event</a></li>
+            <li><a href="unternehmen/catering.html">Catering</a></li>
+            <li><a href="unternehmen/einzelhandel.html">Einzelhandel</a></li>
+            <li><a href="unternehmen/gastronomie-hotellerie.html">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="unternehmen/promotion.html">Promotion</a></li>
+            <li><a href="unternehmen/buero.html">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="about.html">Über Uns</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), {passive:true});
+  </script>
+</body>
+</html>

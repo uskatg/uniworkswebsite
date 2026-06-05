@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum — uniworks GmbH</title>
+  <meta name="description" content="Impressum der uniworks GmbH, Unterhaching — Anbieterkennzeichnung, Haftungshinweis und Kontaktinformationen." />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    /* Canonical tokens (mirror colors_and_type.css / index.html) */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
+    a{color:inherit}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;border-radius:var(--r8);padding:10px 20px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
+    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:24px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+    .nav-ctas{display:flex;align-items:center;gap:14px;margin-left:auto}
+    .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;transition:color var(--tr)}
+    .nav-textlink:hover{color:var(--g)}
+    @media(max-width:560px){.nav-inner{padding:0 24px;gap:14px}.nav-textlink{display:none}}
+
+    /* ── LEGAL CONTENT ── */
+    .legal{padding:128px 0 88px}
+    .legal-inner{max-width:760px;margin:0 auto}
+    .legal h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:44px}
+    .legal address{font-style:normal;font-size:17px;line-height:1.7;color:var(--body)}
+    .legal address strong{color:var(--black);font-weight:700}
+    .legal-contact{margin-top:18px;display:flex;flex-direction:column;gap:8px}
+    .legal-contact a{display:inline-flex;align-items:center;gap:10px;font-size:16px;color:var(--body);text-decoration:none;transition:color var(--tr);width:fit-content}
+    .legal-contact a:hover{color:var(--g)}
+    .legal-contact a .ti{font-size:19px;color:var(--g);flex-shrink:0}
+    .legal h2{font-size:22px;font-weight:700;margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
+    .legal p{font-size:16px;line-height:1.7;color:var(--body);margin-bottom:16px}
+    .legal p:last-child{margin-bottom:0}
+    .legal dl{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;font-size:16px;line-height:1.6}
+    .legal dt{color:var(--sec)}
+    .legal dd{color:var(--black);font-weight:500}
+    .legal dd a{color:var(--g);text-decoration:none}
+    .legal dd a:hover{text-decoration:underline}
+    @media(max-width:560px){.legal{padding:104px 0 64px}.legal dl{grid-template-columns:1fr;gap:2px 0}.legal dd{margin-bottom:12px}}
+
+    /* ── FOOTER (mirrors index.html / about.html) ── */
+    footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+    .footer-brand h3{color:var(--black);font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--sec);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:var(--black);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:var(--sec);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:var(--g)}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:var(--sec);text-decoration:none}
+    .footer-bottom a:hover{color:var(--black)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="uniworks Startseite">
+        <img src="../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <div class="nav-ctas">
+        <a href="about.html" class="nav-textlink">Über uns</a>
+        <a href="unternehmen/index.html" class="btn btn-p">Für Unternehmen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── IMPRESSUM ── -->
+  <main class="legal">
+    <div class="wrap">
+      <div class="legal-inner">
+        <h1>Impressum</h1>
+        <p class="legal-lead">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).</p>
+
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Inselkammerstr. 8<br />
+          82008 Unterhaching
+        </address>
+
+        <div class="legal-contact">
+          <a href="mailto:info@uniworks.gmbh"><i class="ti ti-mail" aria-hidden="true"></i>info@uniworks.gmbh</a>
+          <a href="tel:+498921535440"><i class="ti ti-phone" aria-hidden="true"></i>089 21535440</a>
+        </div>
+
+        <h2>Haftungshinweis</h2>
+        <p>Die Inhalte sowie die Darstellung der von der uniworks GmbH betriebenen Websites sind urheberrechtlich geschützt. Obwohl wir höchste Sorgfalt walten lassen, können wir nicht für die Richtigkeit der dargestellten Informationen oder die dauerhafte technische Erreichbarkeit garantieren.</p>
+        <p>Wir übernehmen keine Haftung für die Inhalte externer Links. Verantwortlich für den Inhalt verlinkter Seiten sind ausschließlich die Betreiber dieser Seiten.</p>
+        <p>uniworks behält sich das Recht vor, den Inhalt und die Gestaltung der betriebenen Websites ohne Vorankündigung zu ändern.</p>
+
+        <h2>Kontaktinformationen</h2>
+        <dl>
+          <dt>E-Mail</dt>
+          <dd><a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a></dd>
+          <dt>Internet</dt>
+          <dd><a href="https://www.uniworks.gmbh" target="_blank" rel="noopener">www.uniworks.gmbh</a></dd>
+          <dt>Registergericht</dt>
+          <dd>Amtsgericht München</dd>
+          <dt>Registernummer</dt>
+          <dd>HRB 282397</dd>
+          <dt>Geschäftsführer</dt>
+          <dd>Moritz Alexander Lange</dd>
+          <dt>USt-IdNr.</dt>
+          <dd>DE360986002</dd>
+          <dt>Wirtschafts-ID</dt>
+          <dd>DE360986002-00001</dd>
+        </dl>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="index.html">Für Studierende</a></li>
+            <li><a href="unternehmen/index.html">Für Unternehmen</a></li>
+            <li><a href="index.html#app">App herunterladen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="unternehmen/logistik.html">Logistik</a></li>
+            <li><a href="unternehmen/event.html">Event</a></li>
+            <li><a href="unternehmen/catering.html">Catering</a></li>
+            <li><a href="unternehmen/einzelhandel.html">Einzelhandel</a></li>
+            <li><a href="unternehmen/gastronomie-hotellerie.html">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="unternehmen/promotion.html">Promotion</a></li>
+            <li><a href="unternehmen/buero.html">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="about.html">Über Uns</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), {passive:true});
+  </script>
+</body>
+</html>

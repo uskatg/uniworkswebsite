@@ -1,0 +1,97 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "uniworks" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "Für Studierende" [ref=e6] [cursor=pointer]:
+          - /url: /studierende
+        - button "Für Unternehmen" [ref=e8] [cursor=pointer]:
+          - generic [ref=e9]: 
+          - strong [ref=e11]: Für Unternehmen
+          - link [ref=e12]:
+            - /url: /unternehmen
+        - link "Über Uns" [ref=e13] [cursor=pointer]:
+          - /url: /about
+      - text: 
+  - generic [ref=e14]:
+    - heading "Ihr Spezialist für Logistik Personal" [level=1] [ref=e15]
+    - generic [ref=e16]: "Ob tägliche Lagerlogistik, Wareneingang, Container-Entladung oder das Abfangen von saisonalen Auftragsspitzen: Unser eingespieltes Team aus Kommissionierern, Staplerfahrern und flexiblen Logistikhelfern sorgt für reibungslose Abläufe in Ihrem Betrieb. Dank unserer Erfahrung im dynamischen Warehouse-Bereich stellen wir sicher, dass Frachten, Waren und Paletten schnell, sicher und termingerecht bewegt werden. Wir passen uns flexibel an Ihre Schichtpläne an, denn wir wissen, dass Zuverlässigkeit und Tempo in der Logistik entscheidend sind."
+    - link "Personalanfrage stellen" [ref=e17] [cursor=pointer]:
+      - /url: https://sseh47t1ev6.typeform.com/to/oG3BzS03
+  - generic [ref=e23]: "Ob Lagerhelfer für saisonale Engpässe, qualifizierte Staplerfahrer für Hochregale oder erfahrene Crewchiefs: Wir stellen Ihnen kurzfristig das ausgebildete Logistik-Team an Ihrem Standort zur Verfügung."
+  - generic [ref=e24]:
+    - heading "Referenzen die für sich sprechen." [level=1] [ref=e25]
+    - generic [ref=e27]:
+      - img "uniworks Kunde Rewe" [ref=e28]
+      - img "Do & Co Catering" [ref=e29]
+      - img "uniworks Kunde EDEKA" [ref=e30]
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - heading "Senden Sie uns Ihre Personalanfrage." [level=1] [ref=e33]
+      - generic [ref=e34]: Teilen Sie uns mit, wie viel Personal Sie wann und wo benötigen und wir melden uns zeitnah bei Ihnen mit einem Angebot, das Ihre Wünsche berücksichtigt.
+    - iframe [ref=e36]:
+      - generic [active] [ref=f1e1]:
+        - progressbar "Form progress" [ref=f1e9]
+        - generic [ref=f1e15]:
+          - generic:
+            - progressbar "Form progress"
+            - generic:
+              - img
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - group "Frage 1 Herzlich Willkommen bei uniworks! Mit wie vielen Personen dürfen wir Sie unterstützen?" [ref=f1e16]:
+                          - generic [ref=f1e18]:
+                            - generic "Frage 1" [ref=f1e22]: "1"
+                            - generic [ref=f1e23]:
+                              - text: Herzlich Willkommen bei uniworks!
+                              - text: Mit wie vielen Personen dürfen wir Sie unterstützen?
+                          - spinbutton [ref=f1e27]
+                        - group "Frage 2 Wann dürfen wir unterstützen?Diese Frage ist erforderlich Geben Sie gerne das Datum und geplante Uhrzeit des Einsatzes an." [ref=f1e28]:
+                          - generic [ref=f1e29]:
+                            - generic [ref=f1e30]:
+                              - generic "Frage 2" [ref=f1e34]: "2"
+                              - generic [ref=f1e35]: Wann dürfen wir unterstützen?*
+                            - generic [ref=f1e37]: Geben Sie gerne das Datum und geplante Uhrzeit des Einsatzes an.
+                          - textbox "Antworten Sie hier..." [ref=f1e41]
+          - button "Ok" [ref=f1e45] [cursor=pointer]:
+            - generic [ref=f1e46]: Ok
+  - contentinfo [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - link "Startseite" [ref=e40] [cursor=pointer]:
+          - /url: /
+        - link "Für Studierende" [ref=e41] [cursor=pointer]:
+          - /url: /studierende
+        - link "Für Unternehmen" [ref=e42] [cursor=pointer]:
+          - /url: /unternehmen
+        - link "Über Uns" [ref=e43] [cursor=pointer]:
+          - /url: /about
+        - link "Blog" [ref=e44] [cursor=pointer]:
+          - /url: /blog
+        - link "News" [ref=e45] [cursor=pointer]:
+          - /url: https://www.uniworks.gmbh/kategorien/news
+        - link "FAQ" [ref=e46] [cursor=pointer]:
+          - /url: /faq
+        - link "Impressum" [ref=e47] [cursor=pointer]:
+          - /url: /impressum
+        - link "Datenschutz" [ref=e48] [cursor=pointer]:
+          - /url: /datenschutz
+        - link "uniworks auf Instagram" [ref=e49] [cursor=pointer]:
+          - /url: https://www.instagram.com/uniworks.gmbh/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA%3D%3D
+      - generic [ref=e50]:
+        - link [ref=e51] [cursor=pointer]:
+          - /url: https://www.dehoga-branchenpartner.bayern/fileadmin/user_upload/Partner_Inhalte/Foerderpartner/Foerder_Loesungskarten/Loesungskarte_B_uniworks.pdf
+        - link "WERK1 – DER STARTUP- FREUNDLICHSTE ORT MÜNCHENS":
+          - /url: https://www.werk1.com/teams/uniworks/
+          - img "WERK1 – DER STARTUP- FREUNDLICHSTE ORT MÜNCHENS"
+        - link [ref=e52] [cursor=pointer]:
+          - /url: https://absolventenkongress.de/de/karriere-welt/unternehmen/uniworks
+        - img "LMU Innovation & Entrepreneurship Center" [ref=e53]
+        - img "TUM. The Entrepreneurial University"
+      - generic [ref=e54]: Copyright © 2026 uniworks GmbH. Alle Rechte vorbehalten.

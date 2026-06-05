@@ -89,9 +89,10 @@
     .nav-lang-mob{display:none}
     .nav-dd{position:relative}
     .nav-dd-toggle .ti{font-size:16px;transition:transform var(--tr)}
-    .nav-dd.open .nav-dd-toggle .ti{transform:rotate(180deg)}
+    .nav-dd.open .nav-dd-toggle .ti,.nav-dd:hover .nav-dd-toggle .ti,.nav-dd:focus-within .nav-dd-toggle .ti{transform:rotate(180deg)}
     .nav-dd-menu{position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);box-shadow:var(--shh);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity var(--tr),transform var(--tr),visibility var(--tr);z-index:101}
-    .nav-dd.open .nav-dd-menu{opacity:1;visibility:visible;transform:none}
+    .nav-dd.open .nav-dd-menu,.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:none}
+    .nav-dd-menu::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
     .nav-dd-menu a{display:flex;align-items:center;gap:10px;padding:10px 12px;font-size:14px;font-weight:500;color:var(--black);text-decoration:none;border-radius:var(--r8);transition:all var(--tr)}
     .nav-dd-menu a:hover{background:var(--gl);color:var(--g)}
     .nav-dd-menu a .ti{font-size:18px;color:var(--g);flex-shrink:0}
@@ -138,7 +139,8 @@
     }
 
     /* ── STATS ── */
-    .stats{background:var(--g);padding:56px 0}
+    /* FLAG: #5cc878 is a synthesized lighter tint of brand green (--g #2ab54a) for this band only */
+    .stats{background:linear-gradient(90deg,var(--g) 0%,#5cc878 100%);padding:56px 0}
     .stats-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
     .stat{text-align:center}
     .stat-v{font-size:44px;font-weight:800;color:#fff;letter-spacing:-.035em;line-height:1;margin-bottom:6px}
@@ -204,35 +206,33 @@
     .services{background:var(--bg);padding-top:64px}
     .services-intro{margin-bottom:8px}
     .services-pin{position:relative}
-    .services-sticky{position:sticky;top:72px;display:flex;flex-direction:column;padding:16px 0 40px}
-    .uw-viewport{overflow:hidden}
+    .services-sticky{position:static;display:flex;flex-direction:column;padding:16px 0 40px}
+    .uw-viewport{overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
+    .uw-viewport::-webkit-scrollbar{display:none}
     .eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
     .sec-h{font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--black);margin-bottom:14px}
     .sec-sub{font-size:17px;line-height:1.65;color:var(--sec);max-width:540px}
     .students-sec{padding:88px 0}
     .uw-carousel-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-    .uw-eyebrow{font-size:13px;color:var(--sec);margin:0}
-    .uw-heading{font-size:20px;font-weight:600;color:var(--black);margin:4px 0 0}
+    .uw-eyebrow{font-size:clamp(18px,2vw,22px);font-weight:600;color:var(--sec);margin:0}
+    .uw-heading{font-size:clamp(24px,3vw,32px);font-weight:700;color:var(--black);margin:6px 0 0}
     .uw-nav-btns{display:flex;gap:8px}
     .uw-nav-btn{width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--tr);font-size:18px;color:var(--black)}
     .uw-nav-btn:hover{background:var(--g);color:#fff;border-color:var(--g)}
-    .uw-track{display:flex;gap:16px;padding-bottom:8px;width:max-content;will-change:transform}
+    .uw-track{display:flex;gap:16px;padding-bottom:8px;width:max-content}
     .uw-track::-webkit-scrollbar{display:none}
     @media(max-width:899px){
-      .services-sticky{position:static;height:auto;padding:8px 0 40px;overflow:visible}
-      .uw-viewport{overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}
-      .uw-viewport::-webkit-scrollbar{display:none}
-      .uw-track{transform:none!important}
+      .services-sticky{padding:8px 0 40px}
       .services-sticky>.wrap{max-width:100%}
     }
-    .uw-card{flex:0 0 300px;height:480px;border-radius:20px;position:relative;overflow:hidden;padding:28px;box-sizing:border-box;transition:transform var(--tr),box-shadow var(--tr)}
+    .uw-card{flex:0 0 300px;height:480px;border-radius:20px;position:relative;overflow:hidden;padding:28px;box-sizing:border-box;transition:transform var(--tr),box-shadow var(--tr);display:block;text-decoration:none}
     .uw-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.14)}
     .uw-card h4{margin:0;font-size:24px;font-weight:600;color:#fff}
     .uw-card p{margin:10px 0 20px;font-size:15px;line-height:1.55;color:rgba(255,255,255,.85)}
     .uw-card-img-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .uw-card-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.62) 0%,rgba(0,0,0,.28) 42%,rgba(0,0,0,0) 78%)}
     .uw-card-body{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-start}
-    .uw-card-btn-img{background:var(--g);color:#fff;border:1.5px solid transparent;border-radius:10px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all var(--tr)}
+    .uw-card-btn-img{display:block;text-align:center;text-decoration:none;box-sizing:border-box;background:var(--g);color:#fff;border:1.5px solid transparent;border-radius:10px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all var(--tr)}
     .uw-card-btn-img:hover{background:var(--gh)}
     /* Mix button + font colour across the row (cycle of 3): green → white → outline.
        Headings/body stay light for legibility on the photos. */
@@ -353,20 +353,27 @@
       <span class="nav-logo-text">uniworks</span>
     </a>
     <div class="nav-ctas">
-      <a href="#studierende" class="btn btn-s">Für Studierende</a>
+      <div class="nav-dd" id="nav-dd-uw">
+        <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+        <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
+          <a href="studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+          <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+        </div>
+      </div>
       <div class="nav-dd" id="nav-dd">
         <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
           Für Unternehmen
           <i class="ti ti-chevron-down" aria-hidden="true"></i>
         </button>
         <div class="nav-dd-menu" role="menu" aria-label="Branchen">
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-          <a href="#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+          <a href="unternehmen/index.html" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+          <a href="unternehmen/logistik.html" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+          <a href="unternehmen/event.html" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+          <a href="unternehmen/catering.html" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+          <a href="unternehmen/einzelhandel.html" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+          <a href="unternehmen/gastronomie-hotellerie.html" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+          <a href="unternehmen/promotion.html" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+          <a href="unternehmen/buero.html" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
         </div>
       </div>
       <a href="about.html" class="nav-textlink">Über uns</a>
@@ -389,17 +396,24 @@
 
 <!-- mobile overlay -->
 <div class="mob-overlay" id="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
-  <a href="#studierende">Für Studierende</a>
+  <details class="mob-dd">
+    <summary>Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+    <div class="mob-dd-list">
+      <a href="studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+      <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+    </div>
+  </details>
   <details class="mob-dd">
     <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
     <div class="mob-dd-list">
-      <a href="#unternehmen"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-      <a href="#unternehmen"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-      <a href="#unternehmen"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-      <a href="#unternehmen"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-      <a href="#unternehmen"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-      <a href="#unternehmen"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-      <a href="#unternehmen"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+      <a href="unternehmen/index.html"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+      <a href="unternehmen/logistik.html"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+      <a href="unternehmen/event.html"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+      <a href="unternehmen/catering.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+      <a href="unternehmen/einzelhandel.html"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+      <a href="unternehmen/gastronomie-hotellerie.html"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+      <a href="unternehmen/promotion.html"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+      <a href="unternehmen/buero.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
     </div>
   </details>
   <a href="about.html">Über uns</a>
@@ -505,8 +519,7 @@
 <section class="dmap" id="deutschlandweit" aria-label="Deutschlandweit vertreten">
   <div class="wrap dmap-grid">
     <div class="dmap-text fu">
-      <div class="eyebrow">Deutschlandweit</div>
-      <h2 class="sec-h">In über 40 Städten für dich da</h2>
+      <h2 class="sec-h"><span style="color:var(--g)">Deutschlandweit</span> für dich da</h2>
       <p class="sec-sub">Gegründet wurde uniworks in München und ist mittlerweile deutschlandweit vertreten.</p>
     </div>
     <div class="dmap-map-col fu" style="transition-delay:.12s">
@@ -531,7 +544,6 @@
         <div class="uw-carousel-hdr">
           <div>
             <p class="uw-eyebrow">Für Unternehmen</p>
-            <h3 class="uw-heading">Für jede Branche das passende Personal</h3>
           </div>
           <div class="uw-nav-btns">
             <button id="uw-prev" class="uw-nav-btn" aria-label="Zurück"><i class="ti ti-arrow-left" aria-hidden="true"></i></button>
@@ -626,6 +638,9 @@
       <img src="../images/logos/JYSK.webp" alt="JYSK" class="ptr-logo" />
       <img src="../images/logos/MBS.webp" alt="MBS" class="ptr-logo" />
       <img src="../images/logos/Raeder.webp" alt="Räder" class="ptr-logo" />
+      <img src="../images/logos/Edeka.webp" alt="Edeka" class="ptr-logo" />
+      <img src="../images/logos/Doco.webp" alt="Doco" class="ptr-logo" />
+      <img src="../images/logos/Rewe.webp" alt="Rewe" class="ptr-logo" />
       <!-- duplicate for loop -->
       <img src="../images/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/WERK1.webp" alt="" class="ptr-logo" />
@@ -635,6 +650,9 @@
       <img src="../images/logos/JYSK.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/MBS.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/Raeder.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Edeka.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Doco.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Rewe.webp" alt="" class="ptr-logo" />
     </div>
   </div>
 </section>
@@ -669,12 +687,13 @@
       <div class="footer-col">
         <h4>Branchen</h4>
         <ul>
-          <li><a href="#">Logistik</a></li>
-          <li><a href="#">Event</a></li>
-          <li><a href="#">Catering</a></li>
-          <li><a href="#">Einzelhandel</a></li>
-          <li><a href="#">Gastronomie</a></li>
-          <li><a href="#">Promotion</a></li>
+          <li><a href="unternehmen/logistik.html">Logistik</a></li>
+          <li><a href="unternehmen/event.html">Event</a></li>
+          <li><a href="unternehmen/catering.html">Catering</a></li>
+          <li><a href="unternehmen/einzelhandel.html">Einzelhandel</a></li>
+          <li><a href="unternehmen/gastronomie-hotellerie.html">Gastronomie &amp; Hotellerie</a></li>
+          <li><a href="unternehmen/promotion.html">Promotion</a></li>
+          <li><a href="unternehmen/buero.html">Büro</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -683,16 +702,16 @@
           <li><a href="about.html">Über Uns</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="#">FAQ</a></li>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 uniworks GmbH. Alle Rechte vorbehalten.</span>
       <div class="footer-bottom-links">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </div>
@@ -732,25 +751,7 @@ mobOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
 }));
 
 // ── "Für Unternehmen" category dropdown ───────────────────────────────────
-const navDd = document.getElementById('nav-dd');
-const navDdToggle = document.getElementById('nav-dd-toggle');
-navDdToggle.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const open = navDd.classList.toggle('open');
-  navDdToggle.setAttribute('aria-expanded', String(open));
-});
-document.addEventListener('click', (e) => {
-  if (!navDd.contains(e.target)) {
-    navDd.classList.remove('open');
-    navDdToggle.setAttribute('aria-expanded', 'false');
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    navDd.classList.remove('open');
-    navDdToggle.setAttribute('aria-expanded', 'false');
-  }
-});
+// Nav category dropdowns open on hover (CSS :hover / :focus-within) — no JS toggle.
 
 // ── Branchen-Karussell (Für Unternehmen) ──────────────────────────────────
 (function () {
@@ -764,85 +765,30 @@ document.addEventListener('keydown', (e) => {
     buero:       '../images/visuals/Buero.webp',
   };
   const cards = [
-    {t:'Logistik',          s:'Lager, Versand und Inventur, zuverlässig besetzt.',        cta:'Zu Logistik',      img:imgs.logistik},
-    {t:'Event',             s:'Auf- und Abbau bis Einlass, alles aus einer Hand.',         cta:'Zu Events',        img:imgs.event},
-    {t:'Catering',          s:'Service- und Küchenhilfen, kurzfristig verfügbar.',         cta:'Zu Catering',      img:imgs.catering},
-    {t:'Einzelhandel',      s:'Kasse, Verkauf und Auffüllen, flexibel gebucht.',           cta:'Zum Einzelhandel', img:imgs.retail},
-    {t:'Gastronomie & Hotellerie', s:'Service und Empfang auf Sterneniveau.',             cta:'Mehr erfahren',    img:imgs.gastro},
-    {t:'Promotion',         s:'Promoter und Hostessen, die Ihre Marke vertreten.',        cta:'Zu Promotion',     img:imgs.promo},
-    {t:'Büro',              s:'Verlässliche Unterstützung im Büroalltag.',                cta:'Zum Büro',         img:imgs.buero},
+    {t:'Logistik',          s:'Lager, Versand und Inventur, zuverlässig besetzt.',        cta:'Zu Logistik',      img:imgs.logistik, href:'unternehmen/logistik.html'},
+    {t:'Event',             s:'Auf- und Abbau bis Einlass, alles aus einer Hand.',         cta:'Zu Events',        img:imgs.event,    href:'unternehmen/event.html'},
+    {t:'Catering',          s:'Service- und Küchenhilfen, kurzfristig verfügbar.',         cta:'Zu Catering',      img:imgs.catering, href:'unternehmen/catering.html'},
+    {t:'Einzelhandel',      s:'Kasse, Verkauf und Auffüllen, flexibel gebucht.',           cta:'Zum Einzelhandel', img:imgs.retail,   href:'unternehmen/einzelhandel.html'},
+    {t:'Gastronomie & Hotellerie', s:'Service und Empfang auf Sterneniveau.',             cta:'Zur Gastronomie',  img:imgs.gastro,   href:'unternehmen/gastronomie-hotellerie.html'},
+    {t:'Promotion',         s:'Promoter und Hostessen, die Ihre Marke vertreten.',        cta:'Zu Promotion',     img:imgs.promo,    href:'unternehmen/promotion.html'},
+    {t:'Büro',              s:'Verlässliche Unterstützung im Büroalltag.',                cta:'Zum Büro',         img:imgs.buero,    href:'unternehmen/buero.html'},
   ];
 
   const track = document.getElementById('uw-track');
   cards.forEach(c => {
-    const el = document.createElement('div');
+    const el = document.createElement('a');
     el.className = 'uw-card';
-    el.innerHTML = `<img src="${c.img}" alt="" class="uw-card-img-bg" loading="lazy" /><div class="uw-card-overlay"></div><div class="uw-card-body"><h4>${c.t}</h4><p>${c.s}</p><button class="uw-card-btn-img">${c.cta}</button></div>`;
+    el.href = c.href;
+    el.setAttribute('aria-label', c.t);
+    el.innerHTML = `<img src="${c.img}" alt="" class="uw-card-img-bg" loading="lazy" /><div class="uw-card-overlay"></div><div class="uw-card-body"><h4>${c.t}</h4><p>${c.s}</p><span class="uw-card-btn-img">${c.cta}</span></div>`;
     track.appendChild(el);
   });
 
-  // ── Scroll-pinning: vertical scroll drives the carousel right, then page continues ──
-  const pin = document.getElementById('services-pin');
-  const sticky = pin.querySelector('.services-sticky');
+  // ── Native horizontal scroll: page scrolls normally; arrows nudge the rail left/right ──
+  const viewport = track.parentElement; // .uw-viewport (overflow-x:auto)
   const STEP = 316; // card (300) + gap (16)
-  const NAV = 72;   // sticky anchors just below the fixed nav
-  let pinDuration = 0;
-  const isDesktop = () => window.matchMedia('(min-width: 900px)').matches;
-
-  function recompute() {
-    if (!isDesktop()) { pin.style.height = ''; track.style.transform = ''; pinDuration = 0; return; }
-    const viewport = track.parentElement.clientWidth;
-    const overflow = Math.max(0, track.scrollWidth - viewport);
-    pinDuration = overflow; // horizontal distance the carousel can travel
-    pin.style.height = overflow > 0 ? (sticky.offsetHeight + overflow) + 'px' : '';
-    applyScroll();
-  }
-
-  function applyScroll() {
-    if (!isDesktop() || pinDuration <= 0) { track.style.transform = ''; return; }
-    const top = pin.getBoundingClientRect().top;
-    const p = Math.min(Math.max(NAV - top, 0), pinDuration);
-    track.style.transform = 'translateX(' + (-p) + 'px)';
-  }
-
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(() => { applyScroll(); ticking = false; }); ticking = true; }
-  }, {passive: true});
-  window.addEventListener('resize', recompute);
-  window.addEventListener('load', recompute);
-
-  function nudge(dir) {
-    if (isDesktop() && pinDuration > 0) {
-      // Move only within the carousel's pinned range so the screen stays put
-      // (sticky keeps the header/cards fixed; only the track slides). Clamping
-      // prevents the scroll from leaking into the neighbouring sections.
-      const start = pin.getBoundingClientRect().top + window.scrollY - NAV; // scrollY where the track is at 0
-      const target = Math.min(Math.max(window.scrollY + dir * STEP, start), start + pinDuration);
-      window.scrollTo({top: target, behavior: 'smooth'});
-    } else {
-      track.scrollBy({left: dir * STEP, behavior: 'smooth'});
-    }
-  }
-
-  document.getElementById('uw-next').addEventListener('click', () => nudge(1));
-  document.getElementById('uw-prev').addEventListener('click', () => nudge(-1));
-
-  // Horizontal trackpad swipe over the carousel drives it left/right (desktop).
-  // Feeds the gesture into the same vertical-scroll mechanism so state stays in sync.
-  track.parentElement.addEventListener('wheel', (e) => {
-    if (!isDesktop() || pinDuration <= 0) return;       // mobile uses native overflow scroll
-    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; // let vertical gestures scroll the page
-    const top = pin.getBoundingClientRect().top;
-    const p = Math.min(Math.max(NAV - top, 0), pinDuration);
-    // Only hijack while the carousel still has room to travel in that direction.
-    if ((e.deltaX > 0 && p < pinDuration) || (e.deltaX < 0 && p > 0)) {
-      e.preventDefault();
-      window.scrollBy({top: e.deltaX});
-    }
-  }, {passive: false});
-
-  recompute();
+  document.getElementById('uw-next').addEventListener('click', () => viewport.scrollBy({left: STEP, behavior: 'smooth'}));
+  document.getElementById('uw-prev').addEventListener('click', () => viewport.scrollBy({left: -STEP, behavior: 'smooth'}));
 })();
 
 // ── Scroll-triggered fade-up ──────────────────────────────────────────────

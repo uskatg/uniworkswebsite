@@ -1,0 +1,125 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   uniworks — Personalanfrage: conversational (Typeform-style) wrapper
+   Full-screen modal that asks one question at a time. Brand-native replica
+   of the Typeform UX — no external embed. Relies on tokens from branche.css.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.tf{position:fixed;inset:0;z-index:1000;background:#fff;display:flex;flex-direction:column;
+    height:100vh;height:100dvh;width:100vw;overflow:hidden;
+    opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease}
+.tf.open{opacity:1;visibility:visible}
+.tf[hidden]{display:none}
+
+/* progress */
+.tf-progress{position:absolute;top:0;left:0;right:0;height:5px;background:var(--gl);z-index:3}
+.tf-progress-bar{display:block;height:100%;width:0;background:var(--g);
+    border-radius:0 3px 3px 0;transition:width .45s cubic-bezier(.4,0,.2,1)}
+
+/* close + brand */
+.tf-top{position:absolute;top:18px;left:0;right:0;display:flex;align-items:center;
+    justify-content:space-between;padding:0 28px;z-index:3}
+.tf-brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.tf-brand img{width:30px;height:30px;border-radius:7px}
+.tf-brand span{font-size:17px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+.tf-close{background:none;border:none;cursor:pointer;width:40px;height:40px;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;color:var(--sec);font-size:24px;
+    transition:background var(--tr),color var(--tr)}
+.tf-close:hover{background:var(--bg);color:var(--black)}
+
+/* viewport holds the stacked steps */
+.tf-viewport{position:relative;flex:1;overflow:hidden}
+.tf-step{position:absolute;inset:0;display:flex;align-items:center;overflow-y:auto;
+    padding:96px 28px 32px;opacity:0;transform:translateY(28px);pointer-events:none;
+    transition:opacity .4s ease,transform .4s cubic-bezier(.4,0,.2,1)}
+.tf-step.is-active{opacity:1;transform:none;pointer-events:auto}
+.tf-step.is-prev{transform:translateY(-28px)}
+.tf-inner{width:100%;max-width:640px;margin:0 auto}
+
+.tf-num{display:inline-flex;align-items:center;gap:7px;color:var(--g);font-size:15px;
+    font-weight:600;margin-bottom:14px}
+.tf-num .ti{font-size:16px}
+.tf-eyebrow{font-size:clamp(20px,2.4vw,26px);font-weight:700;color:var(--g);letter-spacing:-.01em;margin-bottom:12px}
+.tf-q{font-size:clamp(22px,3.2vw,30px);font-weight:700;color:var(--black);
+    line-height:1.25;letter-spacing:-.02em;margin-bottom:10px}
+.tf-q .req{color:var(--g)}
+.tf-sub{font-size:16px;line-height:1.5;color:var(--sec);margin-bottom:28px;max-width:560px}
+
+/* text-ish inputs (Typeform underline style) */
+.tf-input{width:100%;font-family:var(--font);font-size:22px;color:var(--black);
+    background:transparent;border:none;border-bottom:2px solid var(--border);
+    padding:8px 2px;transition:border-color var(--tr)}
+.tf-input::placeholder{color:#C2C7CF}
+.tf-input:focus{outline:none;border-color:var(--g)}
+textarea.tf-input{resize:none;min-height:64px;line-height:1.4}
+select.tf-select{cursor:pointer;appearance:none;-webkit-appearance:none;padding-right:30px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%232ab54a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 2px center}
+
+/* labelled field groups (address / contact) */
+.tf-fields{display:flex;flex-direction:column;gap:20px}
+.tf-fields.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+.tf-field{display:flex;flex-direction:column;gap:6px}
+.tf-field.full{grid-column:1 / -1}
+.tf-field label{font-size:14px;font-weight:600;color:var(--black)}
+.tf-field label .req{color:var(--g)}
+.tf-field .tf-input{font-size:18px}
+
+/* multi-select choices */
+.tf-choices{display:flex;flex-direction:column;gap:12px}
+.tf-choice{display:flex;align-items:center;gap:14px;width:100%;text-align:left;cursor:pointer;
+    background:#fff;border:1.5px solid var(--border);border-radius:var(--r12);
+    padding:14px 16px;font-family:var(--font);font-size:17px;color:var(--black);
+    transition:border-color var(--tr),background var(--tr),box-shadow var(--tr)}
+.tf-choice:hover{border-color:var(--g);background:var(--gl)}
+.tf-choice.sel{border-color:var(--g);background:var(--gl);box-shadow:0 0 0 1px var(--g) inset}
+.tf-choice .key{flex-shrink:0;width:28px;height:28px;border-radius:7px;border:1.5px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;
+    color:var(--sec);transition:all var(--tr)}
+.tf-choice:hover .key,.tf-choice.sel .key{border-color:var(--g);background:var(--g);color:#fff}
+.tf-choice .lbl{flex:1}
+.tf-choice .tick{color:var(--g);font-size:20px;opacity:0;transition:opacity var(--tr)}
+.tf-choice.sel .tick{opacity:1}
+
+/* inline free-text reveal (e.g. "Andere Qualifikation") */
+.tf-andere{margin-top:14px}
+.tf-andere[hidden]{display:none}
+
+/* mailto link inside a sub-line */
+.tf-maillink{color:var(--g);font-weight:600;text-decoration:underline;text-underline-offset:3px;
+    text-decoration-thickness:2px;transition:color var(--tr)}
+.tf-maillink:hover{color:var(--gh)}
+
+/* per-step error + inline OK */
+.tf-err{display:none;color:#DC2626;font-size:14px;margin-top:14px}
+.tf-err.show{display:block}
+.tf-ok{display:inline-flex;align-items:center;gap:12px;margin-top:28px;flex-wrap:wrap}
+.tf-ok .btn-ok{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#fff;
+    border:none;border-radius:var(--r8);padding:12px 22px;font-family:var(--font);font-size:16px;
+    font-weight:600;cursor:pointer;transition:all var(--tr)}
+.tf-ok .btn-ok:hover{background:var(--gh);transform:translateY(-1px)}
+.tf-ok .hint{font-size:13px;color:var(--sec)}
+.tf-ok .hint kbd{font-family:var(--font);font-weight:600;color:var(--body);
+    background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:1px 6px}
+
+/* footer nav */
+.tf-foot{display:flex;align-items:center;justify-content:flex-end;gap:6px;
+    padding:14px 28px;border-top:1px solid var(--border)}
+.tf-foot .count{margin-right:auto;font-size:13px;color:var(--sec)}
+.tf-nav{background:var(--g);border:none;color:#fff;width:38px;height:34px;border-radius:7px;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;
+    transition:background var(--tr),opacity var(--tr)}
+.tf-nav:hover{background:var(--gh)}
+.tf-nav:disabled{opacity:.35;cursor:default;background:var(--g)}
+
+/* end screen */
+.tf-end{text-align:center;max-width:480px;margin:0 auto}
+.tf-end .ok{width:74px;height:74px;border-radius:999px;background:var(--gl);color:var(--g);
+    display:inline-flex;align-items:center;justify-content:center;font-size:40px;margin-bottom:22px}
+.tf-end h2{font-size:28px;font-weight:800;color:var(--black);margin-bottom:12px}
+.tf-end p{font-size:17px;line-height:1.55;color:var(--body);margin-bottom:26px}
+
+@media(max-width:600px){
+  .tf-step{padding:90px 22px 28px}
+  .tf-fields.cols{grid-template-columns:1fr}
+  .tf-q{font-size:23px}
+}

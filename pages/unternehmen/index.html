@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Für Unternehmen — uniworks Personaldienstleister</title>
+  <meta name="description" content="uniworks stellt Unternehmen flexibel, schnell und zuverlässig geprüfte Studierende bereit – von Logistik über Events bis Gastronomie. Recruiting, Bürokratie und Abrechnung übernehmen wir. Jetzt Personalanfrage stellen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="branche.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../about.html">Über Uns</a></li>
+      </ul>
+      <div class="nav-ctas">
+        <div class="nav-dd" id="nav-dd-uw">
+          <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+          <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
+          <a href="../studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+          <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+          </div>
+        </div>
+        <div class="nav-dd" id="nav-dd">
+          <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
+            Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+          <a href="index.html" class="active" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+          <a href="logistik.html" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+          <a href="event.html" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+          <a href="catering.html" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+          <a href="einzelhandel.html" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+          <a href="gastronomie-hotellerie.html" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+          <a href="promotion.html" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+          <a href="buero.html" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+          </div>
+        </div>
+      </div>
+      <button class="nav-hbg" id="nav-hbg" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mob-overlay" id="mob-overlay">
+    <details class="mob-dd">
+      <summary>Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="../studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+        <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+      </div>
+    </details>
+    <details class="mob-dd" open>
+      <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="index.html"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+        <a href="logistik.html"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+        <a href="event.html"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+        <a href="catering.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+        <a href="einzelhandel.html"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+        <a href="gastronomie-hotellerie.html"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+        <a href="promotion.html"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+        <a href="buero.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+      </div>
+    </details>
+    <a href="../about.html">Über Uns</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <div class="bhero-outer">
+    <section class="bhero bhero-hub">
+      <div class="bhero-media">
+        <video src="../../images/branding/LoadingAnimationDesktop.mp4"
+               autoplay muted playsinline preload="auto"
+               aria-label="uniworks Markenanimation"></video>
+      </div>
+      <div class="bhero-text">
+        <h1>Persönlich. <em>Maßgeschneidert.</em></h1>
+        <p>Von Service über Events und Catering bis Logistik und Einzelhandel: uniworks stellt Ihnen flexibel, schnell und zuverlässig geprüfte Studierende bereit, maßgeschneidert auf Ihren Bedarf. Recruiting, Bürokratie, Einsatzplanung und Abrechnung übernehmen wir, Sie gewinnen Zeit und Flexibilität.</p>
+        <div class="bhero-btns">
+          <a href="#branchen" class="btn btn-p">Personalanfrage stellen</a>
+          <a href="../about.html" class="btn btn-s">Über uns</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── LEISTUNGEN (what we take off your plate) ── -->
+  <section class="leist" id="leistungen">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Unternehmen gewinnen wertvolle Zeit und Flexibilität.</h2>
+        <p>Sie sagen uns, wen Sie wann und wo brauchen. Den Rest erledigen wir – von der Auswahl bis zur Lohnabrechnung.</p>
+      </div>
+      <div class="leist-grid">
+        <div class="leist-card">
+          <div class="leist-img"><img src="../../images/visuals/Recruiting.webp" alt="" loading="lazy" /></div>
+          <div class="leist-body">
+            <h3>Recruiting &amp; Auswahl</h3>
+            <p>Wir finden, prüfen und briefen die passenden Studierenden für Ihren Einsatz.</p>
+          </div>
+        </div>
+        <div class="leist-card">
+          <div class="leist-img"><img src="../../images/visuals/Buerokratie.webp" alt="" loading="lazy" /></div>
+          <div class="leist-body">
+            <h3>Bürokratie</h3>
+            <p>Verträge, Anmeldungen und Papierkram übernehmen wir vollständig für Sie.</p>
+          </div>
+        </div>
+        <div class="leist-card">
+          <div class="leist-img"><img src="../../images/visuals/Einsatzplanung.webp" alt="" loading="lazy" /></div>
+          <div class="leist-body">
+            <h3>Einsatzplanung</h3>
+            <p>Schichten, Standorte und kurzfristige Änderungen koordinieren wir zuverlässig.</p>
+          </div>
+        </div>
+        <div class="leist-card">
+          <div class="leist-img"><img src="../../images/visuals/Zeitplanung.webp" alt="" loading="lazy" /></div>
+          <div class="leist-body">
+            <h3>Zeiterfassung</h3>
+            <p>Digitale Stundenerfassung – transparent, nachvollziehbar und papierlos.</p>
+          </div>
+        </div>
+        <div class="leist-card">
+          <div class="leist-img"><img src="../../images/visuals/Zahlung.webp" alt="" loading="lazy" /></div>
+          <div class="leist-body">
+            <h3>Lohn &amp; Gehalt</h3>
+            <p>Abrechnung, Sozialabgaben und Auszahlung laufen komplett über uns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CASE STUDIES ── -->
+  <section class="cases" id="referenzen">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 style="color:var(--black)"><span style="color:var(--g)">Referenzen</span>, die für sich sprechen.</h2>
+        <p style="color:var(--body)">Vom Stadion bis zur Großküche – über 15.000 Studierende waren bereits für unsere Kund:innen im Einsatz.</p>
+      </div>
+      <div class="cases-grid">
+        <article class="case">
+          <div class="case-img">
+            <img src="../../images/visuals/EM.webp" alt="UEFA EURO 2024 Promotion-Einsatz" loading="lazy" />
+            <span class="case-tag"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</span>
+          </div>
+          <div class="case-body">
+            <h3>UEFA EURO 2024</h3>
+            <p>Markenpräsenz und Fan-Aktivierung rund um die Europameisterschaft – koordiniert über mehrere Austragungsorte.</p>
+            <div class="case-stat"><b>250+</b><span>Promoter:innen in 7&nbsp;Städten</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-img">
+            <img src="../../images/visuals/Adele.webp" alt="Adele Konzert München" loading="lazy" />
+            <span class="case-tag"><i class="ti ti-confetti" aria-hidden="true"></i>StageHands &amp; Catering</span>
+          </div>
+          <div class="case-body">
+            <h3>Adele in München</h3>
+            <p>Auf- und Abbau, Crew-Support und Catering-Service für eines der größten Konzert-Events des Jahres.</p>
+            <div class="case-stat"><b>100+</b><span>Kräfte · 700.000&nbsp;Gäste</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-img">
+            <img src="../../images/visuals/ACDCGruppe.webp" alt="AC/DC Tour StageHands" loading="lazy" />
+            <span class="case-tag"><i class="ti ti-confetti" aria-hidden="true"></i>StageHands</span>
+          </div>
+          <div class="case-body">
+            <h3>AC/DC Tour</h3>
+            <p>Eingespielte Stagehand-Crews für Bühnenaufbau und Logistik an gleich mehreren Tour-Standorten.</p>
+            <div class="case-stat"><b>3</b><span>Standorte —</span><span style="color:var(--g);font-weight:600">München, Nürnberg und Hockenheim</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-img">
+            <img src="../../images/visuals/Hungrig.webp" alt="Schulverpflegung Catering" loading="lazy" />
+            <span class="case-tag"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</span>
+          </div>
+          <div class="case-body">
+            <h3>Hungrig?</h3>
+            <p>Gemeinsam mit einem Cateringpartner liefern und servieren wir an mehreren Schulen täglich Essen. In den Schulferien fallen keine Personalkosten an – das spart gegenüber einer Festanstellung bares Geld. Da schmeckt selbst der Grünkohl.</p>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-img">
+            <img src="../../images/visuals/Bier.webp" alt="Biergarten-Service in München" loading="lazy" />
+            <span class="case-tag"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie</span>
+          </div>
+          <div class="case-body">
+            <h3>O'zapft</h3>
+            <p>Servus, als Münchner Unternehmen liegt es uns natürlich besonders am Herzen, unsere geliebten Biergärten mit uniworkern zu unterstützen, egal ob im Service, am Zapfhahn oder an der Kasse. Prost!</p>
+          </div>
+        </article>
+        <article class="case">
+          <div class="case-img">
+            <img src="../../images/visuals/Messe.webp" alt="Hostess und Host auf einer Messe" loading="lazy" />
+            <span class="case-tag"><i class="ti ti-user-check" aria-hidden="true"></i>Hostess / Host</span>
+          </div>
+          <div class="case-body">
+            <h3>Herzlich willkommen</h3>
+            <p>In Deutschlands Messe-Städten übernehmen wir sorgsam die Ticketkontrollen, stehen Unternehmen beim Bewerben ihrer Produkte zur Seite und sorgen stets dafür, dass sich alle willkommen fühlen.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REFERENCES (client logos, auto-scrolling marquee) ── -->
+  <section class="refs">
+    <h2>Vertrauen von Marken in ganz Deutschland.</h2>
+    <div class="refs-marquee">
+      <div class="refs-row">
+        <div class="refs-track refs-track-left">
+          <img src="../../images/logos/JYSK.webp" alt="JYSK" decoding="async" />
+          <img src="../../images/logos/Raeder.webp" alt="Räder" decoding="async" />
+          <img src="../../images/logos/Rewe.webp" alt="REWE" decoding="async" />
+          <img src="../../images/logos/Doco.webp" alt="Do & Co" decoding="async" />
+          <img src="../../images/logos/Edeka.webp" alt="EDEKA" decoding="async" />
+          <img src="../../images/logos/Driver.webp" alt="Driver" decoding="async" />
+          <img src="../../images/logos/mTU.webp" alt="MTU" decoding="async" />
+          <img src="../../images/logos/MBS.webp" alt="MBS" decoding="async" />
+          <img src="../../images/logos/Volvo.webp" alt="Volvo" decoding="async" />
+          <img src="../../images/logos/Uber.webp" alt="Uber" decoding="async" />
+          <!-- duplicate for seamless loop -->
+          <img src="../../images/logos/JYSK.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Raeder.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Rewe.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Doco.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Edeka.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Driver.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/mTU.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/MBS.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Volvo.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Uber.webp" alt="" aria-hidden="true" decoding="async" />
+        </div>
+      </div>
+      <div class="refs-row">
+        <div class="refs-track refs-track-right">
+          <img src="../../images/logos/Lidl.webp" alt="Lidl" decoding="async" />
+          <img src="../../images/logos/Penny.webp" alt="Penny" decoding="async" />
+          <img src="../../images/logos/Hotel.webp" alt="Hotel" decoding="async" />
+          <img src="../../images/logos/Elements.webp" alt="Elements" decoding="async" />
+          <img src="../../images/logos/Kofl.webp" alt="KOFL" decoding="async" />
+          <img src="../../images/logos/Bat.webp" alt="BAT" decoding="async" />
+          <img src="../../images/logos/Groblgastro.webp" alt="Gröbl Gastro" decoding="async" />
+          <img src="../../images/logos/Blgastro.webp" alt="BL Gastro" decoding="async" />
+          <img src="../../images/logos/Gastronomiemagazin.webp" alt="Gastronomiemagazin" decoding="async" />
+          <img src="../../images/logos/Schulverpflegung.webp" alt="Schulverpflegung" decoding="async" />
+          <!-- duplicate for seamless loop -->
+          <img src="../../images/logos/Lidl.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Penny.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Hotel.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Elements.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Kofl.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Bat.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Groblgastro.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Blgastro.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Gastronomiemagazin.webp" alt="" aria-hidden="true" decoding="async" />
+          <img src="../../images/logos/Schulverpflegung.webp" alt="" aria-hidden="true" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BRANCHEN grid → subpages ── -->
+  <section class="branchen" id="branchen">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Personal für Ihre Branche.</h2>
+        <p>Wählen Sie Ihren Bereich und stellen Sie in wenigen Schritten Ihre Personalanfrage.</p>
+      </div>
+      <div class="branchen-grid">
+        <a href="logistik.html" class="branche-card">
+          <img src="../../images/visuals/Logistik.jpeg" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Logistik</h3>
+            <p>Lagerhelfer:innen, Staplerfahrer:innen und Crewchiefs für reibungslose Abläufe.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="event.html" class="branche-card">
+          <img src="../../images/visuals/AdeleMesse.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Event</h3>
+            <p>Stagehands, Auf- und Abbau sowie Einlass- und Garderobenpersonal.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="catering.html" class="branche-card">
+          <img src="../../images/visuals/Catering.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Catering</h3>
+            <p>Servicekräfte, Küchenhilfen und Runner:innen für volle Häuser.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="einzelhandel.html" class="branche-card">
+          <img src="../../images/visuals/Einzelhandel.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Einzelhandel</h3>
+            <p>Verkäufer:innen, Kassierer:innen und Einräumhilfen für Stoßzeiten.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="gastronomie-hotellerie.html" class="branche-card">
+          <img src="../../images/visuals/GastronomieHotellerie.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Gastronomie &amp; Hotellerie</h3>
+            <p>Servicekräfte, Barkeeper:innen und Hotelhilfen mit Gespür fürs Gastgeben.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="promotion.html" class="branche-card">
+          <img src="../../images/visuals/Promotion.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Promotion</h3>
+            <p>Promoter:innen, Brand Ambassadors und Hostessen für Ihre Marke.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="buero.html" class="branche-card">
+          <img src="../../images/visuals/Buero.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Büro</h3>
+            <p>Studentische Bürokräfte für Empfang, Back-Office und Projektunterstützung.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+        <a href="../about.html" class="branche-card">
+          <img src="../../images/branding/UWTeam.webp" alt="" class="branche-card-img" loading="lazy" />
+          <div class="branche-card-overlay"></div>
+          <div class="branche-card-body">
+            <h3>Über uns</h3>
+            <p>Lernen Sie das Team kennen, das hinter uniworks steht.</p>
+            <span class="branche-more">Mehr erfahren <i class="ti ti-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COVERAGE ── -->
+  <section class="cover">
+    <div class="wrap">
+      <h2>Deutschlandweit für Sie vertreten.</h2>
+      <p class="cover-lead">Egal ob Großstadt oder Region – unser Netzwerk aus motivierten Studierenden ist in ganz Deutschland für Sie im Einsatz.</p>
+      <div class="cover-stat">15.000+</div>
+      <div class="cover-stat-lbl">Studierende im uniworks Netzwerk</div>
+      <div class="cover-cities" id="cover-cities">
+        <span>Augsburg</span>
+        <span>Berlin</span>
+        <span>Dortmund</span>
+        <span>Frankfurt am Main</span>
+        <span>Freiburg</span>
+        <span>Hamburg</span>
+        <span>Leipzig</span>
+        <span>München</span>
+        <span>Nürnberg</span>
+        <span>Stuttgart</span>
+        <span>Ulm</span>
+        <span class="city-extra">Sylt</span>
+        <span class="city-extra">Kiel</span>
+        <span class="city-extra">Bremerhaven</span>
+        <span class="city-extra">Wilhelmshaven</span>
+        <span class="city-extra">Oldenburg</span>
+        <span class="city-extra">Hannover</span>
+        <span class="city-extra">Potsdam</span>
+        <span class="city-extra">Münster</span>
+        <span class="city-extra">Blankenburg</span>
+        <span class="city-extra">Essen</span>
+        <span class="city-extra">Düsseldorf</span>
+        <span class="city-extra">Dresden</span>
+        <span class="city-extra">Erfurt</span>
+        <span class="city-extra">Weimar</span>
+        <span class="city-extra">Fulda</span>
+        <span class="city-extra">Köln</span>
+        <span class="city-extra">Alsfeld</span>
+        <span class="city-extra">Nürburg</span>
+        <span class="city-extra">Chemnitz</span>
+        <span class="city-extra">Aschaffenburg</span>
+        <span class="city-extra">Darmstadt</span>
+        <span class="city-extra">Weiden</span>
+        <span class="city-extra">Regensburg</span>
+        <span class="city-extra">Mannheim</span>
+        <span class="city-extra">Heidelberg</span>
+        <span class="city-extra">Reutlingen</span>
+        <span class="city-extra">Passau</span>
+        <span class="city-extra">Konstanz</span>
+        <span class="city-extra">Kempten</span>
+        <span class="city-extra">Rosenheim</span>
+        <span class="city-extra">Salzburg</span>
+        <span class="city-extra">Weil am Rhein</span>
+        <button type="button" class="cities-toggle" id="cities-toggle" aria-expanded="false" aria-controls="cover-cities" aria-label="Alle Städte anzeigen"><i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Häufige Fragen.</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Welche Art von Personalbedarf kann ich über uniworks decken? <i class="ti ti-plus" aria-hidden="true"></i></summary>
+          <div class="faq-a">Mit uniworks können Sie sowohl kurzfristige Belastungsspitzen abfedern als auch längerfristigen Personalbedarf decken. Wir überlassen Ihnen Aushilfskräfte für einzelne Schichten oder mehrere Wochen und Monate. Unsere uniworker stehen Ihnen sowohl im gewerblichen / kaufmännischen als auch privaten Bereich zur Verfügung. Dabei decken wir ein breites Spektrum an Tätigkeiten ab: von einfachen Aufgaben ohne große Einarbeitung (z.&nbsp;B. als Lagerist:in, Verkäufer:in, Umzugshelfer:in) bis hin zu anspruchsvolleren Positionen wie z.&nbsp;B. Kellner:in oder Kassierer:in.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Wie schnell kann ich Personal buchen? <i class="ti ti-plus" aria-hidden="true"></i></summary>
+          <div class="faq-a">In der Regel ist eine Zuteilung ab einer Vorlaufzeit von 24&nbsp;Stunden möglich, in Einzelfällen (beispielsweise bei Anschlussbuchungen) sogar noch kurzfristiger.</div>
+        </details>
+        <details class="faq-item">
+          <summary>In welchen Regionen ist uniworks vertreten? <i class="ti ti-plus" aria-hidden="true"></i></summary>
+          <div class="faq-a">Gegründet wurde uniworks in München und ist mittlerweile deutschlandweit vertreten. Dazu gehören unter anderem Städte wie Augsburg, Berlin, Dortmund, Frankfurt am Main, Freiburg, Hamburg, Leipzig, Nürnberg, Stuttgart und Ulm. Sollten Sie Unterstützung in einer Region benötigen, die nicht aufgelistet ist, zögern Sie nicht, uns zu kontaktieren. Unsere Erfahrung zeigt, dass dies mit etwas Vorlaufzeit ebenfalls realisierbar ist.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Welche Fixkosten erwarten mich? <i class="ti ti-plus" aria-hidden="true"></i></summary>
+          <div class="faq-a">Keine. Bei uniworks gibt es weder monatliche Gebühren noch eine monatliche Mindestabnahme. Sie zahlen ausschließlich für die tatsächlich geleisteten Arbeitsstunden der uniworker bzw. bei einer Absage Ihrerseits innerhalb von 48&nbsp;Stunden vor vereinbartem Arbeitsbeginn.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Ich bin sehr zufrieden mit meinem uniworker – bekomme ich grundsätzlich denselben / dieselbe zugeteilt? <i class="ti ti-plus" aria-hidden="true"></i></summary>
+          <div class="faq-a">Um Prozesse zu vereinfachen und unnötige Einarbeitungszeit zu vermeiden, versuchen wir grundsätzlich, Ihre Präferenzen zu berücksichtigen. Sie erhöhen die Wahrscheinlichkeit einer erneuten Zuteilung, indem Sie uns Rückmeldung über Ihre Zufriedenheit geben.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Kann ich meine Buchung stornieren? <i class="ti ti-plus" aria-hidden="true"></i></summary>
+          <div class="faq-a">Im Geschäftsleben kann es immer auch zu kurzfristigen Änderungen kommen und Sie können prinzipiell jede getätigte Buchung absagen. Bitte haben Sie Verständnis dafür, dass bei einer Absage innerhalb von 48&nbsp;Stunden vor vereinbartem Arbeitsbeginn die jeweilige Schicht unabhängig von der Inanspruchnahme in Rechnung gestellt wird.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <!-- FLAG: contact person, photo, email and phone mirror the original site
+       and should be verified before publishing. -->
+  <section class="contact">
+    <div class="wrap">
+      <h2 class="contact-h">Sprechen Sie mit uns.</h2>
+      <div class="contact-card">
+        <div class="contact-photo">
+          <img src="../../images/membersandnews/Moritz.webp" alt="Moritz Lange, Geschäftsführender Gesellschafter" loading="lazy" />
+        </div>
+        <div class="contact-info">
+          <h3>Moritz Lange</h3>
+          <p class="contact-role">Geschäftsführender Gesellschafter</p>
+          <p>Als Geschäftsführer ist mir der persönliche Kontakt zu meinen Kunden besonders wichtig, deswegen bleibe ich auch nach dem Erstkontakt Ihr persönlicher Ansprechpartner.</p>
+          <div class="contact-btns">
+            <a href="mailto:moritz@uniworks.gmbh" class="contact-pill"><i class="ti ti-mail" aria-hidden="true"></i>moritz@uniworks.gmbh</a>
+            <a href="tel:+491749359156" class="contact-pill"><i class="ti ti-phone" aria-hidden="true"></i>0174 9359156</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PARTNER MARQUEE ── -->
+  <section class="partners">
+    <div class="wrap">
+      <p class="partners-lbl">Unsere Partner &amp; Kunden</p>
+    </div>
+    <div class="ptrs-track-wrap" aria-hidden="true">
+      <div class="ptrs-track">
+        <img src="../../images/logos/DEHOGABayern.webp" alt="DEHOGA Bayern" class="ptr-logo" />
+        <img src="../../images/logos/WERK1.webp" alt="WERK1" class="ptr-logo" />
+        <img src="../../images/logos/TUM.webp" alt="TU München" class="ptr-logo" />
+        <img src="../../images/logos/LMUIEC.webp" alt="LMU IEC" class="ptr-logo" />
+        <img src="../../images/logos/AbsolventenKongress.webp" alt="Absolventenkongress" class="ptr-logo" />
+        <img src="../../images/logos/JYSK.webp" alt="JYSK" class="ptr-logo" />
+        <img src="../../images/logos/MBS.webp" alt="MBS" class="ptr-logo" />
+        <img src="../../images/logos/Raeder.webp" alt="Räder" class="ptr-logo" />
+        <img src="../../images/logos/Edeka.webp" alt="Edeka" class="ptr-logo" />
+        <img src="../../images/logos/Doco.webp" alt="Doco" class="ptr-logo" />
+        <img src="../../images/logos/Rewe.webp" alt="Rewe" class="ptr-logo" />
+        <!-- duplicate for seamless loop -->
+        <img src="../../images/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/WERK1.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/TUM.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/LMUIEC.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/AbsolventenKongress.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/JYSK.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/MBS.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Raeder.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Edeka.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Doco.webp" alt="" class="ptr-logo" />
+        <img src="../../images/logos/Rewe.webp" alt="" class="ptr-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="../../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="../index.html">Für Studierende</a></li>
+            <li><a href="index.html">Für Unternehmen</a></li>
+            <li><a href="../index.html#app">App herunterladen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="logistik.html">Logistik</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="einzelhandel.html">Einzelhandel</a></li>
+            <li><a href="gastronomie-hotellerie.html">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="promotion.html">Promotion</a></li>
+            <li><a href="buero.html">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="../about.html">Über Uns</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="branche.js"></script>
+  <script>
+    // Expand/collapse the full city list in the coverage section
+    (function () {
+      var grid = document.getElementById('cover-cities');
+      var btn = document.getElementById('cities-toggle');
+      if (!grid || !btn) return;
+      btn.addEventListener('click', function () {
+        var open = grid.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Weniger Städte anzeigen' : 'Alle Städte anzeigen');
+      });
+    })();
+
+    // Start the brand marquee only once its logos have loaded, so the track
+    // width is known and the scroll doesn't render off-centre on first paint.
+    (function () {
+      var marquee = document.querySelector('.refs-marquee');
+      if (!marquee) return;
+      var imgs = Array.prototype.slice.call(marquee.querySelectorAll('img'));
+      var ready = function () { marquee.classList.add('refs-ready'); };
+      var pending = imgs.filter(function (img) { return !img.complete; }).length;
+      if (!pending) { ready(); return; }
+      var done = function () { if (--pending <= 0) ready(); };
+      imgs.forEach(function (img) {
+        if (img.complete) return;
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+      });
+      // Safety net: never leave the marquee static if an image stalls.
+      window.addEventListener('load', ready);
+      setTimeout(ready, 3000);
+    })();
+
+    // The hero brand animation plays once and ends on a green frame; when it
+    // scrolls out of view the browser may drop the decoded frame, leaving an
+    // empty box on return. Restart it every time it re-enters the viewport.
+    (function () {
+      var v = document.querySelector('.bhero-media video');
+      if (!v) return;
+      var replay = function () {
+        try { v.currentTime = 0; } catch (e) {}
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      };
+      var inView = function () {
+        var r = v.getBoundingClientRect();
+        return r.bottom > 0 && r.top < (window.innerHeight || document.documentElement.clientHeight);
+      };
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) replay(); });
+        }, { threshold: 0.25 }).observe(v);
+      }
+      // Returning to the tab can also surface a dropped frame.
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && inView()) replay();
+      });
+    })();
+  </script>
+</body>
+</html>
