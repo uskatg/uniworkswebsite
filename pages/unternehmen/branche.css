@@ -87,7 +87,9 @@ a{color:inherit}
   .bhero-media{order:3;margin-bottom:24px}
   .bhero-media img,.bhero-media video{height:240px}
   .bhero p{order:4;font-size:16px;margin-bottom:26px}
-  .bhero-btns{order:5}
+  .bhero-btns{order:5;justify-content:center;width:100%}
+  /* "Lieber im Dialog ausfüllen" Button mittig auf Mobil */
+  .anfrage-intro>p:last-child{text-align:center}
 }
 
 /* ── ROLES STRIP ── */

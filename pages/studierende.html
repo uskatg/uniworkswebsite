@@ -144,15 +144,20 @@
     @media(max-width:900px){
       .st-hero{padding:104px 0 48px}
       .st-hero-grid{grid-template-columns:1fr;gap:8px}
-      .st-hero-media{order:-1;min-height:360px;margin-left:0;gap:8px}
+      /* nur ein Screen auf Mobil, mittig */
+      .st-hero-media{order:-1;min-height:auto;margin-left:0;gap:0;padding:24px 0 12px}
       .st-hero-media::after{display:none}
       /* kräftigeres, gesättigteres Grün-Leuchten auf Mobil */
       .st-hero-media::before{background:radial-gradient(50% 50% at 50% 50%,rgba(42,181,74,.55),rgba(42,181,74,.22) 55%,transparent 75%);filter:blur(14px)}
+      .st-phone{width:auto;filter:drop-shadow(0 0 22px rgba(42,181,74,.40)) drop-shadow(0 18px 38px rgba(42,181,74,.20))}
+      .st-phone:nth-of-type(1){width:240px;max-width:64%}
+      .st-phone:nth-of-type(2),.st-phone:nth-of-type(3){display:none}
+      .st-hero-chip{left:auto;top:auto;right:14%;bottom:9%;padding:10px 14px}
       .st-hero-btns{justify-content:flex-start}
     }
     @media(max-width:520px){
-      .st-phone{width:31%;max-width:130px}
-      .st-hero-chip{left:6%;top:6%;padding:9px 12px}
+      .st-phone:nth-of-type(1){width:210px;max-width:62%}
+      .st-hero-chip{right:9%;bottom:8%;padding:9px 12px}
     }
 
     /* ── STATS BAND ── */
@@ -224,8 +229,12 @@
     .how-step p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.88)}
     .how-note{margin-top:36px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;color:var(--body);text-align:center}
     .how-note .ti{font-size:22px;color:var(--g)}
-    @media(max-width:900px){.how-grid{grid-template-columns:1fr 1fr;gap:32px 20px}}
-    @media(max-width:480px){.how-grid{grid-template-columns:1fr;gap:30px}}
+    @media(max-width:900px){
+      /* horizontal scrollbar statt gestapelt auf Mobil */
+      .how-grid{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:26px 24px 10px;margin:0 -24px;scrollbar-width:none}
+      .how-grid::-webkit-scrollbar{display:none}
+      .how-step{flex:0 0 76%;scroll-snap-align:center;min-height:300px}
+    }
 
     /* ── BENEFITS ── */
     .benefits{padding:96px 0;background:var(--bg)}

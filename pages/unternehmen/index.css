@@ -43,7 +43,7 @@
 .leist-card p{font-size:15px;line-height:1.55;color:var(--sec)}
 @media(max-width:1024px){.leist-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.leist{padding:56px 0}}
-@media(max-width:480px){.leist-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.leist-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 
 /* ── CASE STUDIES ── */
 .cases{padding:80px 0;background:var(--bg)}
@@ -63,7 +63,7 @@
 .case-stat span{font-size:13px;color:var(--sec)}
 @media(max-width:1024px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.cases{padding:56px 0}}
-@media(max-width:600px){.cases-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.cases-grid{grid-template-columns:repeat(2,1fr);gap:14px}.case-tag{display:none}.case-img{aspect-ratio:4/5}.case-body{padding:14px}}
 
 /* ── BRANCHEN grid (links to subpages) ── */
 .branchen{padding:80px 0;background:#fff}
@@ -81,7 +81,8 @@
 .branche-card:hover .branche-more .ti{transform:translateX(3px)}
 @media(max-width:980px){.branchen-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.branchen{padding:56px 0}}
-@media(max-width:420px){.branchen-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.branche-card p,.branche-more{display:none}.branche-card-body{padding:16px 40px 16px 16px;justify-content:flex-end}.branche-card h3{font-size:16px}.branche-card::after{content:"\2192";position:absolute;right:14px;bottom:14px;z-index:2;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:16px;font-weight:700}}
+@media(max-width:420px){.branchen-grid{grid-template-columns:repeat(2,1fr);gap:12px}}
 
 /* ── COVERAGE (deutschlandweit) ── */
 .cover{padding:80px 0;background:var(--g);color:#fff;text-align:center}
@@ -142,7 +143,16 @@
 .contact-pill{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#fff;font-size:15px;font-weight:600;padding:11px 20px;border-radius:999px;text-decoration:none;transition:background var(--tr)}
 .contact-pill:hover{background:var(--gh)}
 .contact-pill .ti{font-size:18px}
-@media(max-width:768px){.contact{padding:56px 0}.contact-card{grid-template-columns:1fr;gap:28px}.contact-h{margin-bottom:32px}}
+@media(max-width:768px){
+  .contact{padding:56px 0}
+  .contact-card{grid-template-columns:1fr;gap:24px;justify-items:center}
+  .contact-h{margin-bottom:32px}
+  .contact-photo{display:flex;justify-content:center;width:100%}
+  .contact-photo img{max-width:220px}
+  .contact-info{text-align:center}
+  .contact-info>p{margin-left:auto;margin-right:auto}
+  .contact-btns{justify-content:center}
+}
 
 /* ── Brand marquee (scrolling logo wall) ── */
 .refs h2{padding:0 24px}
