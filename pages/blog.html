@@ -3,6 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon_io/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon_io/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/images/branding/favicon_io/site.webmanifest" />
+  <meta name="theme-color" content="#2ab54a" />
+  <!-- Open Graph / social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="uniworks" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="uniworks — Blog" />
+  <meta property="og:description" content="Blog von uniworks: Artikel, Anleitungen und News rund um Studentenjobs, flexible Personallösungen und das Thema Personal für Unternehmen." />
+  <meta property="og:url" content="https://www.uniworks.gmbh/pages/blog.html" />
+  <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="uniworks — Blog" />
+  <meta name="twitter:description" content="Blog von uniworks: Artikel, Anleitungen und News rund um Studentenjobs, flexible Personallösungen und das Thema Personal für Unternehmen." />
+  <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <link rel="canonical" href="https://www.uniworks.gmbh/pages/blog.html" />
   <script>
     if("scrollRestoration" in history){history.scrollRestoration="manual";}
     (function(){
@@ -32,9 +53,7 @@
   </script>
   <title>uniworks — Blog</title>
   <meta name="description" content="Blog von uniworks: Artikel, Anleitungen und News rund um Studentenjobs, flexible Personallösungen und das Thema Personal für Unternehmen." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -255,6 +274,16 @@
     .post-card.is-hidden{display:none}
     @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){.blog-grid{grid-template-columns:1fr;gap:14px}.blog-hero{padding:112px 0 4px}.post-card-body{padding:16px 16px 18px}}
+    .footer-app{margin-top:22px}
+    .footer-app-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .footer-app-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0}
+    .footer-app-badge{display:inline-flex;transition:transform var(--tr),opacity var(--tr)}
+    .footer-app-badge img{height:40px;width:auto;display:block}
+    .footer-app-badge:hover{transform:translateY(-1px);opacity:.85}
+    .footer-app-rating{display:flex;align-items:center;gap:8px;margin-top:13px;font-size:14px;color:var(--sec)}
+    .footer-app-rating strong{color:var(--black);font-weight:700;font-size:15px}
+    .footer-app-stars{color:var(--g);letter-spacing:1px}
+
   </style>
 </head>
 <body>
@@ -271,7 +300,7 @@
         <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
         <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
           <a href="studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
-          <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+          <a href="/pages/fachkraefte.html" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
         </div>
       </div>
       <div class="nav-dd" id="nav-dd">
@@ -314,7 +343,7 @@
     <summary>Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
     <div class="mob-dd-list">
       <a href="studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
-      <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+      <a href="/pages/fachkraefte.html"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
     </div>
   </details>
   <details class="mob-dd">
@@ -516,13 +545,19 @@
             <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
           </a>
         </div>
+        <div class="footer-app">
+          <div class="footer-app-row">
+            <img src="/images/branding/AppleStoreIcon.webp" alt="uniworks App" class="footer-app-icon" width="46" height="46" />
+            <a href="https://apps.apple.com/de/app/uniworks/id6470999822" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store"><img src="/images/logos/AppStore.svg" alt="Download on the App Store" /></a>
+            <a href="https://play.google.com/store/apps/details?id=com.pottfay.uniworks&hl=en" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play"><img src="/images/logos/PlayStore.svg" alt="Get it on Google Play" /></a>
+          </div>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Plattform</h4>
         <ul>
           <li><a href="studierende.html">Für Studierende</a></li>
           <li><a href="unternehmen/index.html">Für Unternehmen</a></li>
-          <li><a href="studierende.html#app">App herunterladen</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -548,7 +583,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 uniworks GmbH. Alle Rechte vorbehalten.</span>
+      <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
       <div class="footer-bottom-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>

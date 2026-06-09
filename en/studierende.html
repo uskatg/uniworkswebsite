@@ -3,6 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon_io/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon_io/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/images/branding/favicon_io/site.webmanifest" />
+  <meta name="theme-color" content="#2ab54a" />
+  <!-- Open Graph / social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="uniworks" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="uniworks — For students" />
+  <meta property="og:description" content="Flexible student jobs from €16 per hour. Pick from open shifts near you every day in the uniworks app — no lengthy applications, fair and transparent." />
+  <meta property="og:url" content="https://www.uniworks.gmbh/en/studierende.html" />
+  <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="uniworks — For students" />
+  <meta name="twitter:description" content="Flexible student jobs from €16 per hour. Pick from open shifts near you every day in the uniworks app — no lengthy applications, fair and transparent." />
+  <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <link rel="canonical" href="https://www.uniworks.gmbh/en/studierende.html" />
   <script>
     if("scrollRestoration" in history){history.scrollRestoration="manual";}
     (function(){
@@ -32,9 +53,7 @@
   </script>
   <title>uniworks — For students</title>
   <meta name="description" content="Flexible student jobs from €16 per hour. Pick from open shifts near you every day in the uniworks app — no lengthy applications, fair and transparent." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -371,6 +390,28 @@
     .ptr-logo:hover{opacity:1;filter:grayscale(0%)}
     @keyframes scrollL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
     @media(max-width:768px){.partners{padding:40px 0}.partners-lbl{margin-bottom:28px}}
+    .footer-app{margin-top:22px}
+    .footer-app-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .footer-app-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0}
+    .footer-app-badge{display:inline-flex;transition:transform var(--tr),opacity var(--tr)}
+    .footer-app-badge img{height:40px;width:auto;display:block}
+    .footer-app-badge:hover{transform:translateY(-1px);opacity:.85}
+    .footer-app-rating{display:flex;align-items:center;gap:8px;margin-top:13px;font-size:14px;color:var(--sec)}
+    .footer-app-rating strong{color:var(--black);font-weight:700;font-size:15px}
+    .footer-app-stars{color:var(--g);letter-spacing:1px}
+
+    /* ── job-quiz teaser ── */
+    .quiz{padding:48px 0}
+    .quiz-card{position:relative;width:440px;max-width:100%;margin:0 auto;background:var(--g);border-radius:var(--r20);overflow:hidden;box-shadow:var(--shh)}
+    .quiz-img{display:block;width:100%;height:auto}
+    /* overlay sits in the empty green band at the top of the image (~top 32%) */
+    .quiz-overlay{position:absolute;top:0;left:0;right:0;height:32%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px 24px 0;gap:6px}
+    .quiz-overlay h2{color:#fff;font-size:clamp(20px,4.6vw,30px);font-weight:700;line-height:1.15;margin:0}
+    .quiz-overlay p{color:rgba(255,255,255,.92);font-size:clamp(13px,2.6vw,17px);line-height:1.4;margin:0 0 12px}
+    .quiz-btn{background:#fff;color:var(--g);padding:11px 28px}
+    .quiz-btn:hover{background:var(--gl);transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+    @media(max-width:768px){.quiz{padding:32px 0}}
+
   </style>
 </head>
 <body>
@@ -387,7 +428,7 @@
         <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">For uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
         <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
           <a href="/en/studierende.html" class="active" role="menuitem" aria-current="page"><i class="ti ti-school" aria-hidden="true"></i>Students</a>
-          <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Professionals</a>
+          <a href="/en/fachkraefte.html" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Professionals</a>
         </div>
       </div>
       <div class="nav-dd" id="nav-dd">
@@ -430,7 +471,7 @@
     <summary>For uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
     <div class="mob-dd-list">
       <a href="/en/studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Students</a>
-      <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Professionals</a>
+      <a href="/en/fachkraefte.html"><i class="ti ti-tools" aria-hidden="true"></i>Professionals</a>
     </div>
   </details>
   <details class="mob-dd">
@@ -665,6 +706,20 @@
   </div>
 </section>
 
+<!-- ── JOB-QUIZ TEASER ── -->
+<section class="quiz">
+  <div class="wrap">
+    <div class="quiz-card fu">
+      <img class="quiz-img" src="../images/branding/Quiz.webp" width="800" height="1193" alt="Stage, bar or backstage – which side job suits you?" loading="lazy" />
+      <div class="quiz-overlay">
+        <h2>Which side job suits you?</h2>
+        <p>Find your side-job style.</p>
+        <a class="btn quiz-btn" href="https://sseh47t1ev6.typeform.com/jobquiz?utm_source=website&amp;utm_medium=studierende" target="_blank" rel="noopener">Start</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── FAQ ── -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -860,13 +915,19 @@
             <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
           </a>
         </div>
+        <div class="footer-app">
+          <div class="footer-app-row">
+            <img src="/images/branding/AppleStoreIcon.webp" alt="uniworks App" class="footer-app-icon" width="46" height="46" />
+            <a href="https://apps.apple.com/de/app/uniworks/id6470999822" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store"><img src="/images/logos/AppStore.svg" alt="Download on the App Store" /></a>
+            <a href="https://play.google.com/store/apps/details?id=com.pottfay.uniworks&hl=en" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play"><img src="/images/logos/PlayStore.svg" alt="Get it on Google Play" /></a>
+          </div>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Platform</h4>
         <ul>
           <li><a href="/en/studierende.html">For students</a></li>
           <li><a href="/en/index.html#unternehmen">For businesses</a></li>
-          <li><a href="/en/studierende.html#app">Download the app</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -875,7 +936,7 @@
           <li><a href="/en/studierende.html#schichten">Shifts</a></li>
           <li><a href="/en/studierende.html#bewerbung">Application process</a></li>
           <li><a href="/en/studierende.html#vorteile">Your benefits</a></li>
-          <li><a href="/en/studierende.html#faq">FAQ</a></li>
+          <li><a href="/en/faq.html">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -883,7 +944,7 @@
         <ul>
           <li><a href="/en/about.html">About us</a></li>
           <li><a href="/en/blog.html">Blog</a></li>
-          <li><a href="/en/studierende.html#faq">FAQ</a></li>
+          <li><a href="/en/faq.html">FAQ</a></li>
           <li><a href="/en/impressum.html">Imprint</a></li>
           <li><a href="/en/datenschutz.html">Privacy</a></li>
         </ul>

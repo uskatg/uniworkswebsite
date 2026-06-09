@@ -295,3 +295,14 @@ footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid
 /* ── Nav text link (e.g. Über uns, grouped right with the CTAs) ── */
 .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;padding:8px 12px;border-radius:var(--r8);transition:all var(--tr);white-space:nowrap}
 .nav-textlink:hover{color:var(--g);background:var(--gl)}
+
+/* ── Footer app download (store badges + rating) ── */
+.footer-app{margin-top:22px}
+.footer-app-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.footer-app-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0}
+.footer-app-badge{display:inline-flex;transition:transform var(--tr),opacity var(--tr)}
+.footer-app-badge img{height:40px;width:auto;display:block}
+.footer-app-badge:hover{transform:translateY(-1px);opacity:.85}
+.footer-app-rating{display:flex;align-items:center;gap:8px;margin-top:13px;font-size:14px;color:var(--sec)}
+.footer-app-rating strong{color:var(--black);font-weight:700;font-size:15px}
+.footer-app-stars{color:var(--g);letter-spacing:1px}

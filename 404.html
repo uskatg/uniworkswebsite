@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon_io/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon_io/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/images/branding/favicon_io/site.webmanifest" />
+  <meta name="theme-color" content="#2ab54a" />
+  <meta name="robots" content="noindex" />
+  <title>Seite nicht gefunden — uniworks</title>
+  <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gl:#EBF9EE;
+      --black:#111111;--sec:#6B7280;--border:#E5E7EB;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --r8:8px;--tr:200ms ease-out;
+    }
+    body{font-family:var(--font);color:#374151;background:#fff;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px}
+    .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:48px}
+    .logo img{width:40px;height:40px;border-radius:9px}
+    .logo span{font-size:22px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+    .code{font-size:clamp(80px,16vw,140px);font-weight:700;line-height:1;letter-spacing:-.04em;color:var(--g)}
+    h1{font-size:clamp(24px,4vw,34px);font-weight:700;color:var(--black);letter-spacing:-.02em;margin:8px 0 14px}
+    p{font-size:17px;line-height:1.6;color:var(--sec);max-width:440px;margin:0 auto}
+    p .en{display:block;font-size:14.5px;color:#9aa1ab;margin-top:6px}
+    .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font);font-size:16px;font-weight:600;border-radius:var(--r8);padding:14px 28px;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
+    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
+  </style>
+</head>
+<body>
+  <a href="/pages/index.html" class="logo" aria-label="uniworks">
+    <img src="/images/branding/AppIcon.webp" alt="uniworks" />
+    <span>uniworks</span>
+  </a>
+  <div class="code">404</div>
+  <h1>Seite nicht gefunden</h1>
+  <p>
+    Diese Seite gibt es nicht (mehr). Vielleicht hat sie sich gerade eine Schicht freigenommen.
+    <span class="en">This page could not be found.</span>
+  </p>
+  <div class="btns">
+    <a href="/pages/index.html" class="btn btn-p">Zur Startseite</a>
+    <a href="/pages/faq.html" class="btn btn-s">Zu den FAQ</a>
+  </div>
+</body>
+</html>
