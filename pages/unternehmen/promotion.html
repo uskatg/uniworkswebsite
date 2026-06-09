@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <!-- CDN: Tabler icons webfont — not offline-clean -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
-  <link rel="stylesheet" href="branche.css" />
+  <link rel="stylesheet" href="branche.css?v=3" />
   <link rel="stylesheet" href="typeform-flow.css" />
 </head>
 <body data-tf-branche="Promotion">
@@ -23,9 +23,6 @@
         <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
         <span class="nav-logo-text">uniworks</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="../about.html">Über Uns</a></li>
-      </ul>
       <div class="nav-ctas">
         <div class="nav-dd" id="nav-dd-uw">
           <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
@@ -48,6 +45,12 @@
           <a href="promotion.html" class="active" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
           <a href="buero.html" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
           </div>
+        </div>
+        <a href="../about.html" class="nav-textlink">Über uns</a>
+        <div class="lang-switch" aria-label="Sprache wählen">
+          <a href="promotion.html" hreflang="de" data-lang="de" class="active">DE</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="/en/unternehmen/promotion.html" hreflang="en" data-lang="en">EN</a>
         </div>
       </div>
       <button class="nav-hbg" id="nav-hbg" aria-label="Menü">
@@ -79,6 +82,11 @@
       </div>
     </details>
     <a href="../about.html">Über Uns</a>
+    <div class="lang-switch" aria-label="Sprache wählen">
+      <a href="promotion.html" hreflang="de" data-lang="de" class="active">DE</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="/en/unternehmen/promotion.html" hreflang="en" data-lang="en">EN</a>
+    </div>
   </div>
 
   <!-- ── HERO ── -->
@@ -245,7 +253,6 @@
     <div class="ptrs-track-wrap" aria-hidden="true">
       <div class="ptrs-track">
         <img src="../../images/logos/DEHOGABayern.webp" alt="DEHOGA Bayern" class="ptr-logo" />
-        <img src="../../images/logos/DEHOGA.svg" alt="DEHOGA" class="ptr-logo" />
         <img src="../../images/logos/WERK1.webp" alt="WERK1" class="ptr-logo" />
         <img src="../../images/logos/TUM.webp" alt="TU München" class="ptr-logo" />
         <img src="../../images/logos/LMUIEC.webp" alt="LMU IEC" class="ptr-logo" />
@@ -297,7 +304,6 @@
         <img src="../../images/logos/concerts/PalastBerlin.webp" alt="Palast Berlin" class="ptr-logo" />
         <!-- duplicate for seamless loop -->
         <img src="../../images/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
-        <img src="../../images/logos/DEHOGA.svg" alt="" class="ptr-logo" />
         <img src="../../images/logos/WERK1.webp" alt="" class="ptr-logo" />
         <img src="../../images/logos/TUM.webp" alt="" class="ptr-logo" />
         <img src="../../images/logos/LMUIEC.webp" alt="" class="ptr-logo" />
@@ -373,9 +379,9 @@
         <div class="footer-col">
           <h4>Plattform</h4>
           <ul>
-            <li><a href="../index.html">Für Studierende</a></li>
+            <li><a href="../studierende.html">Für Studierende</a></li>
             <li><a href="index.html">Für Unternehmen</a></li>
-            <li><a href="../index.html#app">App herunterladen</a></li>
+            <li><a href="../studierende.html#app">App herunterladen</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -394,8 +400,8 @@
           <h4>Unternehmen</h4>
           <ul>
             <li><a href="../about.html">Über Uns</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
             <li><a href="../impressum.html">Impressum</a></li>
             <li><a href="../datenschutz.html">Datenschutz</a></li>
           </ul>

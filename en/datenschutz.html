@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy policy — uniworks GmbH</title>
+  <meta name="description" content="uniworks GmbH privacy policy — what data we collect, why, how we use it and what rights you have." />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    /* Canonical tokens (mirror colors_and_type.css / index.html) */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.2}
+    a{color:inherit}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;border-radius:var(--r8);padding:10px 20px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:24px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}
+    .nav-ctas{display:flex;align-items:center;gap:14px;margin-left:auto}
+    .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;transition:color var(--tr)}
+    .nav-textlink:hover{color:var(--g)}
+    .lang-switch{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin:0 2px}
+    .lang-switch a{color:var(--sec);text-decoration:none;padding:4px 2px;transition:color var(--tr)}
+    .lang-switch a:hover{color:var(--g)}
+    .lang-switch a.active{color:var(--black)}
+    .lang-switch .sep{width:1px;height:16px;background:var(--border)}
+    @media(max-width:560px){.nav-inner{padding:0 24px;gap:14px}.nav-textlink{display:none}}
+
+    /* ── LEGAL CONTENT ── */
+    .legal{padding:128px 0 88px}
+    .legal-inner{max-width:760px;margin:0 auto}
+    .legal h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:8px}
+    .legal-updated{font-size:14px;color:var(--sec);margin-bottom:44px}
+    .legal h2{font-size:22px;font-weight:700;margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
+    .legal h3{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 12px}
+    .legal p{font-size:16px;line-height:1.75;color:var(--body);margin-bottom:16px}
+    .legal address{font-style:normal;font-size:16px;line-height:1.7;color:var(--body);margin:4px 0 16px}
+    .legal address strong{color:var(--black);font-weight:700}
+    .legal a[href^="mailto"],.legal a[href^="tel"]{color:var(--g);text-decoration:none}
+    .legal a[href^="mailto"]:hover,.legal a[href^="tel"]:hover{text-decoration:underline}
+    @media(max-width:560px){.legal{padding:104px 0 64px}}
+
+    /* ── FOOTER (mirrors index.html / about.html) ── */
+    footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+    .footer-brand h3{color:var(--black);font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--sec);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:var(--black);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:var(--sec);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:var(--g)}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:var(--sec);text-decoration:none}
+    .footer-bottom a:hover{color:var(--black)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/en/index.html" class="nav-logo" aria-label="uniworks home">
+        <img src="../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <div class="nav-ctas">
+        <a href="/en/about.html" class="nav-textlink">About us</a>
+        <a href="/en/unternehmen/index.html" class="btn btn-p">For businesses</a>
+        <div class="lang-switch" aria-label="Choose language">
+          <a href="/pages/datenschutz.html" hreflang="de" data-lang="de">DE</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="/en/datenschutz.html" hreflang="en" data-lang="en" class="active">EN</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── PRIVACY POLICY ── -->
+  <main class="legal">
+    <div class="wrap">
+      <div class="legal-inner">
+        <h1>Privacy policy</h1>
+        <p class="legal-lead">Our privacy practices in plain language.</p>
+        <p class="legal-updated">Last modified: 5 September 2023.</p>
+        <p class="legal-lead">This English text is a convenience translation. The legally binding version is the German Datenschutzerklärung.</p>
+
+        <h2>1.0 General information</h2>
+        <p>We appreciate that you entrust us with your data, and we always try to live up to that trust. This starts with making sure you understand which data we collect, why we collect it, how we use it and what choices you have regarding this data. These provisions describe our privacy practices in plain language, keeping legal language and jargon to a minimum.</p>
+
+        <h2>1.1 Who we are</h2>
+        <p>This is the company responsible for your data under this privacy policy (the “controller”):</p>
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Inselkammerstr. 8<br />
+          82008 Unterhaching
+        </address>
+
+        <h2>1.2 Where this privacy policy applies</h2>
+        <p>This privacy policy applies to websites, apps and other services operated by uniworks. For the sake of simplicity, we refer to all of the above as our “services” in these provisions. To make this especially clear, we have included links to this privacy policy in all applicable services.</p>
+
+        <h2>1.3 Data we collect</h2>
+        <p>It is obvious that we can only help you find suitable staff or job offers if we collect certain data from you. This includes basic profile data, as well as data generated while using our services, such as access logs. We also receive information from third parties if you use our services via social media. When creating an account, you must provide login details as well as some basic information required to deliver the service, and when you build out your profile you can add additional details such as personality traits or further personal information, as well as photos and videos, whereby access to your camera and device may be required for certain content. Some voluntarily provided data could be classified as particularly sensitive or confidential, such as details about your ethnic background, and your consent to process this information is required. When signing up for a paid service or making a direct purchase from us, financial information such as debit or credit card details is needed, which you provide to us or our payment service provider. We also collect information when you contact our customer service, in order to ensure the quality of our services and to train our staff. Other users may provide information about you when they use our services, and by using your social network login details to register or log in to uniworks, some information from your social media profile may be shared with us. Our partners may also provide us with information about you, for example when uniworks ads are placed on their platforms. We collect information about your activities, such as the use of certain features, search queries and interactions with other users, as well as technical data from the devices you use to access our services, such as IP address, device type and identifiers, browser information and network information. We also collect geolocation and media data with your consent, including precise location data and, if permitted, photos and videos that you wish to share in the services.</p>
+
+        <h2>1.4 Cookies and similar data collection technologies</h2>
+        <p>We use cookies and similar data collection technologies (e.g. web beacons, pixels) to recognise you and/or your device(s), and we may also allow third parties to do so. Cookies are small text files that a website stores on the visitor's computer when visited, recording information about users and the website. Cookies can serve different purposes. For example, we use cookies to improve the technical function of the website, to analyse usage behaviour, and to be able to present both you and our users with job offers we consider relevant, to verify you and store your preferences and settings, to analyse website traffic and trends, to run advertising campaigns and assess their effectiveness, and to enable you to use social features. Some web browsers (including Safari, Internet Explorer, Firefox and Chrome) have a “Do Not Track” feature (“DNT”) that tells a website when a user does not want their online activity to be tracked. If a website that responds to a DNT signal receives one, the browser can prevent that website from collecting certain data about the browser user. Not all browsers have such a feature, and a uniform standard has not yet been established. For this reason, many companies, including uniworks, currently do not respond to DNT signals.</p>
+
+        <h2>1.5 How we use your information</h2>
+        <p>The reason for using your data is to provide and improve our services. If you would like a more detailed explanation of the many reasons we use your data, and are interested in some practical examples, please read on. To maintain your account and provide our services to you, we create and manage your account, support you as a customer, respond to your enquiries, carry out your transactions, communicate with you about our services including order management and invoicing, help you connect with job seekers and employers, analyse job postings, your profile and that of other users in order to suggest relevant connections, show users profiles or job postings of other users, and ensure a consistent experience across your devices. We link the various devices you use by linking device and browser data, for example when you access our services from different devices, or by using, in whole or in part, IP addresses, browser versions and similar data from your devices to identify and link them. To be able to offer you new uniworks services, we register you for new features and applications of uniworks, show your profile there, manage your account on these new features and applications, offer you offers and ads that are of interest to you, manage sweepstakes, competitions, discounts and other offers, develop, show and track content and advertisements tailored to your interests within our services and on other websites, and communicate with you by email, phone or via social media or mobile devices about our products and services that we believe may be of interest to you. To improve our services and develop new ones, we conduct research and analysis of user behaviour to improve our services and content, and may decide, based on user behaviour, to change the design of a feature or the feature itself, or to develop new features and services, such as a new internet-based feature in response to user requests. To prevent, detect and combat fraud or other illegal or unauthorised activities, we respond to current or suspected misconduct on and off the platform, conduct data analyses to better understand such activities and develop measures against them, store data relating to fraudulent activities to prevent recurrence, and comply with legal requirements to meet legal obligations, support law enforcement and exercise our rights, for example our terms. To process your data as described above, we rely on the following legal bases: the provision of our services to you, by processing your data to fulfil the contract you have entered into with us while using our services, to establish relevant connections with job seekers and employers, to maintain your account and profile, to make it visible to other users and to recommend other users or job postings to you; legitimate interests, by using your data where we have a legitimate interest in doing so, such as analysing the behaviour of users of our services to improve our offers and to suggest offers that may interest you, and processing data for administrative purposes, fraud detection and other legal reasons; and consent, by asking for your consent to use your data for certain purposes, which you can withdraw at any time by contacting us at the address you will find at the end of this privacy policy.</p>
+
+        <h2>1.6 How we share your information</h2>
+        <p>Since our goal is to help you establish meaningful connections, we share your user data primarily with other users, but also with service providers and partners who help us deliver our services, and in some cases with judicial authorities. Your data is made accessible to other users when you voluntarily publish information in our services, including your public profile. Be careful with the data you share, because neither you nor we can control what others do with this information once it has been released. We work with third parties who support us with tasks such as data hosting, customer support, marketing and security operations, and may share data with partners for the distribution and marketing of our services, sometimes in hashed, unreadable form. In the event of corporate acquisitions or similar transactions, your data may also be shared. We are legally obliged to share data in order to comply with legal proceedings, for crime prevention or detection, or to protect the safety of other persons. Furthermore, we may disclose information to limit our liability in lawsuits, to protect our rights, to enforce our agreements and to investigate or prevent illegal activities. With your consent or at your request, we may share data with third parties. In any of the circumstances mentioned, we may use and share non-personal data or personal data in hashed form, including with advertisers for targeted advertising within our services and on third-party websites. We may also combine this information with data collected from other sources. For more information on cookies and similar technologies, see section 1.4.</p>
+
+        <h2>1.7 Cross-border data transfer</h2>
+        <p>Sharing data, as described in section 1.6, sometimes involves cross-border data transfer, for example to the USA and to other jurisdictions. For example, if you are located in Europe (in the European Economic Area, “EEA”), your personal data is transferred to countries outside the EEA. We use standard contractual clauses approved by the European Commission, or other appropriate safeguards, to permit the transfer of data from the EEA to other countries. Standard contractual clauses are binding commitments to protect the privacy and security of your data between companies that transfer personal data.</p>
+
+        <h2>1.8 Your rights</h2>
+        <p>We want you to be able to control your data, so we provide you with the following options: access/update tools in the services that allow you to access, correct or delete information you have provided to us that relates directly to your account. If you have questions about these tools and settings, you can contact our customer support team at <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>. We are happy to help. Mobile platforms have permission systems for specific types of device data and notifications, such as address book and location services or push notifications. You can change the settings on your device to allow or refuse the collection of the associated information or the display of the associated notifications, whereby certain services may no longer be fully functional if you do so. You can delete your account either by using the relevant feature directly in the respective service, or by contacting us by email at <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>. You can request the review of your data, a copy, an update or deletion of your data, as well as object to its processing, by contacting us at <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>. For your protection and the protection of all our users, we may ask you to provide proof of identity before we process the requests. We may refuse requests if they are unlawful or violate the rights of others, and refuse requests to withdraw the processing of personal data if doing so would prevent us from being able to provide our services to you. You can stop all collection of information by an app by uninstalling it, although your device's unique identifier remains stored. In some countries, including the European Union, you have the right to lodge a complaint with the competent supervisory authority if you have concerns about our processing of your personal data. The competent supervisory authority may be that of your residence, your place of work or our jurisdiction.</p>
+
+        <h2>1.9 How we protect your data</h2>
+        <p>We do our best to protect your personal data against unauthorised access, alteration, disclosure or destruction. Although we take steps to protect your information, we, like all technology companies, do not promise that your personal information will always remain secure, and you should not expect this either. We regularly review our systems for possible vulnerabilities and attacks and regularly update our methods of collecting, storing and processing data to improve our physical, technical and organisational security measures. We may suspend your use of some or all of our services without notice if we suspect or detect any security breach. If you believe that your account or your data is no longer secure, please contact us immediately by email at <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>.</p>
+
+        <h2>1.10 How long we store your data</h2>
+        <p>We keep your personal information only for as long as we need it for lawful business purposes (as set out in section 1.5) and as permitted by applicable law. To ensure the protection and security of our users on and off our services, we retain your data for security purposes for a further three months after deletion of your account. During this time the account data remains stored, although the account will of course no longer be visible to anyone. In practice this means that after the deletion of your account (and the expiry of the security retention period) or after two years of continuous inactivity, we delete or anonymise all your data, unless: we are obliged to retain it under applicable law (for example, some “traffic data” is stored for one year to meet statutory retention requirements); we are obliged to retain it to demonstrate our compliance with applicable law (for example, proof of your consent to our terms of use and privacy policy and similar consents is kept for five years); there is an open question, a lawsuit or a dispute, prompting us to retain essential information until the matter is resolved; or the data must be retained for legitimate business interests such as fraud prevention and strengthening user safety. For example, data is retained to prevent a user who has been blocked due to unsafe behaviour or security incidents from opening a new account. Please note that, due to technical limitations, we cannot promise that all data will be deleted within a specific period, even if our systems are designed to carry out data deletion in accordance with the policies above.</p>
+
+        <h2>1.11 Changes to the privacy policy</h2>
+        <p>Since we are always looking for new and innovative ways to help you establish meaningful connections, this privacy policy may change over time. We will inform you before any material changes take effect, so that you have time to review the changes.</p>
+
+        <h2>1.12 How you can contact us</h2>
+        <p>If you have questions about this privacy policy, you can reach us as follows:</p>
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Elsässer Str. 25<br />
+          81667 München<br />
+          Email: <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>
+        </address>
+
+        <h2>1.13 Deleting your account</h2>
+        <p>To delete your account for the uniworks app, follow the steps provided within the app.</p>
+
+        <h2>Additional information for our website</h2>
+        <p>In addition, the following points apply specifically to our website.</p>
+
+        <h3>Analytics tools and third-party tools · Hosting</h3>
+        <p>When visiting this website, your browsing behaviour may be statistically evaluated. This is done mainly with so-called analytics programs. Detailed information about these analytics programs can be found in the following privacy policy. We host the content of our website with the following provider: the provider of website creation and hosting services is Webflow, Inc., based in San Francisco, USA. When you visit our website, Webflow collects various log files, including your IP address. Webflow is used as a tool to create and host websites and, in doing so, stores necessary cookies or other recognition technologies that are essential for the correct display of the page, for certain functions and for security. Detailed information can be found in Webflow's privacy policy, available at the link provided. The use of Webflow is based on Art. 6(1)(f) GDPR, as we have a legitimate interest in a reliable display of our website. If consent has been obtained, the processing is carried out on the basis of Art. 6(1)(a) GDPR and Section 25(1) TTDSG, in particular where it concerns the storage of cookies or access to information on the user's device. This consent can be withdrawn at any time. The data transfer to the USA is based on the standard contractual clauses of the EU Commission; further details can be found in Webflow's privacy policy.</p>
+
+        <h3>General information and mandatory information</h3>
+        <p>The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy. When you use this website, various personal data is collected. Personal data is data with which you can be personally identified. This privacy policy explains which data we collect and what we use it for. It also explains how and for what purpose this is done. We point out that data transmission over the internet (e.g. when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible.</p>
+
+        <h3>Information on the controller</h3>
+        <p>The controller for data processing on this website is:</p>
+        <address>
+          <strong>uniworks GmbH</strong><br />
+          Elsässer Str. 25<br />
+          81667 München<br />
+          Phone: <a href="tel:+4901749359156">0174 9359156</a><br />
+          Email: <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>
+        </address>
+        <p>The controller is the natural or legal person who alone or jointly with others determines the purposes and means of processing personal data (e.g. names, email addresses or similar).</p>
+
+        <h3>Retention period</h3>
+        <p>Unless a more specific retention period has been stated within this privacy policy, your personal data will remain with us until the purpose for the data processing no longer applies. If you assert a legitimate request for deletion or withdraw consent to data processing, your data will be deleted, unless we have other legally permissible reasons for storing your personal data (e.g. retention periods under tax or commercial law); in the latter case, deletion takes place once these reasons no longer apply.</p>
+
+        <h3>General information on the legal bases for data processing</h3>
+        <p>If you have consented to the data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR or Art. 9(2)(a) GDPR, insofar as special categories of data under Art. 9(1) GDPR are processed. In the case of explicit consent to the transfer of personal data to third countries, data processing is additionally carried out on the basis of Art. 49(1)(a) GDPR. If you have consented to the storage of cookies or to access to information on your device (e.g. via device fingerprinting), the data processing is additionally carried out on the basis of Section 25(1) TTDSG. Consent can be withdrawn at any time. If your data is required for the performance of a contract or for the implementation of pre-contractual measures, we process your data on the basis of Art. 6(1)(b) GDPR. Furthermore, we process your data, insofar as this is necessary to fulfil a legal obligation, on the basis of Art. 6(1)(c) GDPR. Data processing may also be carried out on the basis of our legitimate interest in accordance with Art. 6(1)(f) GDPR. Information on the legal bases relevant in each individual case is provided in the following paragraphs of this privacy policy.</p>
+
+        <h3>Information on data transfer to the USA and other third countries</h3>
+        <p>Among other things, we use tools from companies based in the USA or other third countries that are not secure under data protection law. When these tools are active, your personal data may be transferred to these third countries and processed there. We point out that no level of data protection comparable to the EU can be guaranteed in these countries. For example, US companies are obliged to release personal data to security authorities without you as a data subject being able to take legal action against this. It can therefore not be ruled out that US authorities (e.g. intelligence services) process, evaluate and permanently store your data located on US servers for monitoring purposes. We have no influence over these processing activities.</p>
+
+        <h3>Withdrawal of your consent to data processing</h3>
+        <p>Many data processing operations are only possible with your express consent. You can withdraw consent you have already given at any time. The lawfulness of the data processing carried out up to the withdrawal remains unaffected by the withdrawal.</p>
+
+        <h3>Right to object to data collection in special cases and to direct marketing (Art. 21 GDPR)</h3>
+        <p>If the data processing is based on Art. 6(1)(e) or (f) GDPR, you have the right at any time to object to the processing of your personal data on grounds relating to your particular situation; this also applies to profiling based on these provisions. You can find the respective legal basis on which processing is based in this privacy policy. If you object, we will no longer process your personal data concerned, unless we can demonstrate compelling legitimate grounds for the processing that override your interests, rights and freedoms, or the processing serves to assert, exercise or defend legal claims (objection under Art. 21(1) GDPR). If your personal data is processed for direct marketing purposes, you have the right to object at any time to the processing of personal data concerning you for the purpose of such advertising; this also applies to profiling, insofar as it is connected with such direct marketing. If you object, your personal data will subsequently no longer be used for the purpose of direct marketing (objection under Art. 21(2) GDPR).</p>
+
+        <h3>Right to lodge a complaint with the competent supervisory authority</h3>
+        <p>In the event of breaches of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority, in particular in the member state of their habitual residence, their place of work or the place of the alleged breach. The right to lodge a complaint exists without prejudice to any other administrative or judicial remedy.</p>
+
+        <h3>Right to data portability</h3>
+        <p>You have the right to have data that we process automatically on the basis of your consent or in performance of a contract handed over to you or to a third party in a common, machine-readable format. If you request the direct transfer of the data to another controller, this will only be done insofar as it is technically feasible.</p>
+
+        <h3>Right of access, rectification and erasure</h3>
+        <p>Within the framework of the applicable legal provisions, you have the right at any time to free information about your stored personal data, its origin and recipients and the purpose of the data processing and, if applicable, a right to rectification or erasure of this data. For this purpose, as well as for further questions on the subject of personal data, you can contact us at any time.</p>
+
+        <h3>Right to restriction of processing</h3>
+        <p>You have the right to request the restriction of the processing of your personal data. You can assert this right at any time by contacting us. The grounds for such a restriction may be the following: if you contest the accuracy of your personal data stored by us, we need time to verify this. During this verification, you have the right to request the restriction of the processing. If the processing of your data was unlawful, you can request the restriction of the processing instead of erasure. If we no longer need your personal data, but you need it to exercise, defend or assert legal claims, you can request the restriction of processing instead of erasure. If you have lodged an objection under Art. 21(1) GDPR, a balance must be struck between your interests and ours. Until it is determined whose interests prevail, you have the right to request the restriction of the processing of your data. If your data is subject to restricted processing, it may – apart from being stored – only be processed with your consent or for the assertion, exercise or defence of legal claims, or to protect the rights of another natural or legal person, or for reasons of important public interest of the European Union or a member state.</p>
+
+        <h3>SSL/TLS encryption</h3>
+        <p>For security reasons and to protect the transmission of confidential content, such as orders or enquiries that you send to us as the site operator, this site uses SSL/TLS encryption. You can recognise an encrypted connection by the fact that the address line of the browser changes from “http://” to “https://” and by the lock symbol in your browser line. When SSL/TLS encryption is activated, the data you transmit to us cannot be read by third parties.</p>
+
+        <h3>Data collection on this website · Cookies</h3>
+        <p>Our websites use so-called “cookies”. These are small text files that do no harm to your device. There are session cookies, which are automatically deleted after the end of your visit, and permanent cookies, which remain on your device until you delete them yourself or until your web browser deletes them. Cookies can be set either directly by our site (first-party cookies) or by third parties (third-party cookies) that enable certain services on our website. Cookies serve different functions: some are technically necessary so that website functions such as the shopping cart or video display work, others serve to evaluate user behaviour or for advertising purposes. The storage of necessary cookies is carried out on the basis of Art. 6(1)(f) GDPR, unless another legal basis is invoked. As the website operator, we have a legitimate interest in storing these cookies for the technically error-free and optimised provision of our services. If consent has been obtained for the storage of cookies and comparable recognition technologies, the processing is based exclusively on this consent (Art. 6(1)(a) GDPR and Section 25(1) TTDSG); this consent can be withdrawn at any time. You can set your browser so that you are informed about the setting of cookies and only allow cookies in individual cases, exclude the acceptance of cookies for certain cases or in general, and activate the automatic deletion of cookies when the browser is closed. If you deactivate cookies, the functionality of our website may be limited. Details about the cookies and services used on this website can be found in our privacy policy.</p>
+
+        <h3>Social media · Instagram</h3>
+        <p>Functions of the Instagram service, offered by Meta Platforms Ireland Limited in Ireland, are integrated on our website. As soon as Instagram elements are active, a connection is established between your device and the Instagram servers, whereby Instagram receives information about your visit to our website. If you are logged in to your Instagram account, you can link content of our website to your Instagram profile, which enables Instagram to assign the visit to our website to your user account. As the website operator, we have no knowledge of the content of the transmitted data or its use by Instagram. The use of Instagram is based either on your consent (Art. 6(1)(a) GDPR and Section 25 TTDSG), which can be withdrawn at any time, or on our legitimate interest in comprehensive visibility on social media, where no consent has been obtained. For the collection of the data that is then forwarded to Facebook or Instagram, we are jointly responsible with Meta Platforms Ireland Limited in accordance with Art. 26 GDPR. Our responsibility is limited to the collection of the data and its forwarding. The processing of the data by Facebook or Instagram after the forwarding does not fall within our area of responsibility. The obligations arising from the joint processing are set out in a special agreement, the details of which you can find at the link provided. We are responsible for the data protection information when using the Instagram tool and the secure implementation of the tool on our website; Meta is responsible for the data security of the products. You can assert data subject rights in relation to data processed by Instagram directly with Instagram. Requests regarding your rights that we receive will be forwarded to Facebook. The data transfer to the USA is based on the standard contractual clauses of the EU Commission. Further information on this can be found at the links provided. Detailed information on data protection at Instagram can be found in Instagram's privacy policy.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Germany's fastest-growing student staffing service — we connect companies with motivated students.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="/en/studierende.html">For students</a></li>
+            <li><a href="/en/unternehmen/index.html">For businesses</a></li>
+            <li><a href="/en/index.html#app">Download the app</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="/en/unternehmen/logistik.html">Logistics</a></li>
+            <li><a href="/en/unternehmen/event.html">Events</a></li>
+            <li><a href="/en/unternehmen/catering.html">Catering</a></li>
+            <li><a href="/en/unternehmen/einzelhandel.html">Retail</a></li>
+            <li><a href="/en/unternehmen/gastronomie-hotellerie.html">Hospitality &amp; Hotels</a></li>
+            <li><a href="/en/unternehmen/promotion.html">Promotion</a></li>
+            <li><a href="/en/unternehmen/buero.html">Office</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/en/about.html">About us</a></li>
+            <li><a href="/en/blog.html">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="/en/impressum.html">Imprint</a></li>
+            <li><a href="/en/datenschutz.html">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="/en/impressum.html">Imprint</a>
+          <a href="/en/datenschutz.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), {passive:true});
+  </script>
+</body>
+</html>

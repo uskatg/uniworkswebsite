@@ -61,6 +61,10 @@
 .case-stat{margin-top:auto;padding-top:16px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .case-stat b{font-size:22px;font-weight:800;color:var(--g);letter-spacing:-.02em}
 .case-stat span{font-size:13px;color:var(--sec)}
+.case-more{margin-top:16px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--g);background:#fff;border:1.5px solid var(--g);border-radius:var(--r8);padding:9px 16px;text-decoration:none;transition:all var(--tr)}
+.case-more .ti{font-size:15px;transition:transform var(--tr)}
+.case-more:hover{background:var(--gl);border-color:var(--gh);color:var(--gh)}
+.case-more:hover .ti{transform:translate(2px,-2px)}
 @media(max-width:1024px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.cases{padding:56px 0}}
 @media(max-width:600px){.cases-grid{grid-template-columns:repeat(2,1fr);gap:14px}.case-tag{display:none}.case-img{aspect-ratio:4/5}.case-body{padding:14px}}

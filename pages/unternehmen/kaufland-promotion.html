@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaufland Card Promotion — Referenz | uniworks für Unternehmen</title>
+  <meta name="description" content="Deutschlandweite Kaufland-Card-Promotion: uniworks koordinierte 350+ Promoter:innen über rund 140 Standorte in Bayern und Baden-Württemberg. Die Referenz im Detail." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="branche.css?v=3" />
+  <link rel="stylesheet" href="typeform-flow.css" />
+  <style>
+    /* ── Page-specific: Kaufland report ── */
+    .kf-back{max-width:var(--mw);margin:0 auto;padding:24px 40px 0}
+    .kf-back a{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--sec);text-decoration:none;transition:color var(--tr)}
+    .kf-back a:hover{color:var(--g)}
+    .kf-back a .ti{font-size:16px}
+
+    .kf-hero{max-width:var(--mw);margin:0 auto;padding:28px 40px 56px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
+    .kf-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--g);background:var(--gl);padding:7px 14px;border-radius:999px;margin-bottom:20px}
+    .kf-eyebrow .ti{font-size:17px}
+    .kf-hero h1{font-size:clamp(30px,4vw,48px);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+    .kf-hero h1 em{color:var(--g);font-style:normal}
+    .kf-hero p{font-size:18px;line-height:1.6;color:var(--body);max-width:560px;margin-bottom:24px}
+    .kf-meta{display:flex;flex-wrap:wrap;gap:20px}
+    .kf-meta-i{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:500;color:var(--black)}
+    .kf-meta-i .ti{font-size:20px;color:var(--g)}
+    .kf-hero-media{display:flex;justify-content:center}
+    .kf-hero-media img{width:100%;max-width:340px;height:auto;border-radius:var(--r20);box-shadow:0 24px 64px rgba(0,0,0,.16);display:block}
+
+    /* Stats band */
+    .kf-stats{background:var(--g);padding:48px 0}
+    .kf-stats-grid{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+    .kf-stat{text-align:center;color:#fff}
+    .kf-stat b{display:block;font-size:clamp(28px,3.4vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1}
+    .kf-stat span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:rgba(255,255,255,.92)}
+
+    /* Narrative section */
+    .kf-sec{padding:72px 0}
+    .kf-sec.alt{background:var(--bg)}
+    .kf-split{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .kf-split.rev .kf-split-media{order:-1}
+    .kf-split-text h2{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.14;margin-bottom:18px}
+    .kf-split-text p{font-size:17px;line-height:1.65;color:var(--body);margin-bottom:16px}
+    .kf-split-text p:last-child{margin-bottom:0}
+    .kf-split-text strong{color:var(--black);font-weight:600}
+    .kf-split-media img{width:100%;max-width:420px;height:auto;border-radius:var(--r20);box-shadow:var(--shh);display:block;margin:0 auto}
+
+    /* City gallery */
+    .kf-gal-head{max-width:720px;margin:0 auto 44px;text-align:center;padding:0 40px}
+    .kf-gal-head h2{font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.14;margin-bottom:14px}
+    .kf-gal-head p{font-size:17px;line-height:1.6;color:var(--body)}
+    .kf-gal{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .kf-card{background:#fff;border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh)}
+    .kf-card img{width:100%;height:auto;display:block}
+
+    /* Schedule */
+    .kf-days{max-width:760px;margin:36px auto 0;padding:0 40px;display:flex;flex-direction:column;gap:14px}
+    .kf-day{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);padding:18px 22px;box-shadow:var(--sh)}
+    .kf-day-date{flex-shrink:0;min-width:128px;font-size:16px;font-weight:700;color:var(--black)}
+    .kf-day-time{display:flex;align-items:center;gap:9px;font-size:15px;color:var(--body)}
+    .kf-day-time .ti{font-size:19px;color:var(--g)}
+
+    /* CTA */
+    .kf-cta{padding:80px 0}
+    .kf-cta-inner{max-width:880px;margin:0 auto;padding:48px 40px;text-align:center;background:var(--gl);border-radius:var(--r20)}
+    .kf-cta-inner h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:14px}
+    .kf-cta-inner p{font-size:17px;line-height:1.6;color:var(--body);max-width:560px;margin:0 auto 28px}
+    .kf-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+    @media(max-width:1024px){
+      .kf-hero{grid-template-columns:1fr;gap:36px}
+      .kf-hero-media{order:-1}
+      .kf-hero-media img{max-width:280px}
+      .kf-stats-grid{grid-template-columns:repeat(3,1fr);gap:28px}
+      .kf-gal{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:768px){
+      .kf-back{padding:20px 24px 0}
+      .kf-hero{padding:24px 24px 44px}
+      .kf-split{grid-template-columns:1fr;gap:32px;padding:0 24px}
+      .kf-split.rev .kf-split-media{order:0}
+      .kf-stats-grid{grid-template-columns:repeat(2,1fr);padding:0 24px}
+      .kf-gal{padding:0 24px}
+      .kf-sec{padding:52px 0}
+      .kf-day{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+    @media(max-width:480px){
+      .kf-gal{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body data-tf-branche="Promotion">
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uniworks</span>
+      </a>
+      <div class="nav-ctas">
+        <div class="nav-dd" id="nav-dd-uw">
+          <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+          <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
+          <a href="../studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+          <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+          </div>
+        </div>
+        <div class="nav-dd" id="nav-dd">
+          <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
+            Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+          <a href="index.html" class="active" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+          <a href="logistik.html" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+          <a href="event.html" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+          <a href="catering.html" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+          <a href="einzelhandel.html" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+          <a href="gastronomie-hotellerie.html" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+          <a href="promotion.html" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+          <a href="buero.html" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+          </div>
+        </div>
+        <a href="../about.html" class="nav-textlink">Über uns</a>
+        <div class="lang-switch" aria-label="Sprache wählen">
+          <a href="kaufland-promotion.html" hreflang="de" data-lang="de" class="active">DE</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="/en/unternehmen/kaufland-promotion.html" hreflang="en" data-lang="en">EN</a>
+        </div>
+      </div>
+      <button class="nav-hbg" id="nav-hbg" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mob-overlay" id="mob-overlay">
+    <details class="mob-dd">
+      <summary>Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="../studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+        <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
+      </div>
+    </details>
+    <details class="mob-dd">
+      <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="index.html"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+        <a href="logistik.html"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+        <a href="event.html"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+        <a href="catering.html"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+        <a href="einzelhandel.html"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+        <a href="gastronomie-hotellerie.html"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+        <a href="promotion.html"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+        <a href="buero.html"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+      </div>
+    </details>
+    <a href="../about.html">Über Uns</a>
+    <div class="lang-switch" aria-label="Sprache wählen">
+      <a href="kaufland-promotion.html" hreflang="de" data-lang="de" class="active">DE</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="/en/unternehmen/kaufland-promotion.html" hreflang="en" data-lang="en">EN</a>
+    </div>
+  </div>
+
+  <!-- ── BACK LINK ── -->
+  <div class="bhero-outer">
+    <div class="kf-back">
+      <a href="index.html#referenzen"><i class="ti ti-arrow-left" aria-hidden="true"></i>Zurück zu den Referenzen</a>
+    </div>
+
+    <!-- ── HERO ── -->
+    <section class="kf-hero">
+      <div class="kf-hero-text">
+        <span class="kf-eyebrow"><i class="ti ti-speakerphone" aria-hidden="true"></i>Referenz · Promotion</span>
+        <h1>Deutschlandweite <em>Kaufland Card</em> Promotion</h1>
+        <p>Mitte Februar 2026 brachte uniworks die Kaufland Card direkt an den Point of Sale: Über 150&nbsp;Standorte in Bayern und Baden-Württemberg informierten unsere Promoter:innen die Kund:innen über die Vorteile der Karte – koordiniert als ein eingespieltes, deutschlandweites Team.</p>
+        <div class="kf-meta">
+          <span class="kf-meta-i"><i class="ti ti-map-pin" aria-hidden="true"></i>Bayern &amp; Baden-Württemberg</span>
+          <span class="kf-meta-i"><i class="ti ti-calendar-event" aria-hidden="true"></i>12.–21. Februar 2026</span>
+        </div>
+      </div>
+      <div class="kf-hero-media">
+        <img src="../../images/work/PromotionKauflandKarteApp.webp" alt="Kaufland Card Promotion-Schicht in der uniworks App" />
+      </div>
+    </section>
+  </div>
+
+  <!-- ── STATS BAND ── -->
+  <section class="kf-stats">
+    <div class="kf-stats-grid">
+      <div class="kf-stat"><b>350+</b><span>Promoter:innen im Einsatz</span></div>
+      <div class="kf-stat"><b>150+</b><span>Standorte &amp; Filialen</span></div>
+      <div class="kf-stat"><b>9</b><span>Einsatztage</span></div>
+      <div class="kf-stat"><b>2</b><span>Bundesländer</span></div>
+      <div class="kf-stat"><b>16&nbsp;€</b><span>Stundenlohn</span></div>
+    </div>
+  </section>
+
+  <!-- ── WORUM GING ES ── -->
+  <section class="kf-sec">
+    <div class="kf-split">
+      <div class="kf-split-text">
+        <h2>Worum ging es?</h2>
+        <p>An einem Promotion-Stand mitten in der Filiale machten unsere Promoter:innen die <strong>Kaufland Card</strong> erlebbar: Sie sprachen Kund:innen aktiv und freundlich an, erklärten die Vorteile der Karte, beantworteten Fragen und halfen direkt vor Ort bei der Anmeldung.</p>
+        <p>Gearbeitet wurde in <strong>Teams von zwei bis drei Personen</strong> je Standort – so blieb der Stand durchgehend besetzt und die Aktion an jedem Einsatztag verlässlich abgedeckt.</p>
+      </div>
+      <div class="kf-split-media">
+        <img src="../../images/work/PromotionKauflandKarte.webp" alt="Kaufland Card – Promotion am Point of Sale" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CITY GALLERY ── -->
+  <section class="kf-sec alt">
+    <div class="kf-gal-head">
+      <h2>In ganz Süddeutschland im Einsatz</h2>
+      <p>Von München bis Ulm: Die Schichten wurden in der uniworks App veröffentlicht und von unseren Studierenden eigenständig gebucht.</p>
+    </div>
+    <div class="kf-gal">
+      <figure class="kf-card"><img src="../../images/work/PromotionKaufland1.webp" alt="Kaufland Promotion-Schicht in München" loading="lazy" /></figure>
+      <figure class="kf-card"><img src="../../images/work/PromotionKauflandKarte.webp" alt="Kaufland Promotion-Schicht in Augsburg" loading="lazy" /></figure>
+      <figure class="kf-card"><img src="../../images/work/PromotionKaufland2.webp" alt="Kaufland Promotion-Schicht in Ulm" loading="lazy" /></figure>
+      <figure class="kf-card"><img src="../../images/work/PromotionKaufland3.webp" alt="Kaufland Promotion-Schicht in Nürnberg" loading="lazy" /></figure>
+    </div>
+  </section>
+
+  <!-- ── SCHEDULE ── -->
+  <section class="kf-sec">
+    <div class="kf-gal-head">
+      <h2>Die Einsatztage im Überblick</h2>
+      <p>Über neun Tage hinweg – mit festen Zeiten zum Auftakt und flexibler Schichtwahl in der zweiten Woche.</p>
+    </div>
+    <div class="kf-days">
+      <div class="kf-day">
+        <span class="kf-day-date">12.–14. Februar</span>
+        <span class="kf-day-time"><i class="ti ti-clock" aria-hidden="true"></i>08:00 – 19:00 Uhr</span>
+      </div>
+      <div class="kf-day">
+        <span class="kf-day-date">16.–21. Februar</span>
+        <span class="kf-day-time"><i class="ti ti-clock" aria-hidden="true"></i>wahlweise 10:00 – 18:00 Uhr oder 11:00 – 19:00 Uhr</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="kf-cta">
+    <div class="kf-cta-inner">
+      <h2>Planen Sie eine ähnliche Aktion?</h2>
+      <p>Ob Sampling, Roadshow oder deutschlandweite POS-Promotion – wir stellen Ihnen schnell und flexibel das passende Promotion-Team aus motivierten Studierenden zusammen.</p>
+      <div class="kf-cta-btns">
+        <button type="button" class="btn btn-p" data-tf-open>Personalanfrage stellen</button>
+        <a href="promotion.html" class="btn btn-s">Mehr zu Promotion</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="../../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="../studierende.html">Für Studierende</a></li>
+            <li><a href="index.html">Für Unternehmen</a></li>
+            <li><a href="../studierende.html#app">App herunterladen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="logistik.html">Logistik</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="einzelhandel.html">Einzelhandel</a></li>
+            <li><a href="gastronomie-hotellerie.html">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="promotion.html">Promotion</a></li>
+            <li><a href="buero.html">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="../about.html">Über Uns</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../impressum.html">Impressum</a></li>
+            <li><a href="../datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="../impressum.html">Impressum</a>
+          <a href="../datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="branche.js"></script>
+  <script src="typeform-flow.js"></script>
+</body>
+</html>

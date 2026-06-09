@@ -282,3 +282,16 @@ footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid
 .footer-bottom a:hover{color:var(--black)}
 .footer-bottom-links{display:flex;gap:20px}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+
+/* ── Language switch ── */
+.lang-switch{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin:0 4px}
+.lang-switch a{color:var(--sec);text-decoration:none;padding:4px 2px;transition:color var(--tr)}
+.lang-switch a:hover{color:var(--g)}
+.lang-switch a.active{color:var(--black)}
+.lang-switch .sep{width:1px;height:16px;background:var(--border)}
+.mob-overlay .lang-switch{padding:13px 0}
+.mob-overlay .lang-switch a{font-size:16px;border-bottom:none;padding:4px 2px}
+
+/* ── Nav text link (e.g. Über uns, grouped right with the CTAs) ── */
+.nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;padding:8px 12px;border-radius:var(--r8);transition:all var(--tr);white-space:nowrap}
+.nav-textlink:hover{color:var(--g);background:var(--gl)}
