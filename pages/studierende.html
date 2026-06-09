@@ -199,20 +199,68 @@
     .wage-body p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.92);max-width:520px;margin-bottom:24px}
     @media(max-width:768px){.wage-inner{grid-template-columns:1fr;gap:20px;padding:44px 28px;text-align:center}.wage-body p{margin-left:auto;margin-right:auto}.wage-num{margin:0 auto}}
 
-    /* ── APP FUNCTIONS ── */
+    /* ── APP FUNCTIONS (arrow-navigated phone screens) ── */
     .appfn{padding:96px 0;background:var(--g)}
     .appfn .sec-h{color:#fff}
     .appfn .sec-sub{color:rgba(255,255,255,.9)}
-    .appfn-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:center}
-    .appfn-media{position:relative;display:flex;justify-content:center}
-    .appfn-media img,.appfn-media video{width:300px;max-width:80%;border-radius:38px;box-shadow:0 28px 64px rgba(0,0,0,.18);display:block}
+    .appfn-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:52px}
+    .appfn-head .sec-sub{text-align:center}
+    .appfn-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:64px;align-items:start}
+    .appfn-media{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+    .appfn-stage-row{display:flex;align-items:center;justify-content:center;gap:8px;width:100%}
+    .appfn-phone{position:relative;width:300px;max-width:72%;aspect-ratio:640/1388;border-radius:50px;background:linear-gradient(150deg,#ebecee,#bfc1c4 42%,#e2e3e5 68%,#b6b8bb);padding:7px;box-shadow:0 28px 64px rgba(0,0,0,.28),inset 0 0 0 1.5px rgba(0,0,0,.22);flex-shrink:0}
+    .appfn-phone::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:31%;height:5.2%;background:#0d0d0d;border-radius:99px;z-index:5;pointer-events:none}
+    .appfn-screens{position:relative;width:100%;height:100%;border-radius:43px;overflow:hidden;background:#fff}
+    .appfn-screen{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
+    .appfn-screen.active{opacity:1}
+    .appfn-nav{flex-shrink:0;z-index:2;width:44px;height:44px;border-radius:50%;border:none;background:#fff;color:var(--g);display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:background var(--tr),transform var(--tr)}
+    .appfn-nav:hover{background:var(--gl);transform:scale(1.08)}
+    .appfn-dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
+    .appfn-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);transition:all var(--tr)}
+    .appfn-dot.active{background:#fff;width:22px;border-radius:5px}
+    .appfn-text{align-self:stretch;display:flex;align-items:center;justify-content:center}
+    .appfn-cards{position:relative;width:100%;max-width:440px;display:flex;flex-direction:column;gap:14px}
+    .appfn-card{opacity:.35;transition:opacity .5s ease}
+    .appfn-card.active{opacity:1}
+    .appfn-vorteile-head{text-align:center;margin-top:64px;margin-bottom:32px}
+    .ben-grid.appfn-vorteile{grid-template-columns:repeat(3,1fr);margin-top:0;gap:18px;grid-auto-rows:1fr;width:100%}
+    .appfn-vorteile .ben{min-height:0;height:100%;padding:20px 18px;justify-content:flex-start}
+    .appfn-vorteile .ben-num{font-size:clamp(30px,3.4vw,40px);margin-bottom:8px}
+    .appfn-vorteile .ben-ico,.appfn-vorteile .ben-applogo{width:48px;height:48px;font-size:24px;margin-bottom:12px}
+    .appfn-vorteile .ben h3{font-size:15.5px}
+    .appfn-vorteile .ben p{font-size:13px}
     .appfn-feats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .feat{background:#fff;border:1px solid var(--border);border-radius:var(--r16);padding:20px 20px 22px}
     .feat-ico{width:40px;height:40px;border-radius:10px;background:var(--gl);color:var(--g);display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:14px}
     .feat h3{font-size:15.5px;font-weight:700;margin-bottom:6px}
     .feat p{font-size:13px;line-height:1.55;color:var(--sec)}
-    @media(max-width:900px){.appfn-grid{grid-template-columns:1fr;gap:44px}.appfn-media{order:-1}}
-    @media(max-width:520px){.appfn-feats{grid-template-columns:1fr}}
+    /* synced cards: icon + title on row 1, description underneath (2 rows), larger text */
+    .appfn-card{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:12px;align-items:center;padding:22px 26px}
+    .appfn-card .feat-ico{grid-column:1;grid-row:1;margin-bottom:0;width:46px;height:46px;font-size:23px}
+    .appfn-card h3{grid-column:2;grid-row:1;font-size:19px;margin-bottom:0}
+    .appfn-card p{grid-column:1/-1;grid-row:2;font-size:15.5px;line-height:1.55}
+    @media(max-width:900px){.appfn-grid{grid-template-columns:1fr;gap:44px}.appfn-media{order:-1}.appfn-text{align-self:auto;min-height:0}.ben-grid.appfn-vorteile{margin-top:44px}}
+    @media(max-width:760px){.ben-grid.appfn-vorteile{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.appfn-feats{grid-template-columns:1fr}.ben-grid.appfn-vorteile{grid-template-columns:1fr 1fr;gap:12px}.appfn-nav{width:38px;height:38px;font-size:19px}.appfn-phone{max-width:66%}}
+    /* phones: 4 cards on the left, smaller phone on the right (arrows overlay the screen) */
+    @media(max-width:600px){
+      .appfn-grid{grid-template-columns:1fr 42%;gap:6px;align-items:center}
+      .appfn-text{order:1;align-self:center}
+      .appfn-media{order:2}
+      .appfn-phone{width:100%;max-width:100%}
+      .appfn-stage-row{position:relative;gap:0}
+      .appfn-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:30px;height:30px;font-size:15px}
+      .appfn-nav:hover{transform:translateY(-50%) scale(1.08)}
+      .appfn-prev{left:-12px}
+      .appfn-next{right:-12px}
+      .appfn-dots{margin-top:12px}
+      .appfn-cards{max-width:none;gap:8px}
+      .appfn-card{padding:12px 13px;column-gap:10px;row-gap:6px}
+      .appfn-card .feat-ico{width:30px;height:30px;font-size:16px}
+      .appfn-card h3{font-size:13px}
+      .appfn-card p{font-size:11px;line-height:1.4}
+    }
+    @media(prefers-reduced-motion:reduce){.appfn-screen,.appfn-card{transition:none}}
 
     /* ── HOW IT WORKS ── */
     .how{padding:96px 0}
@@ -307,6 +355,20 @@
     .fu{opacity:0;transform:translateY(16px);transition:opacity .6s var(--tr),transform .6s var(--tr)}
     .fu.vis{opacity:1;transform:none}
     @media(prefers-reduced-motion:reduce){.fu{opacity:1;transform:none;transition:none}}
+
+    /* ── partner marquee ── */
+    .partners{padding:72px 0;border-top:1px solid var(--border)}
+    .partners-lbl{text-align:center;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sec);text-transform:uppercase;margin-bottom:40px}
+    .ptrs-track-wrap{position:relative;overflow:hidden}
+    .ptrs-track-wrap::before,.ptrs-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+    .ptrs-track-wrap::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+    .ptrs-track-wrap::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+    .ptrs-track{display:flex;align-items:center;gap:56px;width:max-content;animation:scrollL 130s linear infinite;padding:8px 0}
+    .ptrs-track:hover{animation-play-state:paused}
+    .ptr-logo{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all var(--tr);object-fit:contain;flex-shrink:0}
+    .ptr-logo:hover{opacity:1;filter:grayscale(0%)}
+    @keyframes scrollL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @media(max-width:768px){.partners{padding:40px 0}.partners-lbl{margin-bottom:28px}}
   </style>
 </head>
 <body>
@@ -320,7 +382,7 @@
     </a>
     <div class="nav-ctas">
       <div class="nav-dd" id="nav-dd-uw">
-        <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
         <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
           <a href="studierende.html" class="active" role="menuitem" aria-current="page"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
           <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
@@ -363,7 +425,7 @@
 <!-- mobile overlay -->
 <div class="mob-overlay" id="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
   <details class="mob-dd" open>
-    <summary>Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+    <summary>Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
     <div class="mob-dd-list">
       <a href="studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
       <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
@@ -509,35 +571,44 @@
 
 <!-- ── APP FUNCTIONS ── -->
 <section class="appfn" id="app">
+  <div class="wrap appfn-head fu">
+    <h2 class="sec-h">uniworks hilft dir, Studium und Job noch besser zu verbinden</h2>
+    <p class="sec-sub">Alle Funktionen, die du brauchst, um deine Schichten flexibel rund ums Studium zu planen — übersichtlich in einer App.</p>
+  </div>
   <div class="wrap appfn-grid">
     <div class="appfn-media fu">
-      <video class="appfn-video" src="../images/branding/LoadingAnimationPhone.mp4" autoplay muted playsinline preload="auto" aria-label="uniworks App — Animation"></video>
+      <div class="appfn-stage-row">
+        <button type="button" class="appfn-nav appfn-prev" id="appfn-prev" aria-label="Vorheriges Bild"><i class="ti ti-chevron-left" aria-hidden="true"></i></button>
+        <div class="appfn-phone">
+          <div class="appfn-screens" id="appfn-screens">
+            <img class="appfn-screen active" data-i="0" src="../images/visuals/SchichtenFinden.webp" alt="Schichten finden in der uniworks App" loading="lazy" />
+            <img class="appfn-screen" data-i="1" src="../images/visuals/MeineSchichten.webp" alt="Meine Schichten" loading="lazy" />
+            <img class="appfn-screen" data-i="2" src="../images/visuals/ErledigteSchichten.webp" alt="Erledigte Schichten" loading="lazy" />
+            <img class="appfn-screen" data-i="3" src="../images/visuals/Warteliste.webp" alt="Warteliste" loading="lazy" />
+          </div>
+        </div>
+        <button type="button" class="appfn-nav appfn-next" id="appfn-next" aria-label="Nächstes Bild"><i class="ti ti-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <div class="appfn-dots" id="appfn-dots" aria-hidden="true">
+        <span class="appfn-dot active"></span><span class="appfn-dot"></span><span class="appfn-dot"></span><span class="appfn-dot"></span>
+      </div>
     </div>
     <div class="appfn-text">
-      <div class="fu" style="margin-bottom:28px">
-        <h2 class="sec-h">uniworks hilft dir, Studium und Job noch besser zu verbinden</h2>
-        <p class="sec-sub">Alle Funktionen, die du brauchst, um deine Schichten flexibel rund ums Studium zu planen — übersichtlich in einer App.</p>
-      </div>
-      <div class="appfn-feats">
-        <div class="feat fu"><div class="feat-ico"><i class="ti ti-calendar-event" aria-hidden="true"></i></div><h3>Nächste Schichten</h3><p>Entdecke freie Schichten, sortiert nach Datum — mit den nächsten verfügbaren Plätzen.</p></div>
-        <div class="feat fu" style="transition-delay:.04s"><div class="feat-ico"><i class="ti ti-sparkles" aria-hidden="true"></i></div><h3>Neue Schichten</h3><p>Hier findest du immer die aktuellsten Jobangebote zuerst.</p></div>
-        <div class="feat fu" style="transition-delay:.08s"><div class="feat-ico"><i class="ti ti-bell-ringing" aria-hidden="true"></i></div><h3>Wartelistenplatz</h3><p>Melde dich für begehrte Schichten an und werde benachrichtigt, sobald ein Platz frei wird.</p></div>
-        <div class="feat fu"><div class="feat-ico"><i class="ti ti-list-check" aria-hidden="true"></i></div><h3>Meine Schichten</h3><p>Behalte deine geplanten Arbeitszeiten jederzeit im Blick.</p></div>
-        <div class="feat fu" style="transition-delay:.04s"><div class="feat-ico"><i class="ti ti-circle-check" aria-hidden="true"></i></div><h3>Erledigte Schichten</h3><p>Sieh vergangene Arbeitszeiten und abgeschlossene Schichten in der Übersicht.</p></div>
-        <div class="feat fu" style="transition-delay:.08s"><div class="feat-ico"><i class="ti ti-clock-hour-4" aria-hidden="true"></i></div><h3>Zeiten tracken</h3><p>Protokolliere deine Stunden und behalte deine Verdienste stets im Überblick.</p></div>
+      <!-- feature card synced to the active screenshot, aligned to the phone arrow level -->
+      <div class="appfn-cards" id="appfn-cards">
+        <div class="feat appfn-card active" data-i="0"><div class="feat-ico"><i class="ti ti-sparkles" aria-hidden="true"></i></div><h3>Neue Schichten</h3><p>Hier findest du immer die aktuellsten Jobangebote zuerst.</p></div>
+        <div class="feat appfn-card" data-i="1"><div class="feat-ico"><i class="ti ti-list-check" aria-hidden="true"></i></div><h3>Meine Schichten</h3><p>Behalte deine geplanten Arbeitszeiten jederzeit im Blick.</p></div>
+        <div class="feat appfn-card" data-i="2"><div class="feat-ico"><i class="ti ti-circle-check" aria-hidden="true"></i></div><h3>Erledigte Schichten</h3><p>Sieh vergangene Arbeitszeiten und abgeschlossene Schichten in der Übersicht.</p></div>
+        <div class="feat appfn-card" data-i="3"><div class="feat-ico"><i class="ti ti-bell-ringing" aria-hidden="true"></i></div><h3>Wartelistenplatz</h3><p>Melde dich für begehrte Schichten an und werde benachrichtigt, sobald ein Platz frei wird.</p></div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- ── BENEFITS ── -->
-<section class="benefits" id="vorteile">
+  <!-- Vorteile: full-width row, 3 across, centered -->
   <div class="wrap">
-    <div class="fu" style="text-align:center;display:flex;flex-direction:column;align-items:center">
-      <h2 class="sec-h">Alle Vorteile im Überblick</h2>
-      <p class="sec-sub" style="text-align:center">Warum sich über 15.000 Studierende für uniworks entschieden haben.</p>
+    <div class="appfn-vorteile-head fu">
+      <h2 class="sec-h">Alle Vorteile im Überblick.</h2>
     </div>
-    <div class="ben-grid">
+    <div class="ben-grid appfn-vorteile" id="vorteile" style="scroll-margin-top:96px">
       <div class="ben fu"><img class="ben-applogo" src="../images/branding/AppIcon.webp" alt="uniworks App" /><h3>uniworks App</h3><p>Schichten finden, buchen und vieles mehr – alles in einer App!</p></div>
       <div class="ben fu" style="transition-delay:.04s"><div class="ben-num">15.000+</div><p>Über 15.000 Studierende haben sich bereits für uniworks entschieden.</p></div>
       <div class="ben fu" style="transition-delay:.08s"><div class="ben-ico"><i class="ti ti-map-pin" aria-hidden="true"></i></div><h3>München und Umgebung</h3><p>Gegründet in München und verfügbar in immer mehr Regionen.</p></div>
@@ -649,6 +720,120 @@
   </div>
 </section>
 
+<!-- ── PARTNERS ── -->
+<section class="partners" id="partners">
+  <div class="wrap">
+    <p class="partners-lbl">Unsere Partner &amp; Kunden</p>
+  </div>
+  <div class="ptrs-track-wrap" aria-hidden="true">
+    <div class="ptrs-track">
+      <img src="../images/logos/DEHOGABayern.webp" alt="DEHOGA Bayern" class="ptr-logo" />
+      <img src="../images/logos/DEHOGA.svg" alt="DEHOGA" class="ptr-logo" />
+      <img src="../images/logos/WERK1.webp" alt="WERK1" class="ptr-logo" />
+      <img src="../images/logos/TUM.webp" alt="TU München" class="ptr-logo" />
+      <img src="../images/logos/LMUIEC.webp" alt="LMU IEC" class="ptr-logo" />
+      <img src="../images/logos/mTU.webp" alt="mTU" class="ptr-logo" />
+      <img src="../images/logos/AbsolventenKongress.webp" alt="Absolventenkongress" class="ptr-logo" />
+      <img src="../images/logos/Personalleiter.webp" alt="Personalleiter" class="ptr-logo" />
+      <img src="../images/logos/Gastronomiemagazin.webp" alt="Gastronomie Magazin" class="ptr-logo" />
+      <img src="../images/logos/JYSK.webp" alt="JYSK" class="ptr-logo" />
+      <img src="../images/logos/MBS.webp" alt="MBS" class="ptr-logo" />
+      <img src="../images/logos/Raeder.webp" alt="Räder" class="ptr-logo" />
+      <img src="../images/logos/Edeka.webp" alt="Edeka" class="ptr-logo" />
+      <img src="../images/logos/Rewe.webp" alt="Rewe" class="ptr-logo" />
+      <img src="../images/logos/Penny.webp" alt="Penny" class="ptr-logo" />
+      <img src="../images/logos/Lidl.webp" alt="Lidl" class="ptr-logo" />
+      <img src="../images/logos/Uber.webp" alt="Uber" class="ptr-logo" />
+      <img src="../images/logos/Doco.webp" alt="Doco" class="ptr-logo" />
+      <img src="../images/logos/Driver.webp" alt="Driver" class="ptr-logo" />
+      <img src="../images/logos/Elements.webp" alt="Elements" class="ptr-logo" />
+      <img src="../images/logos/Groblgastro.webp" alt="Gröbl Gastro" class="ptr-logo" />
+      <img src="../images/logos/Kofl.webp" alt="Kofl" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kaefer.webp" alt="Käfer" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Paulaner.webp" alt="Paulaner" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BayerischesHof.webp" alt="Bayerischer Hof" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kofler.webp" alt="Kofler" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Aumeister.webp" alt="Aumeister" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Adagio.webp" alt="Adagio" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BlauerBock.webp" alt="Blauer Bock" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Zenner.webp" alt="Zenner" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/HotelVictory.webp" alt="Hotel Victory" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Lekkerei.webp" alt="Lekkerei" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Blgastro.webp" alt="BLGASTRO" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Hotel.webp" alt="Hotel" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Schulverpflegung.webp" alt="Schulverpflegung" class="ptr-logo" />
+      <img src="../images/logos/promotion/Google.webp" alt="Google" class="ptr-logo" />
+      <img src="../images/logos/promotion/BAT.webp" alt="BAT" class="ptr-logo" />
+      <img src="../images/logos/promotion/Sumup.webp" alt="SumUp" class="ptr-logo" />
+      <img src="../images/logos/promotion/Nucao.webp" alt="nucao" class="ptr-logo" />
+      <img src="../images/logos/promotion/Volvo.webp" alt="Volvo" class="ptr-logo" />
+      <img src="../images/logos/promotion/Vonovia.webp" alt="Vonovia" class="ptr-logo" />
+      <img src="../images/logos/concerts/Coldplay.webp" alt="Coldplay" class="ptr-logo" />
+      <img src="../images/logos/concerts/TaylorSwift.webp" alt="Taylor Swift" class="ptr-logo" />
+      <img src="../images/logos/concerts/EdSheerna.webp" alt="Ed Sheeran" class="ptr-logo" />
+      <img src="../images/logos/concerts/ImagineDragons.webp" alt="Imagine Dragons" class="ptr-logo" />
+      <img src="../images/logos/concerts/Adelelogo.webp" alt="Adele" class="ptr-logo" />
+      <img src="../images/logos/concerts/ChrisBrown.webp" alt="Chris Brown" class="ptr-logo" />
+      <img src="../images/logos/concerts/Hurricane.webp" alt="Hurricane Festival" class="ptr-logo" />
+      <img src="../images/logos/concerts/RockImPark.svg" alt="Rock im Park" class="ptr-logo" />
+      <img src="../images/logos/concerts/FeteDeLaMusique.webp" alt="Fête de la Musique" class="ptr-logo" />
+      <img src="../images/logos/concerts/PalastBerlin.webp" alt="Palast Berlin" class="ptr-logo" />
+      <!-- duplicate for seamless loop -->
+      <img src="../images/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/DEHOGA.svg" alt="" class="ptr-logo" />
+      <img src="../images/logos/WERK1.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/TUM.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/LMUIEC.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/mTU.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/AbsolventenKongress.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Personalleiter.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Gastronomiemagazin.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/JYSK.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/MBS.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Raeder.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Edeka.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Rewe.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Penny.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Lidl.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Uber.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Doco.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Driver.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Elements.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Groblgastro.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Kofl.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kaefer.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Paulaner.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BayerischesHof.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kofler.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Aumeister.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Adagio.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BlauerBock.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Zenner.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/HotelVictory.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Lekkerei.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Blgastro.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Hotel.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Schulverpflegung.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Google.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/BAT.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Sumup.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Nucao.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Volvo.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Vonovia.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/Coldplay.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/TaylorSwift.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/EdSheerna.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/ImagineDragons.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/Adelelogo.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/ChrisBrown.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/Hurricane.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/RockImPark.svg" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/FeteDeLaMusique.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/PalastBerlin.webp" alt="" class="ptr-logo" />
+    </div>
+  </div>
+</section>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="wrap">
@@ -756,25 +941,24 @@ const io = new IntersectionObserver(entries => {
 }, {threshold: 0.12, rootMargin: '0px 0px -32px 0px'});
 document.querySelectorAll('.fu').forEach(el => io.observe(el));
 
-// ── App animation: play once, replay only when scrolled back into view ──────
+// ── App functions: phone screens navigated with prev/next arrows ──
 (function () {
-  var v = document.querySelector('.appfn-video');
-  if (!v) return;
-  var replay = function () {
-    try { v.currentTime = 0; } catch (e) {}
-    var p = v.play();
-    if (p && p.catch) p.catch(function () {});
-  };
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) replay(); });
-    }, { threshold: 0.4 }).observe(v);
+  var wrap = document.getElementById('appfn-screens');
+  if (!wrap) return;
+  var screens = [].slice.call(wrap.querySelectorAll('.appfn-screen'));
+  var dots = [].slice.call(document.querySelectorAll('#appfn-dots .appfn-dot'));
+  var cards = [].slice.call(document.querySelectorAll('#appfn-cards .appfn-card'));
+  var prev = document.getElementById('appfn-prev');
+  var next = document.getElementById('appfn-next');
+  var n = screens.length, cur = 0;
+  function setActive(i) {
+    cur = (i + n) % n;
+    screens.forEach(function (s, k) { s.classList.toggle('active', k === cur); });
+    dots.forEach(function (d, k) { d.classList.toggle('active', k === cur); });
+    cards.forEach(function (c, k) { c.classList.toggle('active', k === cur); });
   }
-  document.addEventListener('visibilitychange', function () {
-    if (document.hidden) return;
-    var r = v.getBoundingClientRect();
-    if (r.bottom > 0 && r.top < (window.innerHeight || document.documentElement.clientHeight)) replay();
-  });
+  if (prev) prev.addEventListener('click', function () { setActive(cur - 1); });
+  if (next) next.addEventListener('click', function () { setActive(cur + 1); });
 })();
 </script>
 </body>

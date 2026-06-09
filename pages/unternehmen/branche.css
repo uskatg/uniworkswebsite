@@ -259,7 +259,7 @@ a{color:inherit}
 .ptrs-track-wrap::before,.ptrs-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
 .ptrs-track-wrap::before{left:0;background:linear-gradient(to right,#fff,transparent)}
 .ptrs-track-wrap::after{right:0;background:linear-gradient(to left,#fff,transparent)}
-.ptrs-track{display:flex;align-items:center;gap:56px;width:max-content;animation:scrollL 28s linear infinite;padding:8px 0}
+.ptrs-track{display:flex;align-items:center;gap:56px;width:max-content;animation:scrollL 130s linear infinite;padding:8px 0}
 .ptrs-track:hover{animation-play-state:paused}
 .ptr-logo{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all var(--tr);object-fit:contain;flex-shrink:0}
 .ptr-logo:hover{opacity:1;filter:grayscale(0%)}

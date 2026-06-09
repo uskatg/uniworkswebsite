@@ -234,12 +234,8 @@
     .uw-card-body{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-start}
     .uw-card-btn-img{display:block;text-align:center;text-decoration:none;box-sizing:border-box;background:var(--g);color:#fff;border:1.5px solid transparent;border-radius:10px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);transition:all var(--tr)}
     .uw-card-btn-img:hover{background:var(--gh)}
-    /* Mix button + font colour across the row (cycle of 3): green → white → outline.
-       Headings/body stay light for legibility on the photos. */
-    .uw-track .uw-card:nth-child(3n+2) .uw-card-btn-img{background:#fff;color:var(--gd)}
-    .uw-track .uw-card:nth-child(3n+2) .uw-card-btn-img:hover{background:var(--gl);color:var(--gd)}
-    .uw-track .uw-card:nth-child(3n) .uw-card-btn-img{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.55)}
-    .uw-track .uw-card:nth-child(3n) .uw-card-btn-img:hover{background:rgba(255,255,255,.28);border-color:#fff}
+    /* All card buttons use the brand green --g (#2ab54a), matching the
+       "Für Unternehmen" nav button (.btn-p); hover uses --gh like .btn-p. */
     /* Für Studierende — eigener Abschnitt: Video + Bullet-Liste */
     .uw-students{display:grid;grid-template-columns:minmax(260px,300px) auto;gap:56px;align-items:center;justify-content:center;padding-top:4px}
     .uw-students-info{order:2}
@@ -293,7 +289,7 @@
     .ptrs-track-wrap::before,.ptrs-track-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
     .ptrs-track-wrap::before{left:0;background:linear-gradient(to right,#fff,transparent)}
     .ptrs-track-wrap::after{right:0;background:linear-gradient(to left,#fff,transparent)}
-    .ptrs-track{display:flex;align-items:center;gap:56px;width:max-content;animation:scrollL 28s linear infinite;padding:8px 0}
+    .ptrs-track{display:flex;align-items:center;gap:56px;width:max-content;animation:scrollL 130s linear infinite;padding:8px 0}
     .ptrs-track:hover{animation-play-state:paused}
     .ptr-logo{height:36px;width:auto;opacity:.5;filter:grayscale(100%);transition:all var(--tr);object-fit:contain;flex-shrink:0}
     .ptr-logo:hover{opacity:1;filter:grayscale(0%)}
@@ -354,7 +350,7 @@
     </a>
     <div class="nav-ctas">
       <div class="nav-dd" id="nav-dd-uw">
-        <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-s nav-dd-toggle" id="nav-dd-uw-toggle" aria-haspopup="true" aria-expanded="false">Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
         <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
           <a href="studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
           <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
@@ -397,7 +393,7 @@
 <!-- mobile overlay -->
 <div class="mob-overlay" id="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
   <details class="mob-dd">
-    <summary>Für uniworkers <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+    <summary>Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
     <div class="mob-dd-list">
       <a href="studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
       <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
@@ -519,7 +515,7 @@
 <section class="dmap" id="deutschlandweit" aria-label="Deutschlandweit vertreten">
   <div class="wrap dmap-grid">
     <div class="dmap-text fu">
-      <h2 class="sec-h"><span style="color:var(--g)">Deutschlandweit</span> für dich da</h2>
+      <h2 class="sec-h"><span style="color:var(--g)">Deutschlandweit</span> aktiv</h2>
       <p class="sec-sub">Gegründet wurde uniworks in München und ist mittlerweile deutschlandweit vertreten.</p>
     </div>
     <div class="dmap-map-col fu" style="transition-delay:.12s">
@@ -552,36 +548,6 @@
 
         <div class="uw-viewport">
           <div id="uw-track" class="uw-track" role="region" aria-label="Kategorie-Karussell"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FÜR STUDIERENDE (eigener Abschnitt) ── -->
-<section class="students-sec" id="studierende">
-  <div class="wrap">
-    <div class="uw-carousel-hdr">
-      <div>
-        <p class="uw-eyebrow">Für Studierende</p>
-        <h2 class="uw-heading">Flexible Jobs, die zu deinem Studium passen</h2>
-      </div>
-    </div>
-    <div class="uw-students">
-      <video class="uw-students-video" autoplay muted loop playsinline preload="metadata">
-        <source src="../images/visuals/Studierende.webm" type="video/webm" />
-        <source src="../images/visuals/Studierende.mp4" type="video/mp4" />
-      </video>
-      <div class="uw-students-info">
-        <ul class="uw-bullets">
-          <li><i class="ti ti-calendar-event" aria-hidden="true"></i><div><strong>Flexible Schichten</strong><span>Wähle täglich aus offenen Jobs in deiner Nähe.</span></div></li>
-          <li><i class="ti ti-coin-euro" aria-hidden="true"></i><div><strong>Faire Bezahlung</strong><span>Immer mindestens 16 € pro Stunde, fair und transparent.</span></div></li>
-          <li><i class="ti ti-device-mobile" aria-hidden="true"></i><div><strong>In der App buchen</strong><span>Schicht aussuchen, annehmen, loslegen — in Minuten.</span></div></li>
-          <li><i class="ti ti-school" aria-hidden="true"></i><div><strong>Rund ums Studium</strong><span>Jobs, die sich deinem Hochschulalltag anpassen.</span></div></li>
-          <li><i class="ti ti-map-pin" aria-hidden="true"></i><div><strong>Deutschlandweit</strong><span>Über 15.000 Studierende sind schon dabei.</span></div></li>
-        </ul>
-        <div class="uw-students-cta">
-          <a href="about.html" class="btn btn-p">Mehr erfahren</a>
         </div>
       </div>
     </div>
@@ -630,28 +596,108 @@
   <div class="ptrs-track-wrap" aria-hidden="true">
     <div class="ptrs-track">
       <img src="../images/logos/DEHOGABayern.webp" alt="DEHOGA Bayern" class="ptr-logo" />
+      <img src="../images/logos/DEHOGA.svg" alt="DEHOGA" class="ptr-logo" />
       <img src="../images/logos/WERK1.webp" alt="WERK1" class="ptr-logo" />
       <img src="../images/logos/TUM.webp" alt="TU München" class="ptr-logo" />
       <img src="../images/logos/LMUIEC.webp" alt="LMU IEC" class="ptr-logo" />
+      <img src="../images/logos/mTU.webp" alt="mTU" class="ptr-logo" />
       <img src="../images/logos/AbsolventenKongress.webp" alt="Absolventenkongress" class="ptr-logo" />
+      <img src="../images/logos/Personalleiter.webp" alt="Personalleiter" class="ptr-logo" />
+      <img src="../images/logos/Gastronomiemagazin.webp" alt="Gastronomie Magazin" class="ptr-logo" />
       <img src="../images/logos/JYSK.webp" alt="JYSK" class="ptr-logo" />
       <img src="../images/logos/MBS.webp" alt="MBS" class="ptr-logo" />
       <img src="../images/logos/Raeder.webp" alt="Räder" class="ptr-logo" />
       <img src="../images/logos/Edeka.webp" alt="Edeka" class="ptr-logo" />
-      <img src="../images/logos/Doco.webp" alt="Doco" class="ptr-logo" />
       <img src="../images/logos/Rewe.webp" alt="Rewe" class="ptr-logo" />
-      <!-- duplicate for loop -->
+      <img src="../images/logos/Penny.webp" alt="Penny" class="ptr-logo" />
+      <img src="../images/logos/Lidl.webp" alt="Lidl" class="ptr-logo" />
+      <img src="../images/logos/Uber.webp" alt="Uber" class="ptr-logo" />
+      <img src="../images/logos/Doco.webp" alt="Doco" class="ptr-logo" />
+      <img src="../images/logos/Driver.webp" alt="Driver" class="ptr-logo" />
+      <img src="../images/logos/Elements.webp" alt="Elements" class="ptr-logo" />
+      <img src="../images/logos/Groblgastro.webp" alt="Gröbl Gastro" class="ptr-logo" />
+      <img src="../images/logos/Kofl.webp" alt="Kofl" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kaefer.webp" alt="Käfer" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Paulaner.webp" alt="Paulaner" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BayerischesHof.webp" alt="Bayerischer Hof" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kofler.webp" alt="Kofler" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Aumeister.webp" alt="Aumeister" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Adagio.webp" alt="Adagio" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BlauerBock.webp" alt="Blauer Bock" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Zenner.webp" alt="Zenner" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/HotelVictory.webp" alt="Hotel Victory" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Lekkerei.webp" alt="Lekkerei" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Blgastro.webp" alt="BLGASTRO" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Hotel.webp" alt="Hotel" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Schulverpflegung.webp" alt="Schulverpflegung" class="ptr-logo" />
+      <img src="../images/logos/promotion/Google.webp" alt="Google" class="ptr-logo" />
+      <img src="../images/logos/promotion/BAT.webp" alt="BAT" class="ptr-logo" />
+      <img src="../images/logos/promotion/Sumup.webp" alt="SumUp" class="ptr-logo" />
+      <img src="../images/logos/promotion/Nucao.webp" alt="nucao" class="ptr-logo" />
+      <img src="../images/logos/promotion/Volvo.webp" alt="Volvo" class="ptr-logo" />
+      <img src="../images/logos/promotion/Vonovia.webp" alt="Vonovia" class="ptr-logo" />
+      <img src="../images/logos/concerts/Coldplay.webp" alt="Coldplay" class="ptr-logo" />
+      <img src="../images/logos/concerts/TaylorSwift.webp" alt="Taylor Swift" class="ptr-logo" />
+      <img src="../images/logos/concerts/EdSheerna.webp" alt="Ed Sheeran" class="ptr-logo" />
+      <img src="../images/logos/concerts/ImagineDragons.webp" alt="Imagine Dragons" class="ptr-logo" />
+      <img src="../images/logos/concerts/Adelelogo.webp" alt="Adele" class="ptr-logo" />
+      <img src="../images/logos/concerts/ChrisBrown.webp" alt="Chris Brown" class="ptr-logo" />
+      <img src="../images/logos/concerts/Hurricane.webp" alt="Hurricane Festival" class="ptr-logo" />
+      <img src="../images/logos/concerts/RockImPark.svg" alt="Rock im Park" class="ptr-logo" />
+      <img src="../images/logos/concerts/FeteDeLaMusique.webp" alt="Fête de la Musique" class="ptr-logo" />
+      <img src="../images/logos/concerts/PalastBerlin.webp" alt="Palast Berlin" class="ptr-logo" />
+      <!-- duplicate for seamless loop -->
       <img src="../images/logos/DEHOGABayern.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/DEHOGA.svg" alt="" class="ptr-logo" />
       <img src="../images/logos/WERK1.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/TUM.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/LMUIEC.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/mTU.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/AbsolventenKongress.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Personalleiter.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Gastronomiemagazin.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/JYSK.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/MBS.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/Raeder.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/Edeka.webp" alt="" class="ptr-logo" />
-      <img src="../images/logos/Doco.webp" alt="" class="ptr-logo" />
       <img src="../images/logos/Rewe.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Penny.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Lidl.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Uber.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Doco.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Driver.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Elements.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Groblgastro.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/Kofl.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kaefer.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Paulaner.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BayerischesHof.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Kofler.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Aumeister.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Adagio.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/BlauerBock.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Zenner.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/HotelVictory.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Lekkerei.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Blgastro.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Hotel.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/gastronomie/Schulverpflegung.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Google.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/BAT.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Sumup.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Nucao.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Volvo.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/promotion/Vonovia.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/Coldplay.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/TaylorSwift.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/EdSheerna.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/ImagineDragons.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/Adelelogo.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/ChrisBrown.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/Hurricane.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/RockImPark.svg" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/FeteDeLaMusique.webp" alt="" class="ptr-logo" />
+      <img src="../images/logos/concerts/PalastBerlin.webp" alt="" class="ptr-logo" />
     </div>
   </div>
 </section>
@@ -768,7 +814,7 @@ mobOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
     {t:'Event',             s:'Auf- und Abbau bis Einlass, alles aus einer Hand.',         cta:'Zu Events',        img:imgs.event,    href:'unternehmen/event.html'},
     {t:'Catering',          s:'Service- und Küchenhilfen, kurzfristig verfügbar.',         cta:'Zu Catering',      img:imgs.catering, href:'unternehmen/catering.html'},
     {t:'Einzelhandel',      s:'Kasse, Verkauf und Auffüllen, flexibel gebucht.',           cta:'Zum Einzelhandel', img:imgs.retail,   href:'unternehmen/einzelhandel.html'},
-    {t:'Gastronomie & Hotellerie', s:'Service und Empfang auf Sterneniveau.',             cta:'Zur Gastronomie',  img:imgs.gastro,   href:'unternehmen/gastronomie-hotellerie.html'},
+    {t:'Gastronomie & Hotellerie', s:'Service auf Sterneniveau.',                         cta:'Zur Gastronomie',  img:imgs.gastro,   href:'unternehmen/gastronomie-hotellerie.html'},
     {t:'Promotion',         s:'Promoter und Hostessen, die Ihre Marke vertreten.',        cta:'Zu Promotion',     img:imgs.promo,    href:'unternehmen/promotion.html'},
     {t:'Büro',              s:'Verlässliche Unterstützung im Büroalltag.',                cta:'Zum Büro',         img:imgs.buero,    href:'unternehmen/buero.html'},
   ];
@@ -824,7 +870,30 @@ document.querySelectorAll('.fu').forEach(el => io.observe(el));
     ["Nürnberg",49.452,11.077],["Heidelberg",49.398,8.672],["Regensburg",49.013,12.101],["Stuttgart",48.776,9.182],
     ["Passau",48.567,13.431],["Reutlingen",48.492,9.204],["Ulm",48.401,9.987],["Augsburg",48.370,10.898],
     ["München",48.137,11.575],["Freiburg",47.999,7.842],["Rosenheim",47.857,12.123],["Salzburg",47.811,13.047],
-    ["Kempten",47.728,10.314],["Konstanz",47.660,9.175],["Weil am Rhein",47.593,7.621]
+    ["Kempten",47.728,10.314],["Konstanz",47.660,9.175],["Weil am Rhein",47.593,7.621],
+    // ── Added from WiSe 23/24 university-city list (deduped to unique German cities). ──
+    // FLAG: Austrian (Wien, Graz, Linz, Salzburg, Innsbruck, Klagenfurt, Krems) and Swiss
+    // (Zürich, Basel, Bern, Genf, Lausanne, St. Gallen, Fribourg) cities were intentionally
+    // omitted — the map mask is Germany-only, so they would project outside the green shape.
+    ["Flensburg",54.782,9.437],["Greifswald",54.094,13.387],["Rostock",54.092,12.099],
+    ["Lübeck",53.866,10.687],["Wismar",53.891,11.466],["Bremen",53.079,8.802],
+    ["Vechta",52.728,8.287],["Osnabrück",52.279,8.047],["Braunschweig",52.269,10.521],
+    ["Hildesheim",52.155,9.951],["Magdeburg",52.121,11.628],["Bielefeld",52.020,8.532],
+    ["Frankfurt (Oder)",52.347,14.551],["Cottbus",51.757,14.329],["Paderborn",51.719,8.754],
+    ["Hamm",51.679,7.821],["Recklinghausen",51.614,7.198],["Göttingen",51.541,9.916],
+    ["Bochum",51.482,7.216],["Halle",51.482,11.970],["Duisburg",51.435,6.763],
+    ["Hagen",51.361,7.473],["Kassel",51.312,9.480],["Mittweida",50.986,12.981],
+    ["Jena",50.928,11.589],["Freiberg",50.911,13.342],["Marburg",50.802,8.766],
+    ["Aachen",50.776,6.084],["Bonn",50.737,7.098],["Ilmenau",50.683,10.918],
+    ["Gießen",50.587,8.678],["Koblenz",50.357,7.594],["Siegen",50.875,8.024],
+    ["Coburg",50.258,10.965],["Clausthal-Zellerfeld",51.808,10.341],["Trier",49.750,6.637],
+    ["Würzburg",49.794,9.929],["Mainz",49.992,8.247],["Bayreuth",49.948,11.578],
+    ["Bamberg",49.892,10.886],["Kaiserslautern",49.440,7.749],["Erlangen",49.590,11.005],
+    ["Ludwigshafen",49.477,8.445],["Heilbronn",49.142,9.211],["Karlsruhe",49.007,8.404],
+    ["Pforzheim",48.891,8.698],["Ludwigsburg",48.897,9.192],["Aalen",48.837,10.094],
+    ["Ingolstadt",48.766,11.425],["Esslingen",48.740,9.310],["Nürtingen",48.626,9.339],
+    ["Tübingen",48.520,9.057],["Offenburg",48.474,7.945],["Deggendorf",48.834,12.961],
+    ["Freising",48.403,11.749],["Weingarten",47.809,9.638]
   ];
   var built = CITIES.map(function(c){ var p = project(c[1], c[2]); return { name: c[0], x: p.x, y: p.y }; });
   // München lands first (its label is always-on), then the rest cascade top-to-bottom.
