@@ -67,7 +67,7 @@
 .case-more:hover .ti{transform:translate(2px,-2px)}
 @media(max-width:1024px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.cases{padding:56px 0}}
-@media(max-width:600px){.cases-grid{grid-template-columns:repeat(2,1fr);gap:14px}.case-tag{display:none}.case-img{aspect-ratio:4/5}.case-body{padding:14px}}
+@media(max-width:600px){.cases-grid{grid-template-columns:1fr;gap:16px}.case-body{padding:18px}}
 
 /* ── BRANCHEN grid (links to subpages) ── */
 .branchen{padding:80px 0;background:#fff}
