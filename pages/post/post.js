@@ -20,7 +20,7 @@
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="uniworks Startseite">
         <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
-        <span class="nav-logo-text">uniworks</span>
+        <span class="nav-logo-text">uni<span class="nav-logo-works">works</span></span>
       </a>
       <div class="nav-ctas">
         <div class="nav-dd" id="nav-dd-uw">

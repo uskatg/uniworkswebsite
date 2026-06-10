@@ -227,7 +227,7 @@ TEMPLATE = """<!DOCTYPE html>
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
         <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
-        <span class="nav-logo-text">uniworks</span>
+        <span class="nav-logo-text">uni<span class="nav-logo-works">works</span></span>
       </a>
       <ul class="nav-links">
         <li><a href="../index.html">Für Studierende</a></li>
