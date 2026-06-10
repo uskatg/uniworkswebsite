@@ -47,6 +47,14 @@ In the goneo control panel (KIS) → DNS settings for `uniworks.gmbh`:
       # expect: cache-control: public, max-age=2592000
       ```
 - [ ] Check apex redirect: `curl -sI https://uniworks.gmbh/` → 308 → `https://www.uniworks.gmbh/`.
+      **⚠ Blocked as of 2026-06-10:** goneo serves zone-level CAA records
+      (`0 issue "amazon.com"`, `0 issue "pki.goog"`) that are invisible in the KIS DNS
+      editor (no CAA type there) and block Let's Encrypt from issuing the apex cert.
+      **Do NOT remove them** — they are required by AWS ACM (apps/admin subdomains,
+      SES DKIM) and Google. Support ticket sent to goneo asking to ADD
+      `0 issue "letsencrypt.org"` alongside. Once goneo adds it, Vercel auto-issues
+      the cert (no action needed). Until then `https://uniworks.gmbh` shows a cert
+      warning; `www` and `http://` apex are unaffected.
 - [ ] Spot-check the live URL structure: `/unternehmen/events`, `/nutzungsbedingungen`,
       `/post/die-uniworks-app`, `/en` — all should return 200 (clean URLs, no `.html`).
 
