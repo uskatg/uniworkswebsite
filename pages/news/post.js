@@ -10,32 +10,32 @@
   const navHTML = `
   <nav class="nav" id="main-nav" role="banner">
     <div class="nav-inner">
-      <a href="/pages/index.html" class="nav-logo" aria-label="uniworks Startseite">
+      <a href="/" class="nav-logo" aria-label="uniworks Startseite">
         <img src="/images/branding/AppIcon.webp" alt="uniworks" />
         <span class="nav-logo-text">uniworks</span>
       </a>
       <div class="nav-ctas">
-        <a href="/pages/index.html#studierende" class="btn btn-s">Für Studierende</a>
+        <a href="/#studierende" class="btn btn-s">Für Studierende</a>
         <div class="nav-dd" id="nav-dd">
           <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
             Für Unternehmen
             <i class="ti ti-chevron-down" aria-hidden="true"></i>
           </button>
           <div class="nav-dd-menu" role="menu" aria-label="Branchen">
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-            <a href="/pages/index.html#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
           </div>
         </div>
-        <a href="/pages/about.html" class="nav-textlink">Über uns</a>
+        <a href="/about" class="nav-textlink">Über uns</a>
         <div class="lang-switch" aria-label="Sprache wählen">
-          <a href="/pages/about.html#news" hreflang="de" data-lang="de">DE</a>
+          <a href="/about#news" hreflang="de" data-lang="de">DE</a>
           <span class="sep" aria-hidden="true"></span>
-          <a href="/en/about.html#news" hreflang="en" data-lang="en">EN</a>
+          <a href="/en/about#news" hreflang="en" data-lang="en">EN</a>
         </div>
       </div>
       <button class="nav-hbg" id="nav-hbg" aria-label="Menü öffnen" aria-expanded="false">
@@ -44,17 +44,17 @@
     </div>
   </nav>
   <div class="mob-overlay" id="mob-overlay" role="dialog" aria-label="Navigation" aria-modal="true">
-    <a href="/pages/index.html#studierende">Für Studierende</a>
-    <a href="/pages/index.html#unternehmen">Für Unternehmen</a>
-    <a href="/pages/about.html">Über uns</a>
+    <a href="/#studierende">Für Studierende</a>
+    <a href="/#unternehmen">Für Unternehmen</a>
+    <a href="/about">Über uns</a>
     <div class="lang-switch" aria-label="Sprache wählen" style="padding:14px 0;border-bottom:1px solid var(--border)">
-      <a href="/pages/about.html#news" hreflang="de" data-lang="de">DE</a>
+      <a href="/about#news" hreflang="de" data-lang="de">DE</a>
       <span class="sep" aria-hidden="true"></span>
-      <a href="/en/about.html#news" hreflang="en" data-lang="en">EN</a>
+      <a href="/en/about#news" hreflang="en" data-lang="en">EN</a>
     </div>
     <div class="mob-ctas">
-      <a href="/pages/index.html#studierende" class="btn btn-s">Für Studierende</a>
-      <a href="/pages/index.html#unternehmen" class="btn btn-p">Personal anfragen</a>
+      <a href="/#studierende" class="btn btn-s">Für Studierende</a>
+      <a href="/#unternehmen" class="btn btn-p">Personal anfragen</a>
     </div>
   </div>`;
 
@@ -76,38 +76,38 @@
         <div class="footer-col">
           <h4>Plattform</h4>
           <ul>
-            <li><a href="/pages/index.html#studierende">Für Studierende</a></li>
-            <li><a href="/pages/index.html#unternehmen">Für Unternehmen</a></li>
-            <li><a href="/pages/index.html#app">App herunterladen</a></li>
+            <li><a href="/#studierende">Für Studierende</a></li>
+            <li><a href="/#unternehmen">Für Unternehmen</a></li>
+            <li><a href="/#app">App herunterladen</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Branchen</h4>
           <ul>
-            <li><a href="/pages/index.html#unternehmen">Logistik</a></li>
-            <li><a href="/pages/index.html#unternehmen">Event</a></li>
-            <li><a href="/pages/index.html#unternehmen">Catering</a></li>
-            <li><a href="/pages/index.html#unternehmen">Einzelhandel</a></li>
-            <li><a href="/pages/index.html#unternehmen">Gastronomie</a></li>
-            <li><a href="/pages/index.html#unternehmen">Promotion</a></li>
+            <li><a href="/#unternehmen">Logistik</a></li>
+            <li><a href="/#unternehmen">Event</a></li>
+            <li><a href="/#unternehmen">Catering</a></li>
+            <li><a href="/#unternehmen">Einzelhandel</a></li>
+            <li><a href="/#unternehmen">Gastronomie</a></li>
+            <li><a href="/#unternehmen">Promotion</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Unternehmen</h4>
           <ul>
-            <li><a href="/pages/about.html">Über Uns</a></li>
-            <li><a href="/pages/about.html#news">Blog</a></li>
-            <li><a href="/pages/faq.html">FAQ</a></li>
-            <li><a href="/pages/impressum.html">Impressum</a></li>
-            <li><a href="/pages/datenschutz.html">Datenschutz</a></li>
+            <li><a href="/about">Über Uns</a></li>
+            <li><a href="/about#news">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-bottom-links">
-          <a href="/pages/impressum.html">Impressum</a>
-          <a href="/pages/datenschutz.html">Datenschutz</a>
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
         </div>
       </div>
     </div>

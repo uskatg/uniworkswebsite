@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,20 +12,20 @@
   <!-- Open Graph / social cards -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="uniworks" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Imprint — uniworks GmbH" />
-  <meta property="og:description" content="Imprint of uniworks GmbH, Unterhaching — provider identification, disclaimer and contact information." />
-  <meta property="og:url" content="https://www.uniworks.gmbh/en/impressum" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Nutzungsbedingungen — uniworks GmbH" />
+  <meta property="og:description" content="Nutzungsbedingungen der uniworks App — Registrierung, Buchung von Jobs, Vergütung, Datenschutz und Kontakt." />
+  <meta property="og:url" content="https://www.uniworks.gmbh/nutzungsbedingungen" />
   <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Imprint — uniworks GmbH" />
-  <meta name="twitter:description" content="Imprint of uniworks GmbH, Unterhaching — provider identification, disclaimer and contact information." />
+  <meta name="twitter:title" content="Nutzungsbedingungen — uniworks GmbH" />
+  <meta name="twitter:description" content="Nutzungsbedingungen der uniworks App — Registrierung, Buchung von Jobs, Vergütung, Datenschutz und Kontakt." />
   <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
-  <link rel="canonical" href="https://www.uniworks.gmbh/en/impressum" />
-  <title>Imprint — uniworks GmbH</title>
-  <meta name="description" content="Imprint of uniworks GmbH, Unterhaching — provider identification, disclaimer and contact information." />
+  <link rel="canonical" href="https://www.uniworks.gmbh/nutzungsbedingungen" />
+  <title>Nutzungsbedingungen — uniworks GmbH</title>
+  <meta name="description" content="Nutzungsbedingungen der uniworks App — Registrierung, Buchung von Jobs, Vergütung, Datenschutz und Kontakt." />
   <meta name="robots" content="index,follow" />
   <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
   <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
@@ -45,7 +45,7 @@
     }
     html{scroll-behavior:smooth}
     body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.2}
     a{color:inherit}
     .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
     @media(max-width:768px){.wrap{padding:0 24px}}
@@ -54,8 +54,6 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;border-radius:var(--r8);padding:10px 20px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
     .btn-p{background:var(--g);color:#fff}
     .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
-    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
-    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
 
     /* ── NAV ── */
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
@@ -78,22 +76,16 @@
     .legal{padding:128px 0 88px}
     .legal-inner{max-width:760px;margin:0 auto}
     .legal h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
-    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:44px}
-    .legal address{font-style:normal;font-size:17px;line-height:1.7;color:var(--body)}
-    .legal address strong{color:var(--black);font-weight:700}
-    .legal-contact{margin-top:18px;display:flex;flex-direction:column;gap:8px}
-    .legal-contact a{display:inline-flex;align-items:center;gap:10px;font-size:16px;color:var(--body);text-decoration:none;transition:color var(--tr);width:fit-content}
-    .legal-contact a:hover{color:var(--g)}
-    .legal-contact a .ti{font-size:19px;color:var(--g);flex-shrink:0}
+    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:8px}
+    .legal-updated{font-size:14px;color:var(--sec);margin-bottom:44px}
     .legal h2{font-size:22px;font-weight:700;margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
-    .legal p{font-size:16px;line-height:1.7;color:var(--body);margin-bottom:16px}
-    .legal p:last-child{margin-bottom:0}
-    .legal dl{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;font-size:16px;line-height:1.6}
-    .legal dt{color:var(--sec)}
-    .legal dd{color:var(--black);font-weight:500}
-    .legal dd a{color:var(--g);text-decoration:none}
-    .legal dd a:hover{text-decoration:underline}
-    @media(max-width:560px){.legal{padding:104px 0 64px}.legal dl{grid-template-columns:1fr;gap:2px 0}.legal dd{margin-bottom:12px}}
+    .legal h3{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 12px}
+    .legal p{font-size:16px;line-height:1.75;color:var(--body);margin-bottom:16px}
+    .legal address{font-style:normal;font-size:16px;line-height:1.7;color:var(--body);margin:4px 0 16px}
+    .legal address strong{color:var(--black);font-weight:700}
+    .legal a[href^="mailto"],.legal a[href^="tel"]{color:var(--g);text-decoration:none}
+    .legal a[href^="mailto"]:hover,.legal a[href^="tel"]:hover{text-decoration:underline}
+    @media(max-width:560px){.legal{padding:104px 0 64px}}
 
     /* ── FOOTER (mirrors index.html / about.html) ── */
     footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
@@ -129,63 +121,75 @@
   <!-- ── NAV ── -->
   <nav class="nav" id="main-nav">
     <div class="nav-inner">
-      <a href="/en" class="nav-logo" aria-label="uniworks home">
+      <a href="/" class="nav-logo" aria-label="uniworks Startseite">
         <img src="../images/branding/AppIcon.webp" alt="uniworks" />
         <span class="nav-logo-text">uniworks</span>
       </a>
       <div class="nav-ctas">
-        <a href="/en/about" class="nav-textlink">About us</a>
-        <a href="/en/unternehmen" class="btn btn-p">For businesses</a>
-        <div class="lang-switch" aria-label="Choose language">
-          <a href="/impressum" hreflang="de" data-lang="de">DE</a>
+        <a href="/about" class="nav-textlink">Über uns</a>
+        <a href="/unternehmen" class="btn btn-p">Für Unternehmen</a>
+        <div class="lang-switch" aria-label="Sprache wählen">
+          <a href="/nutzungsbedingungen" hreflang="de" data-lang="de" class="active">DE</a>
           <span class="sep" aria-hidden="true"></span>
-          <a href="/en/impressum" hreflang="en" data-lang="en" class="active">EN</a>
+          <a href="/en/nutzungsbedingungen" hreflang="en" data-lang="en">EN</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- ── IMPRINT ── -->
+  <!-- ── NUTZUNGSBEDINGUNGEN ── -->
   <main class="legal">
     <div class="wrap">
       <div class="legal-inner">
-        <h1>Imprint</h1>
-        <p class="legal-lead">Information pursuant to § 5 DDG (German Digital Services Act).</p>
-        <p class="legal-lead">This English text is a convenience translation. The legally binding version is the German Impressum.</p>
+        <h1>Nutzungsbedingungen</h1>
+        <p class="legal-lead">Die Nutzungsbedingungen der uniworks App.</p>
 
-        <address>
-          <strong>uniworks GmbH</strong><br />
-          Inselkammerstr. 8<br />
-          82008 Unterhaching
-        </address>
+        <p>Willkommen bei uniworks! Wir freuen uns, dass du unsere App für Studierende zur Buchung flexibler Jobs nutzt. Die Nutzung unserer App unterliegt den folgenden Nutzungsbedingungen. Bitte lies diese sorgfältig durch, bevor du die App verwendest. Wenn du die App nutzt, stimmst du automatisch diesen Bedingungen zu.</p>
+        <p>Wir hoffen, dass dir unsere App dabei hilft, flexible Jobs während deines Studiums zu finden. Viel Erfolg!</p>
 
-        <div class="legal-contact">
-          <a href="mailto:info@uniworks.gmbh"><i class="ti ti-mail" aria-hidden="true"></i>info@uniworks.gmbh</a>
-          <a href="tel:+498921535440"><i class="ti ti-phone" aria-hidden="true"></i>089 21535440</a>
-        </div>
+        <h2>Allgemeine Bedingungen</h2>
+        <h3>1. Nutzungsvereinbarung</h3>
+        <p>Diese Nutzungsbedingungen (im Folgenden als Vereinbarung bezeichnet) stellen eine rechtliche Vereinbarung zwischen dir und der uniworks GmbH (im Folgenden als wir, uns oder uniworks bezeichnet) dar. Durch die Nutzung unserer App stimmst du diesen Bedingungen zu.</p>
+        <h3>2. Änderungen der Bedingungen</h3>
+        <p>uniworks behält sich das Recht vor, diese Nutzungsbedingungen jederzeit nach eigenem Ermessen zu ändern. Wir werden dich über Änderungen benachrichtigen, und die fortgesetzte Nutzung der App nach einer solchen Benachrichtigung gilt als Zustimmung zu den geänderten Bedingungen.</p>
 
-        <h2>Disclaimer</h2>
-        <p>The content and presentation of the websites operated by uniworks GmbH are protected by copyright. Although we exercise the utmost care, we cannot guarantee the accuracy of the information presented or its permanent technical availability.</p>
-        <p>We accept no liability for the content of external links. Responsibility for the content of linked pages lies solely with the operators of those pages.</p>
-        <p>uniworks reserves the right to change the content and design of the websites it operates without prior notice.</p>
+        <h2>Nutzung der App</h2>
+        <h3>1. Berechtigung</h3>
+        <p>Du musst ein Studierender sein, um unsere App nutzen zu dürfen. Du bist verpflichtet, ehrliche und genaue Angaben bei der Registrierung zu machen.</p>
+        <h3>2. Registrierung</h3>
+        <p>Um die App zu nutzen, musst du ein Konto erstellen. Du bist für die Geheimhaltung deiner Anmeldedaten verantwortlich und haftest für alle Aktivitäten, die unter deinem Konto stattfinden.</p>
+        <h3>3. Verhalten</h3>
+        <p>Du stimmst zu, die App in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften zu nutzen. Du darfst die App nicht missbrauchen oder für rechtswidrige Zwecke verwenden.</p>
 
-        <h2>Contact information</h2>
-        <dl>
-          <dt>Email</dt>
-          <dd><a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a></dd>
-          <dt>Internet</dt>
-          <dd><a href="https://www.uniworks.gmbh" target="_blank" rel="noopener">www.uniworks.gmbh</a></dd>
-          <dt>Register court</dt>
-          <dd>Amtsgericht München</dd>
-          <dt>Register number</dt>
-          <dd>HRB 282397</dd>
-          <dt>Managing director</dt>
-          <dd>Moritz Alexander Lange</dd>
-          <dt>VAT ID</dt>
-          <dd>DE360986002</dd>
-          <dt>Economic ID</dt>
-          <dd>DE360986002-00001</dd>
-        </dl>
+        <h2>Buchung von Jobs</h2>
+        <h3>1. Job-Angebote</h3>
+        <p>uniworks ermöglicht es dir, flexible Jobs von Dritten zu buchen. Sobald du eine Schicht annimmst, sagst du diese verbindlich zu. Informiere uns umgehend, wenn du außerplanmäßig verhindert sein solltest.</p>
+        <h3>2. Vergütung</h3>
+        <p>Du stimmst zu, dass die angezeigte Vergütung je nach tatsächlich gearbeiteter Zeit variieren kann und einen Richtwert darstellt.</p>
+        <h3>3. Job-Beschreibung</h3>
+        <p>Bei den Schichtbeschreibungen geben wir uns größte Mühe, aber auch uns kann mal ein Fehler unterlaufen, Irrtümer sind also vorbehalten.</p>
+
+        <h2>Datenschutz</h2>
+        <h3>1. Datenschutzrichtlinie</h3>
+        <p>Informationen zur Erhebung und Verwendung deiner personenbezogenen Daten findest du in unserer Datenschutzrichtlinie, die auf unserer Website <a href="/datenschutz">uniworks.gmbh/datenschutz</a> verfügbar ist.</p>
+
+        <h2>Beendigung</h2>
+        <h3>1. Kündigung</h3>
+        <p>uniworks kann dein Konto ohne Begründung oder Vorankündigung kündigen.</p>
+        <h3>2. Konto löschen</h3>
+        <p>Unter „Profil“ besteht jederzeit die Möglichkeit, dein Konto zu löschen.</p>
+
+        <h2>Kontakt</h2>
+        <p>Bei Fragen oder Anliegen erreichst du uns unter <a href="mailto:support@uniworks.gmbh">support@uniworks.gmbh</a> oder auf WhatsApp unter <a href="https://wa.me/4915678983802" target="_blank" rel="noopener noreferrer">+49 156 78983802</a></p>
+
+        <h2>Schlussbestimmungen</h2>
+        <h3>1. Geltendes Recht</h3>
+        <p>Diese Vereinbarung unterliegt dem deutschen Recht.</p>
+        <h3>2. Gerichtsstand</h3>
+        <p>Bei Rechtsstreitigkeiten im Zusammenhang mit dieser Vereinbarung ist das Landgericht München zuständig.</p>
+
+        <h2>Salvatorische Klausel</h2>
+        <p>Sollten einzelne Bestimmungen unserer Nutzungsvereinbarung unwirksam sein oder werden, so wird dadurch die Wirksamkeit der übrigen Bestimmungen nicht berührt.</p>
       </div>
     </div>
   </main>
@@ -199,7 +203,7 @@
             <img src="../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
             <h3>uniworks</h3>
           </div>
-          <p>Germany's fastest-growing staffing service — we connect companies with motivated students.</p>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
           <div class="footer-social">
             <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <i class="ti ti-brand-instagram" aria-hidden="true"></i>
@@ -217,40 +221,40 @@
         </div>
         </div>
         <div class="footer-col">
-          <h4>Platform</h4>
+          <h4>Plattform</h4>
           <ul>
-            <li><a href="/en">For students</a></li>
-            <li><a href="/en/unternehmen">For businesses</a></li>
+            <li><a href="/studierende">Für Studierende</a></li>
+            <li><a href="/unternehmen">Für Unternehmen</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Industries</h4>
+          <h4>Branchen</h4>
           <ul>
-            <li><a href="/en/unternehmen/logistik-personal">Logistics</a></li>
-            <li><a href="/en/unternehmen/events">Event</a></li>
-            <li><a href="/en/unternehmen/catering">Catering</a></li>
-            <li><a href="/en/unternehmen/einzelhandel">Retail</a></li>
-            <li><a href="/en/unternehmen/gastronomie-hotellerie">Gastronomy &amp; Hospitality</a></li>
-            <li><a href="/en/unternehmen/promotion">Promotion</a></li>
-            <li><a href="/en/unternehmen/buro">Office</a></li>
+            <li><a href="/unternehmen/logistik-personal">Logistik</a></li>
+            <li><a href="/unternehmen/events">Event</a></li>
+            <li><a href="/unternehmen/catering">Catering</a></li>
+            <li><a href="/unternehmen/einzelhandel">Einzelhandel</a></li>
+            <li><a href="/unternehmen/gastronomie-hotellerie">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="/unternehmen/promotion">Promotion</a></li>
+            <li><a href="/unternehmen/buro">Büro</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4>Unternehmen</h4>
           <ul>
-            <li><a href="/en/about">About us</a></li>
-            <li><a href="/en/blog">Blog</a></li>
-            <li><a href="/en/faq">FAQ</a></li>
-            <li><a href="/en/impressum">Imprint</a></li>
-            <li><a href="/en/datenschutz">Privacy</a></li>
+            <li><a href="/about">Über Uns</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 uniworks GmbH. All rights reserved.</span>
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-bottom-links">
-          <a href="/en/impressum">Imprint</a>
-          <a href="/en/datenschutz">Privacy</a>
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
         </div>
       </div>
     </div>

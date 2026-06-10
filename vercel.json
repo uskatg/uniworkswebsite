@@ -1,5 +1,583 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/pages/nutzungsbedingungen.html",
+      "destination": "/nutzungsbedingungen",
+      "permanent": true
+    },
+    {
+      "source": "/en/nutzungsbedingungen.html",
+      "destination": "/en/nutzungsbedingungen",
+      "permanent": true
+    },
+    {
+      "source": "/en/about.html",
+      "destination": "/en/about",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog.html",
+      "destination": "/en/blog",
+      "permanent": true
+    },
+    {
+      "source": "/en/datenschutz.html",
+      "destination": "/en/datenschutz",
+      "permanent": true
+    },
+    {
+      "source": "/en/fachkraefte.html",
+      "destination": "/en/fur-fachkrafte",
+      "permanent": true
+    },
+    {
+      "source": "/en/faq.html",
+      "destination": "/en/faq",
+      "permanent": true
+    },
+    {
+      "source": "/en/impressum.html",
+      "destination": "/en/impressum",
+      "permanent": true
+    },
+    {
+      "source": "/en/index.html",
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/en/studierende.html",
+      "destination": "/en/studierende",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/buero.html",
+      "destination": "/en/unternehmen/buro",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/catering.html",
+      "destination": "/en/unternehmen/catering",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/einzelhandel.html",
+      "destination": "/en/unternehmen/einzelhandel",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/event.html",
+      "destination": "/en/unternehmen/events",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/gastronomie-hotellerie.html",
+      "destination": "/en/unternehmen/gastronomie-hotellerie",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/index.html",
+      "destination": "/en/unternehmen",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/kaufland-promotion.html",
+      "destination": "/en/unternehmen/kaufland-promotion",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/logistik.html",
+      "destination": "/en/unternehmen/logistik-personal",
+      "permanent": true
+    },
+    {
+      "source": "/en/unternehmen/promotion.html",
+      "destination": "/en/unternehmen/promotion",
+      "permanent": true
+    },
+    {
+      "source": "/pages/Deutschland-Jobmap.html",
+      "destination": "/deutschland-jobmap",
+      "permanent": true
+    },
+    {
+      "source": "/pages/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/pages/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/pages/datenschutz.html",
+      "destination": "/datenschutz",
+      "permanent": true
+    },
+    {
+      "source": "/pages/fachkraefte.html",
+      "destination": "/fur-fachkrafte",
+      "permanent": true
+    },
+    {
+      "source": "/pages/faq.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/pages/impressum.html",
+      "destination": "/impressum",
+      "permanent": true
+    },
+    {
+      "source": "/pages/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/auftakt-zum-wintersemester-2024-25-uniworks-feiert-mit-munchens-studierenden.html",
+      "destination": "/post/auftakt-zum-wintersemester-2024-25-uniworks-feiert-mit-munchens-studierenden",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/die-uniworks-app.html",
+      "destination": "/post/die-uniworks-app",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/startschuss.html",
+      "destination": "/post/startschuss",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/uniworker-plus.html",
+      "destination": "/post/uniworker-plus",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/uniworks-eine-eingetragene-marke.html",
+      "destination": "/post/uniworks-eine-eingetragene-marke",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/uniworks-in-der-presse.html",
+      "destination": "/post/uniworks-in-der-presse",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/uniworks-wird-dehoga-mitglied.html",
+      "destination": "/post/uniworks-wird-dehoga-mitglied",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/von-studierenden-fur-studierende.html",
+      "destination": "/post/von-studierenden-fur-studierende",
+      "permanent": true
+    },
+    {
+      "source": "/pages/news/young-talents-begeistern-karriere-events-als-erfolgsfaktor.html",
+      "destination": "/post/young-talents-begeistern-karriere-events-als-erfolgsfaktor",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/aushilfen-und-minijobs-flexible-unterstutzung-fur-unternehmen-deutschlandweit.html",
+      "destination": "/post/aushilfen-und-minijobs-flexible-unterstutzung-fur-unternehmen-deutschlandweit",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/aushilfsjobs-und-minijobs-flexible-chancen-fur-studierende.html",
+      "destination": "/post/aushilfsjobs-und-minijobs-flexible-chancen-fur-studierende",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/bewerbungstipps-fur-den-allerersten-studentenjob-keine-erfahrung-kein-problem.html",
+      "destination": "/post/bewerbungstipps-fur-den-allerersten-studentenjob-keine-erfahrung-kein-problem",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/das-lager-denkt-mit-skalierbare-logistiklosungen-fur-die-herausforderungen-von-morgen.html",
+      "destination": "/post/das-lager-denkt-mit-skalierbare-logistiklosungen-fur-die-herausforderungen-von-morgen",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/die-70-tage-regelung-fur-studierende-erklart.html",
+      "destination": "/post/die-70-tage-regelung-fur-studierende-erklart",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/effektive-losungen-fur-den-weihnachtsansturm-flexible-personalstrategien-fur-logistik--und-versandunternehmen.html",
+      "destination": "/post/effektive-losungen-fur-den-weihnachtsansturm-flexible-personalstrategien-fur-logistik--und-versandunternehmen",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/kurzfristig-eventpersonal-finden-so-vermeiden-unternehmen-engpasse-beim-oktoberfest.html",
+      "destination": "/post/kurzfristig-eventpersonal-finden-so-vermeiden-unternehmen-engpasse-beim-oktoberfest",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/personalbedarf-im-einzelhandel.html",
+      "destination": "/post/personalbedarf-im-einzelhandel",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/personaleinsatzplanung-luecken-vermeiden.html",
+      "destination": "/post/personaleinsatzplanung-luecken-vermeiden",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/personliche-betreuung-in-der-arbeitnehmeruberlassung.html",
+      "destination": "/post/personliche-betreuung-in-der-arbeitnehmeruberlassung",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/sozialversicherungsnummer-finden-alles-fur-den-jobstart.html",
+      "destination": "/post/sozialversicherungsnummer-finden-alles-fur-den-jobstart",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/steuer-id-finden-alles-fur-den-jobstart.html",
+      "destination": "/post/steuer-id-finden-alles-fur-den-jobstart",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/steuererklarung-fur-studierende-so-gehts.html",
+      "destination": "/post/steuererklarung-fur-studierende-so-gehts",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/studenten-gesucht-so-finden-unternehmen-schnell-qualifizierte-unterstutzung.html",
+      "destination": "/post/studenten-gesucht-so-finden-unternehmen-schnell-qualifizierte-unterstutzung",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/wellpass.html",
+      "destination": "/post/wellpass",
+      "permanent": true
+    },
+    {
+      "source": "/pages/post/wie-promotion-skalierbar-wird.html",
+      "destination": "/post/wie-promotion-skalierbar-wird",
+      "permanent": true
+    },
+    {
+      "source": "/pages/studierende.html",
+      "destination": "/studierende",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/buero.html",
+      "destination": "/unternehmen/buro",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/catering.html",
+      "destination": "/unternehmen/catering",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/einzelhandel.html",
+      "destination": "/unternehmen/einzelhandel",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/event.html",
+      "destination": "/unternehmen/events",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/gastronomie-hotellerie.html",
+      "destination": "/unternehmen/gastronomie-hotellerie",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/index.html",
+      "destination": "/unternehmen",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/kaufland-promotion.html",
+      "destination": "/unternehmen/kaufland-promotion",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/logistik.html",
+      "destination": "/unternehmen/logistik-personal",
+      "permanent": true
+    },
+    {
+      "source": "/pages/unternehmen/promotion.html",
+      "destination": "/unternehmen/promotion",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vorteile",
+      "destination": "/studierende",
+      "permanent": false
+    },
+    {
+      "source": "/kategorien/:slug",
+      "destination": "/blog",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/pages/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/pages/about.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "/pages/datenschutz.html"
+    },
+    {
+      "source": "/deutschland-jobmap",
+      "destination": "/pages/Deutschland-Jobmap.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/en/about",
+      "destination": "/en/about.html"
+    },
+    {
+      "source": "/en/blog",
+      "destination": "/en/blog.html"
+    },
+    {
+      "source": "/en/datenschutz",
+      "destination": "/en/datenschutz.html"
+    },
+    {
+      "source": "/en/faq",
+      "destination": "/en/faq.html"
+    },
+    {
+      "source": "/en/fur-fachkrafte",
+      "destination": "/en/fachkraefte.html"
+    },
+    {
+      "source": "/en/impressum",
+      "destination": "/en/impressum.html"
+    },
+    {
+      "source": "/en/nutzungsbedingungen",
+      "destination": "/en/nutzungsbedingungen.html"
+    },
+    {
+      "source": "/en/studierende",
+      "destination": "/en/studierende.html"
+    },
+    {
+      "source": "/en/unternehmen",
+      "destination": "/en/unternehmen/index.html"
+    },
+    {
+      "source": "/en/unternehmen/buro",
+      "destination": "/en/unternehmen/buero.html"
+    },
+    {
+      "source": "/en/unternehmen/catering",
+      "destination": "/en/unternehmen/catering.html"
+    },
+    {
+      "source": "/en/unternehmen/einzelhandel",
+      "destination": "/en/unternehmen/einzelhandel.html"
+    },
+    {
+      "source": "/en/unternehmen/events",
+      "destination": "/en/unternehmen/event.html"
+    },
+    {
+      "source": "/en/unternehmen/gastronomie-hotellerie",
+      "destination": "/en/unternehmen/gastronomie-hotellerie.html"
+    },
+    {
+      "source": "/en/unternehmen/kaufland-promotion",
+      "destination": "/en/unternehmen/kaufland-promotion.html"
+    },
+    {
+      "source": "/en/unternehmen/logistik-personal",
+      "destination": "/en/unternehmen/logistik.html"
+    },
+    {
+      "source": "/en/unternehmen/promotion",
+      "destination": "/en/unternehmen/promotion.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/pages/faq.html"
+    },
+    {
+      "source": "/fur-fachkrafte",
+      "destination": "/pages/fachkraefte.html"
+    },
+    {
+      "source": "/impressum",
+      "destination": "/pages/impressum.html"
+    },
+    {
+      "source": "/nutzungsbedingungen",
+      "destination": "/pages/nutzungsbedingungen.html"
+    },
+    {
+      "source": "/post/auftakt-zum-wintersemester-2024-25-uniworks-feiert-mit-munchens-studierenden",
+      "destination": "/pages/news/auftakt-zum-wintersemester-2024-25-uniworks-feiert-mit-munchens-studierenden.html"
+    },
+    {
+      "source": "/post/aushilfen-und-minijobs-flexible-unterstutzung-fur-unternehmen-deutschlandweit",
+      "destination": "/pages/post/aushilfen-und-minijobs-flexible-unterstutzung-fur-unternehmen-deutschlandweit.html"
+    },
+    {
+      "source": "/post/aushilfsjobs-und-minijobs-flexible-chancen-fur-studierende",
+      "destination": "/pages/post/aushilfsjobs-und-minijobs-flexible-chancen-fur-studierende.html"
+    },
+    {
+      "source": "/post/bewerbungstipps-fur-den-allerersten-studentenjob-keine-erfahrung-kein-problem",
+      "destination": "/pages/post/bewerbungstipps-fur-den-allerersten-studentenjob-keine-erfahrung-kein-problem.html"
+    },
+    {
+      "source": "/post/das-lager-denkt-mit-skalierbare-logistiklosungen-fur-die-herausforderungen-von-morgen",
+      "destination": "/pages/post/das-lager-denkt-mit-skalierbare-logistiklosungen-fur-die-herausforderungen-von-morgen.html"
+    },
+    {
+      "source": "/post/die-70-tage-regelung-fur-studierende-erklart",
+      "destination": "/pages/post/die-70-tage-regelung-fur-studierende-erklart.html"
+    },
+    {
+      "source": "/post/die-uniworks-app",
+      "destination": "/pages/news/die-uniworks-app.html"
+    },
+    {
+      "source": "/post/effektive-losungen-fur-den-weihnachtsansturm-flexible-personalstrategien-fur-logistik--und-versandunternehmen",
+      "destination": "/pages/post/effektive-losungen-fur-den-weihnachtsansturm-flexible-personalstrategien-fur-logistik--und-versandunternehmen.html"
+    },
+    {
+      "source": "/post/kurzfristig-eventpersonal-finden-so-vermeiden-unternehmen-engpasse-beim-oktoberfest",
+      "destination": "/pages/post/kurzfristig-eventpersonal-finden-so-vermeiden-unternehmen-engpasse-beim-oktoberfest.html"
+    },
+    {
+      "source": "/post/personalbedarf-im-einzelhandel",
+      "destination": "/pages/post/personalbedarf-im-einzelhandel.html"
+    },
+    {
+      "source": "/post/personaleinsatzplanung-luecken-vermeiden",
+      "destination": "/pages/post/personaleinsatzplanung-luecken-vermeiden.html"
+    },
+    {
+      "source": "/post/personliche-betreuung-in-der-arbeitnehmeruberlassung",
+      "destination": "/pages/post/personliche-betreuung-in-der-arbeitnehmeruberlassung.html"
+    },
+    {
+      "source": "/post/sozialversicherungsnummer-finden-alles-fur-den-jobstart",
+      "destination": "/pages/post/sozialversicherungsnummer-finden-alles-fur-den-jobstart.html"
+    },
+    {
+      "source": "/post/startschuss",
+      "destination": "/pages/news/startschuss.html"
+    },
+    {
+      "source": "/post/steuer-id-finden-alles-fur-den-jobstart",
+      "destination": "/pages/post/steuer-id-finden-alles-fur-den-jobstart.html"
+    },
+    {
+      "source": "/post/steuererklarung-fur-studierende-so-gehts",
+      "destination": "/pages/post/steuererklarung-fur-studierende-so-gehts.html"
+    },
+    {
+      "source": "/post/studenten-gesucht-so-finden-unternehmen-schnell-qualifizierte-unterstutzung",
+      "destination": "/pages/post/studenten-gesucht-so-finden-unternehmen-schnell-qualifizierte-unterstutzung.html"
+    },
+    {
+      "source": "/post/uniworker-plus",
+      "destination": "/pages/news/uniworker-plus.html"
+    },
+    {
+      "source": "/post/uniworks-eine-eingetragene-marke",
+      "destination": "/pages/news/uniworks-eine-eingetragene-marke.html"
+    },
+    {
+      "source": "/post/uniworks-in-der-presse",
+      "destination": "/pages/news/uniworks-in-der-presse.html"
+    },
+    {
+      "source": "/post/uniworks-wird-dehoga-mitglied",
+      "destination": "/pages/news/uniworks-wird-dehoga-mitglied.html"
+    },
+    {
+      "source": "/post/von-studierenden-fur-studierende",
+      "destination": "/pages/news/von-studierenden-fur-studierende.html"
+    },
+    {
+      "source": "/post/wellpass",
+      "destination": "/pages/post/wellpass.html"
+    },
+    {
+      "source": "/post/wie-promotion-skalierbar-wird",
+      "destination": "/pages/post/wie-promotion-skalierbar-wird.html"
+    },
+    {
+      "source": "/post/young-talents-begeistern-karriere-events-als-erfolgsfaktor",
+      "destination": "/pages/news/young-talents-begeistern-karriere-events-als-erfolgsfaktor.html"
+    },
+    {
+      "source": "/studierende",
+      "destination": "/pages/studierende.html"
+    },
+    {
+      "source": "/unternehmen",
+      "destination": "/pages/unternehmen/index.html"
+    },
+    {
+      "source": "/unternehmen/buro",
+      "destination": "/pages/unternehmen/buero.html"
+    },
+    {
+      "source": "/unternehmen/catering",
+      "destination": "/pages/unternehmen/catering.html"
+    },
+    {
+      "source": "/unternehmen/einzelhandel",
+      "destination": "/pages/unternehmen/einzelhandel.html"
+    },
+    {
+      "source": "/unternehmen/events",
+      "destination": "/pages/unternehmen/event.html"
+    },
+    {
+      "source": "/unternehmen/gastronomie-hotellerie",
+      "destination": "/pages/unternehmen/gastronomie-hotellerie.html"
+    },
+    {
+      "source": "/unternehmen/kaufland-promotion",
+      "destination": "/pages/unternehmen/kaufland-promotion.html"
+    },
+    {
+      "source": "/unternehmen/logistik-personal",
+      "destination": "/pages/unternehmen/logistik.html"
+    },
+    {
+      "source": "/unternehmen/promotion",
+      "destination": "/pages/unternehmen/promotion.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

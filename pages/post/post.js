@@ -18,7 +18,7 @@
   const navHTML = `
   <nav class="nav" id="main-nav" role="banner">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo" aria-label="uniworks Startseite">
+      <a href="/" class="nav-logo" aria-label="uniworks Startseite">
         <img src="../../images/branding/AppIcon.webp" alt="uniworks" />
         <span class="nav-logo-text">uniworks</span>
       </a>
@@ -26,25 +26,25 @@
         <div class="nav-dd" id="nav-dd-uw">
           <button type="button" class="btn btn-s nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
           <div class="nav-dd-menu" role="menu" aria-label="uniworkers">
-            <a href="../studierende.html" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+            <a href="/studierende" role="menuitem"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
             <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
           </div>
         </div>
         <div class="nav-dd" id="nav-dd">
           <button type="button" class="btn btn-p nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
           <div class="nav-dd-menu" role="menu" aria-label="Branchen">
-            <a href="../unternehmen/index.html" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-            <a href="../index.html#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+            <a href="/unternehmen" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+            <a href="/#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
           </div>
         </div>
-        <a href="../blog.html" class="nav-textlink active">Blog</a>
-        <a href="../about.html" class="nav-textlink">Über uns</a>
+        <a href="/blog" class="nav-textlink active">Blog</a>
+        <a href="/about" class="nav-textlink">Über uns</a>
         <div class="lang-switch" aria-label="Sprache wählen">
           <a href="#" class="active" hreflang="de" data-lang="de">DE</a>
           <span class="sep" aria-hidden="true"></span>
@@ -60,25 +60,25 @@
     <details class="mob-dd">
       <summary>Für uniworker <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
       <div class="mob-dd-list">
-        <a href="../studierende.html"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
+        <a href="/studierende"><i class="ti ti-school" aria-hidden="true"></i>Studierende</a>
         <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
       </div>
     </details>
     <details class="mob-dd">
       <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
       <div class="mob-dd-list">
-        <a href="../unternehmen/index.html"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-        <a href="../index.html#unternehmen"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+        <a href="/unternehmen"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+        <a href="/#unternehmen"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+        <a href="/#unternehmen"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+        <a href="/#unternehmen"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+        <a href="/#unternehmen"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+        <a href="/#unternehmen"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+        <a href="/#unternehmen"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+        <a href="/#unternehmen"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
       </div>
     </details>
-    <a href="../blog.html">Blog</a>
-    <a href="../about.html">Über uns</a>
+    <a href="/blog">Blog</a>
+    <a href="/about">Über uns</a>
   </div>`;
 
   const footerHTML = `
@@ -99,38 +99,38 @@
         <div class="footer-col">
           <h4>Plattform</h4>
           <ul>
-            <li><a href="../studierende.html">Für Studierende</a></li>
-            <li><a href="../unternehmen/index.html">Für Unternehmen</a></li>
-            <li><a href="../studierende.html#app">App herunterladen</a></li>
+            <li><a href="/studierende">Für Studierende</a></li>
+            <li><a href="/unternehmen">Für Unternehmen</a></li>
+            <li><a href="/studierende#app">App herunterladen</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Branchen</h4>
           <ul>
-            <li><a href="../unternehmen/logistik.html">Logistik</a></li>
-            <li><a href="../unternehmen/event.html">Event</a></li>
-            <li><a href="../unternehmen/catering.html">Catering</a></li>
-            <li><a href="../unternehmen/einzelhandel.html">Einzelhandel</a></li>
-            <li><a href="../unternehmen/gastronomie-hotellerie.html">Gastronomie</a></li>
-            <li><a href="../unternehmen/promotion.html">Promotion</a></li>
+            <li><a href="/unternehmen/logistik-personal">Logistik</a></li>
+            <li><a href="/unternehmen/events">Event</a></li>
+            <li><a href="/unternehmen/catering">Catering</a></li>
+            <li><a href="/unternehmen/einzelhandel">Einzelhandel</a></li>
+            <li><a href="/unternehmen/gastronomie-hotellerie">Gastronomie</a></li>
+            <li><a href="/unternehmen/promotion">Promotion</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Unternehmen</h4>
           <ul>
-            <li><a href="../about.html">Über Uns</a></li>
-            <li><a href="../blog.html">Blog</a></li>
-            <li><a href="../faq.html">FAQ</a></li>
-            <li><a href="../impressum.html">Impressum</a></li>
-            <li><a href="../datenschutz.html">Datenschutz</a></li>
+            <li><a href="/about">Über Uns</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2025 uniworks GmbH. Alle Rechte vorbehalten.</span>
         <div class="footer-bottom-links">
-          <a href="../impressum.html">Impressum</a>
-          <a href="../datenschutz.html">Datenschutz</a>
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
         </div>
       </div>
     </div>

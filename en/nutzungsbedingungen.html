@@ -13,19 +13,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="uniworks" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Imprint — uniworks GmbH" />
-  <meta property="og:description" content="Imprint of uniworks GmbH, Unterhaching — provider identification, disclaimer and contact information." />
-  <meta property="og:url" content="https://www.uniworks.gmbh/en/impressum" />
+  <meta property="og:title" content="Terms of use — uniworks GmbH" />
+  <meta property="og:description" content="Terms of use for the uniworks app — registration, booking jobs, compensation, privacy and contact." />
+  <meta property="og:url" content="https://www.uniworks.gmbh/en/nutzungsbedingungen" />
   <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Imprint — uniworks GmbH" />
-  <meta name="twitter:description" content="Imprint of uniworks GmbH, Unterhaching — provider identification, disclaimer and contact information." />
+  <meta name="twitter:title" content="Terms of use — uniworks GmbH" />
+  <meta name="twitter:description" content="Terms of use for the uniworks app — registration, booking jobs, compensation, privacy and contact." />
   <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
-  <link rel="canonical" href="https://www.uniworks.gmbh/en/impressum" />
-  <title>Imprint — uniworks GmbH</title>
-  <meta name="description" content="Imprint of uniworks GmbH, Unterhaching — provider identification, disclaimer and contact information." />
+  <link rel="canonical" href="https://www.uniworks.gmbh/en/nutzungsbedingungen" />
+  <title>Terms of use — uniworks GmbH</title>
+  <meta name="description" content="Terms of use for the uniworks app — registration, booking jobs, compensation, privacy and contact." />
   <meta name="robots" content="index,follow" />
   <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
   <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
@@ -45,7 +45,7 @@
     }
     html{scroll-behavior:smooth}
     body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.2}
     a{color:inherit}
     .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
     @media(max-width:768px){.wrap{padding:0 24px}}
@@ -54,8 +54,6 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;border-radius:var(--r8);padding:10px 20px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
     .btn-p{background:var(--g);color:#fff}
     .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
-    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
-    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
 
     /* ── NAV ── */
     .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
@@ -78,22 +76,16 @@
     .legal{padding:128px 0 88px}
     .legal-inner{max-width:760px;margin:0 auto}
     .legal h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
-    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:44px}
-    .legal address{font-style:normal;font-size:17px;line-height:1.7;color:var(--body)}
-    .legal address strong{color:var(--black);font-weight:700}
-    .legal-contact{margin-top:18px;display:flex;flex-direction:column;gap:8px}
-    .legal-contact a{display:inline-flex;align-items:center;gap:10px;font-size:16px;color:var(--body);text-decoration:none;transition:color var(--tr);width:fit-content}
-    .legal-contact a:hover{color:var(--g)}
-    .legal-contact a .ti{font-size:19px;color:var(--g);flex-shrink:0}
+    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:8px}
+    .legal-updated{font-size:14px;color:var(--sec);margin-bottom:44px}
     .legal h2{font-size:22px;font-weight:700;margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
-    .legal p{font-size:16px;line-height:1.7;color:var(--body);margin-bottom:16px}
-    .legal p:last-child{margin-bottom:0}
-    .legal dl{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;font-size:16px;line-height:1.6}
-    .legal dt{color:var(--sec)}
-    .legal dd{color:var(--black);font-weight:500}
-    .legal dd a{color:var(--g);text-decoration:none}
-    .legal dd a:hover{text-decoration:underline}
-    @media(max-width:560px){.legal{padding:104px 0 64px}.legal dl{grid-template-columns:1fr;gap:2px 0}.legal dd{margin-bottom:12px}}
+    .legal h3{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 12px}
+    .legal p{font-size:16px;line-height:1.75;color:var(--body);margin-bottom:16px}
+    .legal address{font-style:normal;font-size:16px;line-height:1.7;color:var(--body);margin:4px 0 16px}
+    .legal address strong{color:var(--black);font-weight:700}
+    .legal a[href^="mailto"],.legal a[href^="tel"]{color:var(--g);text-decoration:none}
+    .legal a[href^="mailto"]:hover,.legal a[href^="tel"]:hover{text-decoration:underline}
+    @media(max-width:560px){.legal{padding:104px 0 64px}}
 
     /* ── FOOTER (mirrors index.html / about.html) ── */
     footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
@@ -137,55 +129,68 @@
         <a href="/en/about" class="nav-textlink">About us</a>
         <a href="/en/unternehmen" class="btn btn-p">For businesses</a>
         <div class="lang-switch" aria-label="Choose language">
-          <a href="/impressum" hreflang="de" data-lang="de">DE</a>
+          <a href="/nutzungsbedingungen" hreflang="de" data-lang="de">DE</a>
           <span class="sep" aria-hidden="true"></span>
-          <a href="/en/impressum" hreflang="en" data-lang="en" class="active">EN</a>
+          <a href="/en/nutzungsbedingungen" hreflang="en" data-lang="en" class="active">EN</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- ── IMPRINT ── -->
+  <!-- ── TERMS OF USE ── -->
   <main class="legal">
     <div class="wrap">
       <div class="legal-inner">
-        <h1>Imprint</h1>
-        <p class="legal-lead">Information pursuant to § 5 DDG (German Digital Services Act).</p>
-        <p class="legal-lead">This English text is a convenience translation. The legally binding version is the German Impressum.</p>
+        <h1>Terms of use</h1>
+        <p class="legal-lead">The terms of use for the uniworks app.</p>
+        <p class="legal-lead">This English text is a convenience translation. The legally binding version is the German Nutzungsbedingungen.</p>
 
-        <address>
-          <strong>uniworks GmbH</strong><br />
-          Inselkammerstr. 8<br />
-          82008 Unterhaching
-        </address>
+        <p>Welcome to uniworks! We are delighted that you are using our app for students to book flexible jobs. Use of our app is subject to the following terms of use. Please read them carefully before using the app. By using the app, you automatically agree to these terms.</p>
+        <p>We hope our app helps you find flexible jobs during your studies. Good luck!</p>
 
-        <div class="legal-contact">
-          <a href="mailto:info@uniworks.gmbh"><i class="ti ti-mail" aria-hidden="true"></i>info@uniworks.gmbh</a>
-          <a href="tel:+498921535440"><i class="ti ti-phone" aria-hidden="true"></i>089 21535440</a>
-        </div>
+        <h2>General terms</h2>
+        <h3>1. User agreement</h3>
+        <p>These terms of use (hereinafter referred to as the agreement) constitute a legal agreement between you and uniworks GmbH (hereinafter referred to as we, us or uniworks). By using our app, you agree to these terms.</p>
+        <h3>2. Changes to the terms</h3>
+        <p>uniworks reserves the right to change these terms of use at any time at its own discretion. We will notify you of changes, and continued use of the app after such notification constitutes acceptance of the amended terms.</p>
 
-        <h2>Disclaimer</h2>
-        <p>The content and presentation of the websites operated by uniworks GmbH are protected by copyright. Although we exercise the utmost care, we cannot guarantee the accuracy of the information presented or its permanent technical availability.</p>
-        <p>We accept no liability for the content of external links. Responsibility for the content of linked pages lies solely with the operators of those pages.</p>
-        <p>uniworks reserves the right to change the content and design of the websites it operates without prior notice.</p>
+        <h2>Using the app</h2>
+        <h3>1. Eligibility</h3>
+        <p>You must be a student to use our app. You are required to provide honest and accurate information when registering.</p>
+        <h3>2. Registration</h3>
+        <p>To use the app, you must create an account. You are responsible for keeping your login credentials confidential and are liable for all activities that take place under your account.</p>
+        <h3>3. Conduct</h3>
+        <p>You agree to use the app in accordance with all applicable laws and regulations. You may not misuse the app or use it for unlawful purposes.</p>
 
-        <h2>Contact information</h2>
-        <dl>
-          <dt>Email</dt>
-          <dd><a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a></dd>
-          <dt>Internet</dt>
-          <dd><a href="https://www.uniworks.gmbh" target="_blank" rel="noopener">www.uniworks.gmbh</a></dd>
-          <dt>Register court</dt>
-          <dd>Amtsgericht München</dd>
-          <dt>Register number</dt>
-          <dd>HRB 282397</dd>
-          <dt>Managing director</dt>
-          <dd>Moritz Alexander Lange</dd>
-          <dt>VAT ID</dt>
-          <dd>DE360986002</dd>
-          <dt>Economic ID</dt>
-          <dd>DE360986002-00001</dd>
-        </dl>
+        <h2>Booking jobs</h2>
+        <h3>1. Job offers</h3>
+        <p>uniworks enables you to book flexible jobs from third parties. Once you accept a shift, your commitment is binding. Inform us immediately if you are unexpectedly unable to attend.</p>
+        <h3>2. Compensation</h3>
+        <p>You agree that the displayed compensation may vary depending on the time actually worked and represents a guide value.</p>
+        <h3>3. Job description</h3>
+        <p>We take the greatest care with shift descriptions, but we can also make mistakes — errors are therefore reserved.</p>
+
+        <h2>Privacy</h2>
+        <h3>1. Privacy policy</h3>
+        <p>Information on the collection and use of your personal data can be found in our privacy policy, available on our website at <a href="/en/datenschutz">uniworks.gmbh/datenschutz</a>.</p>
+
+        <h2>Termination</h2>
+        <h3>1. Termination by uniworks</h3>
+        <p>uniworks may terminate your account without justification or prior notice.</p>
+        <h3>2. Deleting your account</h3>
+        <p>Under “Profile” you can delete your account at any time.</p>
+
+        <h2>Contact</h2>
+        <p>If you have any questions or concerns, you can reach us at <a href="mailto:support@uniworks.gmbh">support@uniworks.gmbh</a> or on WhatsApp at <a href="https://wa.me/4915678983802" target="_blank" rel="noopener noreferrer">+49 156 78983802</a></p>
+
+        <h2>Final provisions</h2>
+        <h3>1. Governing law</h3>
+        <p>This agreement is governed by German law.</p>
+        <h3>2. Place of jurisdiction</h3>
+        <p>The Regional Court of Munich (Landgericht München) has jurisdiction over any legal disputes in connection with this agreement.</p>
+
+        <h2>Severability clause</h2>
+        <p>Should individual provisions of our user agreement be or become invalid, the validity of the remaining provisions shall remain unaffected.</p>
       </div>
     </div>
   </main>
@@ -199,7 +204,7 @@
             <img src="../images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
             <h3>uniworks</h3>
           </div>
-          <p>Germany's fastest-growing staffing service — we connect companies with motivated students.</p>
+          <p>Germany's fastest-growing student staffing service — we connect companies with motivated students.</p>
           <div class="footer-social">
             <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
               <i class="ti ti-brand-instagram" aria-hidden="true"></i>
@@ -219,7 +224,7 @@
         <div class="footer-col">
           <h4>Platform</h4>
           <ul>
-            <li><a href="/en">For students</a></li>
+            <li><a href="/en/studierende">For students</a></li>
             <li><a href="/en/unternehmen">For businesses</a></li>
           </ul>
         </div>
@@ -227,10 +232,10 @@
           <h4>Industries</h4>
           <ul>
             <li><a href="/en/unternehmen/logistik-personal">Logistics</a></li>
-            <li><a href="/en/unternehmen/events">Event</a></li>
+            <li><a href="/en/unternehmen/events">Events</a></li>
             <li><a href="/en/unternehmen/catering">Catering</a></li>
             <li><a href="/en/unternehmen/einzelhandel">Retail</a></li>
-            <li><a href="/en/unternehmen/gastronomie-hotellerie">Gastronomy &amp; Hospitality</a></li>
+            <li><a href="/en/unternehmen/gastronomie-hotellerie">Hospitality &amp; Hotels</a></li>
             <li><a href="/en/unternehmen/promotion">Promotion</a></li>
             <li><a href="/en/unternehmen/buro">Office</a></li>
           </ul>
