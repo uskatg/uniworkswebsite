@@ -11,8 +11,8 @@
   --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
   --tr:200ms ease-out;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
 h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
 .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
 @media(max-width:768px){.wrap{padding:0 24px}}
@@ -65,7 +65,7 @@ h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
 .post-back{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--sec);text-decoration:none;margin-bottom:28px;transition:color var(--tr)}
 .post-back:hover{color:var(--g)}
 .post-meta{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:14px}
-.post h1{font-size:clamp(30px,4.5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:30px}
+.post h1{font-size:clamp(30px,4.5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:30px;overflow-wrap:break-word;hyphens:auto}
 .post-hero{border-radius:var(--r20);overflow:hidden;margin-bottom:38px;box-shadow:0 16px 48px rgba(0,0,0,.12)}
 .post-hero img{width:100%;display:block;max-height:460px;object-fit:cover}
 .post-body{font-size:17px;line-height:1.75;color:var(--body)}
