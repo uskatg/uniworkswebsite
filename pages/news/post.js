@@ -22,13 +22,13 @@
             <i class="ti ti-chevron-down" aria-hidden="true"></i>
           </button>
           <div class="nav-dd-menu" role="menu" aria-label="Branchen">
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-            <a href="/#unternehmen" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+            <a href="/unternehmen/logistik-personal" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+            <a href="/unternehmen/events" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+            <a href="/unternehmen/catering" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+            <a href="/unternehmen/einzelhandel" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+            <a href="/unternehmen/gastronomie-hotellerie" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+            <a href="/unternehmen/promotion" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+            <a href="/unternehmen/buro" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
           </div>
         </div>
         <a href="/about" class="nav-textlink">Über uns</a>
@@ -84,12 +84,12 @@
         <div class="footer-col">
           <h4>Branchen</h4>
           <ul>
-            <li><a href="/#unternehmen">Logistik</a></li>
-            <li><a href="/#unternehmen">Event</a></li>
-            <li><a href="/#unternehmen">Catering</a></li>
-            <li><a href="/#unternehmen">Einzelhandel</a></li>
-            <li><a href="/#unternehmen">Gastronomie</a></li>
-            <li><a href="/#unternehmen">Promotion</a></li>
+            <li><a href="/unternehmen/logistik-personal">Logistik</a></li>
+            <li><a href="/unternehmen/events">Event</a></li>
+            <li><a href="/unternehmen/catering">Catering</a></li>
+            <li><a href="/unternehmen/einzelhandel">Einzelhandel</a></li>
+            <li><a href="/unternehmen/gastronomie-hotellerie">Gastronomie</a></li>
+            <li><a href="/unternehmen/promotion">Promotion</a></li>
           </ul>
         </div>
         <div class="footer-col">
