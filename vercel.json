@@ -118,6 +118,11 @@
       "permanent": true
     },
     {
+      "source": "/pages/danke.html",
+      "destination": "/danke",
+      "permanent": true
+    },
+    {
       "source": "/pages/datenschutz.html",
       "destination": "/datenschutz",
       "permanent": true
@@ -349,6 +354,10 @@
     {
       "source": "/blog",
       "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/danke",
+      "destination": "/pages/danke.html"
     },
     {
       "source": "/datenschutz",

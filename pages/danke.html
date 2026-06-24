@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-itunes-app" content="app-id=6470999822" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon_io/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon_io/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/images/branding/favicon_io/site.webmanifest" />
+  <meta name="theme-color" content="#2ab54a" />
+  <!-- Open Graph / social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="uniworks" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Vielen Dank — uniworks" />
+  <meta property="og:description" content="Wir haben Ihre Personalanfrage erhalten und melden uns schnellstmöglich bei Ihnen." />
+  <meta property="og:url" content="https://www.uniworks.gmbh/danke" />
+  <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vielen Dank — uniworks" />
+  <meta name="twitter:description" content="Wir haben Ihre Personalanfrage erhalten und melden uns schnellstmöglich bei Ihnen." />
+  <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <link rel="canonical" href="https://www.uniworks.gmbh/danke" />
+  <title>Vielen Dank — uniworks</title>
+  <meta name="description" content="Wir haben Ihre Personalanfrage erhalten und melden uns schnellstmöglich bei Ihnen." />
+  <!-- Thank-you confirmation page — not a content page, keep out of the index. -->
+  <meta name="robots" content="noindex,follow" />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    /* Canonical tokens (mirror colors_and_type.css / index.html) */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.15}
+    a{color:inherit}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:15px;font-weight:600;border-radius:var(--r8);padding:12px 24px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+    .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
+    .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:24px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}.nav-logo-works{color:var(--g)}
+    .nav-ctas{display:flex;align-items:center;gap:14px;margin-left:auto}
+    .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;transition:color var(--tr)}
+    .nav-textlink:hover{color:var(--g)}
+    @media(max-width:560px){.nav-inner{padding:0 24px;gap:14px}.nav-textlink{display:none}}
+
+    /* ── THANK-YOU HERO ── */
+    .danke{flex:1 0 auto;display:flex;align-items:center;justify-content:center;padding:128px 0 96px}
+    .danke-inner{max-width:600px;margin:0 auto;text-align:center}
+    .danke-check{width:84px;height:84px;border-radius:50%;background:var(--gl);color:var(--g);display:inline-flex;align-items:center;justify-content:center;font-size:46px;margin-bottom:28px;animation:pop 420ms cubic-bezier(.2,.9,.3,1.4) both}
+    @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+    @media(prefers-reduced-motion:reduce){.danke-check{animation:none}}
+    .danke h1{font-size:clamp(30px,5vw,46px);font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+    .danke-lead{font-size:18px;line-height:1.6;color:var(--body);margin:0 auto 14px;max-width:520px}
+    .danke-lead strong{color:var(--black);font-weight:700}
+    .danke-meta{font-size:15px;color:var(--sec);margin:0 auto 36px;max-width:500px}
+    .danke-meta a{color:var(--g);font-weight:600;text-decoration:none}
+    .danke-meta a:hover{text-decoration:underline}
+    .danke-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    @media(max-width:560px){.danke{padding:104px 0 72px}.danke-actions{flex-direction:column}.danke-actions .btn{width:100%}}
+
+    /* ── FOOTER (mirrors index.html / impressum.html) ── */
+    footer{flex-shrink:0;background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+    .footer-brand h3{color:var(--black);font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--sec);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:var(--black);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:var(--sec);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:var(--g)}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:var(--sec);text-decoration:none}
+    .footer-bottom a:hover{color:var(--black)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+    .footer-app{margin-top:22px}
+    .footer-app-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .footer-app-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0}
+    .footer-app-badge{display:inline-flex;transition:transform var(--tr),opacity var(--tr)}
+    .footer-app-badge img{height:40px;width:auto;display:block}
+    .footer-app-badge:hover{transform:translateY(-1px);opacity:.85}
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/app-banner.js"></script>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="uniworks Startseite">
+        <img src="/images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uni<span class="nav-logo-works">works</span></span>
+      </a>
+      <div class="nav-ctas">
+        <a href="/about" class="nav-textlink">Über uns</a>
+        <a href="/unternehmen" class="btn btn-p">Für Unternehmen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── THANK YOU ── -->
+  <main class="danke">
+    <div class="wrap">
+      <div class="danke-inner">
+        <div class="danke-check" aria-hidden="true"><i class="ti ti-check"></i></div>
+        <h1>Vielen Dank für Ihre Personalanfrage</h1>
+        <p class="danke-lead">Wir haben Ihre Anfrage erhalten und melden uns <strong>schnellstmöglich</strong> bei Ihnen — in der Regel innerhalb von 24 Stunden.</p>
+        <p class="danke-meta">Sie möchten uns in der Zwischenzeit direkt erreichen? Schreiben Sie uns jederzeit an <a href="mailto:info@uniworks.gmbh">info@uniworks.gmbh</a>.</p>
+        <div class="danke-actions">
+          <a href="/" class="btn btn-s">Zur Startseite</a>
+          <a href="mailto:info@uniworks.gmbh" class="btn btn-p"><i class="ti ti-mail" aria-hidden="true"></i>Direkt kontaktieren</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="/images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        <div class="footer-app">
+          <div class="footer-app-row">
+            <img src="/images/branding/AppleStoreIcon.webp" alt="uniworks App" class="footer-app-icon" width="46" height="46" />
+            <a href="https://apps.apple.com/de/app/uniworks/id6470999822" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store"><img src="/images/logos/AppStore.svg" alt="Download on the App Store" /></a>
+            <a href="https://play.google.com/store/apps/details?id=gmbh.uniworks.apps&hl=en" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play"><img src="/images/logos/PlayStore.svg" alt="Get it on Google Play" /></a>
+          </div>
+        </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="/studierende">Für Studierende</a></li>
+            <li><a href="/unternehmen">Für Unternehmen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="/unternehmen/logistik-personal">Logistik</a></li>
+            <li><a href="/unternehmen/events">Event</a></li>
+            <li><a href="/unternehmen/catering">Catering</a></li>
+            <li><a href="/unternehmen/einzelhandel">Einzelhandel</a></li>
+            <li><a href="/unternehmen/gastronomie-hotellerie">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="/unternehmen/promotion">Promotion</a></li>
+            <li><a href="/unternehmen/buro">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="/about">Über Uns</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), {passive:true});
+  </script>
+</body>
+</html>
