@@ -123,6 +123,16 @@
       "permanent": true
     },
     {
+      "source": "/pages/app-delete.html",
+      "destination": "/app-delete",
+      "permanent": true
+    },
+    {
+      "source": "/en/app-delete.html",
+      "destination": "/en/app-delete",
+      "permanent": true
+    },
+    {
       "source": "/pages/datenschutz.html",
       "destination": "/datenschutz",
       "permanent": true
@@ -358,6 +368,14 @@
     {
       "source": "/danke",
       "destination": "/pages/danke.html"
+    },
+    {
+      "source": "/app-delete",
+      "destination": "/pages/app-delete.html"
+    },
+    {
+      "source": "/en/app-delete",
+      "destination": "/en/app-delete.html"
     },
     {
       "source": "/datenschutz",

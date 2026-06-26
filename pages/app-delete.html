@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-itunes-app" content="app-id=6470999822" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon_io/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/favicon_io/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="manifest" href="/images/branding/favicon_io/site.webmanifest" />
+  <meta name="theme-color" content="#2ab54a" />
+  <!-- Open Graph / social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="uniworks" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Konto löschen — uniworks GmbH" />
+  <meta property="og:description" content="So löschst du dein uniworks Konto: Schritt-für-Schritt-Anleitung in der App und alternative Anfrage per E-Mail. Welche Daten gelöscht werden." />
+  <meta property="og:url" content="https://www.uniworks.gmbh/app-delete" />
+  <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Konto löschen — uniworks GmbH" />
+  <meta name="twitter:description" content="So löschst du dein uniworks Konto: Schritt-für-Schritt-Anleitung in der App und alternative Anfrage per E-Mail." />
+  <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <link rel="canonical" href="https://www.uniworks.gmbh/app-delete" />
+  <title>Konto löschen — uniworks GmbH</title>
+  <meta name="description" content="So löschst du dein uniworks Konto: Schritt-für-Schritt-Anleitung in der App und alternative Anfrage per E-Mail. Welche Daten gelöscht werden." />
+  <meta name="robots" content="index,follow" />
+  <!-- CDN: Google Fonts (IBM Plex Sans) — not offline-clean -->
+  <link rel="stylesheet" href="/fonts/ibm-plex-sans.css" />
+  <!-- CDN: Tabler icons webfont — not offline-clean -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+  <style>
+    /* Canonical tokens (mirror colors_and_type.css / index.html) */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#2ab54a;--gh:#21993d;--gd:#173404;--gl:#EBF9EE;
+      --black:#111111;--body:#374151;--sec:#6B7280;--bg:#F5F5F5;
+      --border:#E5E7EB;--white:#FFFFFF;
+      --font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+      --mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+      --sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);
+      --tr:200ms ease-out;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--body);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{color:var(--black);letter-spacing:-.02em;line-height:1.2}
+    a{color:inherit}
+    .wrap{max-width:var(--mw);margin:0 auto;padding:0 40px}
+    @media(max-width:768px){.wrap{padding:0 24px}}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:14px;font-weight:600;border-radius:var(--r8);padding:10px 20px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+    .btn-p{background:var(--g);color:#fff}
+    .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color var(--tr),box-shadow var(--tr)}
+    .nav.scrolled{border-color:var(--border);box-shadow:0 1px 20px rgba(0,0,0,.06)}
+    .nav-inner{max-width:var(--mw);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;gap:24px}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+    .nav-logo img{width:36px;height:36px;border-radius:8px}
+    .nav-logo-text{font-size:20px;font-weight:700;color:var(--black);letter-spacing:-.03em}.nav-logo-works{color:var(--g)}
+    .nav-ctas{display:flex;align-items:center;gap:14px;margin-left:auto}
+    .nav-textlink{font-size:15px;font-weight:500;color:var(--black);text-decoration:none;transition:color var(--tr)}
+    .nav-textlink:hover{color:var(--g)}
+    .lang-switch{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin:0 2px}
+    .lang-switch a{color:var(--sec);text-decoration:none;padding:4px 2px;transition:color var(--tr)}
+    .lang-switch a:hover{color:var(--g)}
+    .lang-switch a.active{color:var(--black)}
+    .lang-switch .sep{width:1px;height:16px;background:var(--border)}
+    @media(max-width:560px){.nav-inner{padding:0 24px;gap:14px}.nav-textlink{display:none}}
+
+    /* ── LEGAL CONTENT ── */
+    .legal{padding:128px 0 88px}
+    .legal-inner{max-width:760px;margin:0 auto}
+    .legal h1{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+    .legal-lead{font-size:16px;color:var(--sec);margin-bottom:8px}
+    .legal h2{font-size:22px;font-weight:700;margin:48px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
+    .legal h3{font-size:18px;font-weight:700;color:var(--black);margin:32px 0 12px}
+    .legal p{font-size:16px;line-height:1.75;color:var(--body);margin-bottom:16px}
+    .legal a[href^="mailto"],.legal a[href^="tel"]{color:var(--g);text-decoration:none}
+    .legal a[href^="mailto"]:hover,.legal a[href^="tel"]:hover{text-decoration:underline}
+    .legal-lead a{color:var(--g);text-decoration:none}
+    .legal-lead a:hover{text-decoration:underline}
+    @media(max-width:560px){.legal{padding:104px 0 64px}}
+
+    /* ── DELETE STEPS (recreated app UI in brand style) ── */
+    .steps{display:flex;flex-direction:column;gap:30px;margin:36px 0 8px}
+    .step{display:flex;flex-direction:column;gap:14px}
+    .step-head{display:flex;align-items:center;gap:14px}
+    .step-num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--g);color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center}
+    .step-head h3{font-size:18px;font-weight:700;margin:0}
+    .mock{background:var(--bg);border:1px solid var(--border);border-radius:var(--r16);padding:30px 20px;display:flex;align-items:center;justify-content:center;min-height:128px}
+    .mock-appicon{width:84px;height:84px;border-radius:20px;box-shadow:var(--sh)}
+    .mock-tabs{display:flex;align-items:center;justify-content:center;gap:48px;width:100%}
+    .mock-tab{color:#9CA3AF;font-size:30px;display:flex;align-items:center;justify-content:center}
+    .mock-tab.active{width:56px;height:56px;border-radius:50%;background:var(--g);color:#fff;font-size:28px}
+    .mock-email{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);padding:14px 16px;width:100%;max-width:380px;box-shadow:var(--sh)}
+    .mock-email .av{width:40px;height:40px;border-radius:50%;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+    .mock-email .addr{color:var(--sec);font-size:15px;flex:1}
+    .mock-email .chev{color:var(--sec);font-size:20px}
+    .mock-link{color:var(--g);font-weight:600;font-size:16px;text-decoration:underline;text-underline-offset:3px}
+    .mock-pw{display:flex;flex-direction:column;gap:14px;width:100%;max-width:380px}
+    .mock-pw-field{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);padding:14px 16px;box-shadow:var(--sh)}
+    .mock-pw-field .ph{color:var(--sec);font-size:15px;flex:1}
+    .mock-pw-field .eye{color:var(--sec);font-size:20px}
+    .mock-pw-btn{background:var(--g);color:#fff;text-align:center;font-weight:700;font-size:16px;border-radius:var(--r12);padding:15px}
+
+    /* ── NOTE / CALLOUT ── */
+    .note{background:var(--gl);border:1px solid #CDE9D6;border-left:4px solid var(--g);border-radius:var(--r12);padding:22px 24px;margin:40px 0 8px}
+    .note h3{margin:0 0 10px;font-size:17px;padding:0;border:none}
+    .note p{font-size:15px;line-height:1.7;margin:0 0 10px}
+    .note p:last-child{margin:0}
+    .note a{color:var(--g);text-decoration:none;font-weight:600}
+    .note a:hover{text-decoration:underline}
+
+    /* ── FOOTER (mirrors index.html / about.html) ── */
+    footer{background:#fff;color:var(--sec);padding:64px 0 32px;border-top:1px solid var(--border)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--border)}
+    .footer-brand h3{color:var(--black);font-size:18px;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+    .footer-brand p{font-size:14px;line-height:1.65;max-width:260px}
+    .footer-social{margin-top:20px;display:flex;gap:10px}
+    .foot-social-a{width:36px;height:36px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--sec);text-decoration:none;font-size:18px;transition:all var(--tr)}
+    .foot-social-a:hover{background:var(--g);color:#fff}
+    .footer-col h4{color:var(--black);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .footer-col a{color:var(--sec);text-decoration:none;font-size:14px;transition:color var(--tr)}
+    .footer-col a:hover{color:var(--g)}
+    .footer-bottom{padding-top:24px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+    .footer-bottom a{color:var(--sec);text-decoration:none}
+    .footer-bottom a:hover{color:var(--black)}
+    .footer-bottom-links{display:flex;gap:20px}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-direction:column;gap:10px;text-align:center}}
+    .footer-app{margin-top:22px}
+    .footer-app-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .footer-app-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0}
+    .footer-app-badge{display:inline-flex;transition:transform var(--tr),opacity var(--tr)}
+    .footer-app-badge img{height:40px;width:auto;display:block}
+    .footer-app-badge:hover{transform:translateY(-1px);opacity:.85}
+
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/app-banner.js"></script>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="uniworks Startseite">
+        <img src="/images/branding/AppIcon.webp" alt="uniworks" />
+        <span class="nav-logo-text">uni<span class="nav-logo-works">works</span></span>
+      </a>
+      <div class="nav-ctas">
+        <a href="/about" class="nav-textlink">Über uns</a>
+        <a href="/unternehmen" class="btn btn-p">Für Unternehmen</a>
+        <div class="lang-switch" aria-label="Sprache wählen">
+          <a href="/app-delete" hreflang="de" data-lang="de" class="active">DE</a>
+          <span class="sep" aria-hidden="true"></span>
+          <a href="/en/app-delete" hreflang="en" data-lang="en">EN</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── KONTO LÖSCHEN ── -->
+  <main class="legal">
+    <div class="wrap">
+      <div class="legal-inner">
+        <h1>Anleitung zum Konto löschen</h1>
+        <p class="legal-lead">Dein Studium ist zu Ende gegangen, oder Du hast einen anderen Job gefunden? Was auch immer der Grund sein mag, wir finden es schade, dass Du uns verlässt.</p>
+        <p class="legal-lead">Falls es andere Gründe gibt, die Dich zu dieser Entscheidung bewogen haben, würden wir uns sehr über Dein <a href="mailto:support@uniworks.gmbh?subject=Feedback">Feedback</a> freuen. Deine Meinung liegt uns am Herzen und hilft uns, uniworks stetig zu verbessern und besser auf die Bedürfnisse von Studierenden wie Dir einzugehen.</p>
+
+        <p style="margin-top:24px">Du kannst Dein uniworks Konto jederzeit selbst direkt in der App löschen. Folge dazu einfach diesen Schritten:</p>
+
+        <div class="steps">
+          <!-- 1 -->
+          <div class="step">
+            <div class="step-head"><span class="step-num">1</span><h3>Öffne die uniworks App</h3></div>
+            <div class="mock">
+              <img src="/images/branding/AppIcon.webp" alt="uniworks App-Symbol" class="mock-appicon" width="84" height="84" />
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="step">
+            <div class="step-head"><span class="step-num">2</span><h3>Tippe auf Profil</h3></div>
+            <div class="mock">
+              <div class="mock-tabs" aria-hidden="true">
+                <span class="mock-tab"><i class="ti ti-briefcase"></i></span>
+                <span class="mock-tab"><i class="ti ti-calendar-event"></i></span>
+                <span class="mock-tab active"><i class="ti ti-user"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="step">
+            <div class="step-head"><span class="step-num">3</span><h3>Anschließend auf Deine E-Mail-Adresse</h3></div>
+            <div class="mock">
+              <div class="mock-email">
+                <span class="av" aria-hidden="true"><i class="ti ti-user"></i></span>
+                <span class="addr">deine@emailadresse.com</span>
+                <span class="chev" aria-hidden="true"><i class="ti ti-chevron-right"></i></span>
+              </div>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="step">
+            <div class="step-head"><span class="step-num">4</span><h3>Ganz unten einmal auf „Account löschen“ tippen</h3></div>
+            <div class="mock">
+              <span class="mock-link">Account löschen</span>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="step">
+            <div class="step-head"><span class="step-num">5</span><h3>Gib Dein Passwort ein, um das Löschen zu bestätigen</h3></div>
+            <div class="mock">
+              <div class="mock-pw">
+                <div class="mock-pw-field">
+                  <span class="ph">Passwort eingeben</span>
+                  <span class="eye" aria-hidden="true"><i class="ti ti-eye-off"></i></span>
+                </div>
+                <div class="mock-pw-btn">Account löschen</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <h3>Welche Daten werden gelöscht?</h3>
+          <p>Mit der Löschung Deines Kontos werden Dein Profil und die damit verbundenen personenbezogenen Daten (z. B. Name, Kontaktdaten, Profilbild und Deine App-Aktivität) dauerhaft entfernt. Dieser Schritt kann nicht rückgängig gemacht werden.</p>
+          <p>Daten, zu deren Aufbewahrung wir gesetzlich verpflichtet sind – etwa Abrechnungs- und Buchungsbelege aufgrund handels- und steuerrechtlicher Vorgaben – werden für die gesetzlich vorgeschriebene Dauer aufbewahrt und anschließend gelöscht. Mehr dazu in unserer <a href="/datenschutz">Datenschutzrichtlinie</a>.</p>
+        </div>
+
+        <h2>Kein Zugriff mehr auf die App?</h2>
+        <p>Solltest Du Dich nicht mehr in der App anmelden können, kannst Du die Löschung Deines Kontos auch jederzeit per E-Mail beantragen. Schreib uns einfach von Deiner registrierten E-Mail-Adresse an <a href="mailto:support@uniworks.gmbh?subject=Konto%20l%C3%B6schen">support@uniworks.gmbh</a> mit dem Betreff „Konto löschen“. Wir bestätigen die Löschung und entfernen Dein Konto innerhalb von 30 Tagen.</p>
+
+        <h2>Kontakt</h2>
+        <p>Bei Fragen erreichst Du uns unter <a href="mailto:support@uniworks.gmbh">support@uniworks.gmbh</a> oder auf WhatsApp unter <a href="https://wa.me/4915678983802" target="_blank" rel="noopener noreferrer">+49 156 78983802</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <img src="/images/branding/AppIcon.webp" alt="" style="width:32px;height:32px;border-radius:7px" />
+            <h3>uniworks</h3>
+          </div>
+          <p>Deutschlands schnellst wachsender Personaldienstleister — wir verbinden Unternehmen mit motivierten Studierenden.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/uniworks.gmbh" class="foot-social-a" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/company/uniworks" class="foot-social-a" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <i class="ti ti-brand-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        <div class="footer-app">
+          <div class="footer-app-row">
+            <img src="/images/branding/AppleStoreIcon.webp" alt="uniworks App" class="footer-app-icon" width="46" height="46" />
+            <a href="https://apps.apple.com/de/app/uniworks/id6470999822" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store"><img src="/images/logos/AppStore.svg" alt="Download on the App Store" /></a>
+            <a href="https://play.google.com/store/apps/details?id=gmbh.uniworks.apps&hl=en" class="footer-app-badge" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play"><img src="/images/logos/PlayStore.svg" alt="Get it on Google Play" /></a>
+          </div>
+        </div>
+        </div>
+        <div class="footer-col">
+          <h4>Plattform</h4>
+          <ul>
+            <li><a href="/studierende">Für Studierende</a></li>
+            <li><a href="/unternehmen">Für Unternehmen</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Branchen</h4>
+          <ul>
+            <li><a href="/unternehmen/logistik-personal">Logistik</a></li>
+            <li><a href="/unternehmen/events">Event</a></li>
+            <li><a href="/unternehmen/catering">Catering</a></li>
+            <li><a href="/unternehmen/einzelhandel">Einzelhandel</a></li>
+            <li><a href="/unternehmen/gastronomie-hotellerie">Gastronomie &amp; Hotellerie</a></li>
+            <li><a href="/unternehmen/promotion">Promotion</a></li>
+            <li><a href="/unternehmen/buro">Büro</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="/about">Über Uns</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 uniworks GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-bottom-links">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8), {passive:true});
+  </script>
+</body>
+</html>
