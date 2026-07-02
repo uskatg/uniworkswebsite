@@ -334,8 +334,8 @@
     .beruf-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px 22px;color:#fff}
     .beruf-cap .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--g);padding:5px 10px;border-radius:999px;margin-bottom:10px}
     .beruf-cap h3{color:#fff;font-size:20px;font-weight:700;letter-spacing:-.02em}
-    @media(max-width:900px){.berufe{padding:72px 0}.berufe-grid{grid-template-columns:1fr 1fr;gap:16px}.berufe-grid .beruf-card:last-child{grid-column:1/-1;aspect-ratio:16/9}}
-    @media(max-width:560px){.berufe-grid{grid-template-columns:1fr}.berufe-grid .beruf-card:last-child{aspect-ratio:4/5}}
+    @media(max-width:900px){.berufe{padding:72px 0}.berufe-grid{grid-template-columns:1fr 1fr;gap:16px}.berufe-grid .beruf-card:last-child:nth-child(odd){grid-column:1/-1;aspect-ratio:16/9}}
+    @media(max-width:560px){.berufe-grid{grid-template-columns:1fr}.berufe-grid .beruf-card:last-child:nth-child(odd){aspect-ratio:4/5}}
 
     /* ── VORTEILE (ported from /studierende "Alle Vorteile im Überblick.") ── */
     .vorteile-sec{padding:96px 0;background:var(--bg)}
@@ -458,8 +458,20 @@
         <div class="beruf-cap"><span class="tag">Technik &amp; Wartung</span><h3>Elektriker:in &amp; Techniker:in</h3></div>
       </div>
       <div class="beruf-card fu" style="transition-delay:.12s">
-        <img src="/images/visuals/Fachkraefte3.webp" alt="LKW-Fahrer an der Laderampe bei uniworks" width="1600" height="1074" loading="lazy" />
+        <img src="/images/visuals/Fachkraefte3.webp" alt="LKW-Fahrer mit Klemmbrett am Lkw an der Laderampe bei uniworks" width="1600" height="1074" loading="lazy" />
         <div class="beruf-cap"><span class="tag">Transport &amp; Logistik</span><h3>LKW-Fahrer:in</h3></div>
+      </div>
+      <div class="beruf-card fu" style="transition-delay:.18s">
+        <img src="/images/visuals/Fachkraefte4.webp" alt="Veranstaltungsleiter mit Tablet koordiniert das Team beim Event-Aufbau bei uniworks" width="1600" height="1074" loading="lazy" />
+        <div class="beruf-cap"><span class="tag">Event &amp; Veranstaltung</span><h3>Veranstaltungsleiter:in</h3></div>
+      </div>
+      <div class="beruf-card fu" style="transition-delay:.24s">
+        <img src="/images/visuals/Fachkraefte5.webp" alt="Crew Chief mit Headset weist das Aufbau-Team bei einer Veranstaltung ein bei uniworks" width="1600" height="1074" loading="lazy" />
+        <div class="beruf-cap"><span class="tag">Event &amp; Aufbau</span><h3>Crew Chief</h3></div>
+      </div>
+      <div class="beruf-card fu" style="transition-delay:.3s">
+        <img src="/images/visuals/Fachkraefte6.webp" alt="Reinigungskraft reinigt eine Glasfront im Bürogebäude bei uniworks" width="1600" height="1074" loading="lazy" />
+        <div class="beruf-cap"><span class="tag">Gebäudereinigung</span><h3>Reinigungskraft</h3></div>
       </div>
     </div>
   </div>
@@ -475,10 +487,10 @@
       <div class="ben fu"><img class="ben-applogo" src="/images/branding/AppIcon.webp" alt="uniworks App" /><h3>uniworks App</h3><p>Schichten finden, buchen und vieles mehr – alles in einer App!</p></div>
       <!-- Copy adapted for Fachkräfte: /studierende says "15.000+ Studierende" → "15.000+ uniworker" (flag: reword pending brand confirmation) -->
       <div class="ben fu" style="transition-delay:.04s"><div class="ben-num">15.000+</div><p>Über 15.000 uniworker haben sich bereits für uniworks entschieden.</p></div>
-      <div class="ben fu" style="transition-delay:.08s"><div class="ben-ico"><i class="ti ti-map-pin" aria-hidden="true"></i></div><h3>München und Umgebung</h3><p>Gegründet in München und verfügbar in immer mehr Regionen.</p></div>
+      <div class="ben fu" style="transition-delay:.08s"><div class="ben-ico"><i class="ti ti-map-pin" aria-hidden="true"></i></div><h3>Deutschlandweit aktiv</h3><p>Gegründet wurde uniworks in München und ist mittlerweile deutschlandweit vertreten.</p></div>
       <div class="ben fu"><div class="ben-num">100+</div><p>Wähle jeden Monat flexibel aus einer Vielzahl verschiedener Schichten!</p></div>
       <div class="ben fu" style="transition-delay:.04s"><div class="ben-ico"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i></div><h3>Täglich erreichbar</h3><p>Bei Fragen sind wir 7 Tage die Woche über WhatsApp für dich erreichbar.</p></div>
-      <div class="ben fu" style="transition-delay:.08s"><div class="ben-num">16 €</div><p>Bei allen Schichten zahlen wir dir mindestens 16 Euro pro Stunde.</p></div>
+      <div class="ben fu" style="transition-delay:.08s"><div class="ben-ico"><i class="ti ti-coins" aria-hidden="true"></i></div><h3>Kompetitiver Lohn</h3><p>Als Fachkraft zählt deine Qualifikation – dafür verdienst du bei uns mehr als reguläre uniworker.</p></div>
     </div>
   </div>
 </section>
