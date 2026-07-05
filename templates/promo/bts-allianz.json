@@ -41,9 +41,9 @@
     }
   ],
   "gallery": [
-    { "src": "/images/visuals/BTS/BTSPromo2.webp", "alt": "BTS auf der Bühne vor dem Publikum" },
+    { "src": "/images/visuals/BTS/BTSPromo2.webp", "alt": "BTS auf der Bühne vor dem Publikum", "mobile": false },
     { "src": "/images/visuals/BTS/BTSPromo3.webp", "alt": "BTS – Gruppenporträt" },
-    { "src": "/images/visuals/BTS/BTSPromo5.webp", "alt": "ARMY-Lightsticks im ausverkauften Stadion" }
+    { "src": "/images/visuals/BTS/BTSPromo5.webp", "alt": "ARMY-Lightsticks im ausverkauften Stadion", "mobile": false }
   ],
 
   "calendar": {

@@ -96,8 +96,9 @@ def render_gallery(gallery):
     if not gallery:
         return ""
     figs = "\n".join(
-        f'      <figure><img src="{g["src"]}" alt="{g["alt"]}" loading="lazy" /></figure>'
+        f'      <figure{cls}><img src="{g["src"]}" alt="{g["alt"]}" loading="lazy" /></figure>'
         for g in gallery
+        for cls in ["" if g.get("mobile", True) else ' class="gal-desk"']
     )
     return f'    <div class="bt-gal">\n{figs}\n    </div>'
 
