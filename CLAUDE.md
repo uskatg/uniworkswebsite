@@ -44,6 +44,9 @@ UniworksImages/       ← all real brand photography & logos, referenced root-re
 ui_kits/
   insta_posts/        ← 1080² Instagram post/carousel templates (primary deliverable)
   marketing_web/      ← uniworks.gmbh recreation (B2B + B2C)
+templates/promo/      ← promo-page generator: JSON config → pages/<slug>.html
+                        (create-promo.py also patches vercel.json + sitemap.xml;
+                        see templates/promo/README.md — use this for event promos)
 ```
 
 In `ui_kits/insta_posts/`, `index.html` is one carousel; the other named `.html` files (`service-im-schloss.html`, `sap-projekt-duisburg.html`, `sap-print.html`, etc.) are individual post templates, with `*.png` being their rendered exports and `_export.html` a print/export wrapper.

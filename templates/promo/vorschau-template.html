@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--
+  uniworks Promo-VORSCHAU (standalone, für claude.ai Artifacts)
+
+  Anleitung für Claude: Ersetze alle {{PLATZHALTER}} mit den Werten aus der
+  Promo-Config (JSON). Generierte Blöcke:
+    {{META_ITEMS}}   → je Eintrag: <span class="bt-meta-i"><i class="ti ICON"></i>TEXT</span>
+    {{STATS}}        → je Eintrag: <div class="bt-stat"><b>BIG</b><span>SMALL</span></div>
+    {{JOB_CARDS}}    → siehe Struktur im Jobs-Abschnitt unten (auskommentiertes Beispiel)
+    {{GALLERY}}      → je Bild: <figure><img src="SRC" alt="ALT"></figure> (weglassen wenn keine Galerie)
+    {{BONUS_SECTION}} → Bonus-Sektion nur einfügen, wenn "bonus" in der Config existiert
+    {{FAQ_EXTRA}}    → zusätzliche <details>-Blöcke aus faq_extra (Struktur wie die Standard-FAQ unten);
+                       Antworten aus faq_overrides ERSETZEN die jeweilige Standard-Antwort unten
+    {{CAL_DAYS_JS}}  → das "days"-Objekt der Config als JS-Objekt, Keys = Tageszahlen
+    {{CAL_LEAD}}     → Wochentag des 1. des Monats (Montag=0, Dienstag=1, … Sonntag=6)
+    {{CAL_NDAYS}}    → Anzahl Tage im Monat
+  Bilder: echte Pfade eintragen — fehlende Bilder werden automatisch als
+  beschriftete Platzhalter angezeigt. Danach als HTML-Artifact anzeigen.
+-->
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VORSCHAU — {{TITLE}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
+<style>
+  /* ── uniworks Design-Tokens (Auszug aus branche.css) ── */
+  :root{--g:#2ab54a;--gh:#21993d;--gl:#EBF9EE;--bg:#F5F5F5;--black:#111111;--body:#374151;--sec:#6B7280;--border:#E5E7EB;--mw:1280px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;--sh:0 2px 8px rgba(0,0,0,.06);--shh:0 8px 24px rgba(0,0,0,.10);--tr:200ms ease-out;--font:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font);color:var(--black);background:#fff;line-height:1.5}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:16px;font-weight:600;border-radius:var(--r8);padding:14px 28px;border:none;cursor:pointer;text-decoration:none;transition:all var(--tr);white-space:nowrap}
+  .btn-p{background:var(--g);color:#fff}
+  .btn-p:hover{background:var(--gh);box-shadow:0 4px 16px rgba(42,181,74,.35);transform:translateY(-1px)}
+  .btn-s{background:transparent;color:var(--g);border:2px solid var(--g)}
+  .btn-s:hover{background:var(--gl);transform:translateY(-1px)}
+
+  /* Vorschau-Banner + vereinfachte Nav/Footer */
+  .pv-banner{position:sticky;top:0;z-index:99;background:#111;color:#fff;text-align:center;font-size:13px;font-weight:600;padding:8px 16px}
+  .pv-banner b{color:#7ee89a}
+  .pv-nav{display:flex;align-items:center;justify-content:space-between;max-width:var(--mw);margin:0 auto;padding:16px 40px}
+  .pv-logo{font-size:22px;font-weight:700}
+  .pv-logo em{color:var(--g);font-style:normal}
+  .pv-footer{background:var(--bg);margin-top:0;padding:32px 40px;text-align:center;font-size:14px;color:var(--sec)}
+
+  /* ── Promo-Seiten-Styles (identisch zur echten Seite) ── */
+  .bt-hero{max-width:var(--mw);margin:0 auto;padding:48px 40px 56px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
+  .bt-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--g);background:var(--gl);padding:7px 14px;border-radius:999px;margin-bottom:20px}
+  .bt-eyebrow .ti{font-size:17px}
+  .bt-hero h1{font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+  .bt-hero h1 em{color:var(--g);font-style:normal}
+  .bt-hero p{font-size:18px;line-height:1.6;color:var(--body);max-width:560px;margin-bottom:24px}
+  .bt-meta{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:28px}
+  .bt-meta-i{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:500;color:var(--black)}
+  .bt-meta-i .ti{font-size:20px;color:var(--g)}
+  .bt-hero-btns{display:flex;flex-wrap:wrap;gap:12px}
+  .bt-hero-media{display:flex;justify-content:center}
+  .bt-hero-media img{width:100%;max-width:440px;height:auto;border-radius:var(--r20);box-shadow:0 24px 64px rgba(0,0,0,.16);display:block}
+  .bt-stats{background:var(--g);padding:48px 0}
+  .bt-stats-grid{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat({{STATS_COUNT}},1fr);gap:24px}
+  .bt-stat{text-align:center;color:#fff}
+  .bt-stat b{display:block;font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1}
+  .bt-stat span{display:block;margin-top:8px;font-size:14px;line-height:1.4;color:rgba(255,255,255,.92)}
+  .bt-sec{padding:72px 0}
+  .bt-sec.alt{background:var(--bg)}
+  .bt-sec-head{max-width:720px;margin:0 auto 44px;text-align:center;padding:0 40px}
+  .bt-sec-head h2{font-size:clamp(24px,3vw,34px);font-weight:700;line-height:1.14;margin-bottom:14px}
+  .bt-sec-head p{font-size:17px;line-height:1.6;color:var(--body)}
+  .bt-jobs{max-width:var(--mw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .bt-job{background:#fff;border:1px solid var(--border);border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column}
+  .bt-job img{width:100%;height:240px;object-fit:cover;display:block}
+  .bt-job-body{padding:26px 28px 28px}
+  .bt-job-body h3{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700;margin-bottom:12px}
+  .bt-job-body h3 .ti{font-size:24px;color:var(--g)}
+  .bt-job-body p{font-size:16px;line-height:1.6;color:var(--body)}
+  .bt-job-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .bt-tag{font-size:13px;font-weight:600;color:var(--g);background:var(--gl);padding:5px 12px;border-radius:999px}
+  .bt-gal{max-width:var(--mw);margin:28px auto 0;padding:0 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .bt-gal figure{margin:0;border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh);border:1px solid var(--border)}
+  .bt-gal img{width:100%;height:240px;object-fit:cover;display:block}
+  .bt-cal-wrap{max-width:640px;margin:0 auto;padding:0 24px;position:relative}
+  .bt-cal{background:#fff;border:1px solid var(--border);border-radius:var(--r16);box-shadow:var(--sh);padding:26px 22px 22px}
+  .bt-cal-month{text-align:center;font-size:17px;font-weight:700;margin-bottom:16px}
+  .bt-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+  .bt-cal-grid .dow{font-size:13px;font-weight:600;color:var(--sec);padding:6px 0}
+  .bt-cal-day{appearance:none;background:none;border:none;font:inherit;font-size:15px;color:var(--black);width:100%;aspect-ratio:1;max-height:52px;display:flex;align-items:center;justify-content:center;border-radius:999px;position:relative;cursor:default}
+  .bt-cal-day.off{color:var(--sec);opacity:.45}
+  .bt-cal-day.evt{cursor:pointer;font-weight:700;transition:transform var(--tr),box-shadow var(--tr)}
+  .bt-cal-day.evt.free{background:var(--g);color:#fff}
+  .bt-cal-day.evt.full{background:var(--gl);color:var(--g)}
+  .bt-cal-day.evt.full::after{content:"";position:absolute;left:26%;right:26%;top:50%;height:2px;background:currentColor;opacity:.55;transform:rotate(-12deg)}
+  .bt-cal-day.evt:hover,.bt-cal-day.evt:focus-visible,.bt-cal-day.evt.active{transform:scale(1.12);box-shadow:0 6px 16px rgba(42,181,74,.35);outline:none;z-index:2}
+  .bt-cal-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:18px;font-size:13.5px;color:var(--body)}
+  .bt-cal-legend span{display:inline-flex;align-items:center;gap:7px}
+  .bt-cal-legend i{width:14px;height:14px;border-radius:50%;display:inline-block}
+  .bt-cal-legend i.l-free{background:var(--g)}
+  .bt-cal-legend i.l-full{background:var(--gl);border:1px solid var(--g)}
+  .bt-cal-hint{text-align:center;font-size:13.5px;color:var(--sec);margin-top:10px}
+  .bt-tip{position:absolute;z-index:10;width:290px;background:#fff;border:1px solid var(--border);border-radius:var(--r12);box-shadow:0 16px 40px rgba(0,0,0,.16);padding:16px 18px;display:none}
+  .bt-tip.show{display:block}
+  .bt-tip h4{font-size:15px;font-weight:700;margin-bottom:2px}
+  .bt-tip .bt-tip-sub{font-size:13px;color:var(--sec);margin-bottom:10px}
+  .bt-tip ul{list-style:none;margin:0;padding:0}
+  .bt-tip li{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14.5px;padding:7px 0;border-top:1px solid var(--border)}
+  .bt-tip li span{display:flex;align-items:flex-start;gap:8px;color:var(--black)}
+  .bt-tip li span .ti{font-size:17px;color:var(--g);margin-top:1px}
+  .bt-tip .bt-time{display:block;font-style:normal;font-size:12.5px;color:var(--sec);margin-top:1px}
+  .bt-badge{flex-shrink:0;font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:999px}
+  .bt-badge.b-free{background:var(--g);color:#fff}
+  .bt-badge.b-full{background:var(--bg);color:var(--sec)}
+  .bt-tip .bt-tip-foot{font-size:12.5px;color:var(--sec);margin-top:10px}
+  .bt-pay{max-width:760px;margin:0 auto;padding:0 40px;text-align:center}
+  .bt-pay-num{font-size:clamp(44px,6vw,64px);font-weight:700;letter-spacing:-.03em;color:var(--g);line-height:1;margin-bottom:14px}
+  .bt-pay p{font-size:17px;line-height:1.65;color:var(--body)}
+  .bt-pay strong{color:var(--black);font-weight:600}
+  .bt-ref{max-width:880px;margin:0 auto;padding:0 40px}
+  .bt-ref-inner{background:#fff;border:1px solid var(--border);border-radius:var(--r20);box-shadow:var(--sh);padding:44px 40px;text-align:center}
+  .bt-ref-inner h2{font-size:clamp(24px,3vw,34px);font-weight:700;margin-bottom:14px}
+  .bt-ref-inner p{font-size:17px;line-height:1.65;color:var(--body);max-width:640px;margin:0 auto}
+  .bt-ref-inner p strong{color:var(--black);font-weight:600}
+  .bt-ref-badge{display:inline-flex;align-items:baseline;gap:6px;background:var(--gl);color:var(--g);font-weight:700;font-size:clamp(30px,4vw,42px);letter-spacing:-.02em;padding:14px 28px;border-radius:var(--r12);margin-bottom:22px}
+  .bt-ref-badge small{font-size:.5em;font-weight:700}
+  .bt-faq{max-width:760px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:12px}
+  .bt-faq details{background:#fff;border:1px solid var(--border);border-radius:var(--r12);box-shadow:var(--sh);overflow:hidden}
+  .bt-faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;padding:18px 22px;font-size:16px;font-weight:600;color:var(--black)}
+  .bt-faq summary::-webkit-details-marker{display:none}
+  .bt-faq summary .ti{flex-shrink:0;font-size:19px;color:var(--g);transition:transform var(--tr)}
+  .bt-faq details[open] summary .ti{transform:rotate(180deg)}
+  .bt-faq details p{padding:0 22px 18px;font-size:15.5px;line-height:1.65;color:var(--body)}
+  .bt-faq details ol{margin:0;padding:0 22px 18px 42px;font-size:15.5px;line-height:1.65;color:var(--body)}
+  .bt-faq details ol li{margin-bottom:8px}
+  .bt-faq details a{color:var(--g);font-weight:600;text-decoration:none}
+  .bt-faq-more{max-width:760px;margin:48px auto 0;padding:0 40px;text-align:center}
+  .bt-faq-more h3{font-size:clamp(20px,2.4vw,26px);font-weight:700;line-height:1.3;margin-bottom:22px}
+  .bt-cta{padding:80px 0}
+  .bt-cta-inner{max-width:880px;margin:0 auto;padding:48px 40px;text-align:center;background:var(--gl);border-radius:var(--r20)}
+  .bt-cta-inner h2{font-size:clamp(24px,3vw,34px);font-weight:700;margin-bottom:14px}
+  .bt-cta-inner p{font-size:17px;line-height:1.6;color:var(--body);max-width:560px;margin:0 auto 28px}
+  .bt-cta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  @media(max-width:1024px){
+    .bt-hero{grid-template-columns:1fr;gap:36px}
+    .bt-hero-media{order:-1}
+    .bt-hero-media img{max-width:360px}
+    .bt-stats-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+  }
+  @media(max-width:768px){
+    .bt-hero{padding:32px 24px 44px}
+    .bt-sec{padding:52px 0}
+    .bt-sec-head{padding:0 24px}
+    .bt-jobs{grid-template-columns:1fr;padding:0 24px}
+    .bt-gal{grid-template-columns:1fr;padding:0 24px}
+    .bt-stats-grid{padding:0 24px}
+    .bt-pay,.bt-ref,.bt-faq{padding:0 24px}
+    .bt-ref-inner{padding:36px 24px}
+  }
+  @media(max-width:640px){
+    .bt-tip{position:static;width:auto;margin-top:14px}
+  }
+</style>
+</head>
+<body>
+
+<div class="pv-banner"><b>VORSCHAU</b> — Platzhalter-Bilder &amp; angenäherte Schrift. Die finale Seite wird aus der Config generiert.</div>
+
+<div class="pv-nav">
+  <span class="pv-logo">uni<em>works</em></span>
+  <span><a href="#" class="btn btn-p" style="font-size:14px;padding:10px 20px">Für uniworker</a></span>
+</div>
+
+<!-- ── HERO ── -->
+<section class="bt-hero">
+  <div>
+    <span class="bt-eyebrow"><i class="ti {{EYEBROW_ICON}}"></i>{{EYEBROW_TEXT}}</span>
+    <h1>{{HEADLINE}}</h1>
+    <p>{{INTRO}}</p>
+    <div class="bt-meta">
+{{META_ITEMS}}
+    </div>
+    <div class="bt-hero-btns">
+      <a href="#" class="btn btn-p">Jetzt registrieren</a>
+      <a href="#" class="btn btn-s">Schichten in der App ansehen</a>
+    </div>
+  </div>
+  <div class="bt-hero-media">
+    <img src="{{HERO_IMG}}" alt="{{HERO_ALT}}" />
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section class="bt-stats">
+  <div class="bt-stats-grid">
+{{STATS}}
+  </div>
+</section>
+
+<!-- ── JOBS ── -->
+<section class="bt-sec">
+  <div class="bt-sec-head">
+    <h2>{{JOBS_HEADING}}</h2>
+    <p>{{JOBS_INTRO}}</p>
+  </div>
+  <div class="bt-jobs">
+<!-- je Job:
+    <article class="bt-job">
+      <img src="BILD" alt="ALT" />
+      <div class="bt-job-body">
+        <h3><i class="ti ICON"></i>TITEL</h3>
+        <p>TEXT</p>
+        <div class="bt-job-tags"><span class="bt-tag">TAG1</span><span class="bt-tag">TAG2</span></div>
+      </div>
+    </article>
+-->
+{{JOB_CARDS}}
+  </div>
+  <div class="bt-gal">
+{{GALLERY}}
+  </div>
+</section>
+
+<!-- ── KALENDER ── -->
+<section class="bt-sec alt">
+  <div class="bt-sec-head">
+    <h2>{{CAL_HEADING}}</h2>
+    <p>Tippe auf einen markierten Tag oder fahre mit der Maus darüber – du siehst sofort, welche Schichten noch frei sind.</p>
+  </div>
+  <div class="bt-cal-wrap">
+    <div class="bt-cal">
+      <div class="bt-cal-month">{{CAL_MONTH_LABEL}}</div>
+      <div class="bt-cal-grid" id="bt-cal-grid">
+        <span class="dow">Mo</span><span class="dow">Di</span><span class="dow">Mi</span><span class="dow">Do</span><span class="dow">Fr</span><span class="dow">Sa</span><span class="dow">So</span>
+      </div>
+      <div class="bt-cal-legend">
+        <span><i class="l-free"></i>Plätze frei</span>
+        <span><i class="l-full"></i>ausgebucht</span>
+      </div>
+      <div class="bt-cal-hint">{{CAL_HINT}}</div>
+    </div>
+    <div class="bt-tip" id="bt-tip"></div>
+  </div>
+</section>
+
+<!-- ── GEHALT ── -->
+<section class="bt-sec">
+  <div class="bt-sec-head" style="margin-bottom:24px">
+    <h2>Dein Gehalt im Überblick</h2>
+  </div>
+  <div class="bt-pay">
+    <div class="bt-pay-num">{{PAY_AMOUNT}} <small style="font-size:.4em;font-weight:700;color:var(--body)">{{PAY_SUFFIX}}</small></div>
+    <p>{{PAY_TEXT}}</p>
+  </div>
+</section>
+
+<!-- ── BONUS (nur wenn "bonus" in der Config; sonst kompletten Block entfernen) ── -->
+{{BONUS_SECTION}}
+<!-- Struktur:
+<section class="bt-sec alt">
+  <div class="bt-ref"><div class="bt-ref-inner">
+    <h2>HEADING</h2>
+    <div class="bt-ref-badge">BADGE_BIG<small>BADGE_SMALL</small></div>
+    <p>TEXT</p>
+  </div></div>
+</section>
+-->
+
+<!-- ── FAQ (Standard-Fragen; Antworten aus faq_overrides ersetzen, faq_extra unten anhängen) ── -->
+<section class="bt-sec">
+  <div class="bt-sec-head"><h2>Häufige Fragen</h2></div>
+  <div class="bt-faq">
+    <details><summary>Was ist uniworks?<i class="ti ti-chevron-down"></i></summary><p>uniworks ist eine Plattform, über die Studierende flexible Nebenjobs finden, mit fairer Bezahlung. Du suchst dir die Einsätze selbst aus und kannst sie dann direkt in unserer App buchen.</p></details>
+    <details><summary>Wie läuft der Bewerbungsprozess ab?<i class="ti ti-chevron-down"></i></summary><p>Bei uniworks kannst du in nur wenigen Schritten und innerhalb kurzer Zeit bereits anfangen zu arbeiten. Der Bewerbungsprozess unterteilt sich dabei in vier Schritte:</p><ol><li>Die Anmeldung. In nur 3 Minuten kannst du dich <a href="#">hier</a> bei uns anmelden und dir ein Kennenlerngespräch zu einem von dir gewünschten Zeitpunkt buchen.</li><li>Das Kennenlerngespräch. Hier wollen wir dich in einem 10-minütigen Gespräch kurz kennenlernen und du erfährst auch alles zur Arbeit bei uniworks und wie du dich in der App anmelden kannst.</li><li>Der Dokumentenupload und die Vertragsunterzeichnung. Nach einem positiven Gespräch brauchen wir von dir noch ein paar Unterlagen. Diese werden von uns überprüft und du bekommst im Nachgang den Vertrag von uns zugeschickt.</li><li>Dein erster Job. Nachdem wir den Vertrag von dir unterschrieben zurückbekommen haben, kannst du auch schon in der App loslegen und dir deine passenden Schichten aussuchen!</li></ol><p>Wie immer unterstützen wir dich gerne auf deinem Weg zum uniworker und sind für Fragen immer erreichbar. Diese kannst du gerne im Kennenlerngespräch stellen oder du schreibst uns einfach eine kurze <a href="#">WhatsApp</a>.</p></details>
+    <details><summary>Welche Voraussetzungen brauche ich für den Job?<i class="ti ti-chevron-down"></i></summary><p>Du solltest zuverlässig sein, motiviert auftreten und Spaß im Umgang mit Menschen haben. Der Job richtet sich vor allem an Studierende oder Schülerinnen und Schüler – aber auch wenn du aktuell nicht studierst oder zur Schule gehst, kannst du dich bewerben.</p></details>
+    <details><summary>Wie kann ich mich in der App anmelden?<i class="ti ti-chevron-down"></i></summary><p>Nach deinem Kennenlerngespräch schalten wir dich für die uniworks App frei. Sobald du freigeschaltet bist, kannst du dich einloggen und alle verfügbaren Jobs sehen.</p></details>
+    <details><summary>Wie kann ich mir den Job in der App buchen?<i class="ti ti-chevron-down"></i></summary><p>In der App werden dir alle Schichten angezeigt, die du übernehmen kannst. Du wählst einfach die Termine aus, die zu dir passen – und buchst sie verbindlich mit einem Klick.</p></details>
+    <details><summary>Verpflichte ich mich mit meiner Bewerbung zu etwas?<i class="ti ti-chevron-down"></i></summary><p>Nein, deine Bewerbung ist zunächst unverbindlich und du bist auch nach Unterschrift deines Arbeitsvertrages nicht zu einer Mindestarbeit verpflichtet.</p></details>
+    <details><summary>Wann erhalte ich meinen Lohn?<i class="ti ti-chevron-down"></i></summary><p>Spätestens am zehnten des Folgemonats bekommst du dein Gehalt auf dein Konto überwiesen.</p></details>
+    <details><summary>Ich habe schon einen Job. Kann ich trotzdem bei uniworks arbeiten?<i class="ti ti-chevron-down"></i></summary><p>Ja, du kannst mehrere Beschäftigungen gleichzeitig ausüben. Wichtig ist nur, dass du uns im Kennenlerngespräch kurz sagst, ob du bereits einen Hauptarbeitgeber hast und uns up to date hältst, falls sich etwas ändert.</p></details>
+    <details><summary>Brauche ich eine Schulung?<i class="ti ti-chevron-down"></i></summary><p>Ja. Damit du optimal vorbereitet bist, gibt es vor deinem ersten Einsatz eine kurze digitale Schulung.</p></details>
+    <details><summary>Wie wird die Schulung ablaufen?<i class="ti ti-chevron-down"></i></summary><p>Die Infos zur Schulung werden dir ganz einfach über einen Link bereitgestellt. Im Anschluss gibt es ein kurzes Quiz, mit dem du dein Wissen bestätigst. Das ist unkompliziert und in wenigen Minuten erledigt – keine Raketenwissenschaft.</p></details>
+    <details><summary>Gibt es einen Dresscode zu beachten?<i class="ti ti-chevron-down"></i></summary><p>Je nach Einsatz gibt es einen Dresscode – die Details bekommst du mit deiner Schichtbestätigung in der uniworks App.</p></details>
+    <details><summary>Bin ich ganz alleine bei dem Job?<i class="ti ti-chevron-down"></i></summary><p>Nein. Ihr seid immer im Team unterwegs – je nach Einsatzbereich. Außerdem gibt es vor Ort eine Ansprechperson, die euch unterstützt.</p></details>
+    <details><summary>Kann ich den Job auch gemeinsam mit einem Freund oder Freundin machen?<i class="ti ti-chevron-down"></i></summary><p>Ja, sehr gerne! Dein Freund oder Freundin kann sich ebenfalls bewerben und die gleichen Schichten buchen. Zusammen macht es noch mehr Spaß. Teile einfach den Link dieser Website.</p></details>
+    <details><summary>Habe ich eine Pause während der Schicht?<i class="ti ti-chevron-down"></i></summary><p>Ja. Die Pausen stimmt ihr im Team und mit der Einsatzleitung vor Ort ab – so bleibt jede Position durchgehend besetzt.</p></details>
+    <details><summary>Muss ich an allen Tagen arbeiten?<i class="ti ti-chevron-down"></i></summary><p>Nein. Du kannst flexibel auswählen, welche Schichten du übernehmen möchtest. Wir freuen uns natürlich, wenn du möglichst viele Tage mit dabei bist.</p></details>
+{{FAQ_EXTRA}}
+  </div>
+  <div class="bt-faq-more">
+    <h3>Weitere Infos über uniworks sowie Fragen &amp; Antworten findest du auf unserer Seite für Studierende</h3>
+    <a href="#" class="btn btn-p">Zur Studierenden Seite</a>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="bt-cta">
+  <div class="bt-cta-inner">
+    <h2>{{CTA_HEADING}}</h2>
+    <p>{{CTA_TEXT}}</p>
+    <div class="bt-cta-btns">
+      <a href="#" class="btn btn-p">Jetzt registrieren</a>
+      <a href="#" class="btn btn-s">Zur uniworks App</a>
+    </div>
+  </div>
+</section>
+
+<div class="pv-footer">© 2026 uniworks GmbH · Vorschau — Nav &amp; Footer sind auf der echten Seite vollständig.</div>
+
+<script>
+(function(){
+  /* Fehlende Bilder → beschrifteter Platzhalter */
+  document.querySelectorAll('img').forEach(function(img){
+    img.onerror = function(){
+      var label = (this.alt || 'Bild').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+      this.onerror = null;
+      this.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480">' +
+        '<rect width="100%" height="100%" fill="#EBF9EE"/>' +
+        '<rect x="8" y="8" width="784" height="464" fill="none" stroke="#2ab54a" stroke-width="3" stroke-dasharray="12 8" rx="16"/>' +
+        '<text x="50%" y="46%" font-family="Arial" font-size="26" fill="#21993d" text-anchor="middle">Bild-Platzhalter</text>' +
+        '<text x="50%" y="56%" font-family="Arial" font-size="18" fill="#374151" text-anchor="middle">' + label + '</text></svg>');
+    };
+    if (img.complete && img.naturalWidth === 0) img.onerror();
+  });
+
+  var DAYS = {{CAL_DAYS_JS}};
+
+  var grid = document.getElementById('bt-cal-grid');
+  var tip = document.getElementById('bt-tip');
+  var wrap = tip.parentElement;
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var active = null;
+
+  var frag = document.createDocumentFragment();
+  for (var b = 0; b < {{CAL_LEAD}}; b++) {
+    var off = document.createElement('span');
+    off.className = 'bt-cal-day off';
+    frag.appendChild(off);
+  }
+  for (var d = 1; d <= {{CAL_NDAYS}}; d++) {
+    var el;
+    if (DAYS[d]) {
+      el = document.createElement('button');
+      el.type = 'button';
+      var free = DAYS[d].shifts.reduce(function(s, x){ return s + x.free; }, 0);
+      el.className = 'bt-cal-day evt ' + (free > 0 ? 'free' : 'full');
+      el.setAttribute('data-day', d);
+    } else {
+      el = document.createElement('span');
+      el.className = 'bt-cal-day';
+    }
+    el.textContent = d;
+    frag.appendChild(el);
+  }
+  grid.appendChild(frag);
+
+  function render(day) {
+    var info = DAYS[day];
+    var free = info.shifts.reduce(function(s, x){ return s + x.free; }, 0);
+    var html = '<h4>' + info.label + '</h4><div class="bt-tip-sub">' + info.sub +
+      ' · ' + (free > 0 ? free + ' Plätze frei' : 'ausgebucht') + '</div><ul>';
+    info.shifts.forEach(function(s) {
+      html += '<li><span><i class="ti ' + s.icon + '"></i><span>' + s.name +
+        (s.time ? '<em class="bt-time">' + s.time + '</em>' : '') + '</span></span>' +
+        '<span class="bt-badge ' + (s.free > 0 ? 'b-free">' + s.free + ' frei' : 'b-full">voll') + '</span></li>';
+    });
+    html += '</ul><div class="bt-tip-foot">Buchung in der uniworks App.</div>';
+    tip.innerHTML = html;
+  }
+
+  function show(cell) {
+    render(+cell.getAttribute('data-day'));
+    tip.classList.add('show');
+    grid.querySelectorAll('.bt-cal-day.active').forEach(function(c){ c.classList.remove('active'); });
+    cell.classList.add('active');
+    active = cell;
+    var cr = cell.getBoundingClientRect(), wr = wrap.getBoundingClientRect();
+    var left = cr.left - wr.left + cr.width / 2 - tip.offsetWidth / 2;
+    left = Math.max(8, Math.min(left, wrap.clientWidth - tip.offsetWidth - 8));
+    tip.style.left = left + 'px';
+    tip.style.top = (cr.bottom - wr.top + 10) + 'px';
+  }
+
+  function hide() {
+    tip.classList.remove('show');
+    if (active) { active.classList.remove('active'); active = null; }
+  }
+
+  grid.addEventListener('click', function(e) {
+    var cell = e.target.closest('.bt-cal-day.evt');
+    if (!cell) return;
+    if (active === cell) { hide(); } else { show(cell); }
+  });
+  if (canHover) {
+    grid.addEventListener('mouseover', function(e) {
+      var cell = e.target.closest('.bt-cal-day.evt');
+      if (cell && cell !== active) show(cell);
+    });
+  }
+  document.addEventListener('click', function(e) {
+    if (!wrap.contains(e.target)) hide();
+  });
+})();
+</script>
+</body>
+</html>

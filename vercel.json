@@ -18,6 +18,11 @@
       "permanent": true
     },
     {
+      "source": "/en/app.html",
+      "destination": "/en/app",
+      "permanent": true
+    },
+    {
       "source": "/en/blog.html",
       "destination": "/en/blog",
       "permanent": true
@@ -113,6 +118,11 @@
       "permanent": true
     },
     {
+      "source": "/pages/app.html",
+      "destination": "/app",
+      "permanent": true
+    },
+    {
       "source": "/pages/blog.html",
       "destination": "/blog",
       "permanent": true
@@ -125,6 +135,11 @@
     {
       "source": "/pages/app-delete.html",
       "destination": "/app-delete",
+      "permanent": true
+    },
+    {
+      "source": "/pages/bts-allianz.html",
+      "destination": "/bts-allianz",
       "permanent": true
     },
     {
@@ -358,6 +373,10 @@
       "destination": "/pages/about.html"
     },
     {
+      "source": "/app",
+      "destination": "/pages/app.html"
+    },
+    {
       "source": "/vorteile",
       "destination": "/pages/vorteile.html"
     },
@@ -372,6 +391,10 @@
     {
       "source": "/app-delete",
       "destination": "/pages/app-delete.html"
+    },
+    {
+      "source": "/bts-allianz",
+      "destination": "/pages/bts-allianz.html"
     },
     {
       "source": "/en/app-delete",
@@ -392,6 +415,10 @@
     {
       "source": "/en/about",
       "destination": "/en/about.html"
+    },
+    {
+      "source": "/en/app",
+      "destination": "/en/app.html"
     },
     {
       "source": "/en/blog",
