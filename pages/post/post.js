@@ -30,7 +30,19 @@
             <a href="#" role="menuitem"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
           </div>
         </div>
-        <a href="/unternehmen" class="btn btn-p">Für Unternehmen</a>
+        <div class="nav-dd" id="nav-dd">
+          <button type="button" class="btn btn-p nav-dd-toggle" aria-haspopup="true" aria-expanded="false">Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></button>
+          <div class="nav-dd-menu" role="menu" aria-label="Branchen">
+            <a href="/unternehmen" role="menuitem"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+            <a href="/unternehmen/logistik-personal" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+            <a href="/unternehmen/events" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+            <a href="/unternehmen/catering" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+            <a href="/unternehmen/einzelhandel" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+            <a href="/unternehmen/gastronomie-hotellerie" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+            <a href="/unternehmen/promotion" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+            <a href="/unternehmen/buro" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+          </div>
+        </div>
         <a href="/blog" class="nav-textlink active">Blog</a>
         <a href="/about" class="nav-textlink">Über uns</a>
         <div class="lang-switch" aria-label="Sprache wählen">
@@ -52,7 +64,19 @@
         <a href="#"><i class="ti ti-tools" aria-hidden="true"></i>Fachkräfte</a>
       </div>
     </details>
-    <a href="/unternehmen">Für Unternehmen</a>
+    <details class="mob-dd">
+      <summary>Für Unternehmen <i class="ti ti-chevron-down" aria-hidden="true"></i></summary>
+      <div class="mob-dd-list">
+        <a href="/unternehmen"><i class="ti ti-layout-grid" aria-hidden="true"></i>Übersicht</a>
+        <a href="/unternehmen/logistik-personal"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
+        <a href="/unternehmen/events"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
+        <a href="/unternehmen/catering"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
+        <a href="/unternehmen/einzelhandel"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
+        <a href="/unternehmen/gastronomie-hotellerie"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
+        <a href="/unternehmen/promotion"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
+        <a href="/unternehmen/buro"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
+      </div>
+    </details>
     <a href="/blog">Blog</a>
     <a href="/about">Über uns</a>
   </div>`;
