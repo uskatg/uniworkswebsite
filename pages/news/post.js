@@ -16,21 +16,7 @@
       </a>
       <div class="nav-ctas">
         <a href="/#studierende" class="btn btn-s">Für Studierende</a>
-        <div class="nav-dd" id="nav-dd">
-          <button type="button" class="btn btn-p nav-dd-toggle" id="nav-dd-toggle" aria-haspopup="true" aria-expanded="false">
-            Für Unternehmen
-            <i class="ti ti-chevron-down" aria-hidden="true"></i>
-          </button>
-          <div class="nav-dd-menu" role="menu" aria-label="Branchen">
-            <a href="/unternehmen/logistik-personal" role="menuitem"><i class="ti ti-truck" aria-hidden="true"></i>Logistik</a>
-            <a href="/unternehmen/events" role="menuitem"><i class="ti ti-confetti" aria-hidden="true"></i>Event</a>
-            <a href="/unternehmen/catering" role="menuitem"><i class="ti ti-tools-kitchen-2" aria-hidden="true"></i>Catering</a>
-            <a href="/unternehmen/einzelhandel" role="menuitem"><i class="ti ti-shopping-cart" aria-hidden="true"></i>Einzelhandel</a>
-            <a href="/unternehmen/gastronomie-hotellerie" role="menuitem"><i class="ti ti-glass-full" aria-hidden="true"></i>Gastronomie &amp; Hotellerie</a>
-            <a href="/unternehmen/promotion" role="menuitem"><i class="ti ti-speakerphone" aria-hidden="true"></i>Promotion</a>
-            <a href="/unternehmen/buro" role="menuitem"><i class="ti ti-briefcase" aria-hidden="true"></i>Büro</a>
-          </div>
-        </div>
+        <a href="/unternehmen" class="btn btn-p">Für Unternehmen</a>
         <a href="/about" class="nav-textlink">Über uns</a>
         <div class="lang-switch" aria-label="Sprache wählen">
           <a href="/about#news" hreflang="de" data-lang="de">DE</a>
