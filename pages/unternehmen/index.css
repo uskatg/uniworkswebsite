@@ -147,12 +147,12 @@
 .contact-pill{display:inline-flex;align-items:center;gap:8px;background:var(--g);color:#fff;font-size:15px;font-weight:600;padding:11px 20px;border-radius:999px;text-decoration:none;transition:background var(--tr)}
 .contact-pill:hover{background:var(--gh)}
 .contact-pill .ti{font-size:18px}
-.contact-team-card{max-width:900px;margin:48px auto 0}
+.contact-team-card{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:44px;align-items:center;max-width:900px;margin:48px auto 0}
 .contact-team-card img{width:100%;border-radius:var(--r20);box-shadow:var(--shh);display:block}
-.contact-team{display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;color:var(--body);margin-top:20px}
-.contact-team .ti{font-size:18px;color:var(--g)}
-.contact-team a{color:var(--black);font-weight:700;text-decoration:none;transition:color var(--tr)}
-.contact-team a:hover{color:var(--g)}
+.contact-team{display:flex;align-items:center;flex-wrap:wrap;gap:10px 12px;font-size:clamp(20px,2.6vw,26px);font-weight:600;color:var(--black);margin:0}
+.contact-team .ti{font-size:1.2em;color:var(--g)}
+.contact-team a{color:var(--g);font-weight:700;text-decoration:none;white-space:nowrap;transition:color var(--tr)}
+.contact-team a:hover{color:var(--gh)}
 @media(max-width:768px){
   .contact{padding:56px 0}
   .contact-card{grid-template-columns:1fr;gap:24px;justify-items:center}
@@ -162,7 +162,9 @@
   .contact-info{text-align:center}
   .contact-info>p{margin-left:auto;margin-right:auto}
   .contact-btns{justify-content:center}
-  .contact-team-card{margin-top:32px}
+  .contact-team-card{grid-template-columns:1fr;gap:20px;justify-items:center;margin-top:32px}
+  .contact-team-card img{max-width:320px}
+  .contact-team{justify-content:center;text-align:center}
 }
 
 /* ── Brand marquee (scrolling logo wall) ── */
