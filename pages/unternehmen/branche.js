@@ -121,7 +121,13 @@
       // DEMO mode — no backend configured.
       console.info('[Personalanfrage] DEMO mode (FORM_ENDPOINT not set). Payload:', data);
       var link = mailtoFallback(data);
-      setTimeout(function () { showSuccess(); window.location.href = link; }, 500);
+      // mailto first (opens the mail client without unloading the page), then
+      // on to /danke — the thank-you page fires the Google Ads conversion.
+      setTimeout(function () {
+        showSuccess();
+        window.location.href = link;
+        setTimeout(function () { window.location.href = '/danke'; }, 1200);
+      }, 500);
       return;
     }
 
@@ -131,7 +137,11 @@
       body: JSON.stringify(data)
     })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r; })
-      .then(showSuccess)
+      .then(function () {
+        showSuccess();
+        // /danke fires the Google Ads conversion
+        window.location.href = '/danke';
+      })
       .catch(function (err) {
         console.error('[Personalanfrage] submit failed:', err);
         submitBtn.disabled = false;

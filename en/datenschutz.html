@@ -3,6 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Ads (gtag.js) + Consent Mode v2 — must stay the FIRST scripts in <head> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // GDPR default: deny all advertising/analytics storage until the visitor accepts
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+    // Restore a previously stored acceptance (banner: /cookie-consent.js)
+    try {
+      if (localStorage.getItem('uw_consent') === 'granted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <!-- CDN: Google tag — not offline-clean -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16757732315"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'AW-16757732315');
+  </script>
+  <!-- Self-coded cookie banner — wires Consent Mode accept/reject -->
+  <script defer src="/cookie-consent.js"></script>
   <meta name="apple-itunes-app" content="app-id=6470999822" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon_io/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon_io/favicon-16x16.png" />
@@ -209,7 +241,9 @@
         <p>In addition, the following points apply specifically to our website.</p>
 
         <h3>Analytics tools and third-party tools · Hosting</h3>
-        <p>When visiting this website, your browsing behaviour may be statistically evaluated. This is done mainly with so-called analytics programs. Detailed information about these analytics programs can be found in the following privacy policy. We host the content of our website with the following provider: the provider of website creation and hosting services is Webflow, Inc., based in San Francisco, USA. When you visit our website, Webflow collects various log files, including your IP address. Webflow is used as a tool to create and host websites and, in doing so, stores necessary cookies or other recognition technologies that are essential for the correct display of the page, for certain functions and for security. Detailed information can be found in Webflow's privacy policy, available at the link provided. The use of Webflow is based on Art. 6(1)(f) GDPR, as we have a legitimate interest in a reliable display of our website. If consent has been obtained, the processing is carried out on the basis of Art. 6(1)(a) GDPR and Section 25(1) TTDSG, in particular where it concerns the storage of cookies or access to information on the user's device. This consent can be withdrawn at any time. The data transfer to the USA is based on the standard contractual clauses of the EU Commission; further details can be found in Webflow's privacy policy.</p>
+        <p>When visiting this website, your browsing behaviour may be statistically evaluated. This is done mainly with so-called analytics programs. Detailed information about these analytics programs can be found in the following privacy policy. We host the content of our website with the following provider: the hosting provider is Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA (“Vercel”). When you visit our website, Vercel collects various log files, including your IP address, in order to deliver the website reliably and securely. The use of Vercel is based on Art. 6(1)(f) GDPR, as we have a legitimate interest in a reliable display of our website. Vercel processes this data on our behalf on the basis of a data processing agreement (Art. 28 GDPR). The data transfer to the USA is based on the standard contractual clauses of the EU Commission; further details can be found in <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's privacy policy</a>.</p>
+
+        <p>We also use Vercel Web Analytics, an analytics service provided by Vercel, to measure reach. Vercel Web Analytics works without cookies and does not store any information on your device; visits are evaluated in aggregate using an anonymised identifier that changes daily (e.g. page views, country of origin, browser type), without you being recognisable across multiple days or websites. Its use is based on Art. 6(1)(f) GDPR; our legitimate interest lies in the anonymised analysis of the use of our website in order to improve our services. As no information is stored on or read from your device, consent pursuant to Section 25 TTDSG is not required for this.</p>
 
         <h3>General information and mandatory information</h3>
         <p>The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with the statutory data protection regulations and this privacy policy. When you use this website, various personal data is collected. Personal data is data with which you can be personally identified. This privacy policy explains which data we collect and what we use it for. It also explains how and for what purpose this is done. We point out that data transmission over the internet (e.g. when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible.</p>
@@ -257,6 +291,10 @@
 
         <h3>Data collection on this website · Cookies</h3>
         <p>Our websites use so-called “cookies”. These are small text files that do no harm to your device. There are session cookies, which are automatically deleted after the end of your visit, and permanent cookies, which remain on your device until you delete them yourself or until your web browser deletes them. Cookies can be set either directly by our site (first-party cookies) or by third parties (third-party cookies) that enable certain services on our website. Cookies serve different functions: some are technically necessary so that website functions such as the shopping cart or video display work, others serve to evaluate user behaviour or for advertising purposes. The storage of necessary cookies is carried out on the basis of Art. 6(1)(f) GDPR, unless another legal basis is invoked. As the website operator, we have a legitimate interest in storing these cookies for the technically error-free and optimised provision of our services. If consent has been obtained for the storage of cookies and comparable recognition technologies, the processing is based exclusively on this consent (Art. 6(1)(a) GDPR and Section 25(1) TTDSG); this consent can be withdrawn at any time. You can set your browser so that you are informed about the setting of cookies and only allow cookies in individual cases, exclude the acceptance of cookies for certain cases or in general, and activate the automatic deletion of cookies when the browser is closed. If you deactivate cookies, the functionality of our website may be limited. Details about the cookies and services used on this website can be found in our privacy policy.</p>
+
+        <h3>Google Ads and conversion tracking</h3>
+        <p>We use Google Ads, an online advertising programme of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland (“Google”). To measure the success of our ads, we use Google Ads conversion tracking: if you reach our website via an ad placed by Google and complete a certain action here (e.g. submitting a request, confirmed via our thank-you page), a conversion cookie is set on your device (cookies with the prefix “_gcl_”, usually valid for 90 days). These cookies do not identify you personally. We only receive anonymous, statistical evaluations — such as the total number of users who clicked on an ad and then completed a request — but no information that could identify you personally. The same Google tag is also linked to Google Analytics 4, a web analytics service provided by Google; with your consent, analytics cookies are set (e.g. “_ga”, valid for up to 2 years) that enable statistical evaluation of the use of our website.</p>
+        <p>We use Google Consent Mode v2: when you visit our website, the storage of advertising and analytics cookies is deactivated by default. The cookies mentioned above are only set once you give your consent via our cookie banner. Without your consent, no cookies are stored on your device for advertising or analytics purposes; only aggregated, cookieless signals may be transmitted to Google for statistical modelling. The legal basis is your consent pursuant to Art. 6(1)(a) GDPR and Section 25(1) TTDSG. You can withdraw or re-grant your consent at any time with effect for the future via your <a href="#" onclick="if(window.uwConsentSettings){uwConsentSettings();}return false;">cookie settings</a>. Data transfer to the USA is based on the standard contractual clauses of the EU Commission; Google LLC is also certified under the EU-US Data Privacy Framework. Further information can be found in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
 
         <h3>Social media · Instagram</h3>
         <p>Functions of the Instagram service, offered by Meta Platforms Ireland Limited in Ireland, are integrated on our website. As soon as Instagram elements are active, a connection is established between your device and the Instagram servers, whereby Instagram receives information about your visit to our website. If you are logged in to your Instagram account, you can link content of our website to your Instagram profile, which enables Instagram to assign the visit to our website to your user account. As the website operator, we have no knowledge of the content of the transmitted data or its use by Instagram. The use of Instagram is based either on your consent (Art. 6(1)(a) GDPR and Section 25 TTDSG), which can be withdrawn at any time, or on our legitimate interest in comprehensive visibility on social media, where no consent has been obtained. For the collection of the data that is then forwarded to Facebook or Instagram, we are jointly responsible with Meta Platforms Ireland Limited in accordance with Art. 26 GDPR. Our responsibility is limited to the collection of the data and its forwarding. The processing of the data by Facebook or Instagram after the forwarding does not fall within our area of responsibility. The obligations arising from the joint processing are set out in a special agreement, the details of which you can find at the link provided. We are responsible for the data protection information when using the Instagram tool and the secure implementation of the tool on our website; Meta is responsible for the data security of the products. You can assert data subject rights in relation to data processed by Instagram directly with Instagram. Requests regarding your rights that we receive will be forwarded to Facebook. The data transfer to the USA is based on the standard contractual clauses of the EU Commission. Further information on this can be found at the links provided. Detailed information on data protection at Instagram can be found in Instagram's privacy policy.</p>
