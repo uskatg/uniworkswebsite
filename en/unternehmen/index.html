@@ -67,7 +67,7 @@
   <!-- CDN: Tabler icons webfont — not offline-clean -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.14.0/dist/tabler-icons.min.css" />
   <link rel="stylesheet" href="/pages/unternehmen/branche.css?v=8" />
-  <link rel="stylesheet" href="/pages/unternehmen/index.css?v=8" />
+  <link rel="stylesheet" href="/pages/unternehmen/index.css?v=9" />
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/app-banner.js"></script>
 </head>
@@ -775,10 +775,14 @@
     (function () {
       var v = document.querySelector('.bhero-media video');
       if (!v) return;
+      // Autoplay policies check the muted PROPERTY, not just the attribute.
+      v.muted = true;
+      v.defaultMuted = true;
+      var blocked = false;
       var replay = function () {
         try { v.currentTime = 0; } catch (e) {}
         var p = v.play();
-        if (p && p.catch) p.catch(function () {});
+        if (p && p.catch) p.catch(function () { blocked = true; });
       };
       var inView = function () {
         var r = v.getBoundingClientRect();
@@ -792,6 +796,15 @@
       // Returning to the tab can also surface a dropped frame.
       document.addEventListener('visibilitychange', function () {
         if (!document.hidden && inView()) replay();
+      });
+      // iOS Low Power Mode / Data Saver reject play() outright and paint a
+      // native play button (hidden via index.css). The first real gesture
+      // counts as user activation, so start the animation from there.
+      ['pointerdown', 'touchend', 'keydown'].forEach(function (type) {
+        window.addEventListener(type, function retry() {
+          window.removeEventListener(type, retry, true);
+          if (blocked) { blocked = false; replay(); }
+        }, true);
       });
     })();
   </script>

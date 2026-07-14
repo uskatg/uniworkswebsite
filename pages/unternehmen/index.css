@@ -19,6 +19,9 @@
    canonical brand #2ab54a) so the container blends seamlessly with the clip. */
 .bhero-hub .bhero-media{max-width:720px;margin:0 auto 40px;background:#23a23e;border-radius:var(--r20);overflow:hidden;line-height:0}
 .bhero-hub .bhero-media video{width:100%;height:auto;object-fit:cover;display:block}
+/* Hide WebKit's native "autoplay blocked" play overlay (iOS Low Power Mode,
+   Data Saver); index.html retries playback on the first user gesture instead. */
+.bhero-hub .bhero-media video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none}
 .bhero-hub .bhero-text{display:block;max-width:760px;margin:0 auto}
 .bhero-hub h1{margin-bottom:20px}
 .bhero-hub p{max-width:640px;margin:0 auto 32px}
