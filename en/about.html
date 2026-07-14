@@ -195,17 +195,21 @@
     .team-card h3{font-size:20px;font-weight:700;margin-bottom:4px}
     .team-role{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
     .team-card p{font-size:14.5px;line-height:1.6;color:var(--sec)}
+    /* Expand arrow: base hidden, enabled inside the mobile media query below
+       (base rule must come FIRST so the media query wins the cascade). */
+    .team-card-arrow{display:none;position:absolute;top:20px;right:16px;width:26px;height:26px;border-radius:50%;background:var(--gl);color:var(--g);align-items:center;justify-content:center;transition:transform var(--tr)}
+    .team-card-arrow .ti{font-size:16px}
     @media(max-width:900px){
       .team-grid{grid-template-columns:1fr 1fr;gap:16px}
       .team-card{cursor:pointer}
       .team-card p{display:none}
       .team-card.is-open p{display:block}
-      .team-card-hint{display:flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:600;color:var(--g)}
-      .team-card-hint .ti{font-size:15px;transition:transform var(--tr)}
-      .team-card.is-open .team-card-hint .ti{transform:rotate(180deg)}
+      .team-card-body{position:relative}
+      .team-card h3{padding-right:32px}
+      .team-card-arrow{display:flex}
+      .team-card.is-open .team-card-arrow{transform:rotate(180deg)}
     }
-    @media(max-width:620px){.team-grid{gap:12px}.team-card-body{padding:14px 14px 16px}.team-card h3{font-size:15px}.team-role{font-size:10.5px}.team-card p{font-size:13px;line-height:1.55}}
-    .team-card-hint{display:none}
+    @media(max-width:620px){.team-grid{gap:12px}.team-card-body{padding:14px 14px 16px}.team-card h3{font-size:15px}.team-role{font-size:10.5px}.team-card p{font-size:13px;line-height:1.55}.team-card-arrow{top:12px;right:10px}}
 
     /* ── ORIGIN STORY ── */
     .origin{padding:96px 0;background:var(--bg)}
@@ -384,31 +388,15 @@
         <img src="/images/membersandnews/Moritz.webp" alt="Moritz" loading="lazy" />
         <div class="team-card-body">
           <h3>Moritz</h3>
-          <div class="team-role">Managing partner</div>
+          <div class="team-role">CEO</div>
           <p>After 14 years as a Lufthansa pilot, Moritz decided to take a new path and reshape the world of work with uniworks. Between 2020 and 2024 he studied at LMU Munich and Accadis University of Applied Sciences in Bad Homburg, earning his MBA in Management &amp; Leadership.</p>
         </div>
       </article>
       <article class="team-card fu">
-        <img src="/images/membersandnews/David.webp" alt="David Lindenmayer" loading="lazy" />
-        <div class="team-card-body">
-          <h3>David</h3>
-          <div class="team-role">Partner • Technology</div>
-          <p>After two semesters of engineering at ETH Zurich, David decided to study business administration at LMU. His passion for tech and IT sparked the idea for the uniworks app. Today he leads everything technical and keeps our systems running.</p>
-        </div>
-      </article>
-      <article class="team-card fu">
-        <img src="/images/membersandnews/Emil.webp" alt="Emil Dax" loading="lazy" />
-        <div class="team-card-body">
-          <h3>Emil</h3>
-          <div class="team-role">Partner • Creative</div>
-          <p>As an interface design student at FH Potsdam, Emil brings the creative input to uniworks and looks after projects like the uniworks app and our website. Being close to the capital, he also runs our projects in Berlin.</p>
-        </div>
-      </article>
-      <article class="team-card fu">
-        <img src="/images/membersandnews/New.webp" alt="Armin" loading="lazy" />
+        <img src="/images/membersandnews/ArminKetabi.webp" alt="Armin Ketabi" loading="lazy" />
         <div class="team-card-body">
           <h3>Armin</h3>
-          <div class="team-role">Head of Operations &amp; Strategy</div>
+          <div class="team-role">Strategy</div>
           <p>Armin steers the day-to-day operations and the long-term direction of uniworks. He makes sure everything runs smoothly behind the scenes while constantly setting new impulses to take the company and our processes to the next level.</p>
         </div>
       </article>
@@ -416,7 +404,7 @@
         <img src="/images/membersandnews/KanghyunLee.webp" alt="Kanghyun" loading="lazy" />
         <div class="team-card-body">
           <h3>Kanghyun</h3>
-          <div class="team-role">Product Manager &amp; Software Engineer</div>
+          <div class="team-role">Software</div>
           <p>Kanghyun studies computer science at LMU Munich and brings his technical know-how to uniworks. His focus is on the backend, but he also drives his own projects and keeps developing new ideas.</p>
         </div>
       </article>
@@ -424,32 +412,16 @@
         <img src="/images/membersandnews/UlviRajabli.webp" alt="Ulvi" loading="lazy" />
         <div class="team-card-body">
           <h3>Ulvi</h3>
-          <div class="team-role">Social Media &amp; Software Engineer</div>
+          <div class="team-role">Creative</div>
           <p>Ulvi completed his bachelor's in media informatics and has built his own branding and a strong online presence. He supports us with creative decisions as well as web and app development.</p>
         </div>
       </article>
       <article class="team-card fu">
-        <img src="/images/membersandnews/New.webp" alt="Greta" loading="lazy" />
+        <img src="/images/membersandnews/Enci.webp" alt="Enci" loading="lazy" />
         <div class="team-card-body">
-          <h3>Greta</h3>
-          <div class="team-role">Intern &amp; Founders Associate</div>
-          <p>Greta is studying International Business in the Netherlands and supports us on the side across a wide range of areas — from conducting interviews to communicating with our customers and keeping day-to-day operations running.</p>
-        </div>
-      </article>
-      <article class="team-card fu">
-        <img src="/images/membersandnews/Amelie.webp" alt="Amelie" loading="lazy" />
-        <div class="team-card-body">
-          <h3>Amelie</h3>
-          <div class="team-role">Founders Associate</div>
-          <p>Amelie studied business psychology and gained experience in strategy consulting. Her master's in Consumer Science brought her to Munich — and with it to uniworks. She works alongside Moritz on both operations and strategy.</p>
-        </div>
-      </article>
-      <article class="team-card fu">
-        <img src="/images/membersandnews/New.webp" alt="Bine" loading="lazy" />
-        <div class="team-card-body">
-          <h3>Bine</h3>
-          <div class="team-role">HR &amp; Accounting</div>
-          <p>Bine diligently handles the registration and deregistration of our uniworkers as well as payroll.</p>
+          <h3>Enci</h3>
+          <div class="team-role">Legal</div>
+          <p>Enci studies law at LMU Munich and has gained experience at international law firms. At uniworks he takes care of all legal matters around dispute resolution and compliance, making sure the company grows on a solid legal foundation.</p>
         </div>
       </article>
       <article class="team-card fu">
@@ -461,18 +433,58 @@
         </div>
       </article>
       <article class="team-card fu">
+        <img src="/images/membersandnews/Amelie.webp" alt="Amelie" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Amelie</h3>
+          <div class="team-role">Founders Associate</div>
+          <p>Amelie studied business psychology and gained experience in strategy consulting. Her master's in Consumer Science brought her to Munich — and with it to uniworks. She works alongside Moritz on both operations and strategy.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/David.webp" alt="David Lindenmayer" loading="lazy" />
+        <div class="team-card-body">
+          <h3>David</h3>
+          <div class="team-role">Technology</div>
+          <p>After two semesters of engineering at ETH Zurich, David decided to study business administration at LMU. His passion for tech and IT sparked the idea for the uniworks app. Today he leads everything technical and keeps our systems running.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/Emil.webp" alt="Emil Dax" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Emil</h3>
+          <div class="team-role">Design</div>
+          <p>As an interface design student at FH Potsdam, Emil brings the creative input to uniworks and looks after projects like the uniworks app and our website. Being close to the capital, he also runs our projects in Berlin.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
         <img src="/images/membersandnews/Thommy.webp" alt="Thommy" loading="lazy" />
         <div class="team-card-body">
           <h3>Thommy</h3>
-          <div class="team-role">Partner • People</div>
+          <div class="team-role">People</div>
           <p>Thommy studies Management &amp; Technology at TU Munich and gained valuable HR insights through various roles in management consulting. He's responsible for everything around people and leads the interviews with all applicants — happily in Italian or English too. :)</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/New.webp" alt="Bine" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Bine</h3>
+          <div class="team-role">Accounting</div>
+          <p>Bine diligently handles the registration and deregistration of our uniworkers as well as payroll.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/Dan.webp" alt="Dan" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Dan</h3>
+          <div class="team-role">Location Manager</div>
+          <p>A trained hotel specialist with more than ten years of experience in temporary staffing, Dan leads our Frankfurt and Rhine-Main location for events and hospitality. From event planning and coordination to client support, staff scheduling and people development — everything in the region comes together in her hands.</p>
         </div>
       </article>
       <article class="team-card fu">
         <img src="/images/membersandnews/New.webp" alt="Alina" loading="lazy" />
         <div class="team-card-body">
           <h3>Alina</h3>
-          <div class="team-role">HR &amp; Onboarding</div>
+          <div class="team-role">Onboarding</div>
           <p>Alongside her economics studies, Alina supports the onboarding of new uniworkers and, together with Thommy, leads the introductory interviews with new applicants.</p>
         </div>
       </article>
@@ -480,7 +492,7 @@
         <img src="/images/membersandnews/Marie.webp" alt="Marie" loading="lazy" />
         <div class="team-card-body">
           <h3>Marie</h3>
-          <div class="team-role">Executive assistant</div>
+          <div class="team-role">Assistant</div>
           <p>Alongside her studies, Marie supports operational tasks such as scheduling and our Instagram account.</p>
         </div>
       </article>
@@ -488,8 +500,49 @@
         <img src="/images/membersandnews/Ellen.webp" alt="Ellen" loading="lazy" />
         <div class="team-card-body">
           <h3>Ellen</h3>
-          <div class="team-role">Executive assistant</div>
+          <div class="team-role">Assistant</div>
           <p>Alongside her Finance &amp; Management studies, Ellen supports operational tasks and is reachable every day for all uniworkers with any questions.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/New.webp" alt="Greta" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Greta</h3>
+          <div class="team-role">Intern</div>
+          <p>Greta is studying International Business in the Netherlands and supports us on the side across a wide range of areas — from conducting interviews to communicating with our customers and keeping day-to-day operations running.</p>
+        </div>
+      </article>
+      <!-- FLAG: Interview team — placeholder photo (New.webp) and provisional short bios until real photos/copy arrive -->
+      <article class="team-card fu">
+        <img src="/images/membersandnews/New.webp" alt="Keanu" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Keanu</h3>
+          <div class="team-role">Interview</div>
+          <p>Keanu conducts the introductory interviews with our applicants and guides them through the entire application process.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/New.webp" alt="Lilli" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Lilli</h3>
+          <div class="team-role">Interview</div>
+          <p>Lilli gets to know our applicants in the interviews and makes sure they get off to a smooth start at uniworks.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/New.webp" alt="Anna" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Anna</h3>
+          <div class="team-role">Interview</div>
+          <p>Anna interviews new applicants and supports the onboarding of new uniworkers.</p>
+        </div>
+      </article>
+      <article class="team-card fu">
+        <img src="/images/membersandnews/New.webp" alt="Sirith" loading="lazy" />
+        <div class="team-card-body">
+          <h3>Sirith</h3>
+          <div class="team-role">Interview</div>
+          <p>Sirith conducts introductory interviews with our applicants and helps them settle into the uniworks world.</p>
         </div>
       </article>
     </div>
@@ -755,21 +808,30 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll('.fu').forEach(el => io.observe(el));
 
 // ── Team cards: tap to reveal full bio (mobile) ──
-document.querySelectorAll('.team-card').forEach(card => {
+// Two cards per row on mobile: opening one also opens its row partner, so the
+// stretched neighbour never renders as an empty box.
+const teamCards = Array.from(document.querySelectorAll('.team-card'));
+const teamMobile = window.matchMedia('(max-width:900px)');
+const setCardOpen = (card, open) => {
+  card.classList.toggle('is-open', open);
+  card.setAttribute('aria-expanded', String(open));
+};
+teamCards.forEach((card, idx) => {
   const body = card.querySelector('.team-card-body');
   const bio = card.querySelector('p');
   if (!body || !bio) return;
-  const hint = document.createElement('span');
-  hint.className = 'team-card-hint';
-  hint.innerHTML = 'Mehr erfahren <i class="ti ti-chevron-down" aria-hidden="true"></i>';
-  body.appendChild(hint);
+  const arrow = document.createElement('span');
+  arrow.className = 'team-card-arrow';
+  arrow.innerHTML = '<i class="ti ti-chevron-down" aria-hidden="true"></i>';
+  body.appendChild(arrow);
   card.setAttribute('role', 'button');
   card.setAttribute('tabindex', '0');
   card.setAttribute('aria-expanded', 'false');
   const toggle = () => {
-    const open = card.classList.toggle('is-open');
-    card.setAttribute('aria-expanded', String(open));
-    hint.firstChild.textContent = open ? 'Weniger anzeigen ' : 'Mehr erfahren ';
+    const open = !card.classList.contains('is-open');
+    setCardOpen(card, open);
+    const partner = teamCards[idx ^ 1];
+    if (teamMobile.matches && partner) setCardOpen(partner, open);
   };
   card.addEventListener('click', toggle);
   card.addEventListener('keydown', e => {
