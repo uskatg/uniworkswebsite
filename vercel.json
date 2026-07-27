@@ -363,8 +363,13 @@
       "permanent": false
     },
     {
-      "source": "/pages/toggo-tour-rostock.html",
-      "destination": "/toggo-tour-rostock",
+      "source": "/toggo-tour-rostock",
+      "destination": "/toggo",
+      "permanent": true
+    },
+    {
+      "source": "/pages/toggo.html",
+      "destination": "/toggo",
       "permanent": true
     }
   ],
@@ -650,8 +655,8 @@
       "destination": "/pages/unternehmen/promotion.html"
     },
     {
-      "source": "/toggo-tour-rostock",
-      "destination": "/pages/toggo-tour-rostock.html"
+      "source": "/toggo",
+      "destination": "/pages/toggo.html"
     }
   ],
   "headers": [

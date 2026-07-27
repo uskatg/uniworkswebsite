@@ -253,6 +253,7 @@ def main():
         "CAL_DAYS_JS": render_cal_days_js(cal["days"]),
         "CAL_LEAD": str(lead),
         "CAL_NDAYS": str(ndays),
+        "CAL_HIDE_COUNTS": "true" if cal.get("hide_counts") else "false",
         "PAY_HEADING": cfg["pay"].get("heading", "Dein Gehalt im Überblick"),
         "PAY_AMOUNT": cfg["pay"]["amount"],
         "PAY_SUFFIX": cfg["pay"].get("suffix", "pro Stunde – mindestens"),
