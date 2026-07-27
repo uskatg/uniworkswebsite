@@ -22,23 +22,39 @@
   ],
 
   "jobs_heading": "Deine Aufgaben vor Ort",
-  "jobs_intro": "Ein Job, viele Aufgaben: Als Eventhelfer:in bist du das freundliche Gesicht der Toggo Tour – bei den Kindern an den Modulen genauso wie beim Team im Hintergrund.",
+  "jobs_intro": "Ein Job, vier Aufgabenbereiche: Als Eventhelfer:in bist du an beiden Tagen mittendrin – bei den Kindern an den Modulen genauso wie beim Team im Hintergrund. Das erwartet dich vor Ort:",
   "jobs": [
     {
-      "title": "Spiel- & Aktionsmodule",
+      "title": "Spiel- & Aktionsmodule betreuen",
       "icon": "ti-mood-kid",
       "image": "/images/visuals/Promotion.webp",
       "alt": "Betreuung eines Aktionsstands bei einem Event",
-      "text": "Du betreust die Spiel- und Aktionsstationen, erklärst den Kindern die Spiele und sorgst dafür, dass alle sicher und mit Spaß dabei sind. Ein freundliches, offenes Auftreten und Freude am Umgang mit Kindern sind alles, was du brauchst – eine ausführliche Einweisung bekommst du beim Briefing vor Ort.",
+      "text": "Du stehst an den Spiel- und Aktionsstationen, erklärst den Kindern die Spiele und leitest sie an. Du sorgst dafür, dass alles fair und sicher abläuft – und dass die kleinen Gäste jede Menge Spaß haben. Eine ausführliche Einweisung bekommst du beim Briefing vor Ort.",
       "tags": ["Freude am Umgang mit Kindern", "keine Erfahrung nötig"]
     },
     {
-      "title": "Auf-, Abbau & Eventteam",
+      "title": "Beim Auf- & Abbau anpacken",
       "icon": "ti-tools",
-      "image": "/images/visuals/Eroeffnung.webp",
-      "alt": "Anpacken beim Aufbau eines Event-Stands",
-      "text": "Vor dem ersten und nach dem letzten Besucher packst du mit an: Module aufbauen, Material bereitstellen und am Abend wieder verstauen. Während der Veranstaltung unterstützt du das Eventteam überall dort, wo Hände gebraucht werden, und hältst so den Ablauf reibungslos am Laufen.",
-      "tags": ["Teamgeist & Zuverlässigkeit", "anpacken statt zuschauen"]
+      "image": "/images/visuals/Servicepersonal.webp",
+      "alt": "Hands-on beim Aufbau vor einem Event",
+      "text": "Bevor der erste Gast kommt und wenn der letzte gegangen ist, packst du mit an: Module und Stationen aufbauen, Material bereitstellen und am Ende alles wieder sicher verstauen. Anpacken statt zuschauen.",
+      "tags": ["Motivation & Flexibilität", "anpacken statt zuschauen"]
+    },
+    {
+      "title": "Das Eventteam unterstützen",
+      "icon": "ti-users",
+      "image": "/images/visuals/Recruiting.webp",
+      "alt": "uniworks Team im gemeinsamen Einsatz",
+      "text": "Du bist Teil des Teams vor Ort und springst dort ein, wo gerade Hände gebraucht werden. Kurze Wege, klare Absprachen und eine feste Ansprechperson – ihr zieht den ganzen Tag gemeinsam an einem Strang.",
+      "tags": ["Teamfähigkeit", "Zuverlässigkeit"]
+    },
+    {
+      "title": "Für einen reibungslosen Ablauf sorgen",
+      "icon": "ti-checklist",
+      "image": "/images/visuals/ErsterJob.webp",
+      "alt": "Eventhelferin im Einsatz bei einem Sommer-Event",
+      "text": "Du behältst den Überblick, weist Gästen den Weg und hältst deine Station am Laufen. Mit einem offenen, sicheren Auftreten sorgst du dafür, dass der Tag für alle rund läuft.",
+      "tags": ["sicheres Auftreten", "Pünktlichkeit"]
     }
   ],
 
