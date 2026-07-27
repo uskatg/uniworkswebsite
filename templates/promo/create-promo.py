@@ -132,6 +132,19 @@ def render_bonus_card(bonus):
       </div>'''
 
 
+def render_total_card(total):
+    """Full-width green 'total earnings' banner below the pay + bonus cards."""
+    if not total:
+        return ""
+    label = f'<strong>{total["label"]}</strong>' if total.get("label") else ""
+    return f'''      <div class="bt-card bt-card-total">
+        <div class="bt-total-num">{total["amount"]}</div>
+        <div class="bt-total-body">{label}
+          <p>{total["text"]}</p>
+        </div>
+      </div>'''
+
+
 def render_cal_days_js(days):
     lines = []
     for day in sorted(days, key=int):
@@ -257,6 +270,7 @@ def main():
         "PAY_SUFFIX": cfg["pay"].get("suffix", "pro Stunde – mindestens"),
         "PAY_TEXT": cfg["pay"]["text"],
         "BONUS_CARD": bonus_card,
+        "TOTAL_CARD": render_total_card(cfg.get("total")),
         "PAYROW_MOD": payrow_mod,
         "OG_IMAGE": og_image,
         "FAQ_SEC_CLASS": "bt-sec alt",

@@ -158,6 +158,11 @@
     .bt-card p a:hover{text-decoration:underline}
     .bt-pay-num{font-size:clamp(40px,5vw,58px);font-weight:800;letter-spacing:-.03em;color:var(--g);line-height:1;margin-bottom:18px}
     .bt-pay-num small{font-size:.34em;font-weight:700;color:var(--body)}
+    .bt-card-total{grid-column:1/-1;background:var(--g);border-color:var(--g);flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px 40px;text-align:left;padding:34px 44px}
+    .bt-total-num{font-size:clamp(38px,5vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1;color:#fff;white-space:nowrap}
+    .bt-total-body{max-width:560px}
+    .bt-total-body strong{display:block;color:#fff;font-size:18px;font-weight:800;line-height:1.2;margin-bottom:4px}
+    .bt-total-body p{color:rgba(255,255,255,.9);font-size:15.5px;line-height:1.55;margin:0}
 
     /* FAQ */
     .bt-faq{max-width:760px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:12px}
@@ -198,6 +203,7 @@
       .bt-payrow{grid-template-columns:1fr;padding:0 24px}
       .bt-faq{padding:0 24px}
       .bt-card{padding:36px 24px}
+      .bt-card-total{flex-direction:column;text-align:center;gap:12px;padding:32px 24px}
     }
     @media(max-width:640px){
       /* On small screens the day details render as a static panel below the grid */
@@ -396,6 +402,12 @@
       <div class="bt-card">
         <div class="bt-pay-num">+2&nbsp;Std. <small>Bonus</small></div>
         <p>Für die <strong>pünktliche Teilnahme an beiden Tagen</strong> gibt es 2 Stunden extra. Outfit, Essen und Getränke sind gestellt, mitbringen musst du nur Jeans und Sneaker.</p>
+      </div>
+      <div class="bt-card bt-card-total">
+        <div class="bt-total-num">bis zu 328&nbsp;€</div>
+        <div class="bt-total-body"><strong>Gesamtverdienst</strong>
+          <p>Für zwei ganze Arbeitstage (je rund 9 Std.) plus 2 Bonusstunden, gerechnet mit 16&nbsp;€ pro Stunde.</p>
+        </div>
       </div>
     </div>
   </section>

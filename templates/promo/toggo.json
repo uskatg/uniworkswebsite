@@ -97,6 +97,12 @@
     "text": "Für die <strong>pünktliche Teilnahme an beiden Tagen</strong> gibt es 2 Stunden extra. Outfit, Essen und Getränke sind gestellt, mitbringen musst du nur Jeans und Sneaker."
   },
 
+  "total": {
+    "amount": "bis zu 328&nbsp;€",
+    "label": "Gesamtverdienst",
+    "text": "Für zwei ganze Arbeitstage (je rund 9 Std.) plus 2 Bonusstunden, gerechnet mit 16&nbsp;€ pro Stunde."
+  },
+
   "faq": "standard",
   "faq_overrides": {
     "Gibt es einen Dresscode zu beachten?": "Ein uniworks-Outfit (T-Shirt) wird dir vor Ort gestellt. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker.",

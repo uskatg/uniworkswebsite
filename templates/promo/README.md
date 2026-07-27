@@ -82,8 +82,11 @@ Schritt 2–4 oben aus.
 | `jobs_heading`, `jobs_intro`, `jobs` | ✓ | Job-Karten: `title`, `icon`, `image`, `alt`, `text`, `tags` |
 | `gallery` | – | Bildergalerie unter den Jobs (`src`, `alt`) |
 | `calendar` | ✓ | `year`, `month` (1–12), `snapshot_note`, `days` (siehe oben) |
-| `pay` | ✓ | `amount`, `suffix`, `text` |
-| `bonus` | – | Bonus-Karte (`heading`, `badge_big`, `badge_small`, `text`); weglassen = Sektion erscheint nicht |
+| `pay` | ✓ | Karte links im Gehalt-Band: `amount`, `suffix`, `text`; optional `heading` (Überschrift über dem ganzen Band) |
+| `bonus` | – | Karte rechts daneben, gleiche Optik wie `pay`: `badge_big` (große Zahl, z. B. `+2&nbsp;Std.`), `badge_small` (Einheit), `text`; weglassen = nur die Gehalt-Karte (mittig) |
+| `total` | – | Grüne Box über die volle Breite darunter (z. B. Gesamtverdienst): `amount`, `label`, `text`; weglassen = erscheint nicht |
+| `calendar.hide_counts` | – | `true` blendet im Kalender-Tooltip die Zahl der freien Plätze aus (zeigt nur „Plätze frei“) |
+| `og_image` (s. o.) | – | Vorschaubild beim Teilen |
 | `faq`, `faq_overrides`, `faq_extra` | – | `"standard"` = 15 Standard-Fragen aus `faq-standard.json` |
 | `cta` | ✓ | Abschluss-Box (`heading`, `text`) |
 
