@@ -361,6 +361,11 @@
       "source": "/kategorien/:slug",
       "destination": "/blog",
       "permanent": false
+    },
+    {
+      "source": "/pages/toggo-tour-rostock.html",
+      "destination": "/toggo-tour-rostock",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -643,6 +648,10 @@
     {
       "source": "/unternehmen/promotion",
       "destination": "/pages/unternehmen/promotion.html"
+    },
+    {
+      "source": "/toggo-tour-rostock",
+      "destination": "/pages/toggo-tour-rostock.html"
     }
   ],
   "headers": [

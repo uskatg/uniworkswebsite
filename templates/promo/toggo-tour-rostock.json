@@ -1,0 +1,97 @@
+{
+  "slug": "toggo-tour-rostock",
+  "title": "Toggo Tour Rostock — dein Event-Job am 8. + 9. August 2026 | uniworks",
+  "description": "Werde Eventhelfer:in bei der Toggo Tour am 8. und 9. August 2026 auf dem Neuen Markt in Rostock: Spiel- und Aktionsmodule betreuen, mit anpacken, im Team arbeiten – mindestens 16 € pro Stunde. Jetzt registrieren und Schicht in der uniworks App sichern.",
+  "social_description": "Zwei Tage Spiel, Action & gute Laune: Wir suchen 17 Eventhelfer:innen für die Toggo Tour in Rostock (8. + 9. August 2026). Jetzt registrieren und Schicht in der uniworks App sichern.",
+
+  "eyebrow": { "icon": "ti-confetti", "text": "Event-Job · Rostock" },
+  "headline": "Dein Einsatz bei der <em>Toggo Tour</em> in Rostock",
+  "intro": "Am 8. und 9. August 2026 macht die Toggo Tour Halt auf dem Neuen Markt in Rostock – zwei Tage voller Spiel, Action und guter Laune für Familien. Wir suchen 17 aufgeschlossene Studierende, die als Eventhelfer:innen die Spiel- und Aktionsmodule betreuen und dem Team vor Ort den Rücken freihalten. Registriere dich jetzt und sichere dir deinen Platz direkt in der uniworks App.",
+  "meta": [
+    { "icon": "ti-map-pin", "text": "Neuer Markt, 18057 Rostock" },
+    { "icon": "ti-calendar-event", "text": "8. + 9. August 2026" },
+    { "icon": "ti-coin-euro", "text": "mind. 16&nbsp;€ pro Stunde" }
+  ],
+  "hero_image": { "src": "/images/visuals/BrandAmbassador.webp", "alt": "uniworks Team im Sommer-Einsatz bei einem Outdoor-Event" },
+
+  "stats": [
+    { "big": "17", "small": "Eventhelfer:innen gesucht" },
+    { "big": "8. + 9. Aug", "small": "Samstag & Sonntag 2026" },
+    { "big": "Rostock", "small": "Neuer Markt, Innenstadt" },
+    { "big": "16&nbsp;€", "small": "Stundenlohn – mindestens" }
+  ],
+
+  "jobs_heading": "Deine Aufgaben vor Ort",
+  "jobs_intro": "Ein Job, viele Aufgaben: Als Eventhelfer:in bist du das freundliche Gesicht der Toggo Tour – bei den Kindern an den Modulen genauso wie beim Team im Hintergrund.",
+  "jobs": [
+    {
+      "title": "Spiel- & Aktionsmodule",
+      "icon": "ti-mood-kid",
+      "image": "/images/visuals/Promotion.webp",
+      "alt": "Betreuung eines Aktionsstands bei einem Event",
+      "text": "Du betreust die Spiel- und Aktionsstationen, erklärst den Kindern die Spiele und sorgst dafür, dass alle sicher und mit Spaß dabei sind. Ein freundliches, offenes Auftreten und Freude am Umgang mit Kindern sind alles, was du brauchst – eine ausführliche Einweisung bekommst du beim Briefing vor Ort.",
+      "tags": ["Freude am Umgang mit Kindern", "keine Erfahrung nötig"]
+    },
+    {
+      "title": "Auf-, Abbau & Eventteam",
+      "icon": "ti-tools",
+      "image": "/images/visuals/Eroeffnung.webp",
+      "alt": "Anpacken beim Aufbau eines Event-Stands",
+      "text": "Vor dem ersten und nach dem letzten Besucher packst du mit an: Module aufbauen, Material bereitstellen und am Abend wieder verstauen. Während der Veranstaltung unterstützt du das Eventteam überall dort, wo Hände gebraucht werden, und hältst so den Ablauf reibungslos am Laufen.",
+      "tags": ["Teamgeist & Zuverlässigkeit", "anpacken statt zuschauen"]
+    }
+  ],
+
+  "calendar": {
+    "year": 2026,
+    "month": 8,
+    "intro": "Wir suchen an beiden Tagen dieselben 17 Gesichter. Tippe auf einen markierten Tag oder fahre mit der Maus darüber – du siehst sofort die Schichtzeiten und wie viele Plätze noch frei sind.",
+    "snapshot_note": "Stand: 27. Juli 2026 – tagesaktuelle Verfügbarkeit siehst du in der uniworks App.",
+    "days": {
+      "8": {
+        "label": "Samstag, 8. August", "sub": "Tag 1 · inkl. 45 Min Pause",
+        "shifts": [
+          { "name": "Eventhelfer:in", "time": "08:30 – 18:30 Uhr", "icon": "ti-mood-kid", "free": 17, "total": 17 }
+        ]
+      },
+      "9": {
+        "label": "Sonntag, 9. August", "sub": "Tag 2 · inkl. 45 Min Pause",
+        "shifts": [
+          { "name": "Eventhelfer:in", "time": "10:00 – 20:00 Uhr", "icon": "ti-mood-kid", "free": 17, "total": 17 }
+        ]
+      }
+    }
+  },
+
+  "pay": {
+    "amount": "16&nbsp;€",
+    "suffix": "pro Stunde – mindestens",
+    "text": "Bei uniworks bekommst du immer <strong>mindestens 16&nbsp;€ pro Stunde</strong> – fair und pünktlich. Während der Arbeitszeit sind außerdem <strong>Essen und Getränke</strong> für dich gestellt. Deinen genauen Stundenlohn für diesen Einsatz siehst du direkt bei der Buchung in der uniworks App."
+  },
+
+  "bonus": {
+    "heading": "Alles dabei: Verpflegung & Outfit",
+    "badge_big": "inkl.",
+    "badge_small": "Shirt, Essen & Trinken",
+    "text": "Du kommst einfach vorbei – um den Rest kümmern wir uns: Vor Ort bekommst du ein <strong>gestelltes uniworks-Outfit (T-Shirt)</strong> sowie <strong>Essen und Getränke</strong> während der Arbeitszeit. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker."
+  },
+
+  "faq": "standard",
+  "faq_overrides": {
+    "Gibt es einen Dresscode zu beachten?": "Ein uniworks-Outfit (T-Shirt) wird dir vor Ort gestellt. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker.",
+    "Muss ich an allen Tagen arbeiten?": "Ideal ist, wenn du an beiden Tagen – Samstag und Sonntag – dabei bist, damit dieselben Gesichter durchgehend an den Modulen stehen. Wenn wirklich nur ein Tag klappt, meld dich trotzdem: Wir schauen dann gemeinsam, was passt.",
+    "Habe ich eine Pause während der Schicht?": "Ja. An beiden Tagen ist eine Pause von 45 Minuten eingeplant. Die genaue Pausenzeit stimmt ihr im Team mit der Einsatzleitung vor Ort ab – so bleibt jede Station durchgehend besetzt.",
+    "Wann erhalte ich meinen Lohn?": "Spätestens am zehnten des Folgemonats. Für die Toggo Tour Anfang August bekommst du dein Gehalt also Anfang September auf dein Konto überwiesen."
+  },
+  "faq_extra": [
+    {
+      "q": "Was solltest du für den Einsatz mitbringen?",
+      "a": "Vor allem Freude am Umgang mit Kindern und ein freundliches, offenes Auftreten. Dazu Teamgeist, Zuverlässigkeit und Pünktlichkeit, gute Deutschkenntnisse in Wort und Schrift sowie die Motivation, flexibel dort anzupacken, wo du gebraucht wirst. Vorerfahrung brauchst du keine – die bekommst du beim ausführlichen Briefing vor Ort."
+    }
+  ],
+
+  "cta": {
+    "heading": "Sichere dir deinen Platz bei der Toggo Tour",
+    "text": "Wir suchen 17 Eventhelfer:innen für den 8. und 9. August 2026 in Rostock. Registriere dich jetzt und buche deine Schicht direkt in der uniworks App."
+  }
+}
