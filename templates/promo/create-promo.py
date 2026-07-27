@@ -118,24 +118,18 @@ def render_faq(items):
     return "\n".join(out)
 
 
-def render_bonus(bonus):
+def render_bonus_card(bonus):
+    """Render the bonus as a card that sits next to the pay card (same row)."""
     if not bonus:
         return ""
     badge = ""
     if bonus.get("badge_big"):
         small = f'<small>{bonus["badge_small"]}</small>' if bonus.get("badge_small") else ""
         badge = f'\n        <div class="bt-ref-badge">{bonus["badge_big"]}{small}</div>'
-    return f'''
-  <!-- ── BONUS ── -->
-  <section class="bt-sec alt">
-    <div class="bt-ref">
-      <div class="bt-ref-inner">
-        <h2>{bonus["heading"]}</h2>{badge}
+    return f'''      <div class="bt-card">{badge}
+        <h2>{bonus["heading"]}</h2>
         <p>{bonus["text"]}</p>
-      </div>
-    </div>
-  </section>
-'''
+      </div>'''
 
 
 def render_cal_days_js(days):
@@ -215,7 +209,14 @@ def main():
             item["a"] = override
     faq += esc_amp(cfg.get("faq_extra", []))
 
-    bonus_html = render_bonus(cfg.get("bonus"))
+    bonus_card = render_bonus_card(cfg.get("bonus"))
+    payrow_mod = "" if bonus_card else " solo"  # single centred card when no bonus
+
+    # Social/WhatsApp preview image. Accept a root-relative path in the config and
+    # make it absolute (link scrapers require an absolute URL); default to brand image.
+    og_image = cfg.get("og_image", "https://www.uniworks.gmbh/images/branding/og-image.jpg")
+    if og_image.startswith("/"):
+        og_image = "https://www.uniworks.gmbh" + og_image
 
     # image warnings (page still renders; missing files just 404 locally)
     for src in ([cfg["hero_image"]["src"]] + [j["image"] for j in cfg["jobs"]]
@@ -254,8 +255,10 @@ def main():
         "PAY_AMOUNT": cfg["pay"]["amount"],
         "PAY_SUFFIX": cfg["pay"].get("suffix", "pro Stunde – mindestens"),
         "PAY_TEXT": cfg["pay"]["text"],
-        "BONUS_SECTION": bonus_html,
-        "FAQ_SEC_CLASS": "bt-sec" if bonus_html else "bt-sec alt",
+        "BONUS_CARD": bonus_card,
+        "PAYROW_MOD": payrow_mod,
+        "OG_IMAGE": og_image,
+        "FAQ_SEC_CLASS": "bt-sec alt",
         "FAQ_HEADING": cfg.get("faq_heading", "Häufige Fragen"),
         "FAQ_ITEMS": render_faq(faq),
         "CTA_HEADING": cfg["cta"]["heading"],

@@ -49,13 +49,13 @@
   <meta property="og:title" content="Toggo Tour Rostock — dein Event-Job am 8. + 9. August 2026 | uniworks" />
   <meta property="og:description" content="Zwei Tage Spiel, Action &amp; gute Laune: Wir suchen 17 Eventhelfer:innen für die Toggo Tour in Rostock (8. + 9. August 2026). Jetzt registrieren und Schicht in der uniworks App sichern." />
   <meta property="og:url" content="https://www.uniworks.gmbh/toggo-tour-rostock" />
-  <meta property="og:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <meta property="og:image" content="https://www.uniworks.gmbh/images/visuals/toggo-tour-rostock-og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Toggo Tour Rostock — dein Event-Job am 8. + 9. August 2026 | uniworks" />
   <meta name="twitter:description" content="Zwei Tage Spiel, Action &amp; gute Laune: Wir suchen 17 Eventhelfer:innen für die Toggo Tour in Rostock (8. + 9. August 2026). Jetzt registrieren und Schicht in der uniworks App sichern." />
-  <meta name="twitter:image" content="https://www.uniworks.gmbh/images/branding/og-image.jpg" />
+  <meta name="twitter:image" content="https://www.uniworks.gmbh/images/visuals/toggo-tour-rostock-og.jpg" />
   <link rel="canonical" href="https://www.uniworks.gmbh/toggo-tour-rostock" />
   <link rel="alternate" hreflang="de" href="https://www.uniworks.gmbh/toggo-tour-rostock" />
   <link rel="alternate" hreflang="x-default" href="https://www.uniworks.gmbh/toggo-tour-rostock" />
@@ -146,21 +146,18 @@
     .bt-badge.b-full{background:var(--bg);color:var(--sec)}
     .bt-tip .bt-tip-foot{font-size:12.5px;color:var(--sec);margin-top:10px}
 
-    /* Pay */
-    .bt-pay{max-width:760px;margin:0 auto;padding:0 40px;text-align:center}
-    .bt-pay-num{font-size:clamp(44px,6vw,64px);font-weight:800;letter-spacing:-.03em;color:var(--g);line-height:1;margin-bottom:14px}
-    .bt-pay p{font-size:17px;line-height:1.65;color:var(--body)}
-    .bt-pay strong{color:var(--black);font-weight:600}
-
-    /* Bonus / referral card */
-    .bt-ref{max-width:880px;margin:0 auto;padding:0 40px}
-    .bt-ref-inner{background:#fff;border:1px solid var(--border);border-radius:var(--r20);box-shadow:var(--sh);padding:44px 40px;text-align:center}
-    .bt-ref-inner h2{font-size:clamp(24px,3vw,34px);font-weight:800;margin-bottom:14px}
-    .bt-ref-inner p{font-size:17px;line-height:1.65;color:var(--body);max-width:640px;margin:0 auto}
-    .bt-ref-inner p strong{color:var(--black);font-weight:600}
-    .bt-ref-inner p a{color:var(--g);font-weight:600;text-decoration:none}
-    .bt-ref-inner p a:hover{text-decoration:underline}
-    .bt-ref-badge{display:inline-flex;align-items:baseline;gap:6px;background:var(--gl);color:var(--g);font-weight:800;font-size:clamp(30px,4vw,42px);letter-spacing:-.02em;padding:14px 28px;border-radius:var(--r12);margin-bottom:22px}
+    /* Pay + Bonus — side-by-side equal-height cards */
+    .bt-payrow{max-width:1000px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+    .bt-payrow.solo{max-width:720px;grid-template-columns:1fr}
+    .bt-card{background:#fff;border:1px solid var(--border);border-radius:var(--r20);box-shadow:var(--sh);padding:44px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+    .bt-card h2{font-size:clamp(22px,2.4vw,28px);font-weight:800;line-height:1.16;margin-bottom:14px}
+    .bt-card p{font-size:16px;line-height:1.65;color:var(--body);max-width:560px;margin:0}
+    .bt-card p strong{color:var(--black);font-weight:600}
+    .bt-card p a{color:var(--g);font-weight:600;text-decoration:none}
+    .bt-card p a:hover{text-decoration:underline}
+    .bt-pay-num{font-size:clamp(40px,5vw,58px);font-weight:800;letter-spacing:-.03em;color:var(--g);line-height:1;margin-bottom:16px}
+    .bt-pay-num small{font-size:.34em;font-weight:700;color:var(--body)}
+    .bt-ref-badge{display:inline-flex;align-items:baseline;gap:6px;background:var(--gl);color:var(--g);font-weight:800;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.02em;padding:12px 24px;border-radius:var(--r12);margin-bottom:20px}
     .bt-ref-badge small{font-size:.5em;font-weight:700}
 
     /* FAQ */
@@ -199,8 +196,9 @@
       .bt-gal{grid-template-columns:1fr;padding:0 24px}
       .bt-gal figure.gal-desk{display:none}
       .bt-stats-grid{padding:0 24px}
-      .bt-pay,.bt-ref,.bt-faq{padding:0 24px}
-      .bt-ref-inner{padding:36px 24px}
+      .bt-payrow{grid-template-columns:1fr;padding:0 24px}
+      .bt-faq{padding:0 24px}
+      .bt-card{padding:36px 24px}
     }
     @media(max-width:640px){
       /* On small screens the day details render as a static panel below the grid */
@@ -387,30 +385,26 @@
     </div>
   </section>
 
-  <!-- ── GEHALT ── -->
+  <!-- ── GEHALT & BONUS ── -->
   <section class="bt-sec">
     <div class="bt-sec-head" style="margin-bottom:24px">
       <h2>Dein Gehalt im Überblick</h2>
     </div>
-    <div class="bt-pay">
-      <div class="bt-pay-num">16&nbsp;€ <small style="font-size:.4em;font-weight:700;color:var(--body)">pro Stunde – mindestens</small></div>
-      <p>Bei uniworks bekommst du immer <strong>mindestens 16&nbsp;€ pro Stunde</strong> – fair und pünktlich. Während der Arbeitszeit sind außerdem <strong>Essen und Getränke</strong> für dich gestellt. Deinen genauen Stundenlohn für diesen Einsatz siehst du direkt bei der Buchung in der uniworks App.</p>
-    </div>
-  </section>
-
-  <!-- ── BONUS ── -->
-  <section class="bt-sec alt">
-    <div class="bt-ref">
-      <div class="bt-ref-inner">
-        <h2>2 Bonusstunden, wenn du an beiden Tagen dabei bist</h2>
+    <div class="bt-payrow">
+      <div class="bt-card">
+        <div class="bt-pay-num">16&nbsp;€ <small>pro Stunde – mindestens</small></div>
+        <p>Bei uniworks bekommst du immer <strong>mindestens 16&nbsp;€ pro Stunde</strong> – fair und pünktlich. Während der Arbeitszeit sind außerdem <strong>Essen und Getränke</strong> für dich gestellt. Deinen genauen Stundenlohn für diesen Einsatz siehst du direkt bei der Buchung in der uniworks App.</p>
+      </div>
+      <div class="bt-card">
         <div class="bt-ref-badge">+2<small>Bonusstunden</small></div>
+        <h2>2 Bonusstunden, wenn du an beiden Tagen dabei bist</h2>
         <p>Sei an beiden Tagen dabei – Samstag und Sonntag – und wir schenken dir <strong>2 zusätzliche Bonusstunden</strong> obendrauf. Ums Drumherum musst du dich nicht kümmern: <strong>Outfit (T-Shirt), Essen und Getränke</strong> sind für dich gestellt. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker.</p>
       </div>
     </div>
   </section>
 
   <!-- ── FAQ ── -->
-  <section class="bt-sec">
+  <section class="bt-sec alt">
     <div class="bt-sec-head">
       <h2>Häufige Fragen</h2>
     </div>

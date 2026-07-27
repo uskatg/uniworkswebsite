@@ -72,6 +72,7 @@ Schritt 2–4 oben aus.
 | `slug` | ✓ | URL-Pfad: `/slug`, Datei `pages/slug.html` |
 | `title`, `description` | ✓ | Browser-Titel + Google-Beschreibung |
 | `social_description` | – | WhatsApp/Instagram-Vorschautext (sonst = description) |
+| `og_image` | – | Vorschaubild beim Teilen (WhatsApp/Social): root-relativer Pfad zu einem `.jpg`/`.png`, ideal 1200×630 (sonst uniworks-Standardbild) |
 | `eyebrow` | – | Badge über der Headline (`icon`, `text`) |
 | `headline`, `intro` | ✓ | H1 (mit `<em>` für grün) + Einleitungstext |
 | `meta` | – | Icon-Zeile unter dem Intro (Ort, Datum, Lohn) |
