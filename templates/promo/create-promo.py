@@ -121,15 +121,13 @@ def render_faq(items):
 
 
 def render_bonus_card(bonus):
-    """Render the bonus as a card that sits next to the pay card (same row)."""
+    """Render the bonus as a stat card mirroring the pay card: one big number
+    (badge_big) + short unit (badge_small) + text, so both cards look identical."""
     if not bonus:
         return ""
-    badge = ""
-    if bonus.get("badge_big"):
-        small = f'<small>{bonus["badge_small"]}</small>' if bonus.get("badge_small") else ""
-        badge = f'\n        <div class="bt-ref-badge">{bonus["badge_big"]}{small}</div>'
-    return f'''      <div class="bt-card">{badge}
-        <h2>{bonus["heading"]}</h2>
+    small = f' <small>{bonus["badge_small"]}</small>' if bonus.get("badge_small") else ""
+    return f'''      <div class="bt-card">
+        <div class="bt-pay-num">{bonus.get("badge_big", "")}{small}</div>
         <p>{bonus["text"]}</p>
       </div>'''
 

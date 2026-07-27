@@ -87,14 +87,14 @@
   "pay": {
     "amount": "16&nbsp;€",
     "suffix": "pro Stunde",
-    "text": "Bei uniworks bekommst du immer <strong>mindestens 16&nbsp;€ pro Stunde</strong>, fair und pünktlich ausgezahlt. Deinen genauen Stundenlohn für diesen Einsatz siehst du bei der Buchung in der App."
+    "heading": "Gehalt & Bonus",
+    "text": "Immer <strong>mindestens 16&nbsp;€ pro Stunde</strong>, fair und pünktlich ausgezahlt. Deinen genauen Stundenlohn siehst du bei der Buchung in der App."
   },
 
   "bonus": {
-    "heading": "2 Bonusstunden für die pünktliche Teilnahme an beiden Tagen",
-    "badge_big": "+2",
-    "badge_small": "Bonusstunden",
-    "text": "Bist du an beiden Tagen pünktlich dabei, also Samstag und Sonntag, schenken wir dir <strong>2 zusätzliche Bonusstunden</strong> obendrauf. Outfit, Essen und Getränke sind für dich gestellt. Mitbringen musst du nur deine eigene Jeans und saubere Sneaker."
+    "badge_big": "+2&nbsp;Std.",
+    "badge_small": "Bonus",
+    "text": "Für die <strong>pünktliche Teilnahme an beiden Tagen</strong> gibt es 2 Stunden extra. Outfit, Essen und Getränke sind gestellt, mitbringen musst du nur Jeans und Sneaker."
   },
 
   "faq": "standard",
