@@ -61,7 +61,7 @@
   "calendar": {
     "year": 2026,
     "month": 8,
-    "intro": "Wir suchen an beiden Tagen dieselben 17 Gesichter. Tippe auf einen markierten Tag oder fahre mit der Maus darüber – du siehst sofort die Schichtzeiten und wie viele Plätze noch frei sind.",
+    "intro": "Wir suchen an beiden Tagen dieselben 17 Gesichter – an jedem Einsatztag ist eine 45-minütige Pause eingeplant. Tippe auf einen markierten Tag oder fahre mit der Maus darüber – du siehst sofort die Schichtzeiten und wie viele Plätze noch frei sind.",
     "snapshot_note": "Stand: 27. Juli 2026 – tagesaktuelle Verfügbarkeit siehst du in der uniworks App.",
     "days": {
       "8": {
@@ -86,16 +86,16 @@
   },
 
   "bonus": {
-    "heading": "Alles dabei: Verpflegung & Outfit",
-    "badge_big": "inkl.",
-    "badge_small": "Shirt, Essen & Trinken",
-    "text": "Du kommst einfach vorbei – um den Rest kümmern wir uns: Vor Ort bekommst du ein <strong>gestelltes uniworks-Outfit (T-Shirt)</strong> sowie <strong>Essen und Getränke</strong> während der Arbeitszeit. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker."
+    "heading": "2 Bonusstunden, wenn du an beiden Tagen dabei bist",
+    "badge_big": "+2",
+    "badge_small": "Bonusstunden",
+    "text": "Sei an beiden Tagen dabei – Samstag und Sonntag – und wir schenken dir <strong>2 zusätzliche Bonusstunden</strong> obendrauf. Ums Drumherum musst du dich nicht kümmern: <strong>Outfit (T-Shirt), Essen und Getränke</strong> sind für dich gestellt. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker."
   },
 
   "faq": "standard",
   "faq_overrides": {
     "Gibt es einen Dresscode zu beachten?": "Ein uniworks-Outfit (T-Shirt) wird dir vor Ort gestellt. Mitbringen musst du nur deine eigene ordentliche Jeans und saubere, geschlossene Sneaker.",
-    "Muss ich an allen Tagen arbeiten?": "Ideal ist, wenn du an beiden Tagen – Samstag und Sonntag – dabei bist, damit dieselben Gesichter durchgehend an den Modulen stehen. Wenn wirklich nur ein Tag klappt, meld dich trotzdem: Wir schauen dann gemeinsam, was passt.",
+    "Muss ich an allen Tagen arbeiten?": "Ideal ist, wenn du an beiden Tagen – Samstag und Sonntag – dabei bist: Dafür schenken wir dir 2 Bonusstunden und dieselben Gesichter stehen durchgehend an den Modulen. Wenn wirklich nur ein Tag klappt, meld dich trotzdem – wir schauen dann gemeinsam, was passt.",
     "Habe ich eine Pause während der Schicht?": "Ja. An beiden Tagen ist eine Pause von 45 Minuten eingeplant. Die genaue Pausenzeit stimmt ihr im Team mit der Einsatzleitung vor Ort ab – so bleibt jede Station durchgehend besetzt.",
     "Wann erhalte ich meinen Lohn?": "Spätestens am zehnten des Folgemonats. Für die Toggo Tour Anfang August bekommst du dein Gehalt also Anfang September auf dein Konto überwiesen."
   },
