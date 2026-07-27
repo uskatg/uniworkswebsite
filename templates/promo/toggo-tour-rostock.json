@@ -14,6 +14,9 @@
     { "icon": "ti-coin-euro", "text": "mind. 16&nbsp;€ pro Stunde" }
   ],
   "hero_image": { "src": "/images/visuals/BrandAmbassador.webp", "alt": "uniworks Team im Sommer-Einsatz bei einem Outdoor-Event" },
+  "hero_buttons": [
+    { "text": "Jetzt registrieren", "href": "https://apply.uniworks.gmbh", "style": "p", "size": "lg" }
+  ],
 
   "stats": [
     { "big": "17", "small": "Eventhelfer:innen gesucht" },

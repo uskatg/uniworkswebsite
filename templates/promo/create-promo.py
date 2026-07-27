@@ -56,6 +56,8 @@ def render_buttons(buttons, indent):
     out = []
     for b in buttons:
         cls = "btn btn-p" if b.get("style", "p") == "p" else "btn btn-s"
+        if b.get("size") == "lg":
+            cls += " btn-lg"
         ext = ' target="_blank" rel="noopener"' if b["href"].startswith("http") else ""
         out.append(f'{indent}<a href="{b["href"]}" class="{cls}"{ext}>{b["text"]}</a>')
     return "\n".join(out)
